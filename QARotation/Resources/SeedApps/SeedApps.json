@@ -1,0 +1,514 @@
+[
+ {
+  "appStoreID": "1627216318",
+  "bundleID": "com.leeo.LeeoCon",
+  "name": "LeeoCon",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/99/17/28/9917280c-b360-0800-c279-398a85c48e99/iMessage_App_Icon-0-0-1x_U007emarketing-0-0-0-0-0-3-sRGB-0-0-0-GLES2_U002c0-512MB-85-181-0-0.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad",
+   "watch"
+  ]
+ },
+ {
+  "appStoreID": "6449769987",
+  "bundleID": "com.leeo.PixelMe",
+  "name": "Pixel MeMe",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/57/2b/26/572b265c-99a3-ccb1-bc2a-9a1d85a285cc/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "2.0.1",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6778457299",
+  "bundleID": "com.leeo.StickyPresenter",
+  "name": "StickyPresenter",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d8/2d/2d/d82d2d1d-403f-33fb-8e9f-4c624d5bc121/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png",
+  "version": "1.0.9",
+  "platforms": [
+   "mac"
+  ]
+ },
+ {
+  "appStoreID": "6803358945",
+  "bundleID": "com.leeo.StickyPresenter.Remote",
+  "name": "StickyPresenterRemote",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/88/ad/06/88ad067d-66b9-2d7a-ea1c-a2abfd6a58b0/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.8",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6789206198",
+  "bundleID": "com.leeo.TetraTint",
+  "name": "TetraTint",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/bf/bc/e2bfbc81-7b75-3c19-4686-78b17fb56510/AppIcon-0-0-85-220-0-5-0-2x-P3.png/512x512bb.png",
+  "version": "1.0",
+  "platforms": [
+   "mac"
+  ]
+ },
+ {
+  "appStoreID": "6755983135",
+  "bundleID": "com.Ysoup.LeaveWise",
+  "name": "골드위크 - 황금연휴 플래너",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b2/a6/dc/b2a6dc1d-4676-de11-9ed7-8caac883f355/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "2.1.2",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6755934506",
+  "bundleID": "com.bucketclimb.app",
+  "name": "꿈을 찾아서",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/33/9f/63339fa9-05c2-bee0-679e-a8205ee597cd/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6781537149",
+  "bundleID": "com.leeo.HandsFreeMetronome",
+  "name": "낫마템포",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f7/d5/91/f7d5919d-78c8-d5d4-4529-8982c65b3649/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.5",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "1626715109",
+  "bundleID": "com.leeo.LullabyRecipe",
+  "name": "달빛 - 수면 백색 소음 & 자연의 소리",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cd/b7/ac/cdb7ac9f-0bbc-5415-b7bf-22d88760505a/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+  "version": "4.1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6790137862",
+  "bundleID": "com.example.MoonlitOrder",
+  "name": "달빛 오락실",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f3/4b/b5/f34bb512-3ff0-ecc5-9814-9b083a2f7289/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.1",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6450387984",
+  "bundleID": "com.leeo.DontGoMart",
+  "name": "돈꼬마트",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1d/62/2d/1d622d9d-b367-4f47-2bd3-b26bc64e0bc1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+  "version": "2.0.7",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6752551268",
+  "bundleID": "com.xa.toki",
+  "name": "두번알림",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6c/ca/da/6ccada54-e928-8ca3-66f8-4db1b5a1c59b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "2.2.8",
+  "platforms": [
+   "iPhone",
+   "iPad",
+   "watch"
+  ]
+ },
+ {
+  "appStoreID": "6754888089",
+  "bundleID": "com.ysoup.RapportMap",
+  "name": "라포맵",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/fb/ee/34fbee37-0bf1-e019-b336-dde09e1aeb47/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.1",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6758373947",
+  "bundleID": "com.leeo.FindMe",
+  "name": "링롱",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/68/7c/18/687c18c0-81e9-312e-3eee-5eddcca160e7/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.2",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6793472383",
+  "bundleID": "com.leeo.wifisnap",
+  "name": "마이파이",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d4/6d/ca/d46dca84-c775-6da1-0cea-d79d3fbb2f1a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6777737322",
+  "bundleID": "com.devkoan.ScheduleDensityApp",
+  "name": "무지개 공방",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2e/46/8a/2e468afd-eae2-6e23-11cf-b6a499d6ddbe/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png",
+  "version": "1.1.5",
+  "platforms": [
+   "mac"
+  ]
+ },
+ {
+  "appStoreID": "6792787106",
+  "bundleID": "com.leeo.bookmarkshot",
+  "name": "밑줄",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fa/88/40/fa8840f7-6d9d-9bf5-1a79-ea98e066dc3c/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.1",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6789952970",
+  "bundleID": "com.leeo.FootprintDiary",
+  "name": "벅뚜벅뚜",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/32/38/a7/3238a78b-ab0d-81ff-ccf6-88f1c088c67a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.5",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6758995390",
+  "bundleID": "com.burningparchment.app",
+  "name": "불타는 내인생",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f9/be/bc/f9bebce3-3862-3e36-0203-f1256a1844f7/AppIcon-0-0-1x_U007ephone-0-1-85-220.jpeg/512x512bb.jpg",
+  "version": "1.1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6764088776",
+  "bundleID": "com.devkoan.IndonesianSmallTalk",
+  "name": "사노라면",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/46/37/62/463762b5-40e5-32fd-d931-53b967e707cd/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.2",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6755164924",
+  "bundleID": "com.ysoup.RoutineCamera",
+  "name": "세끼",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8c/d5/31/8cd531a1-52a5-e303-23f6-9916bf97826d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6758270016",
+  "bundleID": "com.leeo.ConversationPractice",
+  "name": "스픽플로우",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/63/d3/1a63d391-479f-6842-d954-2e486d9553bc/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6759643878",
+  "bundleID": "com.leeo.JuniorDevMistakes",
+  "name": "실수 100",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a4/1c/85/a41c8583-5e73-0df4-c348-e8a4085593ed/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6790130891",
+  "bundleID": "com.family.FamilyBank",
+  "name": "쑥쑥용돈",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/88/c6/02/88c60213-abc4-c812-0c17-f148938fb576/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6789881830",
+  "bundleID": "com.devkoan.CalendarSnap",
+  "name": "아이일정",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/74/bb/0f74bbd9-75a3-f5f3-3537-2919813bda47/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.4",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6808132576",
+  "bundleID": "com.leeo.higgym",
+  "name": "앱 디자인 실습",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2e/24/4b/2e244b9c-d76c-f252-8d31-53850ab9e01a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6790131247",
+  "bundleID": "com.family.familycourt",
+  "name": "억울해요",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b8/ce/96/b8ce9628-d5f9-eee0-2325-0352d0e89cd7/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6808471728",
+  "bundleID": "com.leeo.yeoul",
+  "name": "여울",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/da/b7/96/dab796af-d6ca-a198-ce93-1b28b4ce8d4b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6450839961",
+  "bundleID": "com.leeo.JuJob",
+  "name": "오늘의 주접",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0e/cd/e8/0ecde892-caba-09ea-32f5-1a6ebf8b4d33/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+  "version": "1.0.3",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6755280882",
+  "bundleID": "com.example.ScheduleDensityApp",
+  "name": "욕망의 무지개",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/fb/87/c3fb870d-f553-9382-0b37-1133e3b745d7/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.1.4",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6779270691",
+  "bundleID": "com.leeo.thinkflow",
+  "name": "이어생각",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e8/7b/fa/e87bfabe-4959-3ba6-8263-c1bf6709db35/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6755934548",
+  "bundleID": "com.Ysoup.restaurantmap",
+  "name": "인생 맛집",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8e/62/78/8e627886-d44e-27fd-7094-b4c1f67b2595/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6790835318",
+  "bundleID": "com.leeo.slidesnap",
+  "name": "장표스냅",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3e/d9/31/3ed931aa-68c8-a2ab-fc85-42ebac8d34ad/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.4",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6794597095",
+  "bundleID": "com.lectureq.LectureQ",
+  "name": "질문노트",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/08/f7/f8/08f7f8c6-5a51-b2a2-e824-36ddce80bf28/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png",
+  "version": "1.0",
+  "platforms": [
+   "mac"
+  ]
+ },
+ {
+  "appStoreID": "6450388408",
+  "bundleID": "com.leeo.ReboundJournal",
+  "name": "징검돌",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/22/10/36/22103690-85e2-a250-7963-8d0f1d058186/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+  "version": "2.0.1",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6779262832",
+  "bundleID": "com.devkoan.StaffSinger",
+  "name": "초견",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dc/6a/e5/dc6ae5ff-e1e2-ff56-8cc0-ec881cee3416/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.2",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6755988507",
+  "bundleID": "com.Ysoup.CoolTime",
+  "name": "쿨타임",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/04/c8/6b/04c86baa-44d9-48dd-342d-7ba44a375dfb/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.2",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "1543660502",
+  "bundleID": "com.Ysoup.TokenMemo",
+  "name": "클립키보드",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4e/e1/87/4ee18724-25d0-8e79-a65f-d67d0919a0b4/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
+  "version": "5.1.4",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6756433372",
+  "bundleID": "com.ysoup.TokenMemo-tap",
+  "name": "클립키보드: 빠른 붙여넣기",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c9/a6/b8/c9a6b875-ba7b-43a0-f45c-4b16f8867156/AppIcon-0-0-85-220-0-6-0-2x.png/512x512bb.png",
+  "version": "5.1.4",
+  "platforms": [
+   "mac"
+  ]
+ },
+ {
+  "appStoreID": "6779654854",
+  "bundleID": "com.devkoan.FireTracker",
+  "name": "퇴사각",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/38/05/59/380559d4-a868-e154-1a7f-dfd1aaa4a1b8/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.2",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6789852144",
+  "bundleID": "com.leeo.RotoscopeiPad",
+  "name": "팔랑북",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/57/c2/30/57c230ea-fd43-c2dc-75c1-3b4d355bbe78/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.1",
+  "platforms": [
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6779659029",
+  "bundleID": "com.devkoan.StampCamera",
+  "name": "펀칭",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/d2/06/0bd206c1-7de0-44ef-3fc0-5cf5ff7ab598/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6802295390",
+  "bundleID": "com.leeo.SkyDex",
+  "name": "하늘색",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8c/03/68/8c036895-3a7f-2a4f-2261-080598f0acbd/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.1",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6775176578",
+  "bundleID": "com.kora.leeo",
+  "name": "한국길찾기",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fb/21/b5/fb21b5e7-83f7-942c-83fb-eea003da543a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.5",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6758931631",
+  "bundleID": "com.leeo.sunflower",
+  "name": "햇빛바라기",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/94/46/0e/94460efc-e20b-4431-176c-9b54602c0b81/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6755651803",
+  "bundleID": "com.lottochecker.app",
+  "name": "확률계산기",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cf/d7/73/cfd773b2-2d65-e119-6296-7b55db86153c/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0.1",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "",
+  "bundleID": "com.devkoan.externalize",
+  "name": "Externalize",
+  "iconURL": "",
+  "version": "",
+  "platforms": [
+   "iPhone"
+  ]
+ }
+]

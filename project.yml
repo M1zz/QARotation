@@ -1,0 +1,99 @@
+name: QARotation
+options:
+  bundleIdPrefix: com.leeo
+  developmentLanguage: ko
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "18.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: QGAQ3AY3R3
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_EMIT_LOC_STRINGS: YES
+targets:
+  QARotation:
+    type: application
+    platform: iOS
+    sources:
+      - QARotation
+      - Shared
+    entitlements:
+      path: QARotation/QARotation.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.leeo.QARotation
+    info:
+      path: QARotation/Info.plist
+      properties:
+        CFBundleDisplayName: QA 로테이션
+        CFBundleDevelopmentRegion: ko
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        CFBundleURLTypes:
+          - CFBundleURLName: com.leeo.QARotation
+            CFBundleURLSchemes: [qarotation]
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.leeo.QARotation
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+    dependencies:
+      - target: QARotationWidget
+  QARotationWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - QARotationWidget
+      - Shared
+    entitlements:
+      path: QARotationWidget/QARotationWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.leeo.QARotation
+    info:
+      path: QARotationWidget/Info.plist
+      properties:
+        CFBundleDisplayName: QA 로테이션
+        CFBundleDevelopmentRegion: ko
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.leeo.QARotation.Widget
+        TARGETED_DEVICE_FAMILY: "1,2"
+  QARotationTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - QARotationTests
+    dependencies:
+      - target: QARotation
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.leeo.QARotationTests
+schemes:
+  QARotation:
+    build:
+      targets:
+        QARotation: all
+        QARotationWidget: all
+    test:
+      targets:
+        - QARotationTests
+      gatherCoverageData: true
