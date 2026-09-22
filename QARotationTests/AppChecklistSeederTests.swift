@@ -26,7 +26,7 @@ struct AppChecklistSeederTests {
 
     @Test func 카탈로그에_있는_앱에_항목을_넣는다() {
         let app = insertApp(bundleID: "com.Ysoup.TokenMemo")
-        AppChecklistSeeder.seedNewApps(context, defaults: defaults)
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
         #expect(!catalogTitles.isEmpty)
         #expect(app.sortedExtraItems.map(\.title) == catalogTitles)
         #expect(app.sortedExtraItems.allSatisfy { !$0.isDefault })
@@ -34,24 +34,40 @@ struct AppChecklistSeederTests {
 
     @Test func 번들_ID는_대소문자를_가리지_않는다() {
         let app = insertApp(bundleID: "com.ysoup.tokenmemo")
-        AppChecklistSeeder.seedNewApps(context, defaults: defaults)
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
         #expect(app.sortedExtraItems.map(\.title) == catalogTitles)
     }
 
     @Test func 카탈로그에_없는_앱은_건드리지_않는다() {
         let app = insertApp(bundleID: "com.unknown.app")
-        AppChecklistSeeder.seedNewApps(context, defaults: defaults)
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
         #expect(app.sortedExtraItems.isEmpty)
+    }
+
+    @Test func 카탈로그에_새_항목이_생기면_다음_실행에_들어간다() throws {
+        let app = insertApp(bundleID: "com.Ysoup.TokenMemo")
+        // v1.0에서 앞 일곱 개만 받아 둔 기기를 흉내 낸다.
+        let old = Array(AppChecklistCatalog.items(for: app.bundleID).prefix(7))
+        for (index, item) in old.enumerated() {
+            let checklistItem = ChecklistItem(title: item.1, category: item.0, order: index, isDefault: false)
+            context.insert(checklistItem)
+            checklistItem.app = app
+        }
+        try context.save()
+        defaults.set([AppChecklistCatalog.key(app.bundleID)], forKey: SettingsKey.seededAppChecklists)
+
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+        #expect(app.sortedExtraItems.map(\.title) == catalogTitles)
     }
 
     @Test func 지운_항목은_다시_채우지_않고_다시_넣기로만_돌아온다() throws {
         let app = insertApp(bundleID: "com.Ysoup.TokenMemo")
-        AppChecklistSeeder.seedNewApps(context, defaults: defaults)
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
         let first = try #require(app.sortedExtraItems.first)
         context.delete(first)
         try context.save()
 
-        AppChecklistSeeder.seedNewApps(context, defaults: defaults)
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
         #expect(app.sortedExtraItems.count == catalogTitles.count - 1)
         #expect(AppChecklistSeeder.missingCount(for: app) == 1)
 
@@ -67,7 +83,7 @@ struct AppChecklistSeederTests {
         mine.app = app
         try context.save()
 
-        AppChecklistSeeder.seedNewApps(context, defaults: defaults)
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
         #expect(app.sortedExtraItems.map(\.title) == ["내 항목"] + catalogTitles)
     }
 
@@ -97,7 +113,7 @@ struct BundledAppsTests {
         let context = container.mainContext
         let defaults = UserDefaults(suiteName: "BundledAppsTests-\(UUID().uuidString)")!
         BundledAppsSeeder.seedIfNeeded(context, defaults: defaults)
-        AppChecklistSeeder.seedNewApps(context, defaults: defaults)
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
 
         let apps = try context.fetch(FetchDescriptor<TrackedApp>())
         #expect(apps.count == BundledApps.load().count)

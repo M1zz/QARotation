@@ -40,24 +40,38 @@ enum ChecklistSeeder {
 }
 
 /// 카탈로그(`AppChecklistCatalog`)에 있는 앱 전용 항목을 넣는다.
-/// 앱마다 처음 한 번만 넣는다. 사용자가 지운 항목은 다시 채우지 않는다.
+/// 한 번 넣은 제목은 App Group UserDefaults에 적어 두고 다시 넣지 않는다.
+/// 그래서 사용자가 지운 항목은 돌아오지 않고, 카탈로그에 새로 적은 항목만 다음 실행에 들어간다.
 @MainActor
 enum AppChecklistSeeder {
-    /// 아직 받지 않은 앱에만 넣는다. 실행할 때와 가져오기 뒤에 부른다.
-    static func seedNewApps(_ context: ModelContext, defaults: UserDefaults = .shared) {
-        var seeded = Set(defaults.stringArray(forKey: SettingsKey.seededAppChecklists) ?? [])
+    /// 아직 한 번도 넣지 않은 제목만 넣는다. 실행할 때와 가져오기 뒤에 부른다.
+    static func seedNewItems(_ context: ModelContext, defaults: UserDefaults = .shared) {
+        var seeded = (defaults.dictionary(forKey: SettingsKey.seededChecklistTitles) as? [String: [String]]) ?? [:]
+        // 제목을 적기 전(v1.0) 버전에서 넣은 앱들. 그때 넣은 항목이 무엇이었는지는 지금 목록으로 갈음한다.
+        let legacy = Set(defaults.stringArray(forKey: SettingsKey.seededAppChecklists) ?? [])
         let apps = (try? context.fetch(FetchDescriptor<TrackedApp>())) ?? []
         var changed = false
+
         for app in apps {
             let key = AppChecklistCatalog.key(app.bundleID)
-            guard !seeded.contains(key), !AppChecklistCatalog.items(for: app.bundleID).isEmpty else { continue }
-            insertMissing(for: app, in: context)
-            seeded.insert(key)
+            let catalog = AppChecklistCatalog.items(for: app.bundleID)
+            guard !catalog.isEmpty else { continue }
+
+            var known = Set(seeded[key] ?? [])
+            if seeded[key] == nil, legacy.contains(key) {
+                known = Set((app.extraChecklistItems ?? []).map(\.title))
+            }
+            let fresh = catalog.filter { !known.contains($0.1) }
+            guard !fresh.isEmpty else { continue }
+
+            insert(fresh, for: app, in: context)
+            seeded[key] = Array(known.union(catalog.map(\.1))).sorted()
             changed = true
         }
+
         guard changed else { return }
         try? context.save()
-        defaults.set(seeded.sorted(), forKey: SettingsKey.seededAppChecklists)
+        defaults.set(seeded, forKey: SettingsKey.seededChecklistTitles)
     }
 
     /// 카탈로그 항목 중 이 앱에 없는 제목의 수.
@@ -66,16 +80,17 @@ enum AppChecklistSeeder {
         return AppChecklistCatalog.items(for: app.bundleID).filter { !titles.contains($0.1) }.count
     }
 
-    /// 카탈로그 항목 중 제목이 없는 것만 뒤에 붙인다.
+    /// 카탈로그 항목 중 제목이 없는 것만 뒤에 붙인다. 지운 항목을 되살릴 때 쓴다.
     static func restoreMissing(for app: TrackedApp, in context: ModelContext) {
-        insertMissing(for: app, in: context)
+        let titles = Set((app.extraChecklistItems ?? []).map(\.title))
+        insert(AppChecklistCatalog.items(for: app.bundleID).filter { !titles.contains($0.1) }, for: app, in: context)
         try? context.save()
     }
 
-    private static func insertMissing(for app: TrackedApp, in context: ModelContext) {
+    private static func insert(_ items: [(ChecklistCategory, String)], for app: TrackedApp, in context: ModelContext) {
         let titles = Set((app.extraChecklistItems ?? []).map(\.title))
         var order = (app.sortedExtraItems.last?.order ?? -1) + 1
-        for (category, title) in AppChecklistCatalog.items(for: app.bundleID) where !titles.contains(title) {
+        for (category, title) in items where !titles.contains(title) {
             let item = ChecklistItem(title: title, category: category, order: order, isDefault: false)
             context.insert(item)
             item.app = app

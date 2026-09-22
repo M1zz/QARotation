@@ -10,7 +10,9 @@ enum SettingsKey {
     static let remindersEnabled = "breakRemindersEnabled"
     static let breakTimes = "breakTimes"
     static let didSeedChecklist = "didSeedChecklist"
+    /// v1.0에서 쓰던 "이 앱은 넣었음" 목록. 지금은 아래 제목 목록으로 갈음한다.
     static let seededAppChecklists = "seededAppChecklists"
+    static let seededChecklistTitles = "seededChecklistTitles"
     static let didSeedBundledApps = "didSeedBundledApps"
     static let skipDay = "skipDay"
     static let skipIDs = "skipIDs"

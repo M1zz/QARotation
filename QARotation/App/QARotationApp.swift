@@ -17,7 +17,7 @@ struct QARotationApp: App {
         }
         ChecklistSeeder.seedIfNeeded(container.mainContext)
         BundledAppsSeeder.seedIfNeeded(container.mainContext)
-        AppChecklistSeeder.seedNewApps(container.mainContext)
+        AppChecklistSeeder.seedNewItems(container.mainContext)
         PickChangeCoordinator.pickDidChange(context: container.mainContext)
     }
 
