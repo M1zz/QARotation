@@ -82,6 +82,8 @@ enum AppChecklistSeeder {
             let catalog = AppChecklistCatalog.items(for: app.bundleID)
             guard !catalog.isEmpty else { continue }
 
+            if applyCatalogEdits(for: app, key: key, seeded: &seeded, in: context) { changed = true }
+
             var known = Set(seeded[key] ?? [])
             if seeded[key] == nil, legacy.contains(key) {
                 known = Set((app.extraChecklistItems ?? []).map(\.title))
@@ -105,6 +107,38 @@ enum AppChecklistSeeder {
         guard changed else { return }
         try? context.save()
         defaults.set(seeded, forKey: SettingsKey.seededChecklistTitles)
+    }
+
+    /// 앱이 바뀌어 카탈로그에서 문구를 고치거나 뺀 항목을, 이미 받은 기기에서도 따라 고친다.
+    private static func applyCatalogEdits(
+        for app: TrackedApp,
+        key: String,
+        seeded: inout [String: [String]],
+        in context: ModelContext
+    ) -> Bool {
+        let renamed = AppChecklistCatalog.renamedTitles[key] ?? [:]
+        let removed = Set(AppChecklistCatalog.removedTitles[key] ?? [])
+        guard !renamed.isEmpty || !removed.isEmpty else { return false }
+
+        var changed = false
+        var known = Set(seeded[key] ?? [])
+        for item in app.extraChecklistItems ?? [] {
+            if removed.contains(item.title) {
+                known.remove(item.title)
+                context.delete(item)
+                changed = true
+            } else if let newTitle = renamed[item.title] {
+                known.remove(item.title)
+                item.title = newTitle
+                item.steps = ""  // 아래에서 새 단계로 채운다
+                changed = true
+            }
+        }
+        // 지운 항목이 다시 들어오지 않도록, 넣어 본 제목 기록에서도 정리한다.
+        known.subtract(removed)
+        for old in renamed.keys { known.remove(old) }
+        if changed { seeded[key] = known.sorted() }
+        return changed
     }
 
     /// 카탈로그 항목 중 이 앱에 없는 제목의 수.

@@ -87,6 +87,32 @@ struct AppChecklistSeederTests {
         #expect(app.sortedExtraItems.map(\.title) == ["내 항목"] + catalogTitles)
     }
 
+    @Test func 문구를_고친_항목은_기기에서도_바뀌고_뺀_항목은_지워진다() throws {
+        let bundleID = "com.leeo.JuJob"
+        let app = insertApp(bundleID: bundleID)
+        let key = AppChecklistCatalog.key(bundleID)
+        let renamed = try #require(AppChecklistCatalog.renamedTitles[key]?.first)
+        let removedTitle = try #require(AppChecklistCatalog.removedTitles[key]?.first)
+        for (index, title) in [renamed.key, removedTitle].enumerated() {
+            let item = ChecklistItem(title: title, category: .custom, order: index, isDefault: false)
+            context.insert(item)
+            item.app = app
+        }
+        try context.save()
+        defaults.set([key: [renamed.key, removedTitle]], forKey: SettingsKey.seededChecklistTitles)
+
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+        let titles = app.sortedExtraItems.map(\.title)
+        #expect(titles.contains(renamed.value))
+        #expect(!titles.contains(renamed.key))
+        #expect(!titles.contains(removedTitle))
+        #expect(app.sortedExtraItems.allSatisfy { !$0.steps.isEmpty })
+
+        // 두 번째 실행에서 지운 항목이 되살아나지 않는다.
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+        #expect(!app.sortedExtraItems.map(\.title).contains(removedTitle))
+    }
+
     @Test func 카탈로그_제목은_앱마다_겹치지_않는다() {
         for (bundleID, items) in AppChecklistCatalog.itemsByBundleID {
             let titles = items.map(\.1)
