@@ -26,8 +26,10 @@ struct SessionHeaderView: View {
                 Button {
                     openApp(primary: url)
                 } label: {
-                    Label(model.app.launchURL == nil ? "App Store에서 열기" : "앱 열기", systemImage: "arrow.up.forward.app")
-                        .frame(maxWidth: .infinity, minHeight: 44)
+                    WideButtonLabel(
+                        title: model.app.launchURL == nil ? "App Store에서 열기" : "앱 열기",
+                        systemImage: "arrow.up.forward.app"
+                    )
                 }
                 .buttonStyle(.bordered)
             }

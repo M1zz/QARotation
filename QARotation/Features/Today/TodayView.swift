@@ -93,8 +93,7 @@ struct TodayView: View {
                 skipTick += 1
                 PickChangeCoordinator.pickDidChange(context: context)
             } label: {
-                Label("다른 앱 추천", systemImage: "forward.fill")
-                    .frame(maxWidth: .infinity, minHeight: 36)
+                WideButtonLabel(title: "다른 앱 추천", systemImage: "forward.fill", minHeight: 36)
             }
             .buttonStyle(.bordered)
             .disabled(allIDs.count < 2)
@@ -204,9 +203,8 @@ private extension TodayView {
         Button {
             router.startSession(app.id)
         } label: {
-            Label("QA 시작", systemImage: "play.fill")
+            WideButtonLabel(title: "QA 시작", systemImage: "play.fill")
                 .font(.title3.bold())
-                .frame(maxWidth: .infinity, minHeight: 44)
         }
         .buttonStyle(.borderedProminent)
         .controlSize(.large)

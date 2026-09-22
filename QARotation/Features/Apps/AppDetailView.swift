@@ -57,9 +57,8 @@ struct AppDetailView: View {
             Button {
                 router.startSession(app.id)
             } label: {
-                Label("QA 시작", systemImage: "play.fill")
+                WideButtonLabel(title: "QA 시작", systemImage: "play.fill")
                     .font(.headline)
-                    .frame(maxWidth: .infinity, minHeight: 44)
             }
             .buttonStyle(.borderedProminent)
             .disabled(app.isArchived)
@@ -68,8 +67,11 @@ struct AppDetailView: View {
                 Button {
                     openURL(url)
                 } label: {
-                    Label(app.launchURL == nil ? "App Store에서 보기" : "앱 열기", systemImage: "arrow.up.forward.app")
-                        .frame(maxWidth: .infinity, minHeight: 36)
+                    WideButtonLabel(
+                        title: app.launchURL == nil ? "App Store에서 보기" : "앱 열기",
+                        systemImage: "arrow.up.forward.app",
+                        minHeight: 36
+                    )
                 }
                 .buttonStyle(.bordered)
             }
