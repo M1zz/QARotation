@@ -21,6 +21,14 @@ struct ChecklistRow: View {
                 }
             }
 
+            if !draft.steps.isEmpty {
+                Text(draft.steps)
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel("확인하는 방법. \(draft.steps)")
+            }
+
             OutcomeButtons(itemTitle: draft.title, selection: draft.outcome, onSelect: onSelect)
 
             if draft.outcome == .fail {

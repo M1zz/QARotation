@@ -16,6 +16,7 @@ struct QARotationApp: App {
             fatalError("저장소를 열 수 없습니다: \(error)")
         }
         ChecklistSeeder.seedIfNeeded(container.mainContext)
+        ChecklistSeeder.fillMissingSteps(container.mainContext)
         BundledAppsSeeder.seedIfNeeded(container.mainContext)
         AppChecklistSeeder.seedNewItems(container.mainContext)
         PickChangeCoordinator.pickDidChange(context: container.mainContext)

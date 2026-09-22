@@ -5,6 +5,7 @@ import SwiftData
 struct DraftResult: Identifiable, Equatable {
     let id: UUID
     let title: String
+    let steps: String
     let category: ChecklistCategory
     let order: Int
     let isAppSpecific: Bool
@@ -31,11 +32,11 @@ enum SessionRecorder {
     static func drafts(defaultItems: [ChecklistItem], app: TrackedApp) -> [DraftResult] {
         let defaults = defaultItems
             .sorted { ($0.category.sortIndex, $0.order) < ($1.category.sortIndex, $1.order) }
-            .map { DraftResult(id: $0.id, title: $0.title, category: $0.category, order: 0, isAppSpecific: false) }
+            .map { DraftResult(id: $0.id, title: $0.title, steps: $0.steps, category: $0.category, order: 0, isAppSpecific: false) }
         let extras = app.sortedExtraItems
-            .map { DraftResult(id: $0.id, title: $0.title, category: $0.category, order: 0, isAppSpecific: true) }
+            .map { DraftResult(id: $0.id, title: $0.title, steps: $0.steps, category: $0.category, order: 0, isAppSpecific: true) }
         return (defaults + extras).enumerated().map { index, draft in
-            DraftResult(id: draft.id, title: draft.title, category: draft.category, order: index, isAppSpecific: draft.isAppSpecific)
+            DraftResult(id: draft.id, title: draft.title, steps: draft.steps, category: draft.category, order: index, isAppSpecific: draft.isAppSpecific)
         }
     }
 
