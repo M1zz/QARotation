@@ -48,7 +48,6 @@
 		4B61DA2DE5703990EC1A9DA1 /* appicon-com.ysoup.routinecamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 74BAB12E242BD2E28E9B83E8 /* appicon-com.ysoup.routinecamera.png */; };
 		5049FE4E5FA27B302E05C947 /* appicon-com.burningparchment.app.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE1A780135E3E63A916E505 /* appicon-com.burningparchment.app.png */; };
 		50958C89707759652EDFD5FA /* appicon-com.leeo.bookmarkshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 365BC4D7FCBF913FCD734CA6 /* appicon-com.leeo.bookmarkshot.png */; };
-		539BEEDFC155C70AF0DB366A /* FocusMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A9614C070AE2478EC561 /* FocusMode.swift */; };
 		548CF54A65363FA745D57B26 /* appicon-com.leeo.dontgomart.png in Resources */ = {isa = PBXBuildFile; fileRef = E3C56F9A7515D9F2441C5E90 /* appicon-com.leeo.dontgomart.png */; };
 		60D821D3BEEEB9EFDD34EF40 /* appicon-com.example.moonlitorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0F1A467896100327FD6503 /* appicon-com.example.moonlitorder.png */; };
 		60F6AD809AA08D328B6D1F70 /* appicon-com.ysoup.restaurantmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B6B543AF25D82DCDE62A2B9 /* appicon-com.ysoup.restaurantmap.png */; };
@@ -156,7 +155,6 @@
 
 /* Begin PBXFileReference section */
 		0209704E0DC497BA8DCC7C99 /* appicon-com.leeo.footprintdiary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.footprintdiary.png"; sourceTree = "<group>"; };
-		0307A9614C070AE2478EC561 /* FocusMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusMode.swift; sourceTree = "<group>"; };
 		0340B485D686C126CCB88303 /* SessionDraftStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDraftStore.swift; sourceTree = "<group>"; };
 		0600CE88531C423437054971 /* LastQABadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastQABadge.swift; sourceTree = "<group>"; };
 		180A335167BC12B841D40E24 /* appicon-com.leeo.stickypresenter.remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.stickypresenter.remote.png"; sourceTree = "<group>"; };
@@ -348,7 +346,6 @@
 				524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */,
 				97D8772F5F434D9FBE0CE0D3 /* ChecklistRow.swift */,
 				DE1E15329AFC5AEB395EB871 /* FocusedChecklistView.swift */,
-				0307A9614C070AE2478EC561 /* FocusMode.swift */,
 				5E2CAFBE52C92A2A7B9EA18E /* QASessionView.swift */,
 				7E76B165260F1452A817D7F3 /* SessionHeaderView.swift */,
 				6E3D6C634A5B5AA6BD5F0DA7 /* SessionViewModel.swift */,
@@ -752,7 +749,6 @@
 				6F86696E8AD305086ACB8B23 /* DefaultStepsByApp.swift in Sources */,
 				A7DB4B3438E805E8812F258B /* DeviceInfo.swift in Sources */,
 				C5BB28924F0555652B81C306 /* Enums.swift in Sources */,
-				539BEEDFC155C70AF0DB366A /* FocusMode.swift in Sources */,
 				C210574A039F60EA04B3D751 /* FocusedChecklistView.swift in Sources */,
 				0D5DC68C6B8E38C650B73504 /* ITunesLookupClient.swift in Sources */,
 				9D4ED03D98DA9FD71994B97E /* ImportController.swift in Sources */,

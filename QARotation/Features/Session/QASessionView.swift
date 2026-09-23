@@ -50,8 +50,8 @@ private struct SessionContentView: View {
     @State private var finished = false
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.openURL) private var openURL
-    /// 한 항목씩 크게 보며 따라 하는 모드. 단계가 많은 앱에서 쓴다.
-    @State private var focusMode = false
+    /// 한 항목씩 크게 보며 따라 하는 모드. 모든 앱이 이 화면으로 열린다.
+    @State private var focusMode = true
     @State private var focusIndex = 0
     @State private var pickingVersion = false
     @State private var showingIndex = false
@@ -132,8 +132,7 @@ private struct SessionContentView: View {
                 ChecklistIndexView(model: model, index: $focusIndex)
             }
             .task {
-                // 항목이 많은 앱은 목록으로 보면 단계가 묻힌다. 클립키보드부터 한 장씩으로 연다.
-                focusMode = FocusMode.opensFocused(bundleID: model.app.bundleID)
+                // 이어서 하는 경우 아직 답하지 않은 첫 항목에서 시작한다.
                 focusIndex = model.drafts.firstIndex { $0.outcome == nil } ?? 0
             }
         }

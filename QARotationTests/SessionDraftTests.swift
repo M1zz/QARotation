@@ -194,13 +194,6 @@ struct FocusedChecklistTests {
         #expect(StepText.broken("  →  ").isEmpty)
     }
 
-    @Test func 클립키보드만_한_장씩으로_열린다() {
-        #expect(FocusMode.opensFocused(bundleID: "com.Ysoup.TokenMemo"))
-        #expect(FocusMode.opensFocused(bundleID: "com.ysoup.tokenmemo"))
-        #expect(!FocusMode.opensFocused(bundleID: "com.ysoup.TokenMemo-tap"))
-        #expect(!FocusMode.opensFocused(bundleID: "com.leeo.SkyDex"))
-    }
-
     @Test func 답하면_다음_빈_항목으로_넘어간다() throws {
         let container = try Persistence.makeContainer(inMemory: true)
         let context = container.mainContext
