@@ -49,42 +49,20 @@ private struct SessionContentView: View {
     @State private var saveError: String?
     @State private var finished = false
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.openURL) private var openURL
+    /// 한 항목씩 크게 보며 따라 하는 모드. 단계가 많은 앱에서 쓴다.
+    @State private var focusMode = false
+    @State private var focusIndex = 0
 
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    SessionHeaderView(model: model)
-                }
-
-                if !model.reverifyIssues.isEmpty {
-                    Section {
-                        ForEach(model.reverifyIssues) { issue in
-                            ReverifyRow(issue: issue, decision: model.reverify[issue.id]) { decision in
-                                model.setReverify(decision, for: issue)
-                            }
-                        }
-                    } header: {
-                        Text("다시 확인할 이슈 \(model.reverifyIssues.count)개")
-                    } footer: {
-                        Text("고르지 않으면 열린 채로 둡니다.")
-                    }
-                }
-
-                ForEach(model.sections) { section in
-                    Section(section.category.label) {
-                        ForEach(section.itemIDs, id: \.self) { id in
-                            if let index = model.index(of: id) {
-                                ChecklistRow(draft: $model.drafts[index]) { outcome in
-                                    model.setOutcome(outcome, for: id)
-                                }
-                            }
-                        }
-                    }
+            Group {
+                if focusMode {
+                    focusBody
+                } else {
+                    listBody
                 }
             }
-            .listStyle(.insetGrouped)
-            .safeAreaInset(edge: .bottom) { bottomBar }
             .navigationTitle(model.app.name)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -96,6 +74,16 @@ private struct SessionContentView: View {
                             SessionDraftStore.clear()
                             dismiss()
                         }
+                    }
+                }
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        withAnimation { focusMode.toggle() }
+                    } label: {
+                        Label(
+                            focusMode ? "목록으로 보기" : "한 장씩 보기",
+                            systemImage: focusMode ? "list.bullet" : "rectangle.portrait"
+                        )
                     }
                 }
             }
@@ -133,7 +121,113 @@ private struct SessionContentView: View {
                 if phase != .active, model.hasProgress { model.keepDraft() }
             }
             .interactiveDismissDisabled(model.hasProgress)
+            .task {
+                // 항목이 많은 앱은 목록으로 보면 단계가 묻힌다. 클립키보드부터 한 장씩으로 연다.
+                focusMode = FocusMode.opensFocused(bundleID: model.app.bundleID)
+                focusIndex = model.drafts.firstIndex { $0.outcome == nil } ?? 0
+            }
         }
+    }
+
+    /// 한 장씩 보기: 위에 앱과 타이머, 가운데 항목 하나, 아래 답 버튼.
+    private var focusBody: some View {
+        VStack(spacing: 0) {
+            focusTopBar
+            Divider()
+            FocusedChecklistView(model: model, index: $focusIndex)
+            Divider()
+            focusBottomBar
+        }
+    }
+
+    private var focusTopBar: some View {
+        HStack(spacing: 12) {
+            AppIconView(app: model.app, size: 32)
+            VStack(alignment: .leading, spacing: 2) {
+                SessionTimerView(startedAt: model.meta.startedAt, limitSeconds: model.timerSeconds)
+                if !model.meta.appVersion.isEmpty {
+                    Text("테스트 중 v\(model.meta.appVersion)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            Spacer(minLength: 0)
+            if let url = model.app.launchURL ?? model.app.storeURL {
+                Button {
+                    openApp(primary: url)
+                } label: {
+                    Label("앱 열기", systemImage: "arrow.up.forward.app")
+                        .labelStyle(.iconOnly)
+                        .font(.title3)
+                }
+                .accessibilityLabel(model.app.launchURL == nil ? "App Store에서 열기" : "앱 열기")
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(.bar)
+    }
+
+    private var focusBottomBar: some View {
+        HStack(spacing: 12) {
+            ProgressView(value: Double(model.answeredCount), total: Double(max(model.drafts.count, 1)))
+                .accessibilityLabel("진행")
+                .accessibilityValue("\(model.drafts.count)개 중 \(model.answeredCount)개")
+            Text("\(model.answeredCount)/\(model.drafts.count)")
+                .font(.footnote.monospacedDigit())
+                .foregroundStyle(.secondary)
+            finishButton
+                .frame(maxWidth: 140)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 10)
+        .background(.bar)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+    }
+
+    /// URL 스킴으로 못 열면 App Store 로 보낸다(세션 머리말과 같은 방식).
+    private func openApp(primary: URL) {
+        let fallback = model.app.storeURL
+        let open = openURL
+        open(primary) { accepted in
+            if !accepted, let fallback, fallback != primary { open(fallback) }
+        }
+    }
+
+    private var listBody: some View {
+        List {
+                Section {
+                    SessionHeaderView(model: model)
+                }
+
+                if !model.reverifyIssues.isEmpty {
+                    Section {
+                        ForEach(model.reverifyIssues) { issue in
+                            ReverifyRow(issue: issue, decision: model.reverify[issue.id]) { decision in
+                                model.setReverify(decision, for: issue)
+                            }
+                        }
+                    } header: {
+                        Text("다시 확인할 이슈 \(model.reverifyIssues.count)개")
+                    } footer: {
+                        Text("고르지 않으면 열린 채로 둡니다.")
+                    }
+                }
+
+                ForEach(model.sections) { section in
+                    Section(section.category.label) {
+                        ForEach(section.itemIDs, id: \.self) { id in
+                            if let index = model.index(of: id) {
+                                ChecklistRow(draft: $model.drafts[index]) { outcome in
+                                    model.setOutcome(outcome, for: id)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        .listStyle(.insetGrouped)
+        .safeAreaInset(edge: .bottom) { bottomBar }
     }
 
     private var bottomBar: some View {

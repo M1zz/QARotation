@@ -102,6 +102,12 @@ final class SessionViewModel {
 
     func index(of id: UUID) -> Int? { drafts.firstIndex { $0.id == id } }
 
+    /// 한 장씩 보는 화면에서 다음으로 물어볼 항목. 뒤를 먼저 훑고, 없으면 앞으로 돌아간다.
+    func nextUnanswered(after index: Int) -> Int? {
+        if let ahead = drafts.indices.first(where: { $0 > index && drafts[$0].outcome == nil }) { return ahead }
+        return drafts.indices.first { $0 < index && drafts[$0].outcome == nil }
+    }
+
     /// 같은 결과를 다시 누르면 선택을 푼다(잘못 누른 걸 되돌리기).
     func setOutcome(_ outcome: Outcome, for id: UUID) {
         guard let i = index(of: id) else { return }

@@ -157,3 +157,55 @@ struct RouterMemoryTests {
         #expect(Router(defaults: defaults).activeSession == nil)
     }
 }
+
+@Suite("한 장씩 보기")
+@MainActor
+struct FocusedChecklistTests {
+    @Test func 단계를_할_일과_확인할_것으로_가른다() {
+        let broken = StepText.broken("앱 전환기에서 앱을 밀어 끈다 → 홈에서 아이콘을 누른다 → 3초 안에 첫 화면이 뜬다")
+        #expect(broken.actions == ["앱 전환기에서 앱을 밀어 끈다", "홈에서 아이콘을 누른다"])
+        #expect(broken.expectation == "3초 안에 첫 화면이 뜬다")
+    }
+
+    @Test func 토막이_하나면_그것이_확인할_내용이다() {
+        let broken = StepText.broken("빌드 경고 목록에 deprecated가 없다")
+        #expect(broken.actions.isEmpty)
+        #expect(broken.expectation == "빌드 경고 목록에 deprecated가 없다")
+    }
+
+    @Test func 단계가_비면_보여_줄_것이_없다() {
+        #expect(StepText.broken("").isEmpty)
+        #expect(StepText.broken("  →  ").isEmpty)
+    }
+
+    @Test func 클립키보드만_한_장씩으로_열린다() {
+        #expect(FocusMode.opensFocused(bundleID: "com.Ysoup.TokenMemo"))
+        #expect(FocusMode.opensFocused(bundleID: "com.ysoup.tokenmemo"))
+        #expect(!FocusMode.opensFocused(bundleID: "com.ysoup.TokenMemo-tap"))
+        #expect(!FocusMode.opensFocused(bundleID: "com.leeo.SkyDex"))
+    }
+
+    @Test func 답하면_다음_빈_항목으로_넘어간다() throws {
+        let container = try Persistence.makeContainer(inMemory: true)
+        let context = container.mainContext
+        let app = TrackedApp(name: "앱")
+        context.insert(app)
+        let items = (0..<4).map { ChecklistItem(title: "항목 \($0)", category: .stability, order: $0, isDefault: true) }
+        for item in items { context.insert(item) }
+        try context.save()
+
+        let model = SessionViewModel(app: app, defaultItems: items, timerMinutes: 7)
+        #expect(model.nextUnanswered(after: 0) == 1)
+
+        model.drafts[1].outcome = .pass
+        #expect(model.nextUnanswered(after: 0) == 2)
+
+        // 뒤가 다 찼으면 앞으로 돌아가 빈 곳을 찾는다.
+        model.drafts[2].outcome = .pass
+        model.drafts[3].outcome = .pass
+        #expect(model.nextUnanswered(after: 2) == 0)
+
+        model.drafts[0].outcome = .na
+        #expect(model.nextUnanswered(after: 2) == nil)
+    }
+}
