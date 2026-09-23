@@ -128,12 +128,12 @@ struct RouterMemoryTests {
         #expect(router.activeSession == nil)
     }
 
-    @Test func 보던_탭이_다음_실행에도_남는다() {
+    @Test func 앱을_새로_켜면_늘_오늘_탭이다() {
         let defaults = makeDefaults()
         let first = Router(defaults: defaults)
         first.selectedTab = .issues
 
-        #expect(Router(defaults: defaults).selectedTab == .issues)
+        #expect(Router(defaults: defaults).selectedTab == .today)
     }
 
     @Test func QA하던_앱이_다음_실행에_다시_열린다() {

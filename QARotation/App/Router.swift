@@ -17,10 +17,8 @@ final class Router {
 
     private let defaults: UserDefaults
 
-    /// 마지막으로 보던 탭. 앱을 껐다 켜도 그 자리에서 이어 본다.
-    var selectedTab: AppTab {
-        didSet { defaults.set(selectedTab.rawValue, forKey: SettingsKey.lastTab) }
-    }
+    /// 앱을 새로 켜면 늘 오늘 탭에서 시작한다. 켤 때마다 다른 자리에 떨어지면 어디였는지 헷갈린다.
+    var selectedTab: AppTab = .today
 
     /// 열려 있는 QA 세션. 앱이 죽어도 다시 열리도록 어느 앱이었는지 적어 둔다.
     var activeSession: SessionRoute? {
@@ -35,7 +33,6 @@ final class Router {
 
     init(defaults: UserDefaults = .shared) {
         self.defaults = defaults
-        self.selectedTab = AppTab(rawValue: defaults.string(forKey: SettingsKey.lastTab) ?? "") ?? .today
         if let raw = defaults.string(forKey: SettingsKey.openSessionAppID), let id = UUID(uuidString: raw) {
             self.activeSession = SessionRoute(appID: id)
         }
