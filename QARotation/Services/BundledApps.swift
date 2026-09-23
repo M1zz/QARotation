@@ -31,6 +31,15 @@ enum BundledApps {
         }
     }
 
+    /// 소스가 이 맥에 없어 제대로 된 체크리스트를 못 만든 앱.
+    /// 목록에서 지우지는 않고 로테이션에서만 뺀다. 소스를 찾으면 보관을 풀고 항목을 채우면 된다.
+    static let archivedBundleIDs: Set<String> = [
+        "com.leeo.leeocon",
+        "com.leeo.tetratint",
+        "com.leeo.yeoul",
+        "com.lectureq.lectureq",
+    ]
+
     static func icon(for bundleID: String, bundle: Bundle = .main) -> Data? {
         guard !bundleID.isEmpty,
               let url = bundle.url(forResource: "appicon-\(bundleID.lowercased())", withExtension: "png")
@@ -48,6 +57,17 @@ enum BundledAppsSeeder {
         guard !apps.isEmpty, (try? AppImporter.apply(apps, to: context)) != nil else { return }
         fillMissingIcons(context, bundle: bundle)
         defaults.set(true, forKey: SettingsKey.didSeedBundledApps)
+    }
+
+    /// 체크리스트를 못 만든 앱을 로테이션에서 뺀다. 이미 받은 기기에서도 한 번만 보관으로 돌린다.
+    static func archiveAppsWithoutChecklist(_ context: ModelContext, defaults: UserDefaults = .shared) {
+        guard !defaults.bool(forKey: SettingsKey.didArchiveAppsWithoutChecklist) else { return }
+        let apps = (try? context.fetch(FetchDescriptor<TrackedApp>())) ?? []
+        for app in apps where BundledApps.archivedBundleIDs.contains(AppChecklistCatalog.key(app.bundleID)) {
+            app.isArchived = true
+        }
+        try? context.save()
+        defaults.set(true, forKey: SettingsKey.didArchiveAppsWithoutChecklist)
     }
 
     /// 아이콘이 없는 앱에 넣어 둔 아이콘을 채운다. 네트워크 없이도 목록과 위젯에 아이콘이 보인다.

@@ -43,7 +43,6 @@
 		47D4A4ED9264B52C6510B700 /* ChecklistIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */; };
 		48810576C71A7271135ADD4F /* SessionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E04BE6CDFD4B2795C782CD6 /* SessionRecorder.swift */; };
 		4A5800C3FD11356AF7F82552 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7361DA61A45FE63BDA8F084F /* AppSettings.swift */; };
-		4ABBE505CA1B4444FCE1B60D /* appicon-com.leeo.tetratint.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B94330B7AC7FA7A710AA13 /* appicon-com.leeo.tetratint.png */; };
 		4ADBED12C1AC5C5149C5191F /* OutcomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3BC6CB9E3A0A23995DC8 /* OutcomeButtons.swift */; };
 		4B61DA2DE5703990EC1A9DA1 /* appicon-com.ysoup.routinecamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 74BAB12E242BD2E28E9B83E8 /* appicon-com.ysoup.routinecamera.png */; };
 		5049FE4E5FA27B302E05C947 /* appicon-com.burningparchment.app.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE1A780135E3E63A916E505 /* appicon-com.burningparchment.app.png */; };
@@ -55,7 +54,6 @@
 		683A64605D5E009F42DBD015 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093CAAF63FC814645EA5596 /* NotificationScheduler.swift */; };
 		6B31AD1B8713CE51BBCB0C58 /* appicon-com.leeo.lullabyrecipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F5FD8F0DD9F02360486FB9 /* appicon-com.leeo.lullabyrecipe.png */; };
 		6C483CFB53DBC29740631D14 /* appicon-com.bucketclimb.app.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F6E4D67FC4F444D164E51B /* appicon-com.bucketclimb.app.png */; };
-		6CC78F5D52AD580387D5B801 /* appicon-com.leeo.leeocon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367D079EADA4A7FA40198967 /* appicon-com.leeo.leeocon.png */; };
 		6F7406F90643E7877ABF027D /* appicon-com.leeo.wifisnap.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51EFB5AFEF1B7D37BE6217 /* appicon-com.leeo.wifisnap.png */; };
 		6F86696E8AD305086ACB8B23 /* DefaultStepsByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */; };
 		70735AB084AF44A863B1EC49 /* ChecklistEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8B236A1231B4DDDAA271F8 /* ChecklistEditorView.swift */; };
@@ -63,7 +61,6 @@
 		7CEE7C6CD3E7AD985A8A5CA1 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1A4954AD5E38768C74007 /* AppDetailView.swift */; };
 		7F77246E553FB6E6D246EB37 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC2CB91320D827700483E4 /* Rotation.swift */; };
 		845D49460004015F8CDD9598 /* SeedApps.json in Resources */ = {isa = PBXBuildFile; fileRef = C029EF31625015D40449351A /* SeedApps.json */; };
-		86D83EDCABCFF39581CEF7B6 /* appicon-com.lectureq.lectureq.png in Resources */ = {isa = PBXBuildFile; fileRef = 444E079A7FDB92D9CD7D7DF5 /* appicon-com.lectureq.lectureq.png */; };
 		88391CD12A6395E0325DDA98 /* PickResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D3D4CC250AE94A5482990 /* PickResolver.swift */; };
 		8B0F3AE17EA15B50AD680F39 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 42EF56E026EF2DEC29A0AB3B /* Localizable.xcstrings */; };
 		8C5943AF879B4AE0EB22054E /* BundledApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94B795F592D34D8886B8D2 /* BundledApps.swift */; };
@@ -87,7 +84,6 @@
 		B15A85A75DBAC5D74E8A5E3E /* AppsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */; };
 		B220FEDD4EE58BF04FBEF5C3 /* StepText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085D0AA92BA1875CA0D34F9 /* StepText.swift */; };
 		B5CF152CC4A2B1B6397543A9 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E8324E48C5944AB03D6 /* SessionDetailView.swift */; };
-		B5DA54D1770134E18C7E741D /* appicon-com.leeo.yeoul.png in Resources */ = {isa = PBXBuildFile; fileRef = CB196284F348E330E3FF1229 /* appicon-com.leeo.yeoul.png */; };
 		B7B93B031389271C1B6E192B /* appicon-com.devkoan.stampcamera.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A873C4465EDAA1AC05F21 /* appicon-com.devkoan.stampcamera.png */; };
 		B9363F35242D40D53F8C6213 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EE61C45A46D0AF482A8CE4 /* DeepLink.swift */; };
 		BB4BD37C2EE117319AD1F410 /* appicon-com.devkoan.scheduledensityapp.png in Resources */ = {isa = PBXBuildFile; fileRef = A90D85B67F66289F72B765A3 /* appicon-com.devkoan.scheduledensityapp.png */; };
@@ -165,7 +161,6 @@
 		30FE63128DAF517252CF2AE4 /* appicon-com.ysoup.cooltime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.cooltime.png"; sourceTree = "<group>"; };
 		35EE495007B15E701CB306C5 /* appicon-com.devkoan.firetracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.firetracker.png"; sourceTree = "<group>"; };
 		365BC4D7FCBF913FCD734CA6 /* appicon-com.leeo.bookmarkshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.bookmarkshot.png"; sourceTree = "<group>"; };
-		367D079EADA4A7FA40198967 /* appicon-com.leeo.leeocon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.leeocon.png"; sourceTree = "<group>"; };
 		38F5B110E69145AA37DB4861 /* ImportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
 		3A5C63205168CBD7C65D0457 /* QARotationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QARotationApp.swift; sourceTree = "<group>"; };
 		3B48270A9EB6BF3011DDFD28 /* appicon-com.leeo.handsfreemetronome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.handsfreemetronome.png"; sourceTree = "<group>"; };
@@ -174,7 +169,6 @@
 		3E04BE6CDFD4B2795C782CD6 /* SessionRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecorder.swift; sourceTree = "<group>"; };
 		40F6E4D67FC4F444D164E51B /* appicon-com.bucketclimb.app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.bucketclimb.app.png"; sourceTree = "<group>"; };
 		42EF56E026EF2DEC29A0AB3B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		444E079A7FDB92D9CD7D7DF5 /* appicon-com.lectureq.lectureq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.lectureq.lectureq.png"; sourceTree = "<group>"; };
 		471115DD2F38F686F8CD2E1D /* appicon-com.ysoup.leavewise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.leavewise.png"; sourceTree = "<group>"; };
 		480A51F61D2EA07ED4E5EA63 /* appicon-com.leeo.stickypresenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.stickypresenter.png"; sourceTree = "<group>"; };
 		4B66510E33702D11DF604CA2 /* AppChecklistSeederTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecklistSeederTests.swift; sourceTree = "<group>"; };
@@ -192,7 +186,6 @@
 		5F49E2AE39EB8EC2A11056F6 /* appicon-com.ysoup.tokenmemo-tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.tokenmemo-tap.png"; sourceTree = "<group>"; };
 		6338CB747615ECC984E203BD /* AppChecklistCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecklistCatalog.swift; sourceTree = "<group>"; };
 		67CF659E4249DBA75717ED0F /* appicon-com.leeo.findme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.findme.png"; sourceTree = "<group>"; };
-		68B94330B7AC7FA7A710AA13 /* appicon-com.leeo.tetratint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.tetratint.png"; sourceTree = "<group>"; };
 		693C12CC227EA12A382748AE /* appicon-com.devkoan.calendarsnap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.calendarsnap.png"; sourceTree = "<group>"; };
 		6E093D6218FEBD311BB213F8 /* appicon-com.example.scheduledensityapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.example.scheduledensityapp.png"; sourceTree = "<group>"; };
 		6E3D6C634A5B5AA6BD5F0DA7 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
@@ -245,7 +238,6 @@
 		C171DFB61181C3B365D3633F /* appicon-com.family.familycourt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.family.familycourt.png"; sourceTree = "<group>"; };
 		C2EA04EDD1569E91BA8B7F9C /* VersionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionPicker.swift; sourceTree = "<group>"; };
 		C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListView.swift; sourceTree = "<group>"; };
-		CB196284F348E330E3FF1229 /* appicon-com.leeo.yeoul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.yeoul.png"; sourceTree = "<group>"; };
 		CB680C20B7EF90706D3B6158 /* appicon-com.leeo.reboundjournal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.reboundjournal.png"; sourceTree = "<group>"; };
 		CFBDDB918230DB876293CF94 /* appicon-com.devkoan.indonesiansmalltalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.indonesiansmalltalk.png"; sourceTree = "<group>"; };
 		D6041338D4F7EE03C78B7EA9 /* AppEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEditView.swift; sourceTree = "<group>"; };
@@ -445,7 +437,6 @@
 				FBED544EC467850F56727F68 /* appicon-com.family.familybank.png */,
 				C171DFB61181C3B365D3633F /* appicon-com.family.familycourt.png */,
 				22A8A955910A0C9C5E3BF315 /* appicon-com.kora.leeo.png */,
-				444E079A7FDB92D9CD7D7DF5 /* appicon-com.lectureq.lectureq.png */,
 				365BC4D7FCBF913FCD734CA6 /* appicon-com.leeo.bookmarkshot.png */,
 				C0059FAD2027BDCFBAC416CA /* appicon-com.leeo.conversationpractice.png */,
 				E3C56F9A7515D9F2441C5E90 /* appicon-com.leeo.dontgomart.png */,
@@ -455,7 +446,6 @@
 				5A6D582A01A48A7D436C7EDF /* appicon-com.leeo.higgym.png */,
 				A0055E3A94769E4C72F8FB88 /* appicon-com.leeo.jujob.png */,
 				57463C77F9175756CBFA1815 /* appicon-com.leeo.juniordevmistakes.png */,
-				367D079EADA4A7FA40198967 /* appicon-com.leeo.leeocon.png */,
 				54F5FD8F0DD9F02360486FB9 /* appicon-com.leeo.lullabyrecipe.png */,
 				4FADFA86363AC571B0C49185 /* appicon-com.leeo.pixelme.png */,
 				CB680C20B7EF90706D3B6158 /* appicon-com.leeo.reboundjournal.png */,
@@ -465,10 +455,8 @@
 				480A51F61D2EA07ED4E5EA63 /* appicon-com.leeo.stickypresenter.png */,
 				180A335167BC12B841D40E24 /* appicon-com.leeo.stickypresenter.remote.png */,
 				7E415606380C7726E97F87D1 /* appicon-com.leeo.sunflower.png */,
-				68B94330B7AC7FA7A710AA13 /* appicon-com.leeo.tetratint.png */,
 				82253294AF4BA0035471C218 /* appicon-com.leeo.thinkflow.png */,
 				BF51EFB5AFEF1B7D37BE6217 /* appicon-com.leeo.wifisnap.png */,
-				CB196284F348E330E3FF1229 /* appicon-com.leeo.yeoul.png */,
 				D91FB04E501030FE3819BAC3 /* appicon-com.lottochecker.app.png */,
 				8460B05A5CA29ADDE66BA4E3 /* appicon-com.xa.toki.png */,
 				30FE63128DAF517252CF2AE4 /* appicon-com.ysoup.cooltime.png */,
@@ -659,7 +647,6 @@
 				09FA90C0B592FA1507E8BE14 /* appicon-com.family.familybank.png in Resources */,
 				8D40A85CFA12A67EAA4AE6BC /* appicon-com.family.familycourt.png in Resources */,
 				15F53885B0B55625B2246285 /* appicon-com.kora.leeo.png in Resources */,
-				86D83EDCABCFF39581CEF7B6 /* appicon-com.lectureq.lectureq.png in Resources */,
 				50958C89707759652EDFD5FA /* appicon-com.leeo.bookmarkshot.png in Resources */,
 				3C9C8C83037621743FDBEDF5 /* appicon-com.leeo.conversationpractice.png in Resources */,
 				548CF54A65363FA745D57B26 /* appicon-com.leeo.dontgomart.png in Resources */,
@@ -669,7 +656,6 @@
 				A8DE88F8ACF66A72A3F46F1D /* appicon-com.leeo.higgym.png in Resources */,
 				14F799567881EB0D1C965F5D /* appicon-com.leeo.jujob.png in Resources */,
 				1B89648616EB529440A98A22 /* appicon-com.leeo.juniordevmistakes.png in Resources */,
-				6CC78F5D52AD580387D5B801 /* appicon-com.leeo.leeocon.png in Resources */,
 				6B31AD1B8713CE51BBCB0C58 /* appicon-com.leeo.lullabyrecipe.png in Resources */,
 				7A31E94AA74E471B99F7D5D4 /* appicon-com.leeo.pixelme.png in Resources */,
 				E2136D2495F1B0DD96894B90 /* appicon-com.leeo.reboundjournal.png in Resources */,
@@ -679,10 +665,8 @@
 				D8F68CA748E7D8AC80F41DF7 /* appicon-com.leeo.stickypresenter.png in Resources */,
 				03CE20C64E465D3E76579A96 /* appicon-com.leeo.stickypresenter.remote.png in Resources */,
 				BF0AA9DBCE45BC92B0206D7A /* appicon-com.leeo.sunflower.png in Resources */,
-				4ABBE505CA1B4444FCE1B60D /* appicon-com.leeo.tetratint.png in Resources */,
 				2CEA4AF9708729C904544CC9 /* appicon-com.leeo.thinkflow.png in Resources */,
 				6F7406F90643E7877ABF027D /* appicon-com.leeo.wifisnap.png in Resources */,
-				B5DA54D1770134E18C7E741D /* appicon-com.leeo.yeoul.png in Resources */,
 				F06614EF135341BFF1485B8B /* appicon-com.lottochecker.app.png in Resources */,
 				EA8552FA2E643708CF150AA6 /* appicon-com.xa.toki.png in Resources */,
 				8DCF1A55DF1CAADD9C8C03A4 /* appicon-com.ysoup.cooltime.png in Resources */,

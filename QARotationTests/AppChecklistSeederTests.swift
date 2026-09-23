@@ -127,11 +127,39 @@ struct AppChecklistSeederTests {
 struct BundledAppsTests {
     @Test func 모든_앱에_아이콘과_전용_항목이_있다() {
         let apps = BundledApps.load()
-        #expect(apps.count >= 46)
+        #expect(apps.count >= 43)
         for app in apps {
             #expect(BundledApps.icon(for: app.bundleID) != nil, "\(app.name)")
             #expect(!AppChecklistCatalog.items(for: app.bundleID).isEmpty, "\(app.name)")
         }
+    }
+
+    @Test func 체크리스트가_없는_앱은_시드에서_빠져_있다() {
+        let bundleIDs = Set(BundledApps.load().map { AppChecklistCatalog.key($0.bundleID) })
+        #expect(bundleIDs.isDisjoint(with: BundledApps.archivedBundleIDs))
+        for id in BundledApps.archivedBundleIDs {
+            #expect(AppChecklistCatalog.items(for: id).isEmpty)
+        }
+    }
+
+    @Test func 이미_받은_기기에서는_보관으로_돌린다() throws {
+        let container = try Persistence.makeContainer(inMemory: true)
+        let context = container.mainContext
+        let defaults = UserDefaults(suiteName: "ArchiveTests-\(UUID().uuidString)")!
+        let dropped = TrackedApp(name: "여울", bundleID: "com.leeo.yeoul")
+        let kept = TrackedApp(name: "클립키보드", bundleID: "com.Ysoup.TokenMemo")
+        context.insert(dropped)
+        context.insert(kept)
+        try context.save()
+
+        BundledAppsSeeder.archiveAppsWithoutChecklist(context, defaults: defaults)
+        #expect(dropped.isArchived)
+        #expect(!kept.isArchived)
+
+        // 한 번만 한다. 사용자가 다시 꺼내 두면 그대로 둔다.
+        dropped.isArchived = false
+        BundledAppsSeeder.archiveAppsWithoutChecklist(context, defaults: defaults)
+        #expect(!dropped.isArchived)
     }
 
     @Test func 처음_켜면_목록과_아이콘과_항목이_차_있다() throws {

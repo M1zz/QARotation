@@ -1,17 +1,5 @@
 [
  {
-  "appStoreID": "1627216318",
-  "bundleID": "com.leeo.LeeoCon",
-  "name": "LeeoCon",
-  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/99/17/28/9917280c-b360-0800-c279-398a85c48e99/iMessage_App_Icon-0-0-1x_U007emarketing-0-0-0-0-0-3-sRGB-0-0-0-GLES2_U002c0-512MB-85-181-0-0.png/512x512bb.jpg",
-  "version": "1.0",
-  "platforms": [
-   "iPhone",
-   "iPad",
-   "watch"
-  ]
- },
- {
   "appStoreID": "6449769987",
   "bundleID": "com.leeo.PixelMe",
   "name": "Pixel MeMe",
@@ -41,16 +29,6 @@
   "platforms": [
    "iPhone",
    "iPad"
-  ]
- },
- {
-  "appStoreID": "6789206198",
-  "bundleID": "com.leeo.TetraTint",
-  "name": "TetraTint",
-  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/bf/bc/e2bfbc81-7b75-3c19-4686-78b17fb56510/AppIcon-0-0-85-220-0-5-0-2x-P3.png/512x512bb.png",
-  "version": "1.0",
-  "platforms": [
-   "mac"
   ]
  },
  {
@@ -296,17 +274,6 @@
   ]
  },
  {
-  "appStoreID": "6808471728",
-  "bundleID": "com.leeo.yeoul",
-  "name": "여울",
-  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/da/b7/96/dab796af-d6ca-a198-ce93-1b28b4ce8d4b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
-  "version": "1.0",
-  "platforms": [
-   "iPhone",
-   "iPad"
-  ]
- },
- {
   "appStoreID": "6450839961",
   "bundleID": "com.leeo.JuJob",
   "name": "오늘의 주접",
@@ -359,16 +326,6 @@
   "platforms": [
    "iPhone",
    "iPad"
-  ]
- },
- {
-  "appStoreID": "6794597095",
-  "bundleID": "com.lectureq.LectureQ",
-  "name": "질문노트",
-  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/08/f7/f8/08f7f8c6-5a51-b2a2-e824-36ddce80bf28/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png",
-  "version": "1.0",
-  "platforms": [
-   "mac"
   ]
  },
  {
