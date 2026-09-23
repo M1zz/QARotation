@@ -16,20 +16,17 @@ final class SessionViewModel {
     let reverifyIssues: [Issue]
     var reverify: [UUID: ReverifyDecision] = [:]
     var meta: SessionMeta
-    let timerSeconds: Int
 
     /// 보관해 둔 진행 상태가 있으면 이어서 시작한다. 없으면 처음부터.
     init(
         app: TrackedApp,
         defaultItems: [ChecklistItem],
-        timerMinutes: Int,
         resuming stored: SessionDraft? = nil,
         now: Date = .now
     ) {
         self.app = app
         self.drafts = SessionRecorder.drafts(defaultItems: defaultItems, app: app)
         self.reverifyIssues = app.openIssues
-        self.timerSeconds = timerMinutes * 60
 
         if let stored, stored.appID == app.id {
             // 쓴 시간을 이어 세려고 시작 시각을 거꾸로 잡는다.

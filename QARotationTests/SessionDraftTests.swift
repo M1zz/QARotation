@@ -28,7 +28,7 @@ struct SessionDraftTests {
     }
 
     func model(resuming stored: SessionDraft? = nil, now: Date = .now) -> SessionViewModel {
-        SessionViewModel(app: app, defaultItems: items, timerMinutes: 7, resuming: stored, now: now)
+        SessionViewModel(app: app, defaultItems: items, resuming: stored, now: now)
     }
 
     @Test func 답을_누르면_보관함에_남는다() throws {
@@ -203,7 +203,7 @@ struct FocusedChecklistTests {
         for item in items { context.insert(item) }
         try context.save()
 
-        let model = SessionViewModel(app: app, defaultItems: items, timerMinutes: 7)
+        let model = SessionViewModel(app: app, defaultItems: items)
         #expect(model.nextUnanswered(after: 0) == 1)
 
         model.drafts[1].outcome = .pass

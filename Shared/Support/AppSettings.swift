@@ -3,7 +3,6 @@ import Foundation
 enum SettingsKey {
     static let artistID = "artistID"
     static let storefronts = "storefronts"
-    static let timerMinutes = "timerMinutes"
     static let weightHigh = "tierWeightHigh"
     static let weightNormal = "tierWeightNormal"
     static let weightLow = "tierWeightLow"
@@ -26,7 +25,6 @@ enum SettingsDefault {
     static let artistID = "1502508537"
     /// 스토어마다 올라간 앱이 조금씩 달라서(한국 45 · 미국 46) 둘을 합친다.
     static let storefronts = "kr,us"
-    static let timerMinutes = 7
 }
 
 enum AppSettings {
@@ -34,7 +32,6 @@ enum AppSettings {
         defaults.register(defaults: [
             SettingsKey.artistID: SettingsDefault.artistID,
             SettingsKey.storefronts: SettingsDefault.storefronts,
-            SettingsKey.timerMinutes: SettingsDefault.timerMinutes,
             SettingsKey.weightHigh: TierWeights.standard.high,
             SettingsKey.weightNormal: TierWeights.standard.normal,
             SettingsKey.weightLow: TierWeights.standard.low,
@@ -61,7 +58,4 @@ enum AppSettings {
             .filter { !$0.isEmpty }
     }
 
-    static func timerMinutes(_ defaults: UserDefaults = .shared) -> Int {
-        max(1, defaults.integer(forKey: SettingsKey.timerMinutes))
-    }
 }

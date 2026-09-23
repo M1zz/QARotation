@@ -36,7 +36,7 @@ enum NotificationScheduler {
     }
 
     /// 매일 반복 알림은 문구가 고정되므로, 추천이 바뀔 때마다 다시 건다.
-    static func reschedule(pick: PickSummary?, minutes: Int, enabled: Bool, times: [BreakTime]) async {
+    static func reschedule(pick: PickSummary?, enabled: Bool, times: [BreakTime]) async {
         let center = UNUserNotificationCenter.current()
         let pending = await center.pendingNotificationRequests()
         center.removePendingNotificationRequests(withIdentifiers: pending.map(\.identifier).filter { $0.hasPrefix(identifierPrefix) })
@@ -47,7 +47,7 @@ enum NotificationScheduler {
             let content = UNMutableNotificationContent()
             content.title = "쉬는 시간이에요"
             if let pick {
-                content.body = "\(minutes)분 동안 \(pick.name) QA 해 볼까요?"
+                content.body = "\(pick.name) QA 해 볼까요?"
                 content.userInfo = ["url": DeepLink.session(pick.appID).url.absoluteString]
             } else {
                 content.body = "오늘 QA할 앱을 골라 볼까요?"

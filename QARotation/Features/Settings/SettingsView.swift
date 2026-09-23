@@ -4,7 +4,6 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @Environment(ImportController.self) private var importer
-    @AppStorage(SettingsKey.timerMinutes, store: .shared) private var timerMinutes = SettingsDefault.timerMinutes
     @AppStorage(SettingsKey.artistID, store: .shared) private var artistID = SettingsDefault.artistID
     @AppStorage(SettingsKey.storefronts, store: .shared) private var storefronts = SettingsDefault.storefronts
     @AppStorage(SettingsKey.weightHigh, store: .shared) private var weightHigh = TierWeights.standard.high
@@ -18,16 +17,6 @@ struct SettingsView: View {
                     NavigationLink("기본 체크리스트") { ChecklistEditorView() }
                 } footer: {
                     Text("앱마다 따로 붙일 항목은 앱 화면에서 추가하세요.")
-                }
-
-                Section {
-                    Stepper(value: $timerMinutes, in: 1...30) {
-                        LabeledContent("QA 시간", value: "\(timerMinutes)분")
-                    }
-                } header: {
-                    Text("타이머")
-                } footer: {
-                    Text("시간이 지나도 멈추지 않아요. 빨간색으로 초과 시간만 보여 줍니다.")
                 }
 
                 BreakRemindersSection()
@@ -87,7 +76,6 @@ struct SettingsView: View {
             .onChange(of: weightHigh) { PickChangeCoordinator.pickDidChange(context: context) }
             .onChange(of: weightNormal) { PickChangeCoordinator.pickDidChange(context: context) }
             .onChange(of: weightLow) { PickChangeCoordinator.pickDidChange(context: context) }
-            .onChange(of: timerMinutes) { PickChangeCoordinator.pickDidChange(context: context) }
         }
     }
 

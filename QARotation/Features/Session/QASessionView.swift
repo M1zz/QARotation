@@ -34,7 +34,6 @@ struct QASessionView: View {
         model = SessionViewModel(
             app: app,
             defaultItems: defaults,
-            timerMinutes: AppSettings.timerMinutes(),
             resuming: SessionDraftStore.load()
         )
     }
@@ -153,7 +152,6 @@ private struct SessionContentView: View {
         HStack(spacing: 12) {
             AppIconView(app: model.app, size: 32)
             VStack(alignment: .leading, spacing: 2) {
-                SessionTimerView(startedAt: model.meta.startedAt, limitSeconds: model.timerSeconds)
                 Button {
                     pickingVersion = true
                 } label: {

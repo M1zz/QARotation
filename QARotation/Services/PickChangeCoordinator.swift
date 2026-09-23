@@ -11,11 +11,10 @@ enum PickChangeCoordinator {
 
         let pick = (try? PickResolver.currentPick(in: context)).map { PickSummary(appID: $0.id, name: $0.name) }
         let defaults = UserDefaults.shared
-        let minutes = AppSettings.timerMinutes(defaults)
         let enabled = defaults.bool(forKey: SettingsKey.remindersEnabled)
         let times = BreakTimeStore.load(defaults)
         Task {
-            await NotificationScheduler.reschedule(pick: pick, minutes: minutes, enabled: enabled, times: times)
+            await NotificationScheduler.reschedule(pick: pick, enabled: enabled, times: times)
         }
     }
 }
