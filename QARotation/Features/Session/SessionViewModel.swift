@@ -26,7 +26,7 @@ final class SessionViewModel {
             startedAt: now,
             deviceModel: DeviceInfo.deviceModel,
             osVersion: DeviceInfo.osVersion,
-            appVersion: app.currentVersion
+            appVersion: app.versionUnderTest
         )
         self.timerSeconds = timerMinutes * 60
     }

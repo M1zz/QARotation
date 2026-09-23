@@ -19,6 +19,11 @@ struct SessionHeaderView: View {
                         .font(.headline)
                         .fixedSize(horizontal: false, vertical: true)
                     SessionTimerView(startedAt: model.meta.startedAt, limitSeconds: model.timerSeconds)
+                    if !model.meta.appVersion.isEmpty {
+                        Text("테스트 중 v\(model.meta.appVersion)")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
                 }
             }
 

@@ -19,6 +19,16 @@ struct AppDetailView: View {
                     ForEach(Tier.allCases) { Text($0.label).tag($0) }
                 }
                 Toggle("로테이션에서 빼기(보관)", isOn: $app.isArchived)
+                TextField("테스트 중인 버전 (예: 2.2.4)", text: $app.testingVersion)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .onSubmit(save)
+                if app.hasNewerStoreVersion {
+                    Button("스토어 최신 v\(app.currentVersion)으로 바꾸기") {
+                        app.testingVersion = app.currentVersion
+                        save()
+                    }
+                }
                 TextField("URL 스킴 (예: myapp)", text: $app.urlScheme)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
@@ -26,7 +36,7 @@ struct AppDetailView: View {
             } header: {
                 Text("설정")
             } footer: {
-                Text("URL 스킴이 있으면 QA 중 \"앱 열기\"가 앱을 바로 열고, 없으면 App Store 페이지를 엽니다.")
+                Text("테스트 중인 버전은 QA 기록에 함께 남습니다. 비워 두면 스토어의 현재 버전을 씁니다.\nURL 스킴이 있으면 QA 중 \"앱 열기\"가 앱을 바로 열고, 없으면 App Store 페이지를 엽니다.")
             }
 
             extraItemsSection
@@ -81,7 +91,8 @@ struct AppDetailView: View {
 
     private var detailLine: String {
         var parts: [String] = []
-        if !app.currentVersion.isEmpty { parts.append("v\(app.currentVersion)") }
+        if !app.versionUnderTest.isEmpty { parts.append("테스트 중 v\(app.versionUnderTest)") }
+        if app.hasNewerStoreVersion { parts.append("스토어 v\(app.currentVersion)") }
         if !app.platforms.isEmpty { parts.append(app.platforms.map(\.label).joined(separator: ", ")) }
         if !app.bundleID.isEmpty { parts.append(app.bundleID) }
         return parts.joined(separator: " · ")
@@ -148,24 +159,34 @@ struct AppDetailView: View {
     @ViewBuilder
     private var historySection: some View {
         let sessions = app.sortedSessions
-        Section("QA 기록 \(sessions.count)회") {
-            if sessions.isEmpty {
+        if sessions.isEmpty {
+            Section("QA 기록") {
                 Text("아직 기록이 없어요").foregroundStyle(.secondary)
             }
-            ForEach(sessions) { session in
-                NavigationLink {
-                    SessionDetailView(session: session)
-                } label: {
-                    SessionRow(session: session)
+        } else {
+            // 어느 버전을 몇 번 봤는지 한눈에 들어오도록 버전별로 묶는다. 최근에 본 버전이 위에 온다.
+            ForEach(VersionHistory.groups(of: sessions)) { group in
+                Section("\(group.title) · \(group.sessions.count)회") {
+                    ForEach(group.sessions) { session in
+                        NavigationLink {
+                            SessionDetailView(session: session)
+                        } label: {
+                            SessionRow(session: session)
+                        }
+                    }
+                    .onDelete { offsets in
+                        delete(offsets.map { group.sessions[$0] })
+                    }
                 }
             }
-            .onDelete { offsets in
-                let removed = Set(offsets.map { sessions[$0].id })
-                for index in offsets { context.delete(sessions[index]) }
-                app.lastQADate = sessions.first { !removed.contains($0.id) }?.date
-                save()
-            }
         }
+    }
+
+    private func delete(_ sessions: [QASession]) {
+        let removed = Set(sessions.map(\.id))
+        for session in sessions { context.delete(session) }
+        app.lastQADate = app.sortedSessions.first { !removed.contains($0.id) }?.date
+        save()
     }
 
     private func save() {

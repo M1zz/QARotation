@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0010A556C4B4981A859F1B6C /* appicon-com.devkoan.firetracker.png in Resources */ = {isa = PBXBuildFile; fileRef = 35EE495007B15E701CB306C5 /* appicon-com.devkoan.firetracker.png */; };
 		0052A11285D09091C73477A7 /* appicon-com.devkoan.externalize.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C0858E49D79F94A4FB244F /* appicon-com.devkoan.externalize.png */; };
+		00A09F28AC667B10CA7491F9 /* VersionHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F696A06C266F6D893605E /* VersionHistory.swift */; };
 		03CE20C64E465D3E76579A96 /* appicon-com.leeo.stickypresenter.remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 180A335167BC12B841D40E24 /* appicon-com.leeo.stickypresenter.remote.png */; };
 		073E3A32CA7A8316C2A85FD7 /* PickChangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC742F77A0846264F10E9FD /* PickChangeCoordinator.swift */; };
 		079491819F893546B86221BC /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7361DA61A45FE63BDA8F084F /* AppSettings.swift */; };
@@ -150,6 +151,7 @@
 		22A8A955910A0C9C5E3BF315 /* appicon-com.kora.leeo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.kora.leeo.png"; sourceTree = "<group>"; };
 		273AF1D1B76AB1F326D6631C /* RotationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationTests.swift; sourceTree = "<group>"; };
 		28FBC295F65F12E11B361D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2A3F696A06C266F6D893605E /* VersionHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHistory.swift; sourceTree = "<group>"; };
 		30FE63128DAF517252CF2AE4 /* appicon-com.ysoup.cooltime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.cooltime.png"; sourceTree = "<group>"; };
 		35EE495007B15E701CB306C5 /* appicon-com.devkoan.firetracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.firetracker.png"; sourceTree = "<group>"; };
 		365BC4D7FCBF913FCD734CA6 /* appicon-com.leeo.bookmarkshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.bookmarkshot.png"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				D6041338D4F7EE03C78B7EA9 /* AppEditView.swift */,
 				C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */,
 				8ADB1E8324E48C5944AB03D6 /* SessionDetailView.swift */,
+				2A3F696A06C266F6D893605E /* VersionHistory.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				0826EFB6D26B158893662E2B /* SettingsView.swift in Sources */,
 				439DEC2B9B3AA45523C71082 /* SkipStore.swift in Sources */,
 				2D8E03156C8DB24EBCFB88A3 /* TodayView.swift in Sources */,
+				00A09F28AC667B10CA7491F9 /* VersionHistory.swift in Sources */,
 				925EBF7B15DF505EEC5B5042 /* WideButtonLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

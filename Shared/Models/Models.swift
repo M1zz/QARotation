@@ -16,6 +16,8 @@ final class TrackedApp {
     var platformsRaw: [String] = []
     var tierRaw: String = Tier.normal.rawValue
     var urlScheme: String = ""
+    /// 지금 테스트하고 있는 버전. 비어 있으면 스토어의 현재 버전을 쓴다.
+    var testingVersion: String = ""
     var notes: String = ""
     var isArchived: Bool = false
     var createdAt: Date = Date.now
@@ -71,6 +73,17 @@ final class TrackedApp {
 
     var sortedSessions: [QASession] {
         (sessions ?? []).sorted { $0.date > $1.date }
+    }
+
+    /// 이번 QA에 기록할 버전. 손으로 정한 값이 있으면 그것을, 없으면 스토어 버전을 쓴다.
+    var versionUnderTest: String {
+        let mine = testingVersion.trimmingCharacters(in: .whitespaces)
+        return mine.isEmpty ? currentVersion : mine
+    }
+
+    /// 스토어에 이 앱의 더 새 버전이 올라와 있고, 그것을 아직 테스트하고 있지 않은 상태.
+    var hasNewerStoreVersion: Bool {
+        !currentVersion.isEmpty && !versionUnderTest.isEmpty && versionUnderTest != currentVersion
     }
 
     var storeURL: URL? {

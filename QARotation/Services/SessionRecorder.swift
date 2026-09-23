@@ -100,6 +100,8 @@ enum SessionRecorder {
         }
 
         app.lastQADate = meta.startedAt
+        // 다음 QA도 같은 버전으로 이어 가도록, 이번에 기록한 버전을 앱에 남긴다.
+        app.testingVersion = meta.appVersion.trimmingCharacters(in: .whitespaces)
         try context.save()
         return session
     }

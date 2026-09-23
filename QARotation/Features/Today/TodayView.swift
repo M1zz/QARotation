@@ -74,6 +74,10 @@ struct TodayView: View {
                     .font(.headline)
                     .foregroundStyle(.secondary)
                 HStack(spacing: 8) {
+                    if !app.versionUnderTest.isEmpty {
+                        Text("v\(app.versionUnderTest)")
+                        Text("·")
+                    }
                     Text("우선순위 \(app.tier.label)")
                     if !app.openIssues.isEmpty {
                         Text("·")

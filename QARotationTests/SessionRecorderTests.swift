@@ -137,3 +137,68 @@ struct DeepLinkTests {
         #expect(DeepLink(url: URL(string: "qarotation://unknown")!) == nil)
     }
 }
+
+@Suite("테스트한 버전")
+@MainActor
+struct VersionTests {
+    let container: ModelContainer
+    let context: ModelContext
+
+    init() throws {
+        container = try Persistence.makeContainer(inMemory: true)
+        context = container.mainContext
+    }
+
+    @Test func 테스트_중인_버전이_없으면_스토어_버전을_쓴다() {
+        let app = TrackedApp(name: "앱", currentVersion: "2.0")
+        #expect(app.versionUnderTest == "2.0")
+        #expect(!app.hasNewerStoreVersion)
+
+        app.testingVersion = "1.9"
+        #expect(app.versionUnderTest == "1.9")
+        #expect(app.hasNewerStoreVersion)
+    }
+
+    @Test func QA를_마치면_그때_적은_버전이_앱에_남는다() throws {
+        let app = TrackedApp(name: "앱", currentVersion: "2.0")
+        context.insert(app)
+        let item = ChecklistItem(title: "실행", category: .stability, order: 0, isDefault: true)
+        context.insert(item)
+        try context.save()
+
+        var drafts = SessionRecorder.drafts(defaultItems: [item], app: app)
+        drafts[0].outcome = .pass
+        let meta = SessionMeta(startedAt: .now, deviceModel: "iPhone", osVersion: "iOS 26.0", appVersion: "1.9")
+        try SessionRecorder.record(app: app, drafts: drafts, reverify: [:], meta: meta, in: context)
+
+        #expect(app.testingVersion == "1.9")
+        #expect(app.versionUnderTest == "1.9")
+    }
+
+    @Test func 기록이_버전별로_묶이고_최근_버전이_위에_온다() throws {
+        let app = TrackedApp(name: "앱")
+        context.insert(app)
+        func session(_ version: String, daysAgo: Int) {
+            let s = QASession(
+                date: Date.now.addingTimeInterval(-86400 * Double(daysAgo)),
+                deviceModel: "iPhone",
+                osVersion: "iOS 26.0",
+                appVersion: version,
+                durationSeconds: 60
+            )
+            context.insert(s)
+            s.app = app
+        }
+        session("1.0", daysAgo: 9)
+        session("1.1", daysAgo: 5)
+        session("1.0", daysAgo: 7)
+        session("", daysAgo: 1)
+        try context.save()
+
+        let groups = VersionHistory.groups(of: app.sortedSessions)
+        #expect(groups.map(\.version) == ["", "1.1", "1.0"])
+        #expect(groups.map(\.sessions.count) == [1, 1, 2])
+        #expect(groups[0].title == "버전 모름")
+        #expect(groups[1].title == "v1.1")
+    }
+}
