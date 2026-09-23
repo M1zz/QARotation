@@ -45,14 +45,16 @@ final class Router {
         guard let link = DeepLink(url: url) else { return }
         switch link {
         case .session(let id):
-            startSession(id)
+            // 위젯·알림으로 들어오면 어느 탭에 있었든 오늘에서 시작한다.
+            startSession(id, movingToToday: true)
         case .today:
             selectedTab = .today
         }
     }
 
-    func startSession(_ appID: UUID) {
-        selectedTab = .today
+    /// 앱 탭에서 시작했으면 그 탭에 그대로 둔다. 세션을 닫았을 때 보던 자리로 돌아오도록.
+    func startSession(_ appID: UUID, movingToToday: Bool = false) {
+        if movingToToday { selectedTab = .today }
         guard activeSession?.appID != appID else { return }
         activeSession = SessionRoute(appID: appID)
     }

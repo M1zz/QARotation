@@ -144,8 +144,24 @@ struct RouterMemoryTests {
 
         let second = Router(defaults: defaults)
         #expect(second.activeSession?.appID == appID)
-        // 세션을 여는 동안 탭은 오늘로 옮겨 둔다.
-        #expect(second.selectedTab == .today)
+    }
+
+    @Test func 앱_탭에서_시작하면_탭이_바뀌지_않는다() {
+        let router = Router(defaults: makeDefaults())
+        router.selectedTab = .apps
+        router.startSession(UUID())
+
+        #expect(router.selectedTab == .apps)
+    }
+
+    @Test func 위젯이나_알림으로_들어오면_오늘_탭에서_연다() {
+        let router = Router(defaults: makeDefaults())
+        router.selectedTab = .settings
+        let appID = UUID()
+        router.handle(DeepLink.session(appID).url)
+
+        #expect(router.selectedTab == .today)
+        #expect(router.activeSession?.appID == appID)
     }
 
     @Test func 세션을_닫으면_다시_열리지_않는다() {
