@@ -16,6 +16,16 @@ enum AppChecklistCatalog {
         byKey[key(bundleID)] ?? []
     }
 
+    /// 기본 체크리스트는 모든 앱이 같은 문구를 쓰는 탓에 "가장 흔한 일 하나를 고른다"처럼 두루뭉술해진다.
+    /// 앱마다 그 앱의 화면과 흐름으로 바꿔 적어 둔 것이 있으면 세션에서 그것을 보여 준다.
+    static func defaultSteps(for bundleID: String) -> [String: String] {
+        defaultStepsByKey[key(bundleID)] ?? [:]
+    }
+
+    private static let defaultStepsByKey: [String: [String: String]] = Dictionary(
+        uniqueKeysWithValues: defaultStepsByBundleID.map { (key($0.key), $0.value) }
+    )
+
     private static let byKey: [String: [CatalogItem]] = Dictionary(
         uniqueKeysWithValues: itemsByBundleID.map { (key($0.key), $0.value) }
     )

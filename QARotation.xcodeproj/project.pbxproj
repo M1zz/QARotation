@@ -58,6 +58,7 @@
 		6C483CFB53DBC29740631D14 /* appicon-com.bucketclimb.app.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F6E4D67FC4F444D164E51B /* appicon-com.bucketclimb.app.png */; };
 		6CC78F5D52AD580387D5B801 /* appicon-com.leeo.leeocon.png in Resources */ = {isa = PBXBuildFile; fileRef = 367D079EADA4A7FA40198967 /* appicon-com.leeo.leeocon.png */; };
 		6F7406F90643E7877ABF027D /* appicon-com.leeo.wifisnap.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51EFB5AFEF1B7D37BE6217 /* appicon-com.leeo.wifisnap.png */; };
+		6F86696E8AD305086ACB8B23 /* DefaultStepsByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */; };
 		70735AB084AF44A863B1EC49 /* ChecklistEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8B236A1231B4DDDAA271F8 /* ChecklistEditorView.swift */; };
 		7A31E94AA74E471B99F7D5D4 /* appicon-com.leeo.pixelme.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FADFA86363AC571B0C49185 /* appicon-com.leeo.pixelme.png */; };
 		7CEE7C6CD3E7AD985A8A5CA1 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1A4954AD5E38768C74007 /* AppDetailView.swift */; };
@@ -188,6 +189,7 @@
 		57463C77F9175756CBFA1815 /* appicon-com.leeo.juniordevmistakes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.juniordevmistakes.png"; sourceTree = "<group>"; };
 		5A6D582A01A48A7D436C7EDF /* appicon-com.leeo.higgym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.higgym.png"; sourceTree = "<group>"; };
 		5B53BACEEBE539978F181D0C /* QARotation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QARotation.entitlements; sourceTree = "<group>"; };
+		5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStepsByApp.swift; sourceTree = "<group>"; };
 		5E2CAFBE52C92A2A7B9EA18E /* QASessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QASessionView.swift; sourceTree = "<group>"; };
 		5F49E2AE39EB8EC2A11056F6 /* appicon-com.ysoup.tokenmemo-tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.tokenmemo-tap.png"; sourceTree = "<group>"; };
 		6338CB747615ECC984E203BD /* AppChecklistCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecklistCatalog.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				727C60964026B039C30F2FD2 /* AppImporter.swift */,
 				3D94B795F592D34D8886B8D2 /* BundledApps.swift */,
 				76E926AEBCFC01E7BCCA1681 /* ChecklistSeeder.swift */,
+				5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */,
 				F0123C57207E61B466A74561 /* DeviceInfo.swift */,
 				38F5B110E69145AA37DB4861 /* ImportController.swift */,
 				EE08DB977009800412878CCE /* ITunesLookupClient.swift */,
@@ -746,6 +749,7 @@
 				32FDB271502991764C03387A /* ChecklistSeeder.swift in Sources */,
 				CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */,
 				A0ED6843F1154697110F02EB /* DeepLink.swift in Sources */,
+				6F86696E8AD305086ACB8B23 /* DefaultStepsByApp.swift in Sources */,
 				A7DB4B3438E805E8812F258B /* DeviceInfo.swift in Sources */,
 				C5BB28924F0555652B81C306 /* Enums.swift in Sources */,
 				539BEEDFC155C70AF0DB366A /* FocusMode.swift in Sources */,

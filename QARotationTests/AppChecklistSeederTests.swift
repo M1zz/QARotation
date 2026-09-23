@@ -219,3 +219,51 @@ struct CodeTestListTests {
         #expect(text.contains("테스트 중인 버전: 1.2"))
     }
 }
+
+@Suite("기본 항목의 앱별 단계")
+@MainActor
+struct DefaultStepsByAppTests {
+    @Test func 적어_둔_단계는_모두_기본_항목_제목이다() {
+        let titles = Set(DefaultChecklist.items.map(\.title))
+        for (bundleID, steps) in AppChecklistCatalog.defaultStepsByBundleID {
+            for (title, text) in steps {
+                #expect(titles.contains(title), "\(bundleID): \(title)")
+                #expect(!text.isEmpty)
+                // 두루뭉술한 원래 문구가 그대로 남아 있으면 고친 뜻이 없다.
+                #expect(!text.contains("가장 흔한 일 하나"), "\(bundleID): \(title)")
+            }
+        }
+    }
+
+    @Test func 세션에서_그_앱의_단계로_바뀐다() throws {
+        let container = try Persistence.makeContainer(inMemory: true)
+        let context = container.mainContext
+        let app = TrackedApp(name: "클립키보드", bundleID: "com.Ysoup.TokenMemo")
+        context.insert(app)
+        let title = "핵심 흐름을 끝까지 마칠 수 있다"
+        let generic = try #require(DefaultChecklist.items.first { $0.title == title })
+        let item = ChecklistItem(title: title, steps: generic.steps, category: generic.category, order: 0, isDefault: true)
+        context.insert(item)
+        try context.save()
+
+        let drafts = SessionRecorder.drafts(defaultItems: [item], app: app)
+        let mine = try #require(drafts.first { $0.title == title })
+        let expected = try #require(AppChecklistCatalog.defaultSteps(for: app.bundleID)[title])
+        #expect(mine.steps == expected)
+        #expect(mine.steps != generic.steps)
+    }
+
+    @Test func 적어_두지_않은_앱은_기본_문구를_쓴다() throws {
+        let container = try Persistence.makeContainer(inMemory: true)
+        let context = container.mainContext
+        let app = TrackedApp(name: "모르는 앱", bundleID: "com.example.unknown")
+        context.insert(app)
+        let generic = try #require(DefaultChecklist.items.first)
+        let item = ChecklistItem(title: generic.title, steps: generic.steps, category: generic.category, order: 0, isDefault: true)
+        context.insert(item)
+        try context.save()
+
+        let drafts = SessionRecorder.drafts(defaultItems: [item], app: app)
+        #expect(drafts.first?.steps == generic.steps)
+    }
+}

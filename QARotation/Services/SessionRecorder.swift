@@ -31,9 +31,11 @@ struct SessionMeta: Equatable {
 enum SessionRecorder {
     /// 체크리스트 = 기본 항목(분류 → 순서) + 앱 전용 항목(순서).
     static func drafts(defaultItems: [ChecklistItem], app: TrackedApp) -> [DraftResult] {
+        // 기본 항목의 단계는 앱마다 다르게 적어 둔 것이 있으면 그것을 쓴다.
+        let appSteps = AppChecklistCatalog.defaultSteps(for: app.bundleID)
         let defaults = defaultItems
             .sorted { ($0.category.sortIndex, $0.order) < ($1.category.sortIndex, $1.order) }
-            .map { DraftResult(id: $0.id, title: $0.title, steps: $0.steps, category: $0.category, verification: $0.verification, order: 0, isAppSpecific: false) }
+            .map { DraftResult(id: $0.id, title: $0.title, steps: appSteps[$0.title] ?? $0.steps, category: $0.category, verification: $0.verification, order: 0, isAppSpecific: false) }
         let extras = app.sortedExtraItems
             .map { DraftResult(id: $0.id, title: $0.title, steps: $0.steps, category: $0.category, verification: $0.verification, order: 0, isAppSpecific: true) }
         return (defaults + extras).enumerated().map { index, draft in
