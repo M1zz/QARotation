@@ -13,6 +13,8 @@ struct TodayView: View {
     /// 건너뛰기는 UserDefaults 에만 남으므로, 화면을 다시 그리게 하는 신호.
     @State private var skipTick = 0
     @State private var showingAddApp = false
+    /// 보관해 둔 진행 상태. 화면에 들어올 때와 세션을 닫고 돌아올 때 다시 읽는다.
+    @State private var draft: SessionDraft?
     @ScaledMetric(relativeTo: .largeTitle) private var scaledIconSize: CGFloat = 112
     /// 큰 글자에서 아이콘까지 커지면 "QA 시작"이 화면 밖으로 밀려난다.
     private var iconSize: CGFloat { min(scaledIconSize, dynamicTypeSize.isAccessibilitySize ? 88 : 128) }
@@ -24,6 +26,8 @@ struct TodayView: View {
         NavigationStack {
             content
                 .navigationTitle("오늘")
+                .onAppear { draft = SessionDraftStore.load() }
+                .onChange(of: router.activeSession?.appID) { _, _ in draft = SessionDraftStore.load() }
                 .sheet(isPresented: $showingAddApp) { AppEditView(app: nil) }
         }
     }
@@ -42,6 +46,7 @@ struct TodayView: View {
                   let app = activeApps.first(where: { $0.id == chosen.id }) {
             ScrollView {
                 VStack(spacing: 24) {
+                    resumeCard
                     pickCard(app, now: now, allIDs: Set(candidates.map(\.id)))
                     progressCard(candidates: candidates, now: now)
                 }
@@ -55,6 +60,45 @@ struct TodayView: View {
                 systemImage: "archivebox",
                 description: Text("앱 탭에서 보관을 풀면 다시 추천해요.")
             )
+        }
+    }
+
+    /// 하다 만 QA가 있으면 추천보다 위에 둔다. 무엇을 할지 다시 고르지 않아도 되게.
+    @ViewBuilder
+    private var resumeCard: some View {
+        if let draft, let app = apps.first(where: { $0.id == draft.appID }) {
+            VStack(spacing: 12) {
+                HStack(spacing: 12) {
+                    AppIconView(app: app, size: 44)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("하던 QA가 있어요").font(.subheadline).foregroundStyle(.secondary)
+                        Text(app.name).font(.headline)
+                        Text("\(draft.totalCount)개 중 \(draft.answeredCount)개 · \(draft.savedAt, format: .relative(presentation: .named))")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityElement(children: .combine)
+
+                HStack(spacing: 12) {
+                    Button {
+                        router.startSession(app.id)
+                    } label: {
+                        WideButtonLabel(title: "이어서 하기", systemImage: "arrow.uturn.forward", minHeight: 40)
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    Button("버리기", role: .destructive) {
+                        SessionDraftStore.clear()
+                        self.draft = nil
+                    }
+                    .buttonStyle(.bordered)
+                }
+            }
+            .padding()
+            .background(.background.secondary, in: RoundedRectangle(cornerRadius: 16))
         }
     }
 

@@ -24,6 +24,7 @@
 		10D3C869C5616CA6B1834D68 /* appicon-com.leeo.slidesnap.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE654F60C159BAFBF36E98D /* appicon-com.leeo.slidesnap.png */; };
 		14F799567881EB0D1C965F5D /* appicon-com.leeo.jujob.png in Resources */ = {isa = PBXBuildFile; fileRef = A0055E3A94769E4C72F8FB88 /* appicon-com.leeo.jujob.png */; };
 		15F53885B0B55625B2246285 /* appicon-com.kora.leeo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A8A955910A0C9C5E3BF315 /* appicon-com.kora.leeo.png */; };
+		16C3B74784D5B91F1229F94C /* SessionDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340B485D686C126CCB88303 /* SessionDraftStore.swift */; };
 		173F1F819BE272A7C8FC0A18 /* ChecklistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8772F5F434D9FBE0CE0D3 /* ChecklistRow.swift */; };
 		1A0833D24111667E75DB8191 /* appicon-com.leeo.handsfreemetronome.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48270A9EB6BF3011DDFD28 /* appicon-com.leeo.handsfreemetronome.png */; };
 		1B89648616EB529440A98A22 /* appicon-com.leeo.juniordevmistakes.png in Resources */ = {isa = PBXBuildFile; fileRef = 57463C77F9175756CBFA1815 /* appicon-com.leeo.juniordevmistakes.png */; };
@@ -97,11 +98,13 @@
 		C8F76F19E8482E589B5FC6B1 /* SessionRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B480C0AFF5A583EFD3FC35 /* SessionRecorderTests.swift */; };
 		CD25053366C11C3F9AAEB7E6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82CFD8AF9BD57FC84B67816 /* Models.swift */; };
 		CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */; };
+		CFB5BDDD726A1FD660D09AAF /* SessionDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340B485D686C126CCB88303 /* SessionDraftStore.swift */; };
 		D169F3711A53957C003D3F8C /* SkipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E2F60D733AF4587EAF8F6 /* SkipStore.swift */; };
 		D3CDA8C3AA37EFAB9BB0E821 /* appicon-com.ysoup.rapportmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EC376D9D343436124C6B29 /* appicon-com.ysoup.rapportmap.png */; };
 		D6F8AB5A7D551A8DF5966551 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBDBA21696D1AF6B6DE48C /* Enums.swift */; };
 		D8F68CA748E7D8AC80F41DF7 /* appicon-com.leeo.stickypresenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 480A51F61D2EA07ED4E5EA63 /* appicon-com.leeo.stickypresenter.png */; };
 		D9DC0CA1BAD0AE6113CD5264 /* appicon-com.devkoan.calendarsnap.png in Resources */ = {isa = PBXBuildFile; fileRef = 693C12CC227EA12A382748AE /* appicon-com.devkoan.calendarsnap.png */; };
+		DA2431379252B973A5D994FC /* SessionDraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA29B35A32B935166EE93A /* SessionDraftTests.swift */; };
 		E2136D2495F1B0DD96894B90 /* appicon-com.leeo.reboundjournal.png in Resources */ = {isa = PBXBuildFile; fileRef = CB680C20B7EF90706D3B6158 /* appicon-com.leeo.reboundjournal.png */; };
 		E4F11050895D9759A5AE7E41 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A3BA62A08688DE3877270 /* RootView.swift */; };
 		EA8552FA2E643708CF150AA6 /* appicon-com.xa.toki.png in Resources */ = {isa = PBXBuildFile; fileRef = 8460B05A5CA29ADDE66BA4E3 /* appicon-com.xa.toki.png */; };
@@ -147,6 +150,7 @@
 
 /* Begin PBXFileReference section */
 		0209704E0DC497BA8DCC7C99 /* appicon-com.leeo.footprintdiary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.footprintdiary.png"; sourceTree = "<group>"; };
+		0340B485D686C126CCB88303 /* SessionDraftStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDraftStore.swift; sourceTree = "<group>"; };
 		0600CE88531C423437054971 /* LastQABadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastQABadge.swift; sourceTree = "<group>"; };
 		180A335167BC12B841D40E24 /* appicon-com.leeo.stickypresenter.remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.stickypresenter.remote.png"; sourceTree = "<group>"; };
 		22A8A955910A0C9C5E3BF315 /* appicon-com.kora.leeo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.kora.leeo.png"; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		97D8772F5F434D9FBE0CE0D3 /* ChecklistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRow.swift; sourceTree = "<group>"; };
 		981E2F60D733AF4587EAF8F6 /* SkipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipStore.swift; sourceTree = "<group>"; };
 		9A0D3D4CC250AE94A5482990 /* PickResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickResolver.swift; sourceTree = "<group>"; };
+		9CDA29B35A32B935166EE93A /* SessionDraftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDraftTests.swift; sourceTree = "<group>"; };
 		A0055E3A94769E4C72F8FB88 /* appicon-com.leeo.jujob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.jujob.png"; sourceTree = "<group>"; };
 		A32B736EB4AD40911A7CFD8B /* ImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTests.swift; sourceTree = "<group>"; };
 		A402F362F20D3D346F91D5E8 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
@@ -258,6 +263,7 @@
 				4B66510E33702D11DF604CA2 /* AppChecklistSeederTests.swift */,
 				A32B736EB4AD40911A7CFD8B /* ImportTests.swift */,
 				273AF1D1B76AB1F326D6631C /* RotationTests.swift */,
+				9CDA29B35A32B935166EE93A /* SessionDraftTests.swift */,
 				82B480C0AFF5A583EFD3FC35 /* SessionRecorderTests.swift */,
 			);
 			path = QARotationTests;
@@ -278,6 +284,7 @@
 				7361DA61A45FE63BDA8F084F /* AppSettings.swift */,
 				F3EE61C45A46D0AF482A8CE4 /* DeepLink.swift */,
 				8D261538F46586DBAA9DEA6A /* Persistence.swift */,
+				0340B485D686C126CCB88303 /* SessionDraftStore.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -687,6 +694,7 @@
 				EE28020DF30CE855FC62690A /* Persistence.swift in Sources */,
 				88391CD12A6395E0325DDA98 /* PickResolver.swift in Sources */,
 				7F77246E553FB6E6D246EB37 /* Rotation.swift in Sources */,
+				16C3B74784D5B91F1229F94C /* SessionDraftStore.swift in Sources */,
 				D169F3711A53957C003D3F8C /* SkipStore.swift in Sources */,
 				30C39541B2C3122D970CA905 /* TodayPickWidget.swift in Sources */,
 			);
@@ -699,6 +707,7 @@
 				9C5527ACB3B80E27856F81CB /* AppChecklistSeederTests.swift in Sources */,
 				F272BC790358EDD8CE6F9E3B /* ImportTests.swift in Sources */,
 				C1935DBF2F7B543DDD309699 /* RotationTests.swift in Sources */,
+				DA2431379252B973A5D994FC /* SessionDraftTests.swift in Sources */,
 				C8F76F19E8482E589B5FC6B1 /* SessionRecorderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,6 +749,7 @@
 				C40E688ED00CB53B95568229 /* Rotation.swift in Sources */,
 				9C0CF2755A5E43DA648CC291 /* Router.swift in Sources */,
 				B5CF152CC4A2B1B6397543A9 /* SessionDetailView.swift in Sources */,
+				CFB5BDDD726A1FD660D09AAF /* SessionDraftStore.swift in Sources */,
 				C2DC50E60A72AC3F3CB07BE5 /* SessionHeaderView.swift in Sources */,
 				48810576C71A7271135ADD4F /* SessionRecorder.swift in Sources */,
 				09F5F86E03D1735CC31E08B1 /* SessionViewModel.swift in Sources */,

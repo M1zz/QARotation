@@ -15,7 +15,7 @@ struct DraftResult: Identifiable, Equatable {
     var screenshot: Data?
 }
 
-enum ReverifyDecision: Sendable {
+enum ReverifyDecision: String, Sendable {
     case fixed
     case stillFailing
 }

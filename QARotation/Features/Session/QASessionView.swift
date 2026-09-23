@@ -31,7 +31,12 @@ struct QASessionView: View {
             return
         }
         let defaults = (try? context.fetch(FetchDescriptor<ChecklistItem>(predicate: #Predicate { $0.isDefault }))) ?? []
-        model = SessionViewModel(app: app, defaultItems: defaults, timerMinutes: AppSettings.timerMinutes())
+        model = SessionViewModel(
+            app: app,
+            defaultItems: defaults,
+            timerMinutes: AppSettings.timerMinutes(),
+            resuming: SessionDraftStore.load()
+        )
     }
 }
 
@@ -43,6 +48,7 @@ private struct SessionContentView: View {
     @State private var confirmingPartialFinish = false
     @State private var saveError: String?
     @State private var finished = false
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         NavigationStack {
@@ -84,12 +90,24 @@ private struct SessionContentView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("닫기") {
-                        if model.hasProgress { confirmingCancel = true } else { dismiss() }
+                        if model.hasProgress {
+                            confirmingCancel = true
+                        } else {
+                            SessionDraftStore.clear()
+                            dismiss()
+                        }
                     }
                 }
             }
-            .confirmationDialog("기록하지 않고 닫을까요?", isPresented: $confirmingCancel, titleVisibility: .visible) {
-                Button("기록 버리기", role: .destructive) { dismiss() }
+            .confirmationDialog("여기까지 한 것을 어떻게 할까요?", isPresented: $confirmingCancel, titleVisibility: .visible) {
+                Button("보관하고 닫기") {
+                    model.keepDraft()
+                    dismiss()
+                }
+                Button("버리고 닫기", role: .destructive) {
+                    SessionDraftStore.clear()
+                    dismiss()
+                }
                 Button("계속 QA하기", role: .cancel) {}
             }
             .confirmationDialog(
@@ -110,6 +128,10 @@ private struct SessionContentView: View {
                 Text(saveError ?? "")
             }
             .sensoryFeedback(.success, trigger: finished)
+            // 홈으로 나가거나 앱이 꺼져도 여기까지 한 것이 남도록.
+            .onChange(of: scenePhase) { _, phase in
+                if phase != .active, model.hasProgress { model.keepDraft() }
+            }
             .interactiveDismissDisabled(model.hasProgress)
         }
     }
