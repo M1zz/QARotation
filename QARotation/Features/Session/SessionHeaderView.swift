@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SessionHeaderView: View {
     @Bindable var model: SessionViewModel
+    @State private var pickingVersion = false
     @Environment(\.openURL) private var openURL
     @ScaledMetric private var scaledIconSize: CGFloat = 56
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
@@ -19,11 +20,19 @@ struct SessionHeaderView: View {
                         .font(.headline)
                         .fixedSize(horizontal: false, vertical: true)
                     SessionTimerView(startedAt: model.meta.startedAt, limitSeconds: model.timerSeconds)
-                    if !model.meta.appVersion.isEmpty {
-                        Text("테스트 중 v\(model.meta.appVersion)")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                    Button {
+                        pickingVersion = true
+                    } label: {
+                        Label(
+                            model.meta.appVersion.isEmpty ? "테스트할 버전 고르기" : "테스트 중 v\(model.meta.appVersion)",
+                            systemImage: "chevron.down"
+                        )
+                        .labelStyle(TrailingIconLabelStyle())
+                        .font(.subheadline)
                     }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.secondary)
+                    .accessibilityHint("다른 버전으로 바꿉니다")
                 }
             }
 
@@ -47,6 +56,12 @@ struct SessionHeaderView: View {
             .font(.subheadline)
         }
         .padding(.vertical, 4)
+        .sheet(isPresented: $pickingVersion) {
+            VersionPicker(app: model.app, version: $model.meta.appVersion)
+        }
+        .onChange(of: model.meta.appVersion) { _, _ in
+            if model.hasProgress { model.keepDraft() }
+        }
     }
 
     /// URL 스킴으로 못 열면(앱이 안 깔렸거나 스킴이 틀림) App Store 로 보낸다.

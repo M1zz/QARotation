@@ -15,6 +15,7 @@ struct TodayView: View {
     @State private var showingAddApp = false
     /// 보관해 둔 진행 상태. 화면에 들어올 때와 세션을 닫고 돌아올 때 다시 읽는다.
     @State private var draft: SessionDraft?
+    @State private var pickingVersionFor: TrackedApp?
     @ScaledMetric(relativeTo: .largeTitle) private var scaledIconSize: CGFloat = 112
     /// 큰 글자에서 아이콘까지 커지면 "QA 시작"이 화면 밖으로 밀려난다.
     private var iconSize: CGFloat { min(scaledIconSize, dynamicTypeSize.isAccessibilitySize ? 88 : 128) }
@@ -29,6 +30,12 @@ struct TodayView: View {
                 .onAppear { draft = SessionDraftStore.load() }
                 .onChange(of: router.activeSession?.appID) { _, _ in draft = SessionDraftStore.load() }
                 .sheet(isPresented: $showingAddApp) { AppEditView(app: nil) }
+                .sheet(item: $pickingVersionFor) { app in
+                    VersionPicker(app: app, version: Binding(
+                        get: { app.testingVersion.isEmpty ? app.currentVersion : app.testingVersion },
+                        set: { app.testingVersion = $0; try? context.save() }
+                    ))
+                }
         }
     }
 
@@ -118,10 +125,17 @@ struct TodayView: View {
                     .font(.headline)
                     .foregroundStyle(.secondary)
                 HStack(spacing: 8) {
-                    if !app.versionUnderTest.isEmpty {
-                        Text("v\(app.versionUnderTest)")
-                        Text("·")
+                    Button {
+                        pickingVersionFor = app
+                    } label: {
+                        Label(
+                            app.versionUnderTest.isEmpty ? "버전 고르기" : "v\(app.versionUnderTest)",
+                            systemImage: "chevron.down"
+                        )
+                        .labelStyle(TrailingIconLabelStyle())
                     }
+                    .buttonStyle(.plain)
+                    Text("·")
                     Text("우선순위 \(app.tier.label)")
                     if !app.openIssues.isEmpty {
                         Text("·")

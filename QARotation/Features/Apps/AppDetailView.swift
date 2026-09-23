@@ -9,6 +9,7 @@ struct AppDetailView: View {
     @Environment(\.openURL) private var openURL
     @State private var newItemTitle = ""
     @State private var showingEdit = false
+    @State private var pickingVersion = false
     @ScaledMetric private var iconSize: CGFloat = 72
 
     var body: some View {
@@ -20,10 +21,14 @@ struct AppDetailView: View {
                     ForEach(Tier.allCases) { Text($0.label).tag($0) }
                 }
                 Toggle("로테이션에서 빼기(보관)", isOn: $app.isArchived)
-                TextField("테스트 중인 버전 (예: 2.2.4)", text: $app.testingVersion)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .onSubmit(save)
+                HStack {
+                    TextField("테스트 중인 버전 (예: 2.2.4)", text: $app.testingVersion)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .onSubmit(save)
+                    Button("고르기") { pickingVersion = true }
+                        .buttonStyle(.borderless)
+                }
                 if app.hasNewerStoreVersion {
                     Button("스토어 최신 v\(app.currentVersion)으로 바꾸기") {
                         app.testingVersion = app.currentVersion
@@ -50,6 +55,10 @@ struct AppDetailView: View {
             Button("편집") { showingEdit = true }
         }
         .sheet(isPresented: $showingEdit) { AppEditView(app: app) }
+        .sheet(isPresented: $pickingVersion) {
+            VersionPicker(app: app, version: $app.testingVersion)
+        }
+        .onChange(of: app.testingVersion) { save() }
         .onChange(of: app.tierRaw) { save() }
         .onChange(of: app.isArchived) { save() }
     }

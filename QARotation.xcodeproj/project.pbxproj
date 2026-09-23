@@ -40,6 +40,7 @@
 		42BB757964A899DED27B32FF /* appicon-com.leeo.footprintdiary.png in Resources */ = {isa = PBXBuildFile; fileRef = 0209704E0DC497BA8DCC7C99 /* appicon-com.leeo.footprintdiary.png */; };
 		439DEC2B9B3AA45523C71082 /* SkipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E2F60D733AF4587EAF8F6 /* SkipStore.swift */; };
 		477B09F2C33AFF627630FA44 /* PickResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D3D4CC250AE94A5482990 /* PickResolver.swift */; };
+		47D4A4ED9264B52C6510B700 /* ChecklistIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */; };
 		48810576C71A7271135ADD4F /* SessionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E04BE6CDFD4B2795C782CD6 /* SessionRecorder.swift */; };
 		4A5800C3FD11356AF7F82552 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7361DA61A45FE63BDA8F084F /* AppSettings.swift */; };
 		4ABBE505CA1B4444FCE1B60D /* appicon-com.leeo.tetratint.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B94330B7AC7FA7A710AA13 /* appicon-com.leeo.tetratint.png */; };
@@ -71,6 +72,7 @@
 		925EBF7B15DF505EEC5B5042 /* WideButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86241273DEDFF98FB26F2D5 /* WideButtonLabel.swift */; };
 		92CC94C6E14068CAFADC5AD8 /* AppEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6041338D4F7EE03C78B7EA9 /* AppEditView.swift */; };
 		983608BF36E282B2CEE1E14F /* AppChecklistCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6338CB747615ECC984E203BD /* AppChecklistCatalog.swift */; };
+		9AA764D5A4CC17925875F5B6 /* VersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EA04EDD1569E91BA8B7F9C /* VersionPicker.swift */; };
 		9ABED09CFC3731141A533BF5 /* LastQABadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0600CE88531C423437054971 /* LastQABadge.swift */; };
 		9BE180A5BE534D375D27F767 /* appicon-com.ysoup.tokenmemo-tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F49E2AE39EB8EC2A11056F6 /* appicon-com.ysoup.tokenmemo-tap.png */; };
 		9C0CF2755A5E43DA648CC291 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109683E1E99F8D03EA8DA39 /* Router.swift */; };
@@ -179,6 +181,7 @@
 		4B66510E33702D11DF604CA2 /* AppChecklistSeederTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecklistSeederTests.swift; sourceTree = "<group>"; };
 		4FADFA86363AC571B0C49185 /* appicon-com.leeo.pixelme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.pixelme.png"; sourceTree = "<group>"; };
 		50AC2CB91320D827700483E4 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistIndexView.swift; sourceTree = "<group>"; };
 		52CD4E3463D6EBBC1BE4AC34 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		52EC376D9D343436124C6B29 /* appicon-com.ysoup.rapportmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.rapportmap.png"; sourceTree = "<group>"; };
 		54F5FD8F0DD9F02360486FB9 /* appicon-com.leeo.lullabyrecipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.lullabyrecipe.png"; sourceTree = "<group>"; };
@@ -240,6 +243,7 @@
 		C0059FAD2027BDCFBAC416CA /* appicon-com.leeo.conversationpractice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.conversationpractice.png"; sourceTree = "<group>"; };
 		C029EF31625015D40449351A /* SeedApps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeedApps.json; sourceTree = "<group>"; };
 		C171DFB61181C3B365D3633F /* appicon-com.family.familycourt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.family.familycourt.png"; sourceTree = "<group>"; };
+		C2EA04EDD1569E91BA8B7F9C /* VersionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionPicker.swift; sourceTree = "<group>"; };
 		C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListView.swift; sourceTree = "<group>"; };
 		CB196284F348E330E3FF1229 /* appicon-com.leeo.yeoul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.yeoul.png"; sourceTree = "<group>"; };
 		CB680C20B7EF90706D3B6158 /* appicon-com.leeo.reboundjournal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.reboundjournal.png"; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */,
 				8ADB1E8324E48C5944AB03D6 /* SessionDetailView.swift */,
 				2A3F696A06C266F6D893605E /* VersionHistory.swift */,
+				C2EA04EDD1569E91BA8B7F9C /* VersionPicker.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 		656A51EDAF1B1EA7EF6528C9 /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */,
 				97D8772F5F434D9FBE0CE0D3 /* ChecklistRow.swift */,
 				DE1E15329AFC5AEB395EB871 /* FocusedChecklistView.swift */,
 				0307A9614C070AE2478EC561 /* FocusMode.swift */,
@@ -735,6 +741,7 @@
 				B15A85A75DBAC5D74E8A5E3E /* AppsListView.swift in Sources */,
 				8C5943AF879B4AE0EB22054E /* BundledApps.swift in Sources */,
 				70735AB084AF44A863B1EC49 /* ChecklistEditorView.swift in Sources */,
+				47D4A4ED9264B52C6510B700 /* ChecklistIndexView.swift in Sources */,
 				173F1F819BE272A7C8FC0A18 /* ChecklistRow.swift in Sources */,
 				32FDB271502991764C03387A /* ChecklistSeeder.swift in Sources */,
 				CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */,
@@ -769,6 +776,7 @@
 				B220FEDD4EE58BF04FBEF5C3 /* StepText.swift in Sources */,
 				2D8E03156C8DB24EBCFB88A3 /* TodayView.swift in Sources */,
 				00A09F28AC667B10CA7491F9 /* VersionHistory.swift in Sources */,
+				9AA764D5A4CC17925875F5B6 /* VersionPicker.swift in Sources */,
 				925EBF7B15DF505EEC5B5042 /* WideButtonLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

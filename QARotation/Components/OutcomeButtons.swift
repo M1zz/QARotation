@@ -55,3 +55,13 @@ struct OutcomeButtonStyle: ButtonStyle {
             .opacity(configuration.isPressed ? 0.7 : 1)
     }
 }
+
+/// 글자 뒤에 작은 기호를 붙이는 꼬리표. "테스트 중 v5.1.4 ⌄"처럼 누를 수 있음을 알린다.
+struct TrailingIconLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(spacing: 4) {
+            configuration.title
+            configuration.icon.font(.caption2)
+        }
+    }
+}

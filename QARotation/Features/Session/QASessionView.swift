@@ -53,6 +53,8 @@ private struct SessionContentView: View {
     /// 한 항목씩 크게 보며 따라 하는 모드. 단계가 많은 앱에서 쓴다.
     @State private var focusMode = false
     @State private var focusIndex = 0
+    @State private var pickingVersion = false
+    @State private var showingIndex = false
 
     var body: some View {
         NavigationStack {
@@ -77,13 +79,18 @@ private struct SessionContentView: View {
                     }
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        withAnimation { focusMode.toggle() }
-                    } label: {
-                        Label(
-                            focusMode ? "목록으로 보기" : "한 장씩 보기",
-                            systemImage: focusMode ? "list.bullet" : "rectangle.portrait"
-                        )
+                    if focusMode {
+                        Button {
+                            showingIndex = true
+                        } label: {
+                            Label("테스트 항목 보기", systemImage: "list.bullet.indent")
+                        }
+                    } else {
+                        Button {
+                            withAnimation { focusMode = true }
+                        } label: {
+                            Label("한 장씩 보기", systemImage: "rectangle.portrait")
+                        }
                     }
                 }
             }
@@ -121,6 +128,9 @@ private struct SessionContentView: View {
                 if phase != .active, model.hasProgress { model.keepDraft() }
             }
             .interactiveDismissDisabled(model.hasProgress)
+            .sheet(isPresented: $showingIndex) {
+                ChecklistIndexView(model: model, index: $focusIndex)
+            }
             .task {
                 // 항목이 많은 앱은 목록으로 보면 단계가 묻힌다. 클립키보드부터 한 장씩으로 연다.
                 focusMode = FocusMode.opensFocused(bundleID: model.app.bundleID)
@@ -145,11 +155,18 @@ private struct SessionContentView: View {
             AppIconView(app: model.app, size: 32)
             VStack(alignment: .leading, spacing: 2) {
                 SessionTimerView(startedAt: model.meta.startedAt, limitSeconds: model.timerSeconds)
-                if !model.meta.appVersion.isEmpty {
-                    Text("테스트 중 v\(model.meta.appVersion)")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                Button {
+                    pickingVersion = true
+                } label: {
+                    Label(
+                        model.meta.appVersion.isEmpty ? "버전 고르기" : "테스트 중 v\(model.meta.appVersion)",
+                        systemImage: "chevron.down"
+                    )
+                    .labelStyle(TrailingIconLabelStyle())
+                    .font(.caption)
                 }
+                .buttonStyle(.plain)
+                .foregroundStyle(.secondary)
             }
             Spacer(minLength: 0)
             if let url = model.app.launchURL ?? model.app.storeURL {
@@ -166,6 +183,9 @@ private struct SessionContentView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
         .background(.bar)
+        .sheet(isPresented: $pickingVersion) {
+            VersionPicker(app: model.app, version: $model.meta.appVersion)
+        }
     }
 
     private var focusBottomBar: some View {

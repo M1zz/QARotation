@@ -225,3 +225,66 @@ struct FocusedChecklistTests {
         #expect(model.nextUnanswered(after: 2) == nil)
     }
 }
+
+@Suite("테스트할 버전 고르기")
+@MainActor
+struct VersionPickerTests {
+    let container: ModelContainer
+    let context: ModelContext
+
+    init() throws {
+        container = try Persistence.makeContainer(inMemory: true)
+        context = container.mainContext
+    }
+
+    func session(_ app: TrackedApp, version: String, daysAgo: Int) {
+        let s = QASession(
+            date: Date.now.addingTimeInterval(-86400 * Double(daysAgo)),
+            deviceModel: "iPhone",
+            osVersion: "iOS 26.0",
+            appVersion: version,
+            durationSeconds: 60
+        )
+        context.insert(s)
+        s.app = app
+    }
+
+    @Test func 스토어와_보던_버전과_지난_기록이_후보로_나온다() throws {
+        let app = TrackedApp(name: "앱", currentVersion: "5.1.5")
+        context.insert(app)
+        app.testingVersion = "5.1.4"
+        session(app, version: "5.1.0", daysAgo: 30)
+        session(app, version: "5.1.4", daysAgo: 2)
+        session(app, version: "", daysAgo: 1)
+        try context.save()
+
+        let candidates = VersionOptions.candidates(for: app)
+        // 스토어 최신이 맨 위, 그다음 지금 보는 것, 그 뒤로 기록에 있던 것. 빈 값과 중복은 뺀다.
+        #expect(candidates == ["5.1.5", "5.1.4", "5.1.0"])
+    }
+
+    @Test func 후보마다_무엇인지_설명이_붙는다() throws {
+        let app = TrackedApp(name: "앱", currentVersion: "2.0")
+        context.insert(app)
+        app.testingVersion = "1.9"
+        session(app, version: "1.9", daysAgo: 1)
+        session(app, version: "1.9", daysAgo: 3)
+        try context.save()
+
+        #expect(VersionOptions.note(for: "2.0", app: app) == "스토어 최신")
+        #expect(VersionOptions.note(for: "1.9", app: app) == "지금 보는 중 · QA 2회")
+        #expect(VersionOptions.note(for: "1.0", app: app) == nil)
+    }
+
+    @Test func 버전이_하나뿐이어도_고를_수_있다() {
+        let app = TrackedApp(name: "앱", currentVersion: "1.0")
+        context.insert(app)
+        #expect(VersionOptions.candidates(for: app) == ["1.0"])
+    }
+
+    @Test func 스토어_버전조차_없으면_후보가_비어_직접_적는다() {
+        let app = TrackedApp(name: "직접 넣은 앱")
+        context.insert(app)
+        #expect(VersionOptions.candidates(for: app).isEmpty)
+    }
+}
