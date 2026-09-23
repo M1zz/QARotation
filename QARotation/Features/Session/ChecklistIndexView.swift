@@ -25,10 +25,19 @@ struct ChecklistIndexView: View {
                                 Text("\(answered(in: section))/\(section.itemIDs.count)")
                                     .monospacedDigit()
                             }
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal, 16)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(.bar)
+                            .listRowInsets(EdgeInsets())
                         }
                     }
                 }
             }
+            // 평평한 목록이라야 섹션 이름이 위에 붙은 채로 스크롤된다.
+            .listStyle(.plain)
             .navigationTitle("테스트 항목 \(model.answeredCount)/\(model.drafts.count)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
