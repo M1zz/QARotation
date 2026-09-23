@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import UIKit
 
 struct AppDetailView: View {
     @Bindable var app: TrackedApp
@@ -101,7 +102,17 @@ struct AppDetailView: View {
     private var extraItemsSection: some View {
         Section {
             ForEach(app.sortedExtraItems) { item in
-                Text(item.title)
+                HStack(alignment: .firstTextBaseline) {
+                    Text(item.title)
+                    if let badge = item.verification.badge {
+                        Text(badge)
+                            .font(.caption2.weight(.semibold))
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(.purple.opacity(0.15), in: Capsule())
+                            .accessibilityLabel("\(item.verification.label)로 확인할 수 있는 항목")
+                    }
+                }
             }
             .onDelete { offsets in
                 let items = app.sortedExtraItems
@@ -113,6 +124,12 @@ struct AppDetailView: View {
                     .onSubmit(addExtraItem)
                 Button("추가", action: addExtraItem)
                     .disabled(newItemTitle.trimmingCharacters(in: .whitespaces).isEmpty)
+            }
+            let automatable = app.sortedExtraItems.filter { $0.verification.isAutomatable }
+            if !automatable.isEmpty {
+                Button("코드로 확인할 항목 \(automatable.count)개 복사") {
+                    UIPasteboard.general.string = CodeTestList.text(for: app)
+                }
             }
             let missing = AppChecklistSeeder.missingCount(for: app)
             if missing > 0 {

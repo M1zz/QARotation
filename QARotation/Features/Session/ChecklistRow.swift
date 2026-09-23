@@ -11,6 +11,14 @@ struct ChecklistRow: View {
                 Text(draft.title)
                     .font(.body)
                     .fixedSize(horizontal: false, vertical: true)
+                if let badge = draft.verification.badge {
+                    Text(badge)
+                        .font(.caption2.weight(.semibold))
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(.purple.opacity(0.15), in: Capsule())
+                        .accessibilityLabel("\(draft.verification.label)로 확인할 수 있는 항목")
+                }
                 if draft.isAppSpecific {
                     Text("이 앱")
                         .font(.caption2.weight(.semibold))

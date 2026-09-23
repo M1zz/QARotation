@@ -96,6 +96,7 @@
 		C75AD7CC901CAE13139403B0 /* appicon-com.leeo.rotoscopeipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8430DDBE767F81E0E8DDCC12 /* appicon-com.leeo.rotoscopeipad.png */; };
 		C8F76F19E8482E589B5FC6B1 /* SessionRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B480C0AFF5A583EFD3FC35 /* SessionRecorderTests.swift */; };
 		CD25053366C11C3F9AAEB7E6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82CFD8AF9BD57FC84B67816 /* Models.swift */; };
+		CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */; };
 		D169F3711A53957C003D3F8C /* SkipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E2F60D733AF4587EAF8F6 /* SkipStore.swift */; };
 		D3CDA8C3AA37EFAB9BB0E821 /* appicon-com.ysoup.rapportmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EC376D9D343436124C6B29 /* appicon-com.ysoup.rapportmap.png */; };
 		D6F8AB5A7D551A8DF5966551 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBDBA21696D1AF6B6DE48C /* Enums.swift */; };
@@ -195,6 +196,7 @@
 		7E2ED3DF60DBD4D7AB8F43BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E415606380C7726E97F87D1 /* appicon-com.leeo.sunflower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.sunflower.png"; sourceTree = "<group>"; };
 		7E76B165260F1452A817D7F3 /* SessionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHeaderView.swift; sourceTree = "<group>"; };
+		81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTestList.swift; sourceTree = "<group>"; };
 		82253294AF4BA0035471C218 /* appicon-com.leeo.thinkflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.thinkflow.png"; sourceTree = "<group>"; };
 		82B480C0AFF5A583EFD3FC35 /* SessionRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecorderTests.swift; sourceTree = "<group>"; };
 		8430DDBE767F81E0E8DDCC12 /* appicon-com.leeo.rotoscopeipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.rotoscopeipad.png"; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				A7A1A4954AD5E38768C74007 /* AppDetailView.swift */,
 				D6041338D4F7EE03C78B7EA9 /* AppEditView.swift */,
 				C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */,
+				81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */,
 				8ADB1E8324E48C5944AB03D6 /* SessionDetailView.swift */,
 				2A3F696A06C266F6D893605E /* VersionHistory.swift */,
 			);
@@ -716,6 +719,7 @@
 				70735AB084AF44A863B1EC49 /* ChecklistEditorView.swift in Sources */,
 				173F1F819BE272A7C8FC0A18 /* ChecklistRow.swift in Sources */,
 				32FDB271502991764C03387A /* ChecklistSeeder.swift in Sources */,
+				CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */,
 				A0ED6843F1154697110F02EB /* DeepLink.swift in Sources */,
 				A7DB4B3438E805E8812F258B /* DeviceInfo.swift in Sources */,
 				C5BB28924F0555652B81C306 /* Enums.swift in Sources */,

@@ -159,3 +159,63 @@ struct BundledAppsTests {
         #expect(try context.fetchCount(FetchDescriptor<TrackedApp>()) == BundledApps.load().count - 1)
     }
 }
+
+@Suite("코드로 확인할 항목")
+@MainActor
+struct CodeTestListTests {
+    let container: ModelContainer
+    let context: ModelContext
+
+    init() throws {
+        container = try Persistence.makeContainer(inMemory: true)
+        context = container.mainContext
+    }
+
+    @Test func 카탈로그에_유닛과_UI_항목이_들어_있다() {
+        let all = AppChecklistCatalog.itemsByBundleID.values.flatMap { $0 }
+        #expect(all.contains { $0.verification == .unit })
+        #expect(all.contains { $0.verification == .ui })
+        #expect(all.contains { $0.verification == .manual })
+        #expect(Verification.manual.badge == nil)
+        #expect(Verification.unit.isAutomatable)
+    }
+
+    @Test func 넣을_때_카탈로그의_확인_방법이_따라온다() throws {
+        let defaults = UserDefaults(suiteName: "CodeTestListTests-\(UUID().uuidString)")!
+        let app = TrackedApp(name: "클립키보드", bundleID: "com.Ysoup.TokenMemo")
+        context.insert(app)
+        try context.save()
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+
+        let catalog = AppChecklistCatalog.items(for: app.bundleID)
+        let expected = Dictionary(catalog.map { ($0.title, $0.verification) }, uniquingKeysWith: { first, _ in first })
+        #expect(app.sortedExtraItems.allSatisfy { expected[$0.title] == $0.verification })
+    }
+
+    @Test func 복사한_글에는_손으로_하는_항목이_빠진다() throws {
+        let app = TrackedApp(name: "테스트앱", bundleID: "com.example.app", currentVersion: "1.2")
+        context.insert(app)
+        let items: [(String, Verification)] = [("손으로 본다", .manual), ("로직이 맞다", .unit), ("화면이 바뀐다", .ui)]
+        for (index, (title, verification)) in items.enumerated() {
+            let item = ChecklistItem(
+                title: title,
+                steps: "\(title) 단계",
+                category: .custom,
+                verification: verification,
+                order: index,
+                isDefault: false
+            )
+            context.insert(item)
+            item.app = app
+        }
+        try context.save()
+
+        let text = CodeTestList.text(for: app)
+        #expect(text.contains("로직이 맞다"))
+        #expect(text.contains("화면이 바뀐다"))
+        #expect(!text.contains("손으로 본다"))
+        #expect(text.contains("유닛 테스트 (1개)"))
+        #expect(text.contains("UI 테스트 (1개)"))
+        #expect(text.contains("테스트 중인 버전: 1.2"))
+    }
+}

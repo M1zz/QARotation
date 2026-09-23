@@ -118,15 +118,25 @@ final class ChecklistItem {
     /// 어떻게 확인하는지를 "여는 화면 → 하는 일 → 기대 결과" 순서로 적어 둔다. 비어 있어도 된다.
     var steps: String = ""
     var categoryRaw: String = ChecklistCategory.custom.rawValue
+    /// 코드로 확인할 수 있는 항목인지. 기본은 손으로 확인.
+    var verificationRaw: String = Verification.manual.rawValue
     var order: Int = 0
     var isDefault: Bool = true
     /// 앱 전용 항목일 때만 값이 있다.
     var app: TrackedApp?
 
-    init(title: String, steps: String = "", category: ChecklistCategory, order: Int, isDefault: Bool) {
+    init(
+        title: String,
+        steps: String = "",
+        category: ChecklistCategory,
+        verification: Verification = .manual,
+        order: Int,
+        isDefault: Bool
+    ) {
         self.title = title
         self.steps = steps
         self.categoryRaw = category.rawValue
+        self.verificationRaw = verification.rawValue
         self.order = order
         self.isDefault = isDefault
     }
@@ -134,6 +144,11 @@ final class ChecklistItem {
     var category: ChecklistCategory {
         get { ChecklistCategory(rawValue: categoryRaw) ?? .custom }
         set { categoryRaw = newValue.rawValue }
+    }
+
+    var verification: Verification {
+        get { Verification(rawValue: verificationRaw) ?? .manual }
+        set { verificationRaw = newValue.rawValue }
     }
 }
 
