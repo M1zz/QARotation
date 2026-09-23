@@ -114,3 +114,46 @@ struct SessionDraftTests {
         #expect(SessionDraftStore.load(defaults) == nil)
     }
 }
+
+@Suite("보던 자리 기억하기")
+@MainActor
+struct RouterMemoryTests {
+    func makeDefaults() -> UserDefaults {
+        UserDefaults(suiteName: "RouterMemoryTests-\(UUID().uuidString)")!
+    }
+
+    @Test func 처음에는_오늘_탭이고_열린_세션이_없다() {
+        let router = Router(defaults: makeDefaults())
+        #expect(router.selectedTab == .today)
+        #expect(router.activeSession == nil)
+    }
+
+    @Test func 보던_탭이_다음_실행에도_남는다() {
+        let defaults = makeDefaults()
+        let first = Router(defaults: defaults)
+        first.selectedTab = .issues
+
+        #expect(Router(defaults: defaults).selectedTab == .issues)
+    }
+
+    @Test func QA하던_앱이_다음_실행에_다시_열린다() {
+        let defaults = makeDefaults()
+        let appID = UUID()
+        let first = Router(defaults: defaults)
+        first.startSession(appID)
+
+        let second = Router(defaults: defaults)
+        #expect(second.activeSession?.appID == appID)
+        // 세션을 여는 동안 탭은 오늘로 옮겨 둔다.
+        #expect(second.selectedTab == .today)
+    }
+
+    @Test func 세션을_닫으면_다시_열리지_않는다() {
+        let defaults = makeDefaults()
+        let first = Router(defaults: defaults)
+        first.startSession(UUID())
+        first.activeSession = nil
+
+        #expect(Router(defaults: defaults).activeSession == nil)
+    }
+}

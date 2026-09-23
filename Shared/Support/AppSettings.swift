@@ -14,6 +14,9 @@ enum SettingsKey {
     static let seededAppChecklists = "seededAppChecklists"
     static let seededChecklistTitles = "seededChecklistTitles"
     static let didSeedBundledApps = "didSeedBundledApps"
+    /// 마지막으로 보던 탭과, 열려 있던 QA 세션의 앱.
+    static let lastTab = "lastTab"
+    static let openSessionAppID = "openSessionAppID"
     static let skipDay = "skipDay"
     static let skipIDs = "skipIDs"
 }
