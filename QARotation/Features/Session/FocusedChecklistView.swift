@@ -13,6 +13,7 @@ struct FocusedChecklistView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     header
                     title
+                    CarriedCard(draft: draft)
                     steps
                     if draft.outcome == .fail { failDetail }
                 }

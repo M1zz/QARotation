@@ -275,7 +275,7 @@ private extension TodayView {
                 VStack(alignment: .leading, spacing: 2) {
                     Label("Claude가 먼저 봤어요", systemImage: "sparkles")
                         .font(.body.weight(.semibold))
-                        .foregroundStyle(.tint)
+                        .foregroundStyle(Color.claude)
                     Text(app.name).font(.title3.bold())
                 }
             }
@@ -290,11 +290,13 @@ private extension TodayView {
                     .frame(maxWidth: .infinity, minHeight: 44)
             }
             .buttonStyle(.borderedProminent)
+            .tint(Color.claude)
             .accessibilityHint("Claude가 채운 결과를 이어받아 \(app.name)의 QA를 엽니다")
         }
         .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.tint.opacity(0.08), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .background(Color.claude.opacity(0.12), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.claude.opacity(0.4), lineWidth: 1.5))
     }
 
 

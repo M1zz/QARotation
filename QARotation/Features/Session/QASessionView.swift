@@ -3,6 +3,7 @@ import SwiftUI
 
 struct QASessionView: View {
     let appID: UUID
+    var continuesSheet = false
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     @State private var model: SessionViewModel?
@@ -34,7 +35,8 @@ struct QASessionView: View {
         model = SessionViewModel(
             app: app,
             defaultItems: defaults,
-            resuming: SessionDraftStore.load()
+            resuming: SessionDraftStore.load(),
+            continuingSheet: continuesSheet
         )
     }
 }
@@ -54,6 +56,8 @@ private struct SessionContentView: View {
     @State private var focusIndex = 0
     @State private var pickingVersion = false
     @State private var showingIndex = false
+    /// 미리 채운 항목 묶음을 펼쳤는지. 손으로 할 것부터 보이도록 접어 둔다.
+    @State private var showingCarried = false
 
     var body: some View {
         NavigationStack {
@@ -220,6 +224,16 @@ private struct SessionContentView: View {
                 if let claude = model.claudeSession {
                     Section {
                         ClaudeHandoffRow(session: claude, filled: model.claudeFilledCount, remaining: model.unansweredCount)
+                            .listRowBackground(Color.claude.opacity(0.12))
+                    }
+                } else if model.continuesSheet {
+                    Section {
+                        SheetHandoffRow(
+                            version: model.meta.appVersion,
+                            automatic: model.claudeFilledCount,
+                            manual: model.carriedCount - model.claudeFilledCount,
+                            remaining: model.unansweredCount
+                        )
                     }
                 }
 
@@ -237,20 +251,51 @@ private struct SessionContentView: View {
                     }
                 }
 
-                ForEach(model.sections) { section in
+                // 미리 채운 항목이 있으면 손으로 할 것을 위에, 이미 확인한 것은 아래에 접어 둔다.
+                // 나누는 기준은 처음에 채워져 있었는지라서, 답을 바꿔도 항목이 자리를 옮기지 않는다.
+                ForEach(model.sections(where: { $0.carriedOutcome == nil })) { section in
                     Section(section.category.label) {
-                        ForEach(section.itemIDs, id: \.self) { id in
-                            if let index = model.index(of: id) {
-                                ChecklistRow(draft: $model.drafts[index]) { outcome in
-                                    model.setOutcome(outcome, for: id)
+                        checklistRows(section.itemIDs)
+                    }
+                }
+
+                if model.hasCarried {
+                    Section {
+                        DisclosureGroup(isExpanded: $showingCarried) {
+                            checklistRows(model.sections(where: { $0.carriedOutcome != nil }).flatMap(\.itemIDs))
+                        } label: {
+                            VStack(alignment: .leading, spacing: 6) {
+                                Label("이미 확인한 항목 \(model.carriedCount)개", systemImage: "checkmark.circle")
+                                    .font(.body.weight(.semibold))
+                                if model.claudeFilledCount > 0 {
+                                    Label("Claude가 확인 \(model.claudeFilledCount)개", systemImage: "sparkles")
+                                        .font(.body.weight(.semibold))
+                                        .foregroundStyle(Color.claude)
+                                }
+                                if model.carriedCount > model.claudeFilledCount {
+                                    Label("지난번 손으로 확인 \(model.carriedCount - model.claudeFilledCount)개", systemImage: "hand.raised.fill")
+                                        .font(.body)
+                                        .foregroundStyle(.secondary)
                                 }
                             }
                         }
+                    } footer: {
+                        Text("맥에서 자동으로 확인했거나 지난번에 손으로 확인한 항목이에요. 바꾸려면 펼쳐서 다시 고르세요.")
                     }
                 }
             }
         .listStyle(.insetGrouped)
         .safeAreaInset(edge: .bottom) { bottomBar }
+    }
+
+    private func checklistRows(_ ids: [UUID]) -> some View {
+        ForEach(ids, id: \.self) { id in
+            if let index = model.index(of: id) {
+                ChecklistRow(draft: $model.drafts[index]) { outcome in
+                    model.setOutcome(outcome, for: id)
+                }
+            }
+        }
     }
 
     private var bottomBar: some View {
@@ -312,6 +357,26 @@ private struct SessionContentView: View {
 }
 
 /// Claude 가 먼저 본 기록을 이어받는다는 안내.
+/// 버전 QA지를 이어서 채울 때 무엇을 이어받았는지 알려 준다.
+private struct SheetHandoffRow: View {
+    let version: String
+    let automatic: Int
+    let manual: Int
+    let remaining: Int
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Label("v\(version) QA지를 이어서 채워요", systemImage: "list.bullet.clipboard")
+                .font(.body.weight(.semibold))
+            Text("맥에서 자동으로 본 \(automatic)개와 손으로 본 \(manual)개는 채워 두었어요. 남은 \(remaining)개를 손으로 확인하면 돼요.")
+                .font(.body)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+    }
+}
+
 private struct ClaudeHandoffRow: View {
     let session: QASession
     let filled: Int
@@ -320,13 +385,20 @@ private struct ClaudeHandoffRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Label("Claude가 먼저 봤어요", systemImage: "sparkles")
-                .font(.body.weight(.semibold))
+                .font(.headline)
+                .foregroundStyle(Color.claude)
             Text("\(session.date, format: .dateTime.month().day()) · \(session.deviceModel)")
                 .font(.body)
                 .foregroundStyle(.secondary)
             Text("통과 \(filled)개는 채워 두었고, 실패 \(session.count(of: .fail))개는 아래 이슈로 다시 봐요. 남은 \(remaining)개를 이어서 보면 돼요.")
                 .font(.body)
                 .fixedSize(horizontal: false, vertical: true)
+            Label("Claude가 한 항목에는 이 표시가 붙어요", systemImage: "sparkles")
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.white)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 4)
+                .background(Color.claude, in: Capsule())
         }
         .padding(.vertical, 4)
         .accessibilityElement(children: .combine)

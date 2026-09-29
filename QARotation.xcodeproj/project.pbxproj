@@ -81,9 +81,11 @@
 		9D5DDB83DEAA307E2DAFA899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C0B6CD80FCB7C136E891B /* AppDelegate.swift */; };
 		A0ED6843F1154697110F02EB /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EE61C45A46D0AF482A8CE4 /* DeepLink.swift */; };
 		A2EAC922D2A9BD97CB6FF8A9 /* appicon-com.leeo.findme.png in Resources */ = {isa = PBXBuildFile; fileRef = 67CF659E4249DBA75717ED0F /* appicon-com.leeo.findme.png */; };
+		A3729D7278428A100F795C1B /* CarriedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBAA0BC8436DF48798AB424 /* CarriedCard.swift */; };
 		A7DB4B3438E805E8812F258B /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0123C57207E61B466A74561 /* DeviceInfo.swift */; };
 		A8DE88F8ACF66A72A3F46F1D /* appicon-com.leeo.higgym.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6D582A01A48A7D436C7EDF /* appicon-com.leeo.higgym.png */; };
 		A8F28F106466019CD07E5247 /* claude-qa-clipkeyboard-05-06.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D4B69DFBDADF3910B1391B /* claude-qa-clipkeyboard-05-06.png */; };
+		AD2D457A08B7E11EA9EC0F0B /* VersionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB6AE85C5D8A3F178AF0E1 /* VersionSheet.swift */; };
 		B14116D15B1C9A5433873F7C /* appicon-com.devkoan.staffsinger.png in Resources */ = {isa = PBXBuildFile; fileRef = 92C898300A7DCC93888108E5 /* appicon-com.devkoan.staffsinger.png */; };
 		B15A85A75DBAC5D74E8A5E3E /* AppsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */; };
 		B220FEDD4EE58BF04FBEF5C3 /* StepText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085D0AA92BA1875CA0D34F9 /* StepText.swift */; };
@@ -103,9 +105,9 @@
 		C8F76F19E8482E589B5FC6B1 /* SessionRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B480C0AFF5A583EFD3FC35 /* SessionRecorderTests.swift */; };
 		CD25053366C11C3F9AAEB7E6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82CFD8AF9BD57FC84B67816 /* Models.swift */; };
 		CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */; };
-		CFB5BDDD726A1FD660D09AAF /* SessionDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340B485D686C126CCB88303 /* SessionDraftStore.swift */; };
 		CF75208136CD136199411591 /* claude-qa-clipkeyboard-2026-09-29.json in Resources */ = {isa = PBXBuildFile; fileRef = 11473643569404EF929DD5E4 /* claude-qa-clipkeyboard-2026-09-29.json */; };
 		CF85F84B30726133B23C9C41 /* ClaudeQASeederTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89143A8E34CB1106D8A974FD /* ClaudeQASeederTests.swift */; };
+		CFB5BDDD726A1FD660D09AAF /* SessionDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340B485D686C126CCB88303 /* SessionDraftStore.swift */; };
 		D169F3711A53957C003D3F8C /* SkipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E2F60D733AF4587EAF8F6 /* SkipStore.swift */; };
 		D3CDA8C3AA37EFAB9BB0E821 /* appicon-com.ysoup.rapportmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EC376D9D343436124C6B29 /* appicon-com.ysoup.rapportmap.png */; };
 		D6F8AB5A7D551A8DF5966551 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBDBA21696D1AF6B6DE48C /* Enums.swift */; };
@@ -115,6 +117,7 @@
 		E2136D2495F1B0DD96894B90 /* appicon-com.leeo.reboundjournal.png in Resources */ = {isa = PBXBuildFile; fileRef = CB680C20B7EF90706D3B6158 /* appicon-com.leeo.reboundjournal.png */; };
 		E4F11050895D9759A5AE7E41 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A3BA62A08688DE3877270 /* RootView.swift */; };
 		EA8552FA2E643708CF150AA6 /* appicon-com.xa.toki.png in Resources */ = {isa = PBXBuildFile; fileRef = 8460B05A5CA29ADDE66BA4E3 /* appicon-com.xa.toki.png */; };
+		EAC0D9FF75AD274FD9A61223 /* VersionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486E6A575128DE1F060EC95F /* VersionSheetView.swift */; };
 		EE28020DF30CE855FC62690A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261538F46586DBAA9DEA6A /* Persistence.swift */; };
 		F06614EF135341BFF1485B8B /* appicon-com.lottochecker.app.png in Resources */ = {isa = PBXBuildFile; fileRef = D91FB04E501030FE3819BAC3 /* appicon-com.lottochecker.app.png */; };
 		F272BC790358EDD8CE6F9E3B /* ImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32B736EB4AD40911A7CFD8B /* ImportTests.swift */; };
@@ -180,7 +183,9 @@
 		42EF56E026EF2DEC29A0AB3B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		471115DD2F38F686F8CD2E1D /* appicon-com.ysoup.leavewise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.leavewise.png"; sourceTree = "<group>"; };
 		480A51F61D2EA07ED4E5EA63 /* appicon-com.leeo.stickypresenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.stickypresenter.png"; sourceTree = "<group>"; };
+		486E6A575128DE1F060EC95F /* VersionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSheetView.swift; sourceTree = "<group>"; };
 		4B66510E33702D11DF604CA2 /* AppChecklistSeederTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecklistSeederTests.swift; sourceTree = "<group>"; };
+		4CDB6AE85C5D8A3F178AF0E1 /* VersionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSheet.swift; sourceTree = "<group>"; };
 		4FADFA86363AC571B0C49185 /* appicon-com.leeo.pixelme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.pixelme.png"; sourceTree = "<group>"; };
 		50AC2CB91320D827700483E4 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistIndexView.swift; sourceTree = "<group>"; };
@@ -241,6 +246,7 @@
 		B34C0B6CD80FCB7C136E891B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B92D5DFC0753E937436228E9 /* IssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesView.swift; sourceTree = "<group>"; };
 		B9BA602A0B5D0E2759F1E399 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BDBAA0BC8436DF48798AB424 /* CarriedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarriedCard.swift; sourceTree = "<group>"; };
 		BF51EFB5AFEF1B7D37BE6217 /* appicon-com.leeo.wifisnap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.wifisnap.png"; sourceTree = "<group>"; };
 		BFC742F77A0846264F10E9FD /* PickChangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickChangeCoordinator.swift; sourceTree = "<group>"; };
 		C0059FAD2027BDCFBAC416CA /* appicon-com.leeo.conversationpractice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.conversationpractice.png"; sourceTree = "<group>"; };
@@ -322,6 +328,8 @@
 				8ADB1E8324E48C5944AB03D6 /* SessionDetailView.swift */,
 				2A3F696A06C266F6D893605E /* VersionHistory.swift */,
 				C2EA04EDD1569E91BA8B7F9C /* VersionPicker.swift */,
+				4CDB6AE85C5D8A3F178AF0E1 /* VersionSheet.swift */,
+				486E6A575128DE1F060EC95F /* VersionSheetView.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -363,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				52CD4E3463D6EBBC1BE4AC34 /* AppIconView.swift */,
+				BDBAA0BC8436DF48798AB424 /* CarriedCard.swift */,
 				0600CE88531C423437054971 /* LastQABadge.swift */,
 				D96C3BC6CB9E3A0A23995DC8 /* OutcomeButtons.swift */,
 				A86241273DEDFF98FB26F2D5 /* WideButtonLabel.swift */,
@@ -503,8 +512,8 @@
 				727C60964026B039C30F2FD2 /* AppImporter.swift */,
 				3D94B795F592D34D8886B8D2 /* BundledApps.swift */,
 				76E926AEBCFC01E7BCCA1681 /* ChecklistSeeder.swift */,
-				5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */,
 				E8EAA23A30BFA465BA8642A6 /* ClaudeQASeeder.swift */,
+				5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */,
 				F0123C57207E61B466A74561 /* DeviceInfo.swift */,
 				38F5B110E69145AA37DB4861 /* ImportController.swift */,
 				EE08DB977009800412878CCE /* ITunesLookupClient.swift */,
@@ -636,6 +645,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				en,
 				ko,
 			);
 			mainGroup = FA413C196C6B3BD3ABD751C8;
@@ -755,12 +765,13 @@
 				4A5800C3FD11356AF7F82552 /* AppSettings.swift in Sources */,
 				B15A85A75DBAC5D74E8A5E3E /* AppsListView.swift in Sources */,
 				8C5943AF879B4AE0EB22054E /* BundledApps.swift in Sources */,
+				A3729D7278428A100F795C1B /* CarriedCard.swift in Sources */,
 				70735AB084AF44A863B1EC49 /* ChecklistEditorView.swift in Sources */,
 				47D4A4ED9264B52C6510B700 /* ChecklistIndexView.swift in Sources */,
 				173F1F819BE272A7C8FC0A18 /* ChecklistRow.swift in Sources */,
 				32FDB271502991764C03387A /* ChecklistSeeder.swift in Sources */,
-				CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */,
 				243BBC43F868007BB4A3FBE0 /* ClaudeQASeeder.swift in Sources */,
+				CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */,
 				A0ED6843F1154697110F02EB /* DeepLink.swift in Sources */,
 				6F86696E8AD305086ACB8B23 /* DefaultStepsByApp.swift in Sources */,
 				A7DB4B3438E805E8812F258B /* DeviceInfo.swift in Sources */,
@@ -793,6 +804,8 @@
 				2D8E03156C8DB24EBCFB88A3 /* TodayView.swift in Sources */,
 				00A09F28AC667B10CA7491F9 /* VersionHistory.swift in Sources */,
 				9AA764D5A4CC17925875F5B6 /* VersionPicker.swift in Sources */,
+				AD2D457A08B7E11EA9EC0F0B /* VersionSheet.swift in Sources */,
+				EAC0D9FF75AD274FD9A61223 /* VersionSheetView.swift in Sources */,
 				925EBF7B15DF505EEC5B5042 /* WideButtonLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -171,6 +171,8 @@ final class QASession {
     var byClaude: Bool = false
     /// Claude 결과 파일의 id. 확인하지 못한 항목에 남긴 메모를 다시 찾을 때 쓴다.
     var claudeRunID: String = ""
+    /// Claude 가 확인하지 못한 항목과 그 이유(제목 → 이유). 가져온 결과지에서 채운다.
+    var uncheckedNotes: [String: String] = [:]
 
     @Relationship(deleteRule: .cascade, inverse: \ItemResult.session)
     var results: [ItemResult]? = []
@@ -203,6 +205,8 @@ final class ItemResult {
     var outcomeRaw: String = Outcome.pass.rawValue
     var note: String = ""
     @Attribute(.externalStorage) var screenshot: Data?
+    /// 맥에서 Claude 가 자동으로 확인한 결과. 사람이 이어받아 그대로 둔 것도 여기에 든다.
+    var byClaude: Bool = false
 
     @Relationship(deleteRule: .nullify, inverse: \Issue.sourceResult)
     var issues: [Issue]? = []

@@ -13,10 +13,24 @@ struct DraftResult: Identifiable, Equatable {
     var outcome: Outcome?
     var note: String = ""
     var screenshot: Data?
-    /// Claude 가 먼저 판정해 채워 둔 항목이면 그 근거.
+    /// 지난 기록에서 이어받아 미리 채운 결과. 사람이 바꾸지 않으면 그대로 기록된다.
+    var carriedOutcome: Outcome?
+    /// 이어받은 결과가 맥에서 자동으로 확인한 것인지(아니면 지난번에 손으로 본 것).
+    var carriedFromClaude = false
+    /// Claude 가 먼저 판정해 채워 둔 항목이면 그 근거, 확인하지 못한 항목이면 못 본 이유.
     var claudeNote: String?
+
     /// Claude 가 결과까지 낸 항목인지. 메모만 남긴(못 본) 항목은 false.
-    var claudeJudged = false
+    var claudeJudged: Bool { carriedFromClaude && carriedOutcome != nil }
+    /// 이어받은 결과를 사람이 바꾸지 않고 둔 항목.
+    var isCarried: Bool { carriedOutcome != nil && outcome == carriedOutcome }
+}
+
+/// 새 세션에 미리 채울 지난 결과.
+struct CarriedResult: Equatable {
+    let outcome: Outcome
+    let note: String
+    let byClaude: Bool
 }
 
 enum ReverifyDecision: String, Sendable {
@@ -55,25 +69,30 @@ enum SessionRecorder {
         }
     }
 
-    /// Claude 가 통과·해당 없음으로 본 항목을 제목으로 찾아 미리 채운다.
-    /// 실패는 채우지 않는다. 이미 열린 이슈라서 "다시 확인할 이슈"로 사람이 본다.
-    /// 확인하지 못한 항목은 결과 없이 메모(`unchecked`)만 붙인다.
-    static func prefill(_ drafts: [DraftResult], from session: QASession?, unchecked: [String: String] = [:]) -> [DraftResult] {
-        guard let session else { return drafts }
-        let judged = Dictionary(
-            (session.results ?? []).filter { $0.outcome != .fail }.map { ($0.itemTitle, $0) },
+    /// Claude 기록에서 이어받을 결과. 그 기록의 결과는 모두 자동으로 본 것이다.
+    static func carried(from session: QASession?) -> [String: CarriedResult] {
+        guard let session else { return [:] }
+        return Dictionary(
+            (session.results ?? []).map { ($0.itemTitle, CarriedResult(outcome: $0.outcome, note: $0.note, byClaude: true)) },
             uniquingKeysWith: { first, _ in first }
         )
-        return drafts.map { draft in
-            guard let result = judged[draft.title] else {
+    }
+
+    /// 지난 결과를 제목으로 찾아 미리 채운다.
+    /// 실패는 채우지 않는다. 이미 열린 이슈라서 "다시 확인할 이슈"로 사람이 본다.
+    /// 아직 아무도 확인하지 못한 항목은 결과 없이 Claude 의 메모(`unchecked`)만 붙인다.
+    static func prefill(_ drafts: [DraftResult], carried: [String: CarriedResult], unchecked: [String: String] = [:]) -> [DraftResult] {
+        drafts.map { draft in
+            guard let result = carried[draft.title], result.outcome != .fail else {
                 var hinted = draft
                 hinted.claudeNote = unchecked[draft.title]
                 return hinted
             }
             var filled = draft
             filled.outcome = result.outcome
-            filled.claudeNote = result.note
-            filled.claudeJudged = true
+            filled.carriedOutcome = result.outcome
+            filled.carriedFromClaude = result.byClaude
+            if result.byClaude { filled.claudeNote = result.note }
             return filled
         }
     }
@@ -105,15 +124,18 @@ enum SessionRecorder {
         for draft in drafts {
             guard let outcome = draft.outcome else { continue }
             let note = draft.note.trimmingCharacters(in: .whitespacesAndNewlines)
+            // 사람이 이어받아 그대로 둔 Claude 결과도 자동으로 본 것으로 남긴다.
+            let automatic = byClaude || (draft.isCarried && draft.carriedFromClaude)
             let result = ItemResult(
                 itemTitle: draft.title,
                 category: draft.category,
                 order: draft.order,
                 outcome: outcome,
-                // Claude 기록은 통과에도 근거를 남긴다. 사람이 이어서 볼 때 무엇을 봤는지 알 수 있게.
-                note: outcome == .fail || byClaude ? note : "",
+                // Claude 결과는 통과에도 근거를 남긴다. 사람이 이어서 볼 때 무엇을 봤는지 알 수 있게.
+                note: outcome == .fail || byClaude ? note : (automatic ? draft.claudeNote ?? "" : ""),
                 screenshot: outcome == .fail || byClaude ? draft.screenshot : nil
             )
+            result.byClaude = automatic
             context.insert(result)
             result.session = session
 

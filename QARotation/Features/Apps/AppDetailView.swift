@@ -193,6 +193,12 @@ struct AppDetailView: View {
             // 어느 버전을 몇 번 봤는지 한눈에 들어오도록 버전별로 묶는다. 최근에 본 버전이 위에 온다.
             ForEach(VersionHistory.groups(of: sessions)) { group in
                 Section("\(group.title) · \(group.sessions.count)회") {
+                    NavigationLink {
+                        VersionSheetView(app: app, version: group.version)
+                    } label: {
+                        Label("QA지 · 자동과 수동 나눠 보기", systemImage: "list.bullet.clipboard")
+                            .font(.body.weight(.semibold))
+                    }
                     ForEach(group.sessions) { session in
                         NavigationLink {
                             SessionDetailView(session: session)

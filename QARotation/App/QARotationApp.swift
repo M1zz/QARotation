@@ -29,7 +29,7 @@ struct QARotationApp: App {
             RootView()
                 .environment(router)
                 .environment(importer)
-                .onOpenURL { router.handle($0) }
+                .onOpenURL { router.open($0, importer: importer, context: container.mainContext) }
         }
         .modelContainer(container)
     }

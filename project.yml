@@ -37,6 +37,13 @@ targets:
         CFBundleURLTypes:
           - CFBundleURLName: com.leeo.QARotation
             CFBundleURLSchemes: [qarotation]
+        # 맥에서 Claude 가 만든 QA 결과지(json)를 AirDrop·파일 앱에서 바로 열어 가져온다.
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: Claude QA 결과지
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes: [public.json]
+        LSSupportsOpeningDocumentsInPlace: false
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
           - UIInterfaceOrientationLandscapeLeft

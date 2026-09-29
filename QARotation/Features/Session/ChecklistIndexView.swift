@@ -10,12 +10,13 @@ struct ChecklistIndexView: View {
 
     /// 목차에서 무엇만 볼 것인가.
     enum Filter: String, CaseIterable, Identifiable {
-        case all, unanswered, automatable
+        case all, unanswered, handOnly, automatable
         var id: String { rawValue }
         var label: String {
             switch self {
             case .all: "전체"
             case .unanswered: "남은 것만"
+            case .handOnly: String(localized: "손으로 할 것")
             case .automatable: "코드로 되는 것"
             }
         }
@@ -61,7 +62,8 @@ struct ChecklistIndexView: View {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
                         Picker("보기", selection: $filter) {
-                            ForEach(Filter.allCases) { Text($0.label).tag($0) }
+                            // "손으로 할 것"은 맥 결과나 지난 기록을 이어받았을 때만 뜻이 있다.
+                            ForEach(Filter.allCases.filter { $0 != .handOnly || model.hasCarried }) { Text($0.label).tag($0) }
                         }
                     } label: {
                         Label(filter.label, systemImage: "line.3.horizontal.decrease")
@@ -113,6 +115,7 @@ struct ChecklistIndexView: View {
             switch filter {
             case .all: break
             case .unanswered: if draft.outcome != nil { return nil }
+            case .handOnly: if draft.carriedOutcome != nil { return nil }
             case .automatable: if !draft.verification.isAutomatable { return nil }
             }
             return itemIndex
@@ -143,6 +146,11 @@ struct ChecklistIndexView: View {
                     }
                 }
                 Spacer(minLength: 0)
+                if let origin = CarriedOrigin(draft), origin.isClaudeChecked {
+                    Image(systemName: "sparkles")
+                        .foregroundStyle(Color.claude)
+                        .accessibilityHidden(true)
+                }
                 if let badge = draft.verification.badge {
                     Text(badge)
                         .font(.caption2.weight(.semibold))
@@ -153,7 +161,11 @@ struct ChecklistIndexView: View {
             }
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("\(draft.title), \(draft.outcome?.label ?? "아직 안 함")")
+        .accessibilityLabel(
+            CarriedOrigin(draft)?.isClaudeChecked == true
+                ? String(localized: "\(draft.title), \(draft.outcome?.label ?? ""), Claude가 확인")
+                : "\(draft.title), \(draft.outcome?.label ?? "아직 안 함")"
+        )
         .accessibilityHint("이 항목으로 갑니다")
     }
 

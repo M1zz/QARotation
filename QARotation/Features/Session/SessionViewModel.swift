@@ -18,6 +18,8 @@ final class SessionViewModel {
     var meta: SessionMeta
     /// 이어서 보는 Claude 기록. 통과·해당 없음은 미리 채우고, 실패는 이슈로 다시 확인한다.
     let claudeSession: QASession?
+    /// 버전 QA지를 이어서 채우는 세션인지. 그 버전에서 이미 본 결과(자동·수동)를 모두 미리 채운다.
+    let continuesSheet: Bool
     private let initialDrafts: [DraftResult]
 
     /// 보관해 둔 진행 상태가 있으면 이어서 시작한다. 없으면 처음부터.
@@ -25,18 +27,28 @@ final class SessionViewModel {
         app: TrackedApp,
         defaultItems: [ChecklistItem],
         resuming stored: SessionDraft? = nil,
+        continuingSheet: Bool = false,
         now: Date = .now
     ) {
         self.app = app
-        let claude = app.pendingClaudeSession
-        let prefilled = SessionRecorder.prefill(
-            SessionRecorder.drafts(defaultItems: defaultItems, app: app),
-            from: claude,
-            unchecked: ClaudeQARuns.uncheckedNotes(runID: claude?.claudeRunID ?? "")
-        )
+        let base = SessionRecorder.drafts(defaultItems: defaultItems, app: app)
+        let prefilled: [DraftResult]
+        if continuingSheet {
+            let sheet = VersionSheet.build(version: app.versionUnderTest, sessions: app.sortedSessions, checklist: base)
+            prefilled = SessionRecorder.prefill(base, carried: sheet.carried, unchecked: sheet.uncheckedNotes)
+            self.claudeSession = nil
+        } else {
+            let claude = app.pendingClaudeSession
+            prefilled = SessionRecorder.prefill(
+                base,
+                carried: SessionRecorder.carried(from: claude),
+                unchecked: claude?.claudeUncheckedNotes ?? [:]
+            )
+            self.claudeSession = claude
+        }
+        self.continuesSheet = continuingSheet
         self.drafts = prefilled
         self.initialDrafts = prefilled
-        self.claudeSession = claude
         self.reverifyIssues = app.openIssues
 
         if let stored, stored.appID == app.id {
@@ -95,8 +107,14 @@ final class SessionViewModel {
         )
     }
 
-    var sections: [CategorySection] {
-        let grouped = Dictionary(grouping: drafts, by: \.category)
+    var sections: [CategorySection] { sections { _ in true } }
+
+    /// 미리 채워 둔 항목이 있는지. 있으면 목록을 "손으로 할 것"과 "이미 확인한 것"으로 나눈다.
+    var hasCarried: Bool { drafts.contains { $0.carriedOutcome != nil } }
+    var carriedCount: Int { drafts.filter { $0.carriedOutcome != nil }.count }
+
+    func sections(where include: (DraftResult) -> Bool) -> [CategorySection] {
+        let grouped = Dictionary(grouping: drafts.filter(include), by: \.category)
         return ChecklistCategory.allCases.compactMap { category in
             guard let items = grouped[category], !items.isEmpty else { return nil }
             return CategorySection(category: category, itemIDs: items.sorted { $0.order < $1.order }.map(\.id))

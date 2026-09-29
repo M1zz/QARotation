@@ -37,16 +37,7 @@ struct ChecklistRow: View {
                     .accessibilityLabel("확인하는 방법. \(draft.steps)")
             }
 
-            if let claudeNote = draft.claudeNote {
-                Label {
-                    Text(claudeText(claudeNote))
-                        .fixedSize(horizontal: false, vertical: true)
-                } icon: {
-                    Image(systemName: "sparkles")
-                }
-                .font(.body)
-                .foregroundStyle(.secondary)
-            }
+            CarriedCard(draft: draft)
 
             OutcomeButtons(itemTitle: draft.title, selection: draft.outcome, onSelect: onSelect)
 
@@ -58,6 +49,8 @@ struct ChecklistRow: View {
         }
         .padding(.vertical, 6)
         .animation(.default, value: draft.outcome)
+        // Claude 가 한 항목은 행 전체를 옅게 칠해 훑어볼 때도 가려지게 한다.
+        .listRowBackground(CarriedOrigin(draft)?.isClaudeChecked == true ? Color.claude.opacity(0.06) : nil)
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button { onSelect(.pass) } label: { Label("통과", systemImage: Outcome.pass.symbol) }
                 .tint(.green)
@@ -68,13 +61,6 @@ struct ChecklistRow: View {
             Button { onSelect(.na) } label: { Label("해당 없음", systemImage: Outcome.na.symbol) }
                 .tint(.gray)
         }
-    }
-}
-
-private extension ChecklistRow {
-    func claudeText(_ note: String) -> String {
-        if !draft.claudeJudged { return note.isEmpty ? "Claude가 확인하지 못했어요" : "Claude가 못 봤어요: \(note)" }
-        return note.isEmpty ? "Claude가 확인" : "Claude: \(note)"
     }
 }
 

@@ -26,7 +26,7 @@ struct RootView: View {
             }
         }
         .fullScreenCover(item: $router.activeSession) { route in
-            QASessionView(appID: route.appID)
+            QASessionView(appID: route.appID, continuesSheet: route.continuesSheet)
         }
         .importAlert(importer)
         #if DEBUG

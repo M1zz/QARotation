@@ -80,4 +80,82 @@ struct ClaudeQASeederTests {
             #expect(ClaudeQARuns.screenshot(named: entry.screenshot) != nil, "\(entry.title)")
         }
     }
+
+    @Test func 사람이_그대로_둔_Claude_결과는_자동으로_남고_QA지가_자동_수동_남은_것으로_나뉜다() throws {
+        try ClaudeQASeeder.record(run(start: .now.addingTimeInterval(-3600)), app: app, in: context)
+
+        let model = SessionViewModel(app: app, defaultItems: [])
+        #expect(model.drafts.first { $0.title == "키보드 입력" }?.claudeNote == "실기기 필요")
+        model.setOutcome(.pass, for: try #require(model.drafts.first { $0.title == "키보드 입력" }).id)
+        try model.finish(in: context)
+
+        let human = try #require(app.sortedSessions.first { !$0.byClaude })
+        #expect(human.sortedResults.first { $0.itemTitle == "검색" }?.byClaude == true)
+        #expect(human.sortedResults.first { $0.itemTitle == "검색" }?.note == "테스트 통과")
+        #expect(human.sortedResults.first { $0.itemTitle == "키보드 입력" }?.byClaude == false)
+
+        let checklist = SessionRecorder.drafts(defaultItems: [], app: app)
+        let sheet = VersionSheet.build(version: "5.1.6", sessions: app.sortedSessions, checklist: checklist)
+        #expect(sheet.automatic.map(\.title) == ["검색", "분류"])
+        #expect(sheet.manual.map(\.title) == ["키보드 입력"])
+        #expect(sheet.pending.isEmpty)
+        #expect(sheet.failCount == 1)
+    }
+
+    @Test func QA지를_이어서_채우면_본_것은_채워지고_남은_것만_손으로_본다() throws {
+        try ClaudeQASeeder.record(run(start: .now.addingTimeInterval(-3600)), app: app, in: context)
+        let checklist = SessionRecorder.drafts(defaultItems: [], app: app)
+
+        let before = VersionSheet.build(version: "5.1.6", sessions: app.sortedSessions, checklist: checklist)
+        #expect(before.pending.map(\.title) == ["키보드 입력"])
+        #expect(before.pending.first?.note == "실기기 필요")
+
+        let model = SessionViewModel(app: app, defaultItems: [], continuingSheet: true)
+        #expect(model.claudeSession == nil)
+        #expect(model.carriedCount == 1)
+        #expect(model.unansweredCount == 2)
+        #expect(model.sections(where: { $0.carriedOutcome == nil }).flatMap(\.itemIDs).count == 2)
+        #expect(!model.hasChanges)
+    }
+
+    @Test func 파일로_가져오면_스크린샷을_붙이고_같은_결과지는_두_번_넣지_않는다() throws {
+        let defaults = try #require(UserDefaults(suiteName: "ClaudeQAImport-\(UUID())"))
+        let folder = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        let png = Data([0x89, 0x50, 0x4E, 0x47])
+        let json = """
+        {"id":"file-1","bundleID":"com.ysoup.tokenmemo","startedAt":"2026-09-29T10:00:00+09:00",
+         "durationSeconds":60,"deviceModel":"Claude · 맥","osVersion":"iOS 27.0","appVersion":"5.2.0",
+         "results":[{"title":"검색","outcome":"pass","note":"통과","screenshot":"shot-1"},
+                    {"title":"분류","outcome":"na","note":"해당 없음","screenshotBase64":"\(png.base64EncodedString())"},
+                    {"title":"키보드 입력","note":"실기기 필요"}]}
+        """
+        let jsonURL = folder.appendingPathComponent("claude-qa-file-1.json")
+        try Data(json.utf8).write(to: jsonURL)
+        let pngURL = folder.appendingPathComponent("shot-1.png")
+        try png.write(to: pngURL)
+
+        let first = ClaudeQASeeder.importFiles([jsonURL, pngURL], into: context, defaults: defaults)
+        #expect(first.imported == ["클립키보드 v5.2.0"])
+        let session = try #require(app.sortedSessions.first { $0.claudeRunID == "file-1" })
+        #expect(session.sortedResults.allSatisfy { $0.screenshot == png })
+        #expect(session.uncheckedNotes == ["키보드 입력": "실기기 필요"])
+
+        let again = ClaudeQASeeder.importFiles([jsonURL], into: context, defaults: defaults)
+        #expect(again.imported.isEmpty)
+        #expect(again.duplicates == 1)
+        #expect(app.sortedSessions.filter { $0.claudeRunID == "file-1" }.count == 1)
+    }
+
+    @Test func 목록에_없는_앱의_결과지는_알려_준다() throws {
+        let defaults = try #require(UserDefaults(suiteName: "ClaudeQAImport-\(UUID())"))
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("claude-qa-\(UUID()).json")
+        try Data("""
+        {"id":"x","bundleID":"com.example.none","startedAt":"2026-09-29T10:00:00+09:00","durationSeconds":1,
+         "deviceModel":"","osVersion":"","appVersion":"1.0","results":[]}
+        """.utf8).write(to: url)
+        let summary = ClaudeQASeeder.importFiles([url], into: context, defaults: defaults)
+        #expect(summary.unknownApps == ["com.example.none"])
+        #expect(summary.imported.isEmpty)
+    }
 }

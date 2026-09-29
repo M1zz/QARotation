@@ -4,6 +4,16 @@
     "·" : {
 
     },
+    "%@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ · %2$@"
+          }
+        }
+      }
+    },
     "%@ · %lld회" : {
       "localizations" : {
         "ko" : {
@@ -24,6 +34,16 @@
         }
       }
     },
+    "%@ 결과지를 넣었어요. 오늘 탭에서 이어서 QA하세요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imported results for %@. Continue the QA from the Today tab."
+          }
+        }
+      }
+    },
     "%@, %@" : {
       "localizations" : {
         "ko" : {
@@ -34,12 +54,22 @@
         }
       }
     },
-    "%@, 통과 %lld개, 실패 %lld개, 해당 없음 %lld개" : {
+    "%@, %@, Claude가 확인" : {
       "localizations" : {
-        "ko" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@, 통과 %2$lld개, 실패 %3$lld개, 해당 없음 %4$lld개"
+            "state" : "translated",
+            "value" : "%1$@, %2$@, checked by Claude"
+          }
+        }
+      }
+    },
+    "%@%@, 통과 %lld개, 실패 %lld개, 해당 없음 %lld개" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@%2$@, %3$lld passed, %4$lld failed, %5$lld not applicable"
           }
         }
       }
@@ -82,6 +112,16 @@
         }
       }
     },
+    "%lld개" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
     "%lld개 중 %lld개" : {
       "localizations" : {
         "ko" : {
@@ -98,6 +138,16 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$lld개 중 %2$lld개 · %3$@"
+          }
+        }
+      }
+    },
+    "%lld개 중 %lld개 확인 · 자동 %lld · 수동 %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$lld of %1$lld checked · %3$lld automated · %4$lld manual"
           }
         }
       }
@@ -136,6 +186,157 @@
     "artistId" : {
 
     },
+    "Claude" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude"
+          }
+        }
+      }
+    },
+    "Claude QA 결과지(json)를 골라 주세요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a Claude QA results file (JSON)."
+          }
+        }
+      }
+    },
+    "Claude 결과를 바꿈" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changed Claude's Result"
+          }
+        }
+      }
+    },
+    "Claude 결과지 가져오기" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import Claude Results"
+          }
+        }
+      }
+    },
+    "Claude가 맥에서 못 본 이유가 있으면 함께 적어 두었어요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If Claude couldn't check an item on the Mac, the reason is shown."
+          }
+        }
+      }
+    },
+    "Claude가 먼저 봤어요" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude Checked First"
+          }
+        }
+      }
+    },
+    "Claude가 못 봄" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude Couldn't Check"
+          }
+        }
+      }
+    },
+    "Claude가 못 봤어요: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude couldn't check: %@"
+          }
+        }
+      }
+    },
+    "Claude가 본 결과(%@)를 직접 바꿨어요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You changed Claude's result (%@)."
+          }
+        }
+      }
+    },
+    "Claude가 시뮬레이터와 테스트로 먼저 본 기록이에요. 로테이션의 마지막 QA로는 세지 않아요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude checked this first with the simulator and tests. It doesn't count as the last QA in the rotation."
+          }
+        }
+      }
+    },
+    "Claude가 채운 결과를 이어받아 %@의 QA를 엽니다" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens QA for %@ with Claude's results filled in"
+          }
+        }
+      }
+    },
+    "Claude가 한 항목에는 이 표시가 붙어요" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Items Claude checked have this mark"
+          }
+        }
+      }
+    },
+    "Claude가 확인 · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked by Claude · %@"
+          }
+        }
+      }
+    },
+    "Claude가 확인 %lld개" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Checked by Claude"
+          }
+        }
+      }
+    },
+    "Claude가 확인하지 못했어요" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude couldn't check this"
+          }
+        }
+      }
+    },
     "kr,us" : {
 
     },
@@ -151,8 +352,15 @@
     "QA 기록까지 삭제" : {
 
     },
-    "QA 시간" : {
-
+    "QA지 · 자동과 수동 나눠 보기" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QA Sheet · Automated and Manual"
+          }
+        }
+      }
     },
     "URL 스킴 (예: myapp)" : {
 
@@ -160,11 +368,41 @@
     "v%@" : {
 
     },
+    "v%@ QA지" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v%@ QA Sheet"
+          }
+        }
+      }
+    },
+    "v%@ QA지를 이어서 채워요" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuing the v%@ QA sheet"
+          }
+        }
+      }
+    },
     "개발자 ID" : {
 
     },
     "걸린 시간" : {
 
+    },
+    "결과지를 가져왔어요" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Results Imported"
+          }
+        }
+      }
     },
     "계속 QA하기" : {
 
@@ -180,6 +418,16 @@
     },
     "기기" : {
 
+    },
+    "기기에서 직접 확인한 항목이에요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked by hand on a device."
+          }
+        }
+      }
     },
     "기록 정보" : {
 
@@ -202,12 +450,12 @@
     "날짜" : {
 
     },
-    "남은 시간 %lld분 %lld초" : {
+    "남은 %lld개 이어서 채우기" : {
       "localizations" : {
-        "ko" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "남은 시간 %1$lld분 %2$lld초"
+            "state" : "translated",
+            "value" : "Fill In the Remaining %lld"
           }
         }
       }
@@ -217,6 +465,16 @@
     },
     "내용" : {
 
+    },
+    "넣은 결과지가 없어요" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing Imported"
+          }
+        }
+      }
     },
     "다 봤어요" : {
 
@@ -244,6 +502,88 @@
     },
     "로테이션에서 빼기(보관)" : {
 
+    },
+    "맥에서 Claude가 만든 QA 결과지와 스크린샷을 고릅니다" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose QA results and screenshots Claude made on the Mac"
+          }
+        }
+      }
+    },
+    "맥에서 Claude가 시뮬레이터와 테스트로 확인한 항목이에요. 사람이 이어받아 그대로 둔 것도 여기에 들어요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked by Claude on the Mac with the simulator and tests, including results a person kept unchanged."
+          }
+        }
+      }
+    },
+    "맥에서 자동으로 본 %lld개와 손으로 본 %lld개는 채워 두었어요. 남은 %lld개를 손으로 확인하면 돼요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld items checked automatically on the Mac and %2$lld checked by hand are filled in. Check the remaining %3$lld by hand."
+          }
+        }
+      }
+    },
+    "맥에서 자동으로 확인" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked automatically on the Mac"
+          }
+        }
+      }
+    },
+    "맥에서 자동으로 확인: %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked automatically on the Mac: %@"
+          }
+        }
+      }
+    },
+    "맥에서 자동으로 확인했거나 지난번에 손으로 확인한 항목이에요. 바꾸려면 펼쳐서 다시 고르세요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "These were checked automatically on the Mac or by hand last time. Expand to change an answer."
+          }
+        }
+      }
+    },
+    "맥에서 자동으로 확인했어요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked automatically on the Mac."
+          }
+        }
+      }
+    },
+    "맥에서는 확인할 수 없었어요. 손으로 확인해 주세요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This couldn't be checked on the Mac. Please check it by hand."
+          }
+        }
+      }
     },
     "메모" : {
 
@@ -280,6 +620,16 @@
     },
     "버전 고르기" : {
 
+    },
+    "버전 모름 QA지" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Version QA Sheet"
+          }
+        }
+      }
     },
     "번들 ID" : {
 
@@ -323,6 +673,26 @@
     "설정" : {
 
     },
+    "손으로 할 것" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To Check by Hand"
+          }
+        }
+      }
+    },
+    "수동 · 손으로 확인" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manual · Checked by Hand"
+          }
+        }
+      }
+    },
     "쉬는 시간 알림" : {
 
     },
@@ -347,11 +717,18 @@
     "시각 추가" : {
 
     },
-    "시간이 지나도 멈추지 않아요. 빨간색으로 초과 시간만 보여 줍니다." : {
-
-    },
     "실패" : {
 
+    },
+    "실패 %lld개" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Failed"
+          }
+        }
+      }
     },
     "쓰기" : {
 
@@ -368,6 +745,26 @@
     "아직 등록한 앱이 없어요" : {
 
     },
+    "아직 안 본 항목" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not Checked Yet"
+          }
+        }
+      }
+    },
+    "아직 안 함" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not checked"
+          }
+        }
+      }
+    },
     "알림" : {
 
     },
@@ -379,6 +776,16 @@
     },
     "앱" : {
 
+    },
+    "앱 목록에 없는 번들 ID예요: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "These bundle IDs aren't in your app list: %@"
+          }
+        }
+      }
     },
     "앱 목록을 엽니다" : {
 
@@ -446,6 +853,16 @@
     "우선순위 가중치" : {
 
     },
+    "이 버전에서 이미 본 결과를 채워 두고 남은 항목만 손으로 확인합니다" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fills in results already checked for this version so you only check the rest by hand"
+          }
+        }
+      }
+    },
     "이 앱" : {
 
     },
@@ -463,6 +880,26 @@
     },
     "이렇게 되면 통과. %@" : {
 
+    },
+    "이미 넣은 결과지 %lld개는 건너뛰었어요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skipped %lld results that were already imported."
+          }
+        }
+      }
+    },
+    "이미 확인한 항목 %lld개" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Already Checked"
+          }
+        }
+      }
     },
     "이번 사이클" : {
 
@@ -483,8 +920,38 @@
     "이슈 %lld개" : {
 
     },
+    "이어서 QA" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue QA"
+          }
+        }
+      }
+    },
     "이전" : {
 
+    },
+    "읽지 못한 파일: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't read: %@"
+          }
+        }
+      }
+    },
+    "자동 · 맥에서 확인" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automated · Checked on the Mac"
+          }
+        }
+      }
     },
     "저장" : {
 
@@ -498,21 +965,42 @@
     "정한 시각에 오늘 추천 앱을 알려 줘요. 알림을 누르면 바로 QA가 시작돼요." : {
 
     },
-    "제한 시간 %lld분 %lld초 초과" : {
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "제한 시간 %1$lld분 %2$lld초 초과"
-          }
-        }
-      }
-    },
     "지금 보는 항목" : {
 
     },
     "지금까지 %lld바퀴를 돌았어요" : {
 
+    },
+    "지난번 손으로 확인" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked by Hand Last Time"
+          }
+        }
+      }
+    },
+    "지난번 손으로 확인 %lld개" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Checked by Hand Last Time"
+          }
+        }
+      }
+    },
+    "지난번에 손으로 확인했어요" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked by hand last time"
+          }
+        }
+      }
     },
     "직접 적기" : {
 
@@ -548,9 +1036,6 @@
     "코드로 확인할 항목 %lld개 복사" : {
 
     },
-    "타이머" : {
-
-    },
     "테스트 중 v%@" : {
 
     },
@@ -584,6 +1069,26 @@
     },
     "통과" : {
 
+    },
+    "통과 %lld · 실패 %lld · 나머지는 이어서 봐요" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld passed · %2$lld failed · continue with the rest"
+          }
+        }
+      }
+    },
+    "통과 %lld개는 채워 두었고, 실패 %lld개는 아래 이슈로 다시 봐요. 남은 %lld개를 이어서 보면 돼요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld passes are filled in and %2$lld failures are listed below as issues to recheck. Continue with the remaining %3$lld."
+          }
+        }
+      }
     },
     "편집" : {
 

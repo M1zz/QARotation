@@ -16,6 +16,7 @@ enum SettingsKey {
     static let didArchiveAppsWithoutChecklist = "didArchiveAppsWithoutChecklist"
     /// 열려 있던 QA 세션의 앱. 앱이 죽어도 하던 QA로 돌아가려고 적어 둔다.
     static let openSessionAppID = "openSessionAppID"
+    static let openSessionContinuesSheet = "openSessionContinuesSheet"
     static let seededClaudeRuns = "seededClaudeRuns"
     static let skipDay = "skipDay"
     static let skipIDs = "skipIDs"

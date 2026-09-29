@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct AppsListView: View {
     @Environment(\.modelContext) private var context
@@ -8,6 +9,7 @@ struct AppsListView: View {
     @State private var search = ""
     @State private var showingAdd = false
     @State private var pendingDelete: TrackedApp?
+    @State private var importingResults = false
 
     /// 오래 안 본 순서: 한 번도 안 한 앱 → 마지막 QA 가 오래된 앱.
     static func byStaleness(_ apps: [TrackedApp]) -> [TrackedApp] {
@@ -74,12 +76,24 @@ struct AppsListView: View {
                     .disabled(importer.isRunning)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
+                    Button { importingResults = true } label: {
+                        Label("Claude 결과지 가져오기", systemImage: "square.and.arrow.down")
+                    }
+                    .accessibilityHint("맥에서 Claude가 만든 QA 결과지와 스크린샷을 고릅니다")
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button { showingAdd = true } label: {
                         Label("직접 추가", systemImage: "plus")
                     }
                 }
             }
             .sheet(isPresented: $showingAdd) { AppEditView(app: nil) }
+            // 결과지와 함께 스크린샷 PNG 를 골라도 된다. 결과지에 적힌 이름으로 맞춰 붙인다.
+            .fileImporter(isPresented: $importingResults, allowedContentTypes: [.json, .png], allowsMultipleSelection: true) { result in
+                if case .success(let urls) = result {
+                    importer.importClaudeResults(urls, context: context)
+                }
+            }
             .confirmationDialog(
                 "\(pendingDelete?.name ?? "")을(를) 삭제할까요?",
                 isPresented: Binding(get: { pendingDelete != nil }, set: { if !$0 { pendingDelete = nil } }),
