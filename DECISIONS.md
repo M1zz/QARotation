@@ -155,3 +155,11 @@
   - `-importOnLaunch`: 가져오기를 바로 돌린다.
   - `-deepLink <url>`: 위젯·알림과 같은 경로로 화면을 연다.
 - 둘 다 시뮬레이터 확인과 스크린샷용이다.
+
+## Claude 자동 QA
+
+- **결과지는 앱에 함께 넣는다.** `Resources/ClaudeQA/claude-qa-*.json`(스크린샷 PNG 포함)을 실행할 때와 가져오기 뒤에 `ClaudeQASeeder`가 한 번씩 세션으로 넣는다. 넣은 id는 App Group UserDefaults(`seededClaudeRuns`)에 기억해서, 기록을 지워도 다시 넣지 않는다.
+- **로테이션에는 세지 않는다.** `QASession.byClaude`가 참인 기록은 `lastQADate`를 올리지 않고 사이클 진행에서도 뺀다. 키보드·실기기 항목은 사람이 봐야 끝난 것이기 때문이다.
+- **실패는 바로 이슈가 된다.** 사람 기록과 같은 길(`SessionRecorder.record`)을 쓴다. Claude 기록은 통과에도 근거 메모와 스크린샷을 남긴다.
+- **이어서 보기.** 사람이 아직 이어서 보지 않은 Claude 기록이 있으면 오늘 탭 맨 위에 카드가 뜬다. 세션을 열면 Claude가 통과·해당 없음으로 본 항목은 미리 채워지고, 실패는 "다시 확인할 이슈"로 나온다. 확인하지 못한 항목에는 그 이유가 붙는다. 사람이 완료하면 그때 `lastQADate`가 올라가고 카드가 사라진다.
+- **닫을 때 확인은 사람이 바꾼 게 있을 때만 받는다.** 미리 채운 것만으로는 묻지 않는다(`hasChanges`).

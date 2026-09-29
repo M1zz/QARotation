@@ -71,6 +71,12 @@ final class TrackedApp {
         (issues ?? []).filter { $0.status == .open }.sorted { $0.createdAt < $1.createdAt }
     }
 
+    /// 사람이 아직 이어서 보지 않은 가장 최근 Claude 기록.
+    var pendingClaudeSession: QASession? {
+        let last = lastQADate ?? .distantPast
+        return sortedSessions.first { $0.byClaude && $0.date > last }
+    }
+
     var sortedSessions: [QASession] {
         (sessions ?? []).sorted { $0.date > $1.date }
     }
@@ -161,6 +167,10 @@ final class QASession {
     var osVersion: String = ""
     var appVersion: String = ""
     var durationSeconds: Int = 0
+    /// Claude 가 시뮬레이터·테스트로 먼저 본 기록. 로테이션의 "마지막 QA"와 사이클에는 세지 않는다.
+    var byClaude: Bool = false
+    /// Claude 결과 파일의 id. 확인하지 못한 항목에 남긴 메모를 다시 찾을 때 쓴다.
+    var claudeRunID: String = ""
 
     @Relationship(deleteRule: .cascade, inverse: \ItemResult.session)
     var results: [ItemResult]? = []

@@ -16,6 +16,9 @@ final class SessionViewModel {
     let reverifyIssues: [Issue]
     var reverify: [UUID: ReverifyDecision] = [:]
     var meta: SessionMeta
+    /// 이어서 보는 Claude 기록. 통과·해당 없음은 미리 채우고, 실패는 이슈로 다시 확인한다.
+    let claudeSession: QASession?
+    private let initialDrafts: [DraftResult]
 
     /// 보관해 둔 진행 상태가 있으면 이어서 시작한다. 없으면 처음부터.
     init(
@@ -25,7 +28,15 @@ final class SessionViewModel {
         now: Date = .now
     ) {
         self.app = app
-        self.drafts = SessionRecorder.drafts(defaultItems: defaultItems, app: app)
+        let claude = app.pendingClaudeSession
+        let prefilled = SessionRecorder.prefill(
+            SessionRecorder.drafts(defaultItems: defaultItems, app: app),
+            from: claude,
+            unchecked: ClaudeQARuns.uncheckedNotes(runID: claude?.claudeRunID ?? "")
+        )
+        self.drafts = prefilled
+        self.initialDrafts = prefilled
+        self.claudeSession = claude
         self.reverifyIssues = app.openIssues
 
         if let stored, stored.appID == app.id {
@@ -96,6 +107,9 @@ final class SessionViewModel {
     var unansweredCount: Int { drafts.count - answeredCount }
     var failCount: Int { drafts.filter { $0.outcome == .fail }.count }
     var hasProgress: Bool { answeredCount > 0 || !reverify.isEmpty }
+    /// 미리 채운 것 말고 사람이 바꾼 것이 있는지. 닫을 때 확인을 받을지 정한다.
+    var hasChanges: Bool { drafts != initialDrafts || !reverify.isEmpty }
+    var claudeFilledCount: Int { drafts.filter(\.claudeJudged).count }
 
     func index(of id: UUID) -> Int? { drafts.firstIndex { $0.id == id } }
 

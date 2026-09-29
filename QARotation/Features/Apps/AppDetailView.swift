@@ -211,7 +211,7 @@ struct AppDetailView: View {
     private func delete(_ sessions: [QASession]) {
         let removed = Set(sessions.map(\.id))
         for session in sessions { context.delete(session) }
-        app.lastQADate = app.sortedSessions.first { !removed.contains($0.id) }?.date
+        app.lastQADate = app.sortedSessions.first { !removed.contains($0.id) && !$0.byClaude }?.date
         save()
     }
 
@@ -226,8 +226,15 @@ struct SessionRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(session.date, format: .dateTime.year().month().day().hour().minute())
-                .font(.body.weight(.medium))
+            HStack(spacing: 6) {
+                Text(session.date, format: .dateTime.year().month().day().hour().minute())
+                    .font(.body.weight(.medium))
+                if session.byClaude {
+                    Label("Claude", systemImage: "sparkles")
+                        .font(.body)
+                        .foregroundStyle(.tint)
+                }
+            }
             HStack(spacing: 10) {
                 Label("\(session.count(of: .pass))", systemImage: Outcome.pass.symbol).foregroundStyle(.green)
                 Label("\(session.count(of: .fail))", systemImage: Outcome.fail.symbol).foregroundStyle(.red)
@@ -240,7 +247,7 @@ struct SessionRow: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(
-            "\(session.date.formatted(date: .long, time: .shortened)), 통과 \(session.count(of: .pass))개, 실패 \(session.count(of: .fail))개, 해당 없음 \(session.count(of: .na))개"
+            "\(session.byClaude ? "Claude 기록, " : "")\(session.date.formatted(date: .long, time: .shortened)), 통과 \(session.count(of: .pass))개, 실패 \(session.count(of: .fail))개, 해당 없음 \(session.count(of: .na))개"
         )
     }
 }

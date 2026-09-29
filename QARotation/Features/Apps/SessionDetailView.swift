@@ -6,6 +6,10 @@ struct SessionDetailView: View {
     var body: some View {
         List {
             Section("기록 정보") {
+                if session.byClaude {
+                    Label("Claude가 시뮬레이터와 테스트로 먼저 본 기록이에요. 로테이션의 마지막 QA로는 세지 않아요.", systemImage: "sparkles")
+                        .font(.body)
+                }
                 LabeledContent("날짜", value: session.date.formatted(date: .long, time: .shortened))
                 LabeledContent("걸린 시간", value: Duration.seconds(session.durationSeconds).formatted(.units(allowed: [.minutes, .seconds], width: .abbreviated)))
                 LabeledContent("앱 버전", value: session.appVersion.isEmpty ? "-" : session.appVersion)

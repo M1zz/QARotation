@@ -54,6 +54,9 @@ struct TodayView: View {
             ScrollView {
                 VStack(spacing: 24) {
                     resumeCard
+                    ForEach(activeApps.filter { $0.pendingClaudeSession != nil }) { claudeApp in
+                        claudeCard(claudeApp)
+                    }
                     pickCard(app, now: now, allIDs: Set(candidates.map(\.id)))
                     progressCard(candidates: candidates, now: now)
                 }
@@ -167,7 +170,7 @@ struct TodayView: View {
 
     private func progressCard(candidates: [RotationCandidate], now: Date) -> some View {
         let active = Set(candidates.map(\.id))
-        let stamps = sessions.compactMap { s in s.app.map { SessionStamp(appID: $0.id, date: s.date) } }
+        let stamps = sessions.filter { !$0.byClaude }.compactMap { s in s.app.map { SessionStamp(appID: $0.id, date: s.date) } }
         let cycle = Rotation.cycleProgress(sessions: stamps, activeAppIDs: active)
         let overdue = Rotation.overdueCount(candidates, now: now)
         let never = Rotation.neverQACount(candidates)
@@ -261,6 +264,40 @@ private struct ImportAlertModifier: ViewModifier {
 }
 
 private extension TodayView {
+    /// Claude 가 먼저 본 앱. 사람이 이어서 보면(완료하면) 사라진다.
+    func claudeCard(_ app: TrackedApp) -> some View {
+        let session = app.pendingClaudeSession
+        let pass = session?.count(of: .pass) ?? 0
+        let fail = session?.count(of: .fail) ?? 0
+        return VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 12) {
+                AppIconView(app: app, size: 44)
+                VStack(alignment: .leading, spacing: 2) {
+                    Label("Claude가 먼저 봤어요", systemImage: "sparkles")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(.tint)
+                    Text(app.name).font(.title3.bold())
+                }
+            }
+            Text("통과 \(pass) · 실패 \(fail) · 나머지는 이어서 봐요")
+                .font(.body)
+                .foregroundStyle(.secondary)
+            Button {
+                router.startSession(app.id)
+            } label: {
+                Label("이어서 QA", systemImage: "arrow.forward.circle.fill")
+                    .font(.body.bold())
+                    .frame(maxWidth: .infinity, minHeight: 44)
+            }
+            .buttonStyle(.borderedProminent)
+            .accessibilityHint("Claude가 채운 결과를 이어받아 \(app.name)의 QA를 엽니다")
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.tint.opacity(0.08), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+    }
+
+
     func startButton(_ app: TrackedApp) -> some View {
         Button {
             router.startSession(app.id)

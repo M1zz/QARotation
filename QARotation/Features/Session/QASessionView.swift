@@ -69,7 +69,7 @@ private struct SessionContentView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("닫기") {
-                        if model.hasProgress {
+                        if model.hasChanges {
                             confirmingCancel = true
                         } else {
                             SessionDraftStore.clear()
@@ -124,9 +124,9 @@ private struct SessionContentView: View {
             .sensoryFeedback(.success, trigger: finished)
             // 홈으로 나가거나 앱이 꺼져도 여기까지 한 것이 남도록.
             .onChange(of: scenePhase) { _, phase in
-                if phase != .active, model.hasProgress { model.keepDraft() }
+                if phase != .active, model.hasChanges { model.keepDraft() }
             }
-            .interactiveDismissDisabled(model.hasProgress)
+            .interactiveDismissDisabled(model.hasChanges)
             .sheet(isPresented: $showingIndex) {
                 ChecklistIndexView(model: model, index: $focusIndex)
             }
@@ -217,6 +217,12 @@ private struct SessionContentView: View {
                     SessionHeaderView(model: model)
                 }
 
+                if let claude = model.claudeSession {
+                    Section {
+                        ClaudeHandoffRow(session: claude, filled: model.claudeFilledCount, remaining: model.unansweredCount)
+                    }
+                }
+
                 if !model.reverifyIssues.isEmpty {
                     Section {
                         ForEach(model.reverifyIssues) { issue in
@@ -302,5 +308,27 @@ private struct SessionContentView: View {
         } catch {
             saveError = error.localizedDescription
         }
+    }
+}
+
+/// Claude 가 먼저 본 기록을 이어받는다는 안내.
+private struct ClaudeHandoffRow: View {
+    let session: QASession
+    let filled: Int
+    let remaining: Int
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Label("Claude가 먼저 봤어요", systemImage: "sparkles")
+                .font(.body.weight(.semibold))
+            Text("\(session.date, format: .dateTime.month().day()) · \(session.deviceModel)")
+                .font(.body)
+                .foregroundStyle(.secondary)
+            Text("통과 \(filled)개는 채워 두었고, 실패 \(session.count(of: .fail))개는 아래 이슈로 다시 봐요. 남은 \(remaining)개를 이어서 보면 돼요.")
+                .font(.body)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
     }
 }

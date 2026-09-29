@@ -37,6 +37,17 @@ struct ChecklistRow: View {
                     .accessibilityLabel("확인하는 방법. \(draft.steps)")
             }
 
+            if let claudeNote = draft.claudeNote {
+                Label {
+                    Text(claudeText(claudeNote))
+                        .fixedSize(horizontal: false, vertical: true)
+                } icon: {
+                    Image(systemName: "sparkles")
+                }
+                .font(.body)
+                .foregroundStyle(.secondary)
+            }
+
             OutcomeButtons(itemTitle: draft.title, selection: draft.outcome, onSelect: onSelect)
 
             if draft.outcome == .fail {
@@ -57,6 +68,13 @@ struct ChecklistRow: View {
             Button { onSelect(.na) } label: { Label("해당 없음", systemImage: Outcome.na.symbol) }
                 .tint(.gray)
         }
+    }
+}
+
+private extension ChecklistRow {
+    func claudeText(_ note: String) -> String {
+        if !draft.claudeJudged { return note.isEmpty ? "Claude가 확인하지 못했어요" : "Claude가 못 봤어요: \(note)" }
+        return note.isEmpty ? "Claude가 확인" : "Claude: \(note)"
     }
 }
 

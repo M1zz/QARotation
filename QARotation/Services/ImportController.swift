@@ -29,6 +29,7 @@ final class ImportController {
             let fetched = try await ITunesLookupClient().fetchApps(artistID: artistID, storefronts: AppSettings.storefronts())
             let summary = try AppImporter.apply(fetched, to: context)
             AppChecklistSeeder.seedNewItems(context)
+            ClaudeQASeeder.seedIfNeeded(context)
             BundledAppsSeeder.fillMissingIcons(context)
             try? await AppImporter.downloadMissingIcons(in: context)
             PickChangeCoordinator.pickDidChange(context: context)
