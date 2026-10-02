@@ -1,33 +1,88 @@
 import SwiftUI
 
-/// 항목 하나를 크게 펼쳐 놓고 차례대로 답하는 화면.
+/// 항목마다 카드 한 장으로 크게 펼쳐 놓고, 옆으로 넘기며 차례대로 답하는 화면.
 /// 목록으로 보면 단계가 작은 글씨로 묻혀서, 손에 기기를 든 채 따라 하기 어렵다.
 struct FocusedChecklistView: View {
     @Bindable var model: SessionViewModel
     @Binding var index: Int
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
+    /// 가로로 넘기는 카드 줄에서 지금 가운데 있는 카드. `index` 와 서로 맞춘다.
+    @State private var position: Int?
+
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    header
-                    title
-                    CarriedCard(draft: draft)
-                    steps
-                    if draft.outcome == .fail { failDetail }
-                }
-                .padding(20)
-                .readableColumn(alignment: .leading)
-                .id(draft.id)
-            }
+            cards
             answerBar
         }
     }
 
     private var draft: DraftResult { model.drafts[index] }
 
-    private var header: some View {
+    /// 한 장만 덩그러니 있으면 답답해서, 앞뒤 카드가 양옆에 걸쳐 보이게 늘어놓고 밀어서 넘긴다.
+    private var cards: some View {
+        GeometryReader { geo in
+            // 아이폰에서는 이웃 카드가 손톱만큼, 아이패드에서는 넉넉하게 보인다.
+            let cardWidth = max(min(geo.size.width - 88, 560), 0)
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 8) {
+                    ForEach(model.drafts.indices, id: \.self) { i in
+                        card(i)
+                            .frame(width: cardWidth, height: geo.size.height)
+                            // 옆 카드는 눌러서 그 카드로 간다. 그 안의 칸과 버튼은 가운데로 와야 쓴다.
+                            .overlay {
+                                if i != index {
+                                    Color.clear
+                                        .contentShape(Rectangle())
+                                        .onTapGesture { withAnimation { index = i } }
+                                        .accessibilityHidden(true)
+                                }
+                            }
+                            .scrollTransition(.interactive, axis: .horizontal) { content, phase in
+                                content
+                                    .scaleEffect(phase.isIdentity ? 1 : 0.94)
+                                    .opacity(phase.isIdentity ? 1 : 0.55)
+                            }
+                    }
+                }
+                .scrollTargetLayout()
+            }
+            .safeAreaPadding(.horizontal, (geo.size.width - cardWidth) / 2)
+            .scrollTargetBehavior(.viewAligned)
+            .scrollPosition(id: $position)
+            .scrollIndicators(.hidden)
+        }
+        .padding(.vertical, 16)
+        .background(Color(.systemGroupedBackground))
+        .onAppear { position = index }
+        .onChange(of: position) { _, new in
+            if let new, new != index { index = new }
+        }
+        .onChange(of: index) { _, new in
+            if position != new { withAnimation { position = new } }
+        }
+    }
+
+    private func card(_ i: Int) -> some View {
+        let draft = model.drafts[i]
+        let shape = RoundedRectangle(cornerRadius: 24, style: .continuous)
+        return ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                header(draft, at: i)
+                title(draft)
+                CarriedCard(draft: draft)
+                steps(draft)
+                if draft.outcome == .fail { failDetail(i) }
+            }
+            .padding(20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .scrollBounceBehavior(.basedOnSize)
+        .background(Color(.secondarySystemGroupedBackground), in: shape)
+        .clipShape(shape)
+    }
+
+    private func header(_ draft: DraftResult, at i: Int) -> some View {
         HStack {
             Text(draft.category.label)
                 .font(.subheadline.weight(.semibold))
@@ -47,21 +102,27 @@ struct FocusedChecklistView: View {
                     .background(.purple.opacity(0.15), in: Capsule())
             }
             Spacer()
-            Text("\(index + 1) / \(model.drafts.count)")
+            // 넘기다가도 어느 카드에 답했는지 보이게 한다.
+            if let outcome = draft.outcome {
+                Label(outcome.label, systemImage: outcome.symbol)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(outcome.tint)
+            }
+            Text("\(i + 1) / \(model.drafts.count)")
                 .font(.subheadline.monospacedDigit())
                 .foregroundStyle(.secondary)
         }
         .accessibilityElement(children: .combine)
     }
 
-    private var title: some View {
+    private func title(_ draft: DraftResult) -> some View {
         Text(draft.title)
             .font(.title2.bold())
             .fixedSize(horizontal: false, vertical: true)
     }
 
     @ViewBuilder
-    private var steps: some View {
+    private func steps(_ draft: DraftResult) -> some View {
         let broken = StepText.broken(draft.steps)
         if !broken.isEmpty {
             VStack(alignment: .leading, spacing: 14) {
@@ -94,16 +155,16 @@ struct FocusedChecklistView: View {
             }
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.background.secondary, in: RoundedRectangle(cornerRadius: 16))
+            .background(Color(.tertiarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 16))
         }
     }
 
-    private var failDetail: some View {
+    private func failDetail(_ i: Int) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("무엇이 문제였나요?").font(.subheadline.weight(.semibold))
-            TextField("메모 (선택)", text: $model.drafts[index].note, axis: .vertical)
+            TextField("메모 (선택)", text: $model.drafts[i].note, axis: .vertical)
                 .textFieldStyle(.roundedBorder)
-            ScreenshotPicker(data: $model.drafts[index].screenshot)
+            ScreenshotPicker(data: $model.drafts[i].screenshot)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
