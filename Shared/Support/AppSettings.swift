@@ -18,6 +18,8 @@ enum SettingsKey {
     static let openSessionAppID = "openSessionAppID"
     static let openSessionContinuesSheet = "openSessionContinuesSheet"
     static let seededClaudeRuns = "seededClaudeRuns"
+    /// 한 장씩 보기에서 통과한 카드를 줄에서 빼고 넘길지.
+    static let skipPassedCards = "skipPassedCards"
     static let skipDay = "skipDay"
     static let skipIDs = "skipIDs"
 }

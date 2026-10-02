@@ -9,6 +9,8 @@ struct FocusedChecklistView: View {
 
     /// 가로로 넘기는 카드 줄에서 지금 가운데 있는 카드. `index` 와 서로 맞춘다.
     @State private var position: Int?
+    /// 켜면 통과한 카드는 줄에서 빠져, 넘길 때 남은 것·실패한 것만 지나간다. 지금 보는 카드는 빼지 않는다.
+    @AppStorage(SettingsKey.skipPassedCards, store: .shared) private var skipPassed = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -19,6 +21,12 @@ struct FocusedChecklistView: View {
 
     private var draft: DraftResult { model.drafts[index] }
 
+    /// 카드 줄에 놓을 항목. 건너뛰기를 켜면 통과한 것을 뺀다.
+    private var shownIndices: [Int] {
+        guard skipPassed else { return Array(model.drafts.indices) }
+        return model.drafts.indices.filter { $0 == index || model.drafts[$0].outcome != .pass }
+    }
+
     /// 한 장만 덩그러니 있으면 답답해서, 앞뒤 카드가 양옆에 걸쳐 보이게 늘어놓고 밀어서 넘긴다.
     private var cards: some View {
         GeometryReader { geo in
@@ -26,7 +34,7 @@ struct FocusedChecklistView: View {
             let cardWidth = max(min(geo.size.width - 88, 560), 0)
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 8) {
-                    ForEach(model.drafts.indices, id: \.self) { i in
+                    ForEach(shownIndices, id: \.self) { i in
                         card(i)
                             .frame(width: cardWidth, height: geo.size.height)
                             // 옆 카드는 눌러서 그 카드로 간다. 그 안의 칸과 버튼은 가운데로 와야 쓴다.
@@ -78,8 +86,15 @@ struct FocusedChecklistView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .scrollBounceBehavior(.basedOnSize)
-        .background(Color(.secondarySystemGroupedBackground), in: shape)
+        .background {
+            shape.fill(Color(.secondarySystemGroupedBackground))
+            if let outcome = draft.outcome { shape.fill(outcome.tint.opacity(0.14)) }
+        }
         .clipShape(shape)
+        // 답한 카드는 테두리로 한눈에 갈린다. 옆에 흐리게 걸친 카드에서도 보이게 굵게.
+        .overlay {
+            if let outcome = draft.outcome { shape.strokeBorder(outcome.tint, lineWidth: 3) }
+        }
     }
 
     private func header(_ draft: DraftResult, at i: Int) -> some View {
@@ -105,8 +120,11 @@ struct FocusedChecklistView: View {
             // 넘기다가도 어느 카드에 답했는지 보이게 한다.
             if let outcome = draft.outcome {
                 Label(outcome.label, systemImage: outcome.symbol)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(outcome.tint)
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(outcome.tint, in: Capsule())
             }
             Text("\(i + 1) / \(model.drafts.count)")
                 .font(.subheadline.monospacedDigit())
@@ -184,21 +202,27 @@ struct FocusedChecklistView: View {
 
             HStack {
                 Button {
-                    move(by: -1)
+                    if let previous { withAnimation { index = previous } }
                 } label: {
                     Label("이전", systemImage: "chevron.left")
                 }
-                .disabled(index == 0)
+                .disabled(previous == nil)
                 .keyboardShortcut("[", modifiers: .command)
 
                 Spacer()
 
+                Toggle("통과 건너뛰기", isOn: $skipPassed.animation())
+                    .toggleStyle(CapsuleToggleStyle())
+                    .accessibilityHint("켜면 통과한 항목은 넘길 때 지나칩니다")
+
+                Spacer()
+
                 Button {
-                    move(by: 1)
+                    if let next { withAnimation { index = next } }
                 } label: {
                     Label("다음", systemImage: "chevron.right")
                 }
-                .disabled(index >= model.drafts.count - 1)
+                .disabled(next == nil)
                 .keyboardShortcut("]", modifiers: .command)
             }
             .font(.subheadline)
@@ -228,14 +252,36 @@ struct FocusedChecklistView: View {
         .accessibilityAddTraits(draft.outcome == outcome ? .isSelected : [])
     }
 
-    private func move(by step: Int) {
-        let next = index + step
-        guard model.drafts.indices.contains(next) else { return }
-        withAnimation { index = next }
-    }
+    /// 이전·다음도 카드 줄을 따른다. 건너뛰기를 켜면 통과한 항목을 지나친다.
+    private var previous: Int? { shownIndices.last { $0 < index } }
+    private var next: Int? { shownIndices.first { $0 > index } }
 
     private func goToNextUnanswered() {
         guard let next = model.nextUnanswered(after: index) else { return }
         withAnimation { index = next }
+    }
+}
+
+/// 켜졌는지 한눈에 보이는 작은 캡슐 토글. 켜면 색이 채워지고 체크가 붙는다.
+private struct CapsuleToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button {
+            configuration.isOn.toggle()
+        } label: {
+            Label {
+                configuration.label
+            } icon: {
+                Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
+            }
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(configuration.isOn ? Color.white : Color.accentColor)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(configuration.isOn ? Color.accentColor : Color.accentColor.opacity(0.12), in: Capsule())
+        }
+        .buttonStyle(.plain)
+        .accessibilityRepresentation {
+            Toggle(isOn: configuration.$isOn) { configuration.label }
+        }
     }
 }
