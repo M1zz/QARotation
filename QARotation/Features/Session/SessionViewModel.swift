@@ -121,6 +121,31 @@ final class SessionViewModel {
         }
     }
 
+    /// 카드가 놓인 차례대로 이어지는 구역(앱의 화면·기능 영역). 한 장씩 보기와 목차가 같은 구역으로 나뉜다.
+    struct Area: Identifiable {
+        let name: String
+        let indices: Range<Int>
+        var id: Int { indices.lowerBound }
+    }
+
+    var areas: [Area] {
+        var result: [Area] = []
+        var start = 0
+        for index in drafts.indices where index == drafts.count - 1 || drafts[index + 1].area != drafts[index].area {
+            result.append(Area(name: drafts[index].area, indices: start..<(index + 1)))
+            start = index + 1
+        }
+        return result
+    }
+
+    func area(containing index: Int) -> Area? {
+        areas.first { $0.indices.contains(index) }
+    }
+
+    func answeredCount(in area: Area) -> Int {
+        area.indices.filter { drafts[$0].outcome != nil }.count
+    }
+
     var answeredCount: Int { drafts.filter { $0.outcome != nil }.count }
     var unansweredCount: Int { drafts.count - answeredCount }
     var failCount: Int { drafts.filter { $0.outcome == .fail }.count }

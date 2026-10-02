@@ -10,6 +10,8 @@ struct DraftResult: Identifiable, Equatable {
     let verification: Verification
     let order: Int
     let isAppSpecific: Bool
+    /// 앱의 어느 구역(화면·기능 영역)인가. 한 장씩 보기에서 "지금 어디쯤"으로 보여 준다.
+    var area: String = ""
     var outcome: Outcome?
     var note: String = ""
     var screenshot: Data?
@@ -47,15 +49,29 @@ struct SessionMeta: Equatable {
 
 @MainActor
 enum SessionRecorder {
+    /// 모든 앱에 공통인 기본 항목의 구역 이름.
+    static let defaultArea = "기본 점검"
+    /// 카탈로그에 없는 앱 전용 항목이 맨 앞에 올 때의 구역 이름.
+    static let customArea = "직접 넣은 항목"
+
+    /// "결제 (100번까지 무료, …)"처럼 괄호로 덧붙인 설명은 화면에서 뺀다.
+    static func shortArea(_ name: String) -> String {
+        name.components(separatedBy: " (").first ?? name
+    }
+
     /// 체크리스트 = 기본 항목(분류 → 순서) + 앱 전용 항목(순서).
     static func drafts(defaultItems: [ChecklistItem], app: TrackedApp) -> [DraftResult] {
         // 기본 항목의 단계는 앱마다 다르게 적어 둔 것이 있으면 그것을 쓴다.
         let appSteps = AppChecklistCatalog.defaultSteps(for: app.bundleID)
         let defaults = defaultItems
             .sorted { ($0.category.sortIndex, $0.order) < ($1.category.sortIndex, $1.order) }
-            .map { DraftResult(id: $0.id, title: $0.title, steps: appSteps[$0.title] ?? $0.steps, category: $0.category, verification: $0.verification, order: 0, isAppSpecific: false) }
-        let extras = app.sortedExtraItems
-            .map { DraftResult(id: $0.id, title: $0.title, steps: $0.steps, category: $0.category, verification: $0.verification, order: 0, isAppSpecific: true) }
+            .map { DraftResult(id: $0.id, title: $0.title, steps: appSteps[$0.title] ?? $0.steps, category: $0.category, verification: $0.verification, order: 0, isAppSpecific: false, area: defaultArea) }
+        // 직접 넣은 항목은 카탈로그 순서에서 바로 앞 항목 뒤에 붙어 있으므로 그 구역을 따른다.
+        var currentArea = customArea
+        let extras = app.sortedExtraItems.map { item in
+            if let area = AppChecklistCatalog.area(of: item.title, for: app.bundleID) { currentArea = shortArea(area) }
+            return DraftResult(id: item.id, title: item.title, steps: item.steps, category: item.category, verification: item.verification, order: 0, isAppSpecific: true, area: currentArea)
+        }
         return (defaults + extras).enumerated().map { index, draft in
             DraftResult(
                 id: draft.id,
@@ -64,7 +80,8 @@ enum SessionRecorder {
                 category: draft.category,
                 verification: draft.verification,
                 order: index,
-                isAppSpecific: draft.isAppSpecific
+                isAppSpecific: draft.isAppSpecific,
+                area: draft.area
             )
         }
     }

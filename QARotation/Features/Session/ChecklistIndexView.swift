@@ -24,34 +24,45 @@ struct ChecklistIndexView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(model.sections) { section in
-                    let rows = visibleRows(in: section)
-                    if !rows.isEmpty {
-                        Section {
-                            ForEach(rows, id: \.self) { itemIndex in
-                                row(itemIndex)
+            ScrollViewReader { proxy in
+                List {
+                    // 카드가 놓인 차례 그대로, 앱의 구역(화면·기능 영역)으로 나눈다.
+                    ForEach(model.areas) { area in
+                        let rows = visibleRows(in: area)
+                        if !rows.isEmpty {
+                            Section {
+                                ForEach(rows, id: \.self) { itemIndex in
+                                    row(itemIndex)
+                                }
+                            } header: {
+                                HStack {
+                                    Text(area.name)
+                                    if area.indices.contains(index) {
+                                        Image(systemName: "location.fill")
+                                            .font(.caption)
+                                            .foregroundStyle(.tint)
+                                            .accessibilityLabel("지금 보는 구역")
+                                    }
+                                    Spacer()
+                                    Text("\(model.answeredCount(in: area))/\(area.indices.count)")
+                                        .monospacedDigit()
+                                }
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                                .padding(.vertical, 6)
+                                .padding(.horizontal, 16)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(.bar)
+                                .listRowInsets(EdgeInsets())
                             }
-                        } header: {
-                            HStack {
-                                Text(section.category.label)
-                                Spacer()
-                                Text("\(answered(in: section))/\(section.itemIDs.count)")
-                                    .monospacedDigit()
-                            }
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(.secondary)
-                            .padding(.vertical, 6)
-                            .padding(.horizontal, 16)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(.bar)
-                            .listRowInsets(EdgeInsets())
                         }
                     }
                 }
+                // 평평한 목록이라야 섹션 이름이 위에 붙은 채로 스크롤된다.
+                .listStyle(.plain)
+                // 백 개 가까운 목록에서 지금 자리를 찾아 내려가지 않아도 되게.
+                .onAppear { proxy.scrollTo(index, anchor: .center) }
             }
-            // 평평한 목록이라야 섹션 이름이 위에 붙은 채로 스크롤된다.
-            .listStyle(.plain)
             .safeAreaInset(edge: .top) { summary }
             .navigationTitle("테스트 항목 \(model.answeredCount)/\(model.drafts.count)")
             .navigationBarTitleDisplayMode(.inline)
@@ -105,12 +116,11 @@ struct ChecklistIndexView: View {
     }
 
     private var visibleCount: Int {
-        model.sections.reduce(0) { $0 + visibleRows(in: $1).count }
+        model.areas.reduce(0) { $0 + visibleRows(in: $1).count }
     }
 
-    private func visibleRows(in section: SessionViewModel.CategorySection) -> [Int] {
-        section.itemIDs.compactMap { id in
-            guard let itemIndex = model.index(of: id) else { return nil }
+    private func visibleRows(in area: SessionViewModel.Area) -> [Int] {
+        area.indices.compactMap { itemIndex in
             let draft = model.drafts[itemIndex]
             switch filter {
             case .all: break
@@ -122,12 +132,6 @@ struct ChecklistIndexView: View {
         }
     }
 
-    private func answered(in section: SessionViewModel.CategorySection) -> Int {
-        section.itemIDs.filter { id in
-            guard let itemIndex = model.index(of: id) else { return false }
-            return model.drafts[itemIndex].outcome != nil
-        }.count
-    }
 
     private func row(_ itemIndex: Int) -> some View {
         let draft = model.drafts[itemIndex]

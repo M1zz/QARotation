@@ -14,9 +14,81 @@ struct FocusedChecklistView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            whereBar
             cards
             answerBar
         }
+        .background(Color(.systemGroupedBackground))
+    }
+
+    /// 지금 앱의 어느 구역에서 몇 번째를 보고 있는지. 아래 막대는 구역마다 한 칸이고 얼마나 했는지 차오른다.
+    @ViewBuilder
+    private var whereBar: some View {
+        let areas = model.areas
+        if let current = areas.first(where: { $0.indices.contains(index) }) {
+            let position = index - current.indices.lowerBound + 1
+            VStack(alignment: .leading, spacing: 8) {
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    Text(current.name)
+                        .font(.headline)
+                        .lineLimit(1)
+                    Text("\(position) / \(current.indices.count)")
+                        .font(.subheadline.weight(.semibold).monospacedDigit())
+                        .foregroundStyle(.tint)
+                    Spacer(minLength: 8)
+                    Text("전체 \(index + 1) / \(model.drafts.count)")
+                        .font(.footnote.monospacedDigit())
+                        .foregroundStyle(.secondary)
+                }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("지금 \(current.name), 이 구역 \(current.indices.count)개 중 \(position)번째, 전체 \(model.drafts.count)개 중 \(index + 1)번째")
+
+                areaStrip(areas, current: current)
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 12)
+            .readableColumn()
+            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+        }
+    }
+
+    /// 구역마다 항목 수만큼 폭을 나눠 가진 칸. 누르면 그 구역의 아직 안 한 첫 항목으로 간다.
+    private func areaStrip(_ areas: [SessionViewModel.Area], current: SessionViewModel.Area) -> some View {
+        GeometryReader { geo in
+            let spacing: CGFloat = 3
+            let usable = max(geo.size.width - spacing * CGFloat(areas.count - 1), 0)
+            HStack(spacing: spacing) {
+                ForEach(areas) { area in
+                    let isCurrent = area.id == current.id
+                    let done = Double(model.answeredCount(in: area)) / Double(area.indices.count)
+                    Button {
+                        let target = area.indices.first { model.drafts[$0].outcome == nil } ?? area.indices.lowerBound
+                        withAnimation { index = target }
+                    } label: {
+                        Capsule()
+                            .fill(Color(.tertiarySystemFill))
+                            .overlay(alignment: .leading) {
+                                GeometryReader { bar in
+                                    Capsule()
+                                        .fill(Color.accentColor.opacity(isCurrent ? 1 : 0.55))
+                                        .frame(width: bar.size.width * done)
+                                }
+                            }
+                            .overlay {
+                                if isCurrent { Capsule().strokeBorder(Color.accentColor, lineWidth: 1.5) }
+                            }
+                            .frame(height: isCurrent ? 10 : 6)
+                            .frame(maxHeight: .infinity)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .frame(width: max(usable * CGFloat(area.indices.count) / CGFloat(max(model.drafts.count, 1)), 4))
+                    .accessibilityLabel("\(area.name), \(area.indices.count)개 중 \(model.answeredCount(in: area))개 함")
+                    .accessibilityAddTraits(isCurrent ? .isSelected : [])
+                }
+            }
+        }
+        .frame(height: 16)
     }
 
     private var draft: DraftResult { model.drafts[index] }
@@ -60,8 +132,8 @@ struct FocusedChecklistView: View {
             .scrollPosition(id: $position)
             .scrollIndicators(.hidden)
         }
-        .padding(.vertical, 16)
-        .background(Color(.systemGroupedBackground))
+        .padding(.top, 8)
+        .padding(.bottom, 16)
         .onAppear { position = index }
         .onChange(of: position) { _, new in
             if let new, new != index { index = new }

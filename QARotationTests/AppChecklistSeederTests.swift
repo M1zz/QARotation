@@ -122,6 +122,27 @@ struct AppChecklistSeederTests {
         #expect(item.category == source.category)
     }
 
+    @Test func 세션_카드는_앱의_구역으로_이어진다() throws {
+        let app = insertApp(bundleID: "com.Ysoup.TokenMemo")
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+        let first = try #require(AppChecklistCatalog.items(for: app.bundleID).first)
+        let firstArea = try #require(AppChecklistCatalog.area(of: first.title, for: app.bundleID))
+
+        let model = SessionViewModel(app: app, defaultItems: [])
+        #expect(model.drafts.first?.area == SessionRecorder.shortArea(firstArea))
+        #expect(model.drafts.allSatisfy { !$0.area.isEmpty })
+        // 구역은 카드 차례대로 빈틈없이 이어진다.
+        #expect(model.areas.map(\.indices.count).reduce(0, +) == model.drafts.count)
+        #expect(model.areas.count > 5)
+    }
+
+    @Test func 구역_표시_줄은_항목으로_나오지_않는다() {
+        for (bundleID, items) in AppChecklistCatalog.itemsByBundleID {
+            #expect(items.allSatisfy { !$0.title.hasPrefix("\u{1}") }, "\(bundleID)")
+            #expect(items.allSatisfy { AppChecklistCatalog.area(of: $0.title, for: bundleID) != nil }, "\(bundleID)")
+        }
+    }
+
     @Test func 문구를_고친_항목은_기기에서도_바뀌고_뺀_항목은_지워진다() throws {
         let bundleID = "com.leeo.JuJob"
         let app = insertApp(bundleID: bundleID)
