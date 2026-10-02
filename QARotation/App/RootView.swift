@@ -25,13 +25,20 @@ struct RootView: View {
                 SettingsView()
             }
         }
+        // 아이패드에서는 위쪽 탭 막대를 왼쪽 사이드바로 펼칠 수 있다. 아이폰은 그대로 아래 탭 막대.
+        .tabViewStyle(.sidebarAdaptable)
         .fullScreenCover(item: $router.activeSession) { route in
             QASessionView(appID: route.appID, continuesSheet: route.continuesSheet)
         }
         .importAlert(importer)
         #if DEBUG
-        // 시뮬레이터 확인·스크린샷용: 실행 인자 -importOnLaunch 는 가져오기를, -deepLink <url> 은 위젯·알림과 같은 경로로 화면을 연다.
+        // 시뮬레이터 확인·스크린샷용: 실행 인자 -importOnLaunch 는 가져오기를, -deepLink <url> 은 위젯·알림과 같은 경로로 화면을,
+        // -tab <today|apps|issues|settings> 는 그 탭을 연다.
         .task {
+            let args = CommandLine.arguments
+            if let i = args.firstIndex(of: "-tab"), i + 1 < args.count, let tab = AppTab(rawValue: args[i + 1]) {
+                router.selectedTab = tab
+            }
             if CommandLine.arguments.contains("-importOnLaunch") { await importer.run(context: context) }
             if let i = CommandLine.arguments.firstIndex(of: "-deepLink"), i + 1 < CommandLine.arguments.count,
                let url = URL(string: CommandLine.arguments[i + 1]) {

@@ -18,7 +18,7 @@ struct FocusedChecklistView: View {
                     if draft.outcome == .fail { failDetail }
                 }
                 .padding(20)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .readableColumn(alignment: .leading)
                 .id(draft.id)
             }
             answerBar
@@ -116,9 +116,9 @@ struct FocusedChecklistView: View {
                 ? AnyLayout(VStackLayout(spacing: 8))
                 : AnyLayout(HStackLayout(spacing: 8))
             layout {
-                answerButton(.pass, tint: .green)
-                answerButton(.fail, tint: .red)
-                answerButton(.na, tint: .gray)
+                answerButton(.pass, tint: .green, key: "1")
+                answerButton(.fail, tint: .red, key: "2")
+                answerButton(.na, tint: .gray, key: "3")
             }
 
             HStack {
@@ -128,6 +128,7 @@ struct FocusedChecklistView: View {
                     Label("이전", systemImage: "chevron.left")
                 }
                 .disabled(index == 0)
+                .keyboardShortcut("[", modifiers: .command)
 
                 Spacer()
 
@@ -137,17 +138,20 @@ struct FocusedChecklistView: View {
                     Label("다음", systemImage: "chevron.right")
                 }
                 .disabled(index >= model.drafts.count - 1)
+                .keyboardShortcut("]", modifiers: .command)
             }
             .font(.subheadline)
             .buttonStyle(.borderless)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
+        .readableColumn()
         .background(.bar)
         .dynamicTypeSize(...DynamicTypeSize.accessibility1)
     }
 
-    private func answerButton(_ outcome: Outcome, tint: Color) -> some View {
+    /// 아이패드에 키보드를 붙이면 ⌘1·⌘2·⌘3 으로 답한다. 실패 메모를 적는 중에도 글자가 먹히지 않게 ⌘ 를 붙였다.
+    private func answerButton(_ outcome: Outcome, tint: Color, key: KeyEquivalent) -> some View {
         Button {
             model.setOutcome(outcome, for: draft.id)
             // 실패는 메모를 적어야 하니 그 자리에 머문다.
@@ -158,6 +162,7 @@ struct FocusedChecklistView: View {
                 .frame(maxWidth: .infinity, minHeight: 48)
         }
         .buttonStyle(OutcomeButtonStyle(tint: tint, isSelected: draft.outcome == outcome))
+        .keyboardShortcut(key, modifiers: .command)
         .accessibilityLabel("\(draft.title), \(outcome.label)")
         .accessibilityAddTraits(draft.outcome == outcome ? .isSelected : [])
     }

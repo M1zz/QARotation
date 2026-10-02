@@ -4,11 +4,13 @@ import SwiftUI
 struct IssuesView: View {
     @Query(sort: \Issue.createdAt, order: .reverse) private var issues: [Issue]
     @State private var filter: IssueStatus = .open
+    /// 아이패드에서는 오른쪽에 펼쳐 둘 이슈. 아이폰에서는 밀어 넣은 화면이 된다.
+    @State private var selectedID: Issue.ID?
 
     var body: some View {
-        NavigationStack {
+        NavigationSplitView {
             let shown = issues.filter { $0.status == filter }
-            List {
+            List(selection: $selectedID) {
                 Section {
                     Picker("상태", selection: $filter) {
                         ForEach(IssueStatus.allCases) { status in
@@ -22,9 +24,7 @@ struct IssuesView: View {
 
                 Section {
                     ForEach(shown) { issue in
-                        NavigationLink {
-                            IssueDetailView(issue: issue)
-                        } label: {
+                        NavigationLink(value: issue.id) {
                             IssueRow(issue: issue, showsApp: true)
                         }
                     }
@@ -36,6 +36,15 @@ struct IssuesView: View {
                     ContentUnavailableView(emptyTitle, systemImage: "ladybug", description: Text(emptyDescription))
                 }
             }
+        } detail: {
+            NavigationStack {
+                if let issue = issues.first(where: { $0.id == selectedID }) {
+                    IssueDetailView(issue: issue)
+                } else {
+                    ContentUnavailableView("이슈를 고르세요", systemImage: "ladybug")
+                }
+            }
+            .id(selectedID)
         }
     }
 

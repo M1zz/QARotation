@@ -10,6 +10,8 @@ struct AppsListView: View {
     @State private var showingAdd = false
     @State private var pendingDelete: TrackedApp?
     @State private var importingResults = false
+    /// 아이패드에서는 오른쪽에 펼쳐 둘 앱. 아이폰에서는 밀어 넣은 화면이 된다.
+    @State private var selectedID: TrackedApp.ID?
 
     /// 오래 안 본 순서: 한 번도 안 한 앱 → 마지막 QA 가 오래된 앱.
     static func byStaleness(_ apps: [TrackedApp]) -> [TrackedApp] {
@@ -30,14 +32,14 @@ struct AppsListView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            List {
+        NavigationSplitView {
+            List(selection: $selectedID) {
                 let active = Self.byStaleness(filtered.filter { !$0.isArchived })
                 let archived = filtered.filter(\.isArchived).sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
 
                 Section {
                     ForEach(active) { app in
-                        NavigationLink(value: app) { AppRow(app: app) }
+                        NavigationLink(value: app.id) { AppRow(app: app) }
                             .swipeActions { deleteButton(app) }
                     }
                 } header: {
@@ -47,14 +49,13 @@ struct AppsListView: View {
                 if !archived.isEmpty {
                     Section("보관됨 \(archived.count)개") {
                         ForEach(archived) { app in
-                            NavigationLink(value: app) { AppRow(app: app) }
+                            NavigationLink(value: app.id) { AppRow(app: app) }
                                 .swipeActions { deleteButton(app) }
                         }
                     }
                 }
             }
             .navigationTitle("앱")
-            .navigationDestination(for: TrackedApp.self) { AppDetailView(app: $0) }
             .searchable(text: $search, prompt: "앱 이름 또는 번들 ID")
             .overlay {
                 if apps.isEmpty {
@@ -101,6 +102,7 @@ struct AppsListView: View {
                 presenting: pendingDelete
             ) { app in
                 Button("QA 기록까지 삭제", role: .destructive) {
+                    if selectedID == app.id { selectedID = nil }
                     context.delete(app)
                     try? context.save()
                     PickChangeCoordinator.pickDidChange(context: context)
@@ -108,6 +110,16 @@ struct AppsListView: View {
             } message: { _ in
                 Text("QA 기록과 이슈도 함께 지워집니다. 로테이션에서만 빼려면 앱 화면에서 보관을 켜세요.")
             }
+        } detail: {
+            // 상세 안에서 이슈·기록으로 더 들어가므로 스택을 둔다. 다른 앱을 고르면 쌓인 화면을 비운다.
+            NavigationStack {
+                if let app = apps.first(where: { $0.id == selectedID }) {
+                    AppDetailView(app: app)
+                } else {
+                    ContentUnavailableView("앱을 고르세요", systemImage: "square.grid.2x2")
+                }
+            }
+            .id(selectedID)
         }
     }
 }

@@ -56,6 +56,7 @@
 		6459887569088071F956F74F /* AppImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C60964026B039C30F2FD2 /* AppImporter.swift */; };
 		683A64605D5E009F42DBD015 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093CAAF63FC814645EA5596 /* NotificationScheduler.swift */; };
 		6B31AD1B8713CE51BBCB0C58 /* appicon-com.leeo.lullabyrecipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F5FD8F0DD9F02360486FB9 /* appicon-com.leeo.lullabyrecipe.png */; };
+		6B71F0D27AEC1DD784326A10 /* ReadableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637E8828530E2D0CC80219B /* ReadableColumn.swift */; };
 		6C483CFB53DBC29740631D14 /* appicon-com.bucketclimb.app.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F6E4D67FC4F444D164E51B /* appicon-com.bucketclimb.app.png */; };
 		6F7406F90643E7877ABF027D /* appicon-com.leeo.wifisnap.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51EFB5AFEF1B7D37BE6217 /* appicon-com.leeo.wifisnap.png */; };
 		6F86696E8AD305086ACB8B23 /* DefaultStepsByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */; };
@@ -166,6 +167,7 @@
 		11473643569404EF929DD5E4 /* claude-qa-clipkeyboard-2026-09-29.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-clipkeyboard-2026-09-29.json"; sourceTree = "<group>"; };
 		180A335167BC12B841D40E24 /* appicon-com.leeo.stickypresenter.remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.stickypresenter.remote.png"; sourceTree = "<group>"; };
 		22A8A955910A0C9C5E3BF315 /* appicon-com.kora.leeo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.kora.leeo.png"; sourceTree = "<group>"; };
+		2637E8828530E2D0CC80219B /* ReadableColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableColumn.swift; sourceTree = "<group>"; };
 		273AF1D1B76AB1F326D6631C /* RotationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationTests.swift; sourceTree = "<group>"; };
 		27CF91D063BE3A07DF5E9FC8 /* claude-qa-clipkeyboard-08-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-clipkeyboard-08-ax5.png"; sourceTree = "<group>"; };
 		28FBC295F65F12E11B361D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				BDBAA0BC8436DF48798AB424 /* CarriedCard.swift */,
 				0600CE88531C423437054971 /* LastQABadge.swift */,
 				D96C3BC6CB9E3A0A23995DC8 /* OutcomeButtons.swift */,
+				2637E8828530E2D0CC80219B /* ReadableColumn.swift */,
 				A86241273DEDFF98FB26F2D5 /* WideButtonLabel.swift */,
 			);
 			path = Components;
@@ -790,6 +793,7 @@
 				477B09F2C33AFF627630FA44 /* PickResolver.swift in Sources */,
 				09A8848DCC7CAB5FB181D97D /* QARotationApp.swift in Sources */,
 				F9C6A2C85A20BA4FE3ED7B2E /* QASessionView.swift in Sources */,
+				6B71F0D27AEC1DD784326A10 /* ReadableColumn.swift in Sources */,
 				E4F11050895D9759A5AE7E41 /* RootView.swift in Sources */,
 				C40E688ED00CB53B95568229 /* Rotation.swift in Sources */,
 				9C0CF2755A5E43DA648CC291 /* Router.swift in Sources */,

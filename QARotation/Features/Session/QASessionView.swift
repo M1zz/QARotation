@@ -88,6 +88,7 @@ private struct SessionContentView: View {
                         } label: {
                             Label("테스트 항목 보기", systemImage: "list.bullet.indent")
                         }
+                        .keyboardShortcut("l", modifiers: .command)
                     } else {
                         Button {
                             withAnimation { focusMode = true }
@@ -183,6 +184,7 @@ private struct SessionContentView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
+        .readableColumn()
         .background(.bar)
         .sheet(isPresented: $pickingVersion) {
             VersionPicker(app: model.app, version: $model.meta.appVersion)
@@ -202,6 +204,7 @@ private struct SessionContentView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
+        .readableColumn()
         .background(.bar)
         .dynamicTypeSize(...DynamicTypeSize.accessibility1)
     }
@@ -311,6 +314,7 @@ private struct SessionContentView: View {
         }
         .padding(.horizontal)
         .padding(.vertical, 12)
+        .readableColumn()
         .background(.bar)
         // 고정 막대가 화면을 다 덮지 않게 글자 크기에 상한을 둔다(목록 본문은 제한 없음).
         .dynamicTypeSize(...DynamicTypeSize.accessibility1)
@@ -343,6 +347,7 @@ private struct SessionContentView: View {
         }
         .buttonStyle(.borderedProminent)
         .disabled(!model.hasProgress)
+        .keyboardShortcut(.return, modifiers: .command)
     }
 
     private func finish() {
