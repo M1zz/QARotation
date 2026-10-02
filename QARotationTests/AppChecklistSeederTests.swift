@@ -87,6 +87,41 @@ struct AppChecklistSeederTests {
         #expect(app.sortedExtraItems.map(\.title) == ["내 항목"] + catalogTitles)
     }
 
+    @Test func 새_항목은_맨_뒤가_아니라_카탈로그_자리에_선다() throws {
+        let app = insertApp(bundleID: "com.Ysoup.TokenMemo")
+        let catalog = AppChecklistCatalog.items(for: app.bundleID)
+        // 가운데 항목 하나가 나중에 카탈로그에 더해진 기기를 흉내 낸다.
+        let later = catalog[catalog.count / 2].title
+        let mine = ChecklistItem(title: "내 항목", category: .custom, order: 0, isDefault: false)
+        context.insert(mine)
+        mine.app = app
+        for (index, item) in catalog.enumerated() where item.title != later {
+            let checklistItem = ChecklistItem(title: item.title, category: item.category, order: index + 1, isDefault: false)
+            context.insert(checklistItem)
+            checklistItem.app = app
+        }
+        try context.save()
+        let key = AppChecklistCatalog.key(app.bundleID)
+        defaults.set([key: catalogTitles.filter { $0 != later }], forKey: SettingsKey.seededChecklistTitles)
+
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+        #expect(app.sortedExtraItems.map(\.title) == ["내 항목"] + catalogTitles)
+    }
+
+    @Test func 카탈로그에서_고친_단계와_분류가_기기에도_들어간다() throws {
+        let app = insertApp(bundleID: "com.Ysoup.TokenMemo")
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+        let item = try #require(app.sortedExtraItems.first)
+        let source = try #require(AppChecklistCatalog.items(for: app.bundleID).first)
+        item.steps = "옛 화면 → 옛 단추를 누른다 → 옛 결과"
+        item.category = source.category == .custom ? .store : .custom
+        try context.save()
+
+        AppChecklistSeeder.seedNewItems(context, defaults: defaults)
+        #expect(item.steps == source.steps)
+        #expect(item.category == source.category)
+    }
+
     @Test func 문구를_고친_항목은_기기에서도_바뀌고_뺀_항목은_지워진다() throws {
         let bundleID = "com.leeo.JuJob"
         let app = insertApp(bundleID: bundleID)

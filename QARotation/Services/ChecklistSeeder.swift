@@ -102,10 +102,16 @@ enum AppChecklistSeeder {
                 known = Set((app.extraChecklistItems ?? []).map(\.title))
             }
             let byTitle = Dictionary(catalog.map { ($0.title, $0) }, uniquingKeysWith: { first, _ in first })
+            // 카탈로그에서 온 항목은 단계·분류·확인 방법을 카탈로그가 정한다(앱 화면에서 고칠 수 없는 값이다).
+            // 앱이 바뀌어 단계 문구를 고치면 이미 받은 기기에도 따라 들어간다.
             for item in app.extraChecklistItems ?? [] {
                 guard let source = byTitle[item.title] else { continue }
-                if item.steps.isEmpty, !source.steps.isEmpty {
+                if item.steps != source.steps {
                     item.steps = source.steps
+                    changed = true
+                }
+                if item.category != source.category {
+                    item.category = source.category
                     changed = true
                 }
                 if item.verification != source.verification {
@@ -115,11 +121,12 @@ enum AppChecklistSeeder {
             }
 
             let fresh = catalog.filter { !known.contains($0.title) }
-            guard !fresh.isEmpty else { continue }
-
-            insert(fresh, for: app, in: context)
-            seeded[key] = Array(known.union(catalog.map(\.title))).sorted()
-            changed = true
+            if !fresh.isEmpty {
+                insert(fresh, for: app, in: context)
+                seeded[key] = Array(known.union(catalog.map(\.title))).sorted()
+                changed = true
+            }
+            if arrangeInCatalogOrder(app, catalog: catalog) { changed = true }
         }
 
         guard changed else { return }
@@ -156,6 +163,33 @@ enum AppChecklistSeeder {
         known.subtract(removed)
         for old in renamed.keys { known.remove(old) }
         if changed { seeded[key] = known.sorted() }
+        return changed
+    }
+
+    /// 새 항목이 맨 뒤에 붙지 않고 카탈로그의 흐름(첫 실행 → 주요 화면 → … → 데이터) 자리에 서게 한다.
+    /// 사용자가 직접 넣은 항목은 바로 앞에 있던 카탈로그 항목 뒤에 그대로 붙어 다닌다.
+    @discardableResult
+    static func arrangeInCatalogOrder(_ app: TrackedApp, catalog: [CatalogItem]) -> Bool {
+        var rank: [String: Int] = [:]
+        for (index, item) in catalog.enumerated() where rank[item.title] == nil { rank[item.title] = index }
+
+        var anchor = -1
+        var keyed: [(item: ChecklistItem, key: (Int, Int, Int))] = []
+        for (position, item) in app.sortedExtraItems.enumerated() {
+            if let r = rank[item.title] {
+                anchor = r
+                keyed.append((item, (r, 0, position)))
+            } else {
+                keyed.append((item, (anchor, 1, position)))
+            }
+        }
+        keyed.sort { $0.key < $1.key }
+
+        var changed = false
+        for (order, entry) in keyed.enumerated() where entry.item.order != order {
+            entry.item.order = order
+            changed = true
+        }
         return changed
     }
 
