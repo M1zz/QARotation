@@ -77,6 +77,11 @@ final class TrackedApp {
         return sortedSessions.first { $0.byClaude && $0.date > last }
     }
 
+    /// 이 앱만의 체크 항목이 하나도 없다. QA를 열어도 모든 앱 공통인 기본 항목만 나온다.
+    var hasNoOwnChecklist: Bool {
+        (extraChecklistItems ?? []).isEmpty
+    }
+
     var sortedSessions: [QASession] {
         (sessions ?? []).sorted { $0.date > $1.date }
     }

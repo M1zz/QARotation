@@ -151,6 +151,13 @@ struct TodayView: View {
             }
             .accessibilityElement(children: .combine)
 
+            if app.hasNoOwnChecklist {
+                Label("이 앱만의 체크 항목이 없어요. 기본 항목만 나와요.", systemImage: "exclamationmark.triangle.fill")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.orange)
+                    .multilineTextAlignment(.center)
+            }
+
             if !dynamicTypeSize.isAccessibilitySize { startButton(app) }
 
             Button {

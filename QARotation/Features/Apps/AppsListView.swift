@@ -36,14 +36,31 @@ struct AppsListView: View {
             List(selection: $selectedID) {
                 let active = Self.byStaleness(filtered.filter { !$0.isArchived })
                 let archived = filtered.filter(\.isArchived).sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
+                // 로테이션에 있는데 이 앱만의 항목이 없으면, 추천돼도 기본 항목만 보고 끝난다. 먼저 채우라고 맨 위에 모은다.
+                let empty = active.filter(\.hasNoOwnChecklist)
+                let ready = active.filter { !$0.hasNoOwnChecklist }
+
+                if !empty.isEmpty {
+                    Section {
+                        ForEach(empty) { app in
+                            NavigationLink(value: app.id) { AppRow(app: app) }
+                                .swipeActions { deleteButton(app) }
+                        }
+                    } header: {
+                        Label("체크리스트가 비어 있는 앱 \(empty.count)개", systemImage: "exclamationmark.triangle.fill")
+                            .foregroundStyle(.orange)
+                    } footer: {
+                        Text("이 앱만의 체크 항목이 없어 QA를 열어도 기본 항목만 나와요. 앱 화면에서 항목을 더하거나, 지금 QA하지 않을 앱이면 보관하세요.")
+                    }
+                }
 
                 Section {
-                    ForEach(active) { app in
+                    ForEach(ready) { app in
                         NavigationLink(value: app.id) { AppRow(app: app) }
                             .swipeActions { deleteButton(app) }
                     }
                 } header: {
-                    Text("로테이션 \(active.count)개")
+                    Text(empty.isEmpty ? "로테이션 \(active.count)개" : "로테이션 \(active.count)개 중 체크리스트가 있는 \(ready.count)개")
                 }
 
                 if !archived.isEmpty {
@@ -138,6 +155,11 @@ struct AppRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(app.name).font(.body.weight(.medium))
                 Text(subtitle).font(.caption).foregroundStyle(.secondary)
+                if showsEmptyChecklist {
+                    Label("체크리스트 없음", systemImage: "exclamationmark.triangle.fill")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.orange)
+                }
             }
             if !dynamicTypeSize.isAccessibilitySize { Spacer(minLength: 0) }
             HStack(spacing: 6) {
@@ -161,10 +183,14 @@ struct AppRow: View {
         return parts.joined(separator: " · ")
     }
 
+    /// 체크리스트가 빈 앱은 이름 아래에 주황 표시를 붙인다(보관한 앱은 QA하지 않으니 빼고).
+    private var showsEmptyChecklist: Bool { app.hasNoOwnChecklist && !app.isArchived }
+
     private var accessibilityText: String {
         var parts = [app.name, LastQAText.sentence(app.lastQADate)]
         if !app.openIssues.isEmpty { parts.append("열린 이슈 \(app.openIssues.count)개") }
         if app.tier != .normal { parts.append("우선순위 \(app.tier.label)") }
+        if showsEmptyChecklist { parts.append("체크리스트 없음") }
         return parts.joined(separator: ", ")
     }
 }
