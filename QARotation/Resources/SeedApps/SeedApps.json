@@ -467,5 +467,47 @@
   "platforms": [
    "iPhone"
   ]
+ },
+ {
+  "appStoreID": "6789206198",
+  "bundleID": "com.leeo.TetraTint",
+  "name": "TetraTint",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/bf/bc/e2bfbc81-7b75-3c19-4686-78b17fb56510/AppIcon-0-0-85-220-0-5-0-2x-P3.png/512x512bb.png",
+  "version": "1.0",
+  "platforms": [
+   "mac"
+  ]
+ },
+ {
+  "appStoreID": "6808471728",
+  "bundleID": "com.leeo.yeoul",
+  "name": "여울",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/da/b7/96/dab796af-d6ca-a198-ce93-1b28b4ce8d4b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
+ },
+ {
+  "appStoreID": "6794597095",
+  "bundleID": "com.lectureq.LectureQ",
+  "name": "질문노트",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/08/f7/f8/08f7f8c6-5a51-b2a2-e824-36ddce80bf28/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png",
+  "version": "1.0",
+  "platforms": [
+   "mac"
+  ]
+ },
+ {
+  "appStoreID": "6793473149",
+  "bundleID": "com.leeo.geusaie",
+  "name": "그사이에",
+  "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/75/e3/a7/75e3a7f9-29ee-1706-cedc-4a35b3d4ca8f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "version": "1.0",
+  "platforms": [
+   "iPhone",
+   "iPad"
+  ]
  }
 ]

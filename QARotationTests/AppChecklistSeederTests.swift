@@ -202,7 +202,7 @@ struct BundledAppsTests {
         let container = try Persistence.makeContainer(inMemory: true)
         let context = container.mainContext
         let defaults = UserDefaults(suiteName: "ArchiveTests-\(UUID().uuidString)")!
-        let dropped = TrackedApp(name: "여울", bundleID: "com.leeo.yeoul")
+        let dropped = TrackedApp(name: "LeeoCon", bundleID: "com.leeo.LeeoCon")
         let kept = TrackedApp(name: "클립키보드", bundleID: "com.Ysoup.TokenMemo")
         context.insert(dropped)
         context.insert(kept)
@@ -216,6 +216,29 @@ struct BundledAppsTests {
         dropped.isArchived = false
         BundledAppsSeeder.archiveAppsWithoutChecklist(context, defaults: defaults)
         #expect(!dropped.isArchived)
+    }
+
+    @Test func 체크리스트를_채운_앱은_한_번만_보관을_푼다() throws {
+        let container = try Persistence.makeContainer(inMemory: true)
+        let context = container.mainContext
+        let defaults = UserDefaults(suiteName: "RestoreTests-\(UUID().uuidString)")!
+        let restored = TrackedApp(name: "여울", bundleID: "com.leeo.yeoul")
+        let stillEmpty = TrackedApp(name: "LeeoCon", bundleID: "com.leeo.LeeoCon")
+        restored.isArchived = true
+        stillEmpty.isArchived = true
+        context.insert(restored)
+        context.insert(stillEmpty)
+        try context.save()
+
+        BundledAppsSeeder.restoreAppsWithChecklist(context, defaults: defaults)
+        #expect(!restored.isArchived)
+        #expect(stillEmpty.isArchived)
+        #expect(!AppChecklistCatalog.items(for: restored.bundleID).isEmpty)
+
+        // 한 번만 한다. 사용자가 다시 보관하면 그대로 둔다.
+        restored.isArchived = true
+        BundledAppsSeeder.restoreAppsWithChecklist(context, defaults: defaults)
+        #expect(restored.isArchived)
     }
 
     @Test func 처음_켜면_목록과_아이콘과_항목이_차_있다() throws {

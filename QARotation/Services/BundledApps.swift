@@ -35,6 +35,11 @@ enum BundledApps {
     /// 목록에서 지우지는 않고 로테이션에서만 뺀다. 소스를 찾으면 보관을 풀고 항목을 채우면 된다.
     static let archivedBundleIDs: Set<String> = [
         "com.leeo.leeocon",
+    ]
+
+    /// 예전에 소스가 없어 한 번 보관으로 돌렸다가, 소스를 찾아 체크리스트를 채운 앱.
+    /// 이미 받은 기기에서 한 번만 보관을 푼다.
+    static let restoredBundleIDs: Set<String> = [
         "com.leeo.tetratint",
         "com.leeo.yeoul",
         "com.lectureq.lectureq",
@@ -68,6 +73,17 @@ enum BundledAppsSeeder {
         }
         try? context.save()
         defaults.set(true, forKey: SettingsKey.didArchiveAppsWithoutChecklist)
+    }
+
+    /// 체크리스트를 채운 앱을 로테이션에 되돌린다. 시스템이 보관했던 앱만, 한 번만.
+    static func restoreAppsWithChecklist(_ context: ModelContext, defaults: UserDefaults = .shared) {
+        guard !defaults.bool(forKey: SettingsKey.didRestoreAppsWithChecklist) else { return }
+        let apps = (try? context.fetch(FetchDescriptor<TrackedApp>())) ?? []
+        for app in apps where BundledApps.restoredBundleIDs.contains(AppChecklistCatalog.key(app.bundleID)) {
+            app.isArchived = false
+        }
+        try? context.save()
+        defaults.set(true, forKey: SettingsKey.didRestoreAppsWithChecklist)
     }
 
     /// 아이콘이 없는 앱에 넣어 둔 아이콘을 채운다. 네트워크 없이도 목록과 위젯에 아이콘이 보인다.

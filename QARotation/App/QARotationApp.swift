@@ -19,6 +19,7 @@ struct QARotationApp: App {
         ChecklistSeeder.fillMissingSteps(container.mainContext)
         BundledAppsSeeder.seedIfNeeded(container.mainContext)
         BundledAppsSeeder.archiveAppsWithoutChecklist(container.mainContext)
+        BundledAppsSeeder.restoreAppsWithChecklist(container.mainContext)
         AppChecklistSeeder.seedNewItems(container.mainContext)
         ClaudeQASeeder.seedIfNeeded(container.mainContext)
         PickChangeCoordinator.pickDidChange(context: container.mainContext)
