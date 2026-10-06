@@ -87,10 +87,14 @@ enum SessionRecorder {
     }
 
     /// Claude 기록에서 이어받을 결과. 그 기록의 결과는 모두 자동으로 본 것이다.
+    /// 그 뒤 카탈로그에서 이름을 바꾼 항목은 새 제목으로 옮겨 붙인다.
     static func carried(from session: QASession?) -> [String: CarriedResult] {
         guard let session else { return [:] }
+        let renamed = AppChecklistCatalog.renamedTitles[AppChecklistCatalog.key(session.app?.bundleID ?? "")] ?? [:]
         return Dictionary(
-            (session.results ?? []).map { ($0.itemTitle, CarriedResult(outcome: $0.outcome, note: $0.note, byClaude: true)) },
+            (session.results ?? []).map {
+                (renamed[$0.itemTitle] ?? $0.itemTitle, CarriedResult(outcome: $0.outcome, note: $0.note, byClaude: true))
+            },
             uniquingKeysWith: { first, _ in first }
         )
     }

@@ -73,9 +73,15 @@ struct ClaudeQASeederTests {
         let run = try #require(runs.first { $0.bundleID == "com.Ysoup.TokenMemo" })
         let catalog = Set(AppChecklistCatalog.items(for: run.bundleID).map(\.1))
         let defaults = Set(DefaultChecklist.items.map(\.1))
-        let titles = Set(run.results.map(\.title))
-        #expect(catalog.isSubset(of: titles))
+        let renamed = AppChecklistCatalog.renamedTitles[AppChecklistCatalog.key(run.bundleID)] ?? [:]
+        let titles = Set(run.results.map { renamed[$0.title] ?? $0.title })
         #expect(defaults.isSubset(of: titles))
+        // 결과지는 그날의 목록을 본 것이다. 그 뒤 카탈로그에 더한 항목은 없어도 되지만,
+        // 결과지의 제목은 (이름을 바꾼 것까지 따라가면) 지금 목록에 있어야 이어받을 수 있다.
+        // 목록 밖에서 Claude가 따로 찾은 문제는 실패로만 남는다.
+        for entry in run.results where !catalog.contains(renamed[entry.title] ?? entry.title) && !defaults.contains(entry.title) {
+            #expect(entry.outcome == Outcome.fail.rawValue, "\(entry.title)")
+        }
         for entry in run.results where entry.screenshot != nil {
             #expect(ClaudeQARuns.screenshot(named: entry.screenshot) != nil, "\(entry.title)")
         }
