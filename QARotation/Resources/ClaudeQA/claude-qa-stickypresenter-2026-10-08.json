@@ -1,0 +1,731 @@
+{
+ "id": "stickypresenter-2026-10-08-claude",
+ "bundleID": "com.leeo.StickyPresenter",
+ "startedAt": "2026-10-08T20:13:02+09:00",
+ "durationSeconds": 1148,
+ "deviceModel": "Claude 자동 QA · Mac",
+ "osVersion": "macOS 27.0",
+ "appVersion": "1.1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "macOS 27.0에서 Debug 빌드를 다섯 번 켜고 끄는 동안(첫 실행 1번 포함) 죽지 않았다. 켤 때마다 3초 안에 타이머 창이 뜨고 메뉴 막대 메뉴(새 스티키 노트~StickyPresenter 종료)가 AX로 읽혔다.",
+   "screenshot": "claude-qa-stickypresenter-03-timer-empty"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "메뉴로 새 노트를 만들고 끄고 다시 켜니 노트가 같은 자리에 돌아왔다. 다만 노트에 글을 직접 치는 것은 키 입력이 필요해 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "앱과 위젯·리모컨 소스에 StoreKit·구매 코드가 없다. 무료 앱이다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "앱과 위젯·리모컨 소스에 StoreKit·구매 코드가 없다. 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "시스템 전체 다크 모드를 바꾸면 사용 중인 사용자 화면이 바뀌어 못 봤다. 텔레프롬프터는 늘 어두운 바탕이라 글자가 잘 보였다.",
+   "screenshot": "claude-qa-stickypresenter-05-teleprompter"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "디스플레이 해상도를 바꾸면 사용 중인 화면이 바뀌어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "창을 끌어 줄이는 조작이 필요해 못 봤다. 기본 크기(360×380)에서는 음악 줄 가운데 글이 '곡이 없습니다 — 집…더에 음원을 넣으세요'로 가운데가 잘려 보인다.",
+   "screenshot": "claude-qa-stickypresenter-03-timer-empty"
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다. AX 트리를 읽어 보니 입력 형식 보기·새 스티키 노트·음악 재생 단추에는 이름(help)이 있지만, 빠른 시작 3m/5m/10m/15m 단추와 −30s/+30s 단추에는 AXTitle·AXDescription이 비어 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 스티키 노트·타이머 창·떠 있는 타이머 위젯이 어긋남 없이 떴다. 단위 테스트 22개 통과. 알림 센터 위젯은 서명 없는 빌드라 App Group을 못 써서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "앱 스킴 빌드에서 Swift 경고 2개 모두 지원 종료 API다. TimerView.swift:1598, 1599의 onChange(of:perform:)가 macOS 14.0부터 deprecated다. WidgetExtension 스킴은 경고 0개.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다. 지금 메뉴는 AX로 읽어 보니 도움말·설정… 항목이 있고 이메일·인스타그램은 도움말 하위 메뉴에 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에 사용법 스티키 노트가 하나 뜬다",
+   "outcome": "pass",
+   "note": "첫 실행 표식(hasLaunchedBefore)을 지우고 켜니 화면 왼쪽(60,330)에 단축키가 적힌 노란 사용법 노트 하나가 떴다(209자).",
+   "screenshot": "claude-qa-stickypresenter-01-first-note"
+  },
+  {
+   "title": "첫 실행에 사용 가이드 창이 맨 앞에 뜬다",
+   "outcome": null,
+   "note": "첫 실행에 사용 가이드 창이 만들어진 것은 창 목록으로 확인했다. 다만 확인했을 때는 이미 닫혀 있었고 단축키 주제에 머물러 있어, 맨 앞에 시작하기 주제로 떴는지는 못 봤다(사용 중인 Mac이라 Return 입력이 기본 단추로 들어갔을 수 있다).",
+   "screenshot": "claude-qa-stickypresenter-02-guide-shortcuts"
+  },
+  {
+   "title": "Dock에 아이콘 없이 메뉴 막대에만 산다",
+   "outcome": "pass",
+   "note": "실행 중인 프로세스를 lsappinfo로 보니 종류가 UIElement(Dock 아이콘 없음)이고, 메뉴 막대 2에 노트 아이콘 메뉴가 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌘⌃N을 누르면 빈 노트가 새로 뜬다",
+   "outcome": null,
+   "note": "전역 단축키 ⌘⌃N은 키 입력이 필요해 못 봤다. 메뉴 막대의 새 스티키 노트 항목으로는 글자 없는 새 노트(0자)가 떴다.",
+   "screenshot": "claude-qa-stickypresenter-06-pink-note"
+  },
+  {
+   "title": "⌘⌃S·⌘⌃H로 모든 노트가 보였다 숨는다",
+   "outcome": null,
+   "note": "전역 단축키 입력이 필요하다. 사용자가 쓰고 있는 Mac이라 키 입력을 보내지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 색 메뉴에서 고른 색으로 새 노트가 난다",
+   "outcome": "pass",
+   "note": "메뉴 막대 ▸ 기본 색상에서 분홍을 누르고 새 스티키 노트를 누르니 분홍 노트가 떴다(notes.json에도 color pink). 단축키 대신 같은 동작의 메뉴 항목을 눌렀다.",
+   "screenshot": "claude-qa-stickypresenter-06-pink-note"
+  },
+  {
+   "title": "모든 창을 닫아도 앱이 메뉴 막대에 남는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Finder에서 다시 열면 타이머 목록이 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "도움말 ▸ 사용 가이드로 가이드 창을 다시 연다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음을 눌러 일곱 주제를 차례로 넘기고 시작하기로 닫는다",
+   "outcome": null,
+   "note": "다음 단추를 누르는 조작은 못 했다. 단축키 주제(마지막)에서 아래 단추가 시작하기로 바뀌어 있는 것은 봤다.",
+   "screenshot": "claude-qa-stickypresenter-02-guide-shortcuts"
+  },
+  {
+   "title": "단축키 주제에 일곱 단축키가 표로 나온다",
+   "outcome": "pass",
+   "note": "가이드의 단축키 주제에 ⌘^N 새 스티키 노트부터 ⌘^H 모든 노트 감추기까지 일곱 줄이 하는 일과 함께 표로 나왔다.",
+   "screenshot": "claude-qa-stickypresenter-02-guide-shortcuts"
+  },
+  {
+   "title": "다른 앱이 차지한 단축키는 다른 앱이 사용 중으로 표시된다",
+   "outcome": null,
+   "note": "전역 단축키 입력이 필요하다. 사용자가 쓰고 있는 Mac이라 키 입력을 보내지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "도움말 메뉴에서 메일과 인스타그램이 열린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Keynote 전체 화면 앞에서 ⌘⌃T가 바로 먹는다",
+   "outcome": null,
+   "note": "실제 장비·다른 앱(Keynote, 외장 모니터 등)이 필요한 조작이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌘⌃T가 타이머 위젯을 감췄다 다시 보인다",
+   "outcome": null,
+   "note": "전역 단축키 입력이 필요하다. 사용자가 쓰고 있는 Mac이라 키 입력을 보내지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 화면 Keynote 위에 스티키 노트가 보인다",
+   "outcome": null,
+   "note": "실제 장비·다른 앱(Keynote, 외장 모니터 등)이 필요한 조작이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "노트를 눌러도 발표 앱의 포커스를 빼앗지 않는다",
+   "outcome": null,
+   "note": "실제 장비·다른 앱(Keynote, 외장 모니터 등)이 필요한 조작이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌘⌃V로 클립보드 내용이 새 노트가 된다",
+   "outcome": null,
+   "note": "전역 단축키 입력이 필요하다. 사용자가 쓰고 있는 Mac이라 키 입력을 보내지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "마우스를 올려야 노트 조절 단추가 나타난다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "색 동그라미를 눌러 여섯 색으로 바꾼다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "투명도 슬라이더로 노트가 옅어진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자 크기 ±로 10pt에서 32pt까지 간다",
+   "outcome": null,
+   "note": "글자 크기 범위(10~32pt)를 확인하는 테스트가 없다. NoteStoreTests.testLenientDecoding이 저장된 999pt를 32로 깎아 읽는 것만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "자물쇠를 채우면 글이 안 고쳐지고 선택만 된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "아래 줄에 글자 수가 세어져 보인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 노트 단추 이름을 읽는다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "모두 지우기는 한 번 묻고 나서 지운다",
+   "outcome": null,
+   "note": "모든 노트 지우기 메뉴를 AX로 눌렀지만 묻는 창이 뜨지 않았다. 메뉴 열기 없이 누른 것이라 앱 문제인지 누르는 방법 문제인지 가릴 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "노트 글·자리·크기가 재실행 후 같은 곳에 돌아온다",
+   "outcome": "pass",
+   "note": "노트 두 장(사용법 노트 60,330 / 분홍 노트 897,336, 각 280×220)을 둔 채 메뉴로 끝내고 다시 켜니 같은 글이 같은 자리·같은 크기로 돌아왔다. 직접 옮기거나 키우지는 못했다. NoteStoreTests.testRoundTrip도 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "노트 색·투명도·잠금이 재실행 후 남는다",
+   "outcome": "pass",
+   "note": "NoteStoreTests.testRoundTrip이 색(pink)·투명도 0.5·잠금 true를 저장하고 다시 읽어 그대로인 것을 확인한다. 화면에서 바꾸는 조작은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "치자마자 ⌘Q로 끝내도 마지막 글자까지 남는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "닫은 노트를 닫은 노트 다시 열기로 되살린다",
+   "outcome": "pass",
+   "note": "사용법 노트가 닫힌 뒤(recentlyClosed에 들어감) 메뉴 막대 ▸ 닫은 노트 다시 열기를 누르니 같은 글의 노트가 원래 자리(60,330)에 떴다.",
+   "screenshot": "claude-qa-stickypresenter-01-first-note"
+  },
+  {
+   "title": "모든 노트 지우기로 닫은 노트도 되살릴 수 있다",
+   "outcome": null,
+   "note": "글 있는 노트 세 장을 만들려면 키 입력이 필요해 못 했다. NoteStoreTests.testStashSkipsEmptyNotesAndCaps가 빈 노트는 안 넣고 개수 한도를 지키는 것만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "빠진 모니터에 있던 노트가 다음 실행 때 기본 화면 안으로 온다",
+   "outcome": "pass",
+   "note": "NoteStoreTests.testFrameOnMissingScreenIsBroughtBack이 빠진 화면 좌표(3000,200)의 노트를 노트북 화면 안으로 데려오고 크기는 지키는 것을 확인한다. 실제 모니터를 뽑아 보지는 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "깨진 저장 파일은 지우지 않고 옮겨 둔 뒤 알린다",
+   "outcome": null,
+   "note": "NoteStoreTests.testCorruptFileIsMovedAsideNotDeleted·testWrongShapeJSONIsTreatedAsCorrupt가 깨진 파일을 지우지 않고 옮겨 두는 것은 확인한다. 알림 창과 Finder에서 보기는 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "텔레프롬프터가 자동 스크롤되고 좌우 반전된다",
+   "outcome": null,
+   "note": "텔레프롬프터 창은 메뉴로 열려 대본이 보였다. 재생·좌우 반전 단추를 AX로 눌렀지만 화면에 변화가 없어, 누르는 방법 문제인지 가릴 수 없었다.",
+   "screenshot": "claude-qa-stickypresenter-05-teleprompter"
+  },
+  {
+   "title": "클립보드 글이 대본으로 들어와 있다",
+   "outcome": "pass",
+   "note": "클립보드에 ~/Documents/workspace/Auto 가 있는 채로 메뉴 ▸ 텔레프롬프터를 여니 본문에 그 글이 그대로 들어와 있었다.",
+   "screenshot": "claude-qa-stickypresenter-05-teleprompter"
+  },
+  {
+   "title": "클립보드가 비면 안내 문구가 대신 들어온다",
+   "outcome": null,
+   "note": "클립보드를 이미지로 바꾸면 사용자의 클립보드를 덮어써야 해서 못 했다. 이 경우를 다루는 테스트도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "속도 슬라이더로 스크롤이 빨라지고 느려진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음으로 단추를 누르면 대본이 맨 위로 돌아간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "대본 끝에 닿으면 스크롤이 저절로 멈춘다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "좌우 반전 중에도 대본 끝에서 멈춘다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝에서 재생을 누르면 처음부터 다시 흐른다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "텔레프롬프터 속도·글자 크기·반전이 다음에 열 때도 남는다",
+   "outcome": null,
+   "note": "이 동작을 다루는 테스트가 없다(StickyPresenterTests는 NoteStoreTests 10개, TimerCoreTests 12개뿐). 텔레프롬프터 설정 저장은 확인 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "연필을 눌러 대본을 그 자리에서 고친다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "위아래 그라데이션이 글을 덮어 읽기 쉽다",
+   "outcome": "pass",
+   "note": "텔레프롬프터 본문 맨 위와 맨 아래에 어둡게 옅어지는 그라데이션 띠가 보였다(재생 중은 아니다).",
+   "screenshot": "claude-qa-stickypresenter-05-teleprompter"
+  },
+  {
+   "title": "5:30·1h 20m·45s·10이 모두 시간으로 읽힌다",
+   "outcome": "pass",
+   "note": "TimerCoreTests.testColonFormats(5:30=330, 1:15:00=4500), testUnitFormats(1h 20m=4800, 45s=45), testPlainNumberIsMinutes(10=600)가 모두 시간으로 읽는 것을 확인한다. 미리보기 표시는 UI라 별도다.",
+   "screenshot": "claude-qa-stickypresenter-03-timer-empty"
+  },
+  {
+   "title": "입력 아래에 해석한 시간이 미리 보인다",
+   "outcome": null,
+   "note": "입력 칸에 글을 치는 키 입력이 필요하다. AX로 값만 넣으면 SwiftUI 바인딩이 안 바뀌어 미리보기가 안 생겨 판정할 수 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "못 읽는 입력에는 보내기 단추가 안 생긴다",
+   "outcome": null,
+   "note": "TimerCoreTests.testUnreadableInputIsZero가 abc를 0으로 읽는 것은 확인한다. 보내기 단추가 안 생기는 것은 키 입력이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "입력 형식 안내의 예시를 누르면 입력 칸에 채워진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "99:59:59를 넘는 시간은 받지 않는다",
+   "outcome": "pass",
+   "note": "TimerCoreTests.testHugeInputIsRejectedInsteadOfOverflowing이 100h를 0(받지 않음)으로, 99:59:59를 최대값으로 읽는 것을 확인한다. 보내기 단추·미리보기 표시는 UI라 별도다.",
+   "screenshot": null
+  },
+  {
+   "title": "아주 긴 숫자를 쳐도 앱이 꺼지지 않는다",
+   "outcome": "pass",
+   "note": "TimerCoreTests.testHugeInputIsRejectedInsteadOfOverflowing이 9가 스무 개인 입력을 넘침 없이 0으로 돌려주는 것을 확인한다(예전엔 Int 변환에서 죽었다). Return으로 넣는 화면 조작은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "25/5를 넣으면 뽀모도로 타이머가 선다",
+   "outcome": "pass",
+   "note": "TimerCoreTests.testPomodoroInput이 25/5를 집중 1500초·휴식 300초로 읽고, testPomodoroLabel이 25m/5m 라벨을 확인한다. Return으로 만드는 화면 조작은 별도다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머가 없을 때만 빠른 시작 줄이 보인다",
+   "outcome": "pass",
+   "note": "타이머가 없을 때 빠른 시작 줄(3m 5m 10m 15m)이 보였고, 3m을 눌러 타이머를 만들자 그 줄이 사라지고 타이머 추가 줄이 생겼다.",
+   "screenshot": "claude-qa-stickypresenter-04-timer-running"
+  },
+  {
+   "title": "프리셋 편집에서 값을 1~6개로 바꿔 둔다",
+   "outcome": null,
+   "note": "프리셋 개수 한도(1~6개)를 다루는 테스트가 없다. 편집 화면은 키 입력이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "고친 프리셋이 원문 그대로 다시 열린다",
+   "outcome": null,
+   "note": "이 동작을 다루는 테스트가 없다(StickyPresenterTests는 NoteStoreTests 10개, TimerCoreTests 12개뿐). 프리셋 원문 저장은 확인 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머 추가를 펼쳐 프리셋으로 타이머를 하나 더 만든다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "−30s·+30s로 남은 시간을 30초씩 줄이고 늘린다",
+   "outcome": "pass",
+   "note": "3m 타이머에서 +30s를 AX로 누르니 01:29가 01:57로 늘고, −30s를 누르니 01:52가 01:20으로 줄었다(누르는 사이 흐른 1~2초 포함).",
+   "screenshot": "claude-qa-stickypresenter-04-timer-running"
+  },
+  {
+   "title": "끝난 타이머의 재생을 누르면 처음부터 다시 돈다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝난 타이머 줄의 프리셋으로 같은 위젯에서 다시 시작한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머를 지워도 남은 타이머가 계속 돈다",
+   "outcome": null,
+   "note": "이 동작을 다루는 테스트가 없다(StickyPresenterTests는 NoteStoreTests 10개, TimerCoreTests 12개뿐). 여러 타이머 중 하나를 지우는 경로는 확인 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머 줄에 마우스를 올리면 그 위젯에 점선 테두리가 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머 창이 첫 클릭부터 끌려 옮겨진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "왼쪽 위 닫기 버튼이 위젯을 감추고 타이머는 계속 흐른다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "S·M·L을 눌러 위젯 크기가 세 단으로 바뀐다",
+   "outcome": "pass",
+   "note": "타이머 줄의 M, L, S를 AX로 차례로 누르니 위젯 창이 300×300, 420×420, 200×200으로 바뀌었다.",
+   "screenshot": null
+  },
+  {
+   "title": "오른쪽 아래 그립으로 정사각 비율이 지켜진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝이 가까우면 링과 숫자가 붉게 변한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "진행 선이 1/4 지점을 지날 때 회색 점이 반짝인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다 끝나면 붉은 테두리가 다섯 번 깜빡인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머가 끝나면 종소리가 세 번 울린다",
+   "outcome": null,
+   "note": "음원 파일과 소리를 듣는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "테마 단추가 시스템·밝게·어둡게·카멜레온을 돈다",
+   "outcome": null,
+   "note": "테마 단추를 AX로 누르니 툴팁이 시스템 → 밝게 → 어둡게 → 카멜레온 순으로 바뀌었다. 이 빌드는 화면 기록이 이미 허용되어 있어 권한 조건은 못 맞췄다.",
+   "screenshot": null
+  },
+  {
+   "title": "윈도우로 열면 신호등 없는 창으로 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "윈도우 창이 화면 공유의 윈도우 목록에 이름과 함께 잡힌다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "윈도우 창 그립이 첫 클릭부터 크기를 바꾼다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "정렬을 누르면 위젯이 타이머 창 옆에 붙는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면을 하나 뽑아도 위젯 창이 남은 화면에 있다",
+   "outcome": null,
+   "note": "실제 장비·다른 앱(Keynote, 외장 모니터 등)이 필요한 조작이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌘⌃B로 25분·5분 뽀모도로가 바로 돈다",
+   "outcome": null,
+   "note": "전역 단축키 입력이 필요하다. 사용자가 쓰고 있는 Mac이라 키 입력을 보내지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "뽀모도로가 집중이 끝나면 휴식으로 넘어간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "집중은 빨강, 휴식은 초록으로 위젯 색이 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카멜레온 위젯이 뒤 화면 색에 맞춰 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카멜레온 전에 화면 기록이 왜 필요한지 먼저 설명한다",
+   "outcome": null,
+   "note": "이 빌드는 화면 기록 권한이 이미 허용된 상태(CGPreflightScreenCaptureAccess가 참)라 카멜레온으로 가도 안내 창이 뜨지 않는 게 맞다. 권한이 없는 상태는 만들 수 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "권한 안내에서 시스템 설정 열기를 누르면 화면 기록 설정이 열린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "권한 안내에서 건너뛰기를 누르면 카멜레온을 지나 시스템으로 간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면 기록 권한이 없으면 카멜레온이 시스템 색으로 그려진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "집중·차분·재즈·활기 네 분위기를 고른다",
+   "outcome": null,
+   "note": "네 분위기 단추(집중·차분·재즈·활기)는 보였다. 재즈를 눌러 바뀌는 것은 못 봤다.",
+   "screenshot": "claude-qa-stickypresenter-03-timer-empty"
+  },
+  {
+   "title": "곡이 없는 분위기는 비었다고 알려 준다",
+   "outcome": "pass",
+   "note": "음원을 넣지 않은 집중 분위기에서 가운데 글이 곡이 없습니다 — 집중 폴더에 음원을 넣으세요로 적히고 재생 단추가 흐렸다. 다만 기본 창 폭에서는 글 가운데가 …로 잘린다.",
+   "screenshot": "claude-qa-stickypresenter-03-timer-empty"
+  },
+  {
+   "title": "폴더 열기로 음원 넣을 자리가 Finder에 뜬다",
+   "outcome": null,
+   "note": "음원 파일과 소리를 듣는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새로 읽기로 폴더에 넣은 곡이 바로 잡힌다",
+   "outcome": null,
+   "note": "음원 파일과 소리를 듣는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머와 함께 재생을 켜면 음악이 타이머를 따른다",
+   "outcome": null,
+   "note": "음원 파일과 소리를 듣는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "볼륨과 분위기가 다시 켜도 그대로다",
+   "outcome": null,
+   "note": "이 동작을 다루는 테스트가 없다(StickyPresenterTests는 NoteStoreTests 10개, TimerCoreTests 12개뿐). 음악 볼륨·분위기 저장은 확인 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "시작·정지가 0.8초에 걸쳐 부드럽게 넘어간다",
+   "outcome": null,
+   "note": "음원 파일과 소리를 듣는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "리모컨 메뉴에 네 자리 연결 코드가 띄어 적힌다",
+   "outcome": "pass",
+   "note": "메뉴 막대 ▸ 리모컨 하위 메뉴 맨 윗줄이 연결 코드:   9 4 2 9로 네 숫자를 띄워 적혀 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "붙어 있는 리모컨 수가 메뉴에 세어져 있다",
+   "outcome": null,
+   "note": "iPhone 리모컨을 붙일 수 없어 못 봤다. 아무것도 안 붙었을 때는 연결된 리모컨 없음으로 적힌다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결 코드 새로 만들기를 누르면 코드가 바뀐다",
+   "outcome": "pass",
+   "note": "리모컨 메뉴의 연결 코드 새로 만들기를 누르니 코드가 9429에서 8293으로 바뀌었다.",
+   "screenshot": null
+  },
+  {
+   "title": "기억한 리모컨이 없으면 지우기 항목이 흐려진다",
+   "outcome": "pass",
+   "note": "기억한 리모컨이 없는 상태에서 리모컨 메뉴의 기억한 리모컨 지우기 항목이 enabled false(흐림)였다.",
+   "screenshot": null
+  },
+  {
+   "title": "기억한 리모컨 지우기는 한 번 묻고 연결을 끊는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "로컬 네트워크를 막으면 리모컨이 Mac을 못 찾는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 센터 위젯에서 타이머가 줄어든다",
+   "outcome": null,
+   "note": "서명 없는 Debug 빌드라 App Group에 못 써서 알림 센터 위젯을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머가 없으면 위젯이 빈 안내로 바뀐다",
+   "outcome": null,
+   "note": "서명 없는 Debug 빌드라 App Group에 못 써서 알림 센터 위젯을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "멈춘 타이머는 위젯에 일시정지로 표시된다",
+   "outcome": null,
+   "note": "서명 없는 Debug 빌드라 App Group에 못 써서 알림 센터 위젯을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝난 타이머는 위젯에서 붉은 종으로 바뀐다",
+   "outcome": null,
+   "note": "서명 없는 Debug 빌드라 App Group에 못 써서 알림 센터 위젯을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 끄면 위젯 카운트다운이 멎는다",
+   "outcome": null,
+   "note": "서명 없는 Debug 빌드라 App Group에 못 써서 알림 센터 위젯을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메뉴 막대 ▸ 설정…으로 설정 창이 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "로그인할 때 자동으로 열기를 켜면 다음 로그인에 앱이 켜진다",
+   "outcome": null,
+   "note": "실제 장비·다른 앱(Keynote, 외장 모니터 등)이 필요한 조작이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정의 새 노트 색이 메뉴의 기본 색상과 같이 움직인다",
+   "outcome": null,
+   "note": "전역 단축키 입력이 필요하다. 사용자가 쓰고 있는 Mac이라 키 입력을 보내지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "노트 저장 파일 보기가 Finder에서 notes.json을 짚어 준다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정 ▸ 지원의 피드백 보내기가 피드백 화면을 연다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 봤지만, 사용자가 쓰고 있는 Mac이라 키 입력·끌기·마우스 올리기는 보내지 않았다. 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정 맨 아래 버전이 1.1.0 (13)으로 적힌다",
+   "outcome": null,
+   "note": "설정 창은 앞으로 나오며 포커스를 가져가 사용 중인 화면을 가려서 열지 않았다. 소스 버전은 1.1.0 (13)이다.",
+   "screenshot": null
+  },
+  {
+   "title": "시스템 언어가 한국어면 메뉴가 한국어로 나온다",
+   "outcome": null,
+   "note": "시스템 언어가 한국어인 상태에서 메뉴가 📌 새 스티키 노트로 나왔다. 언어를 바꿔 다시 켜는 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac이 잠들었다 깨도 타이머가 실제 시각에 맞다",
+   "outcome": null,
+   "note": "덮개를 닫는 조작이 필요하다. TimerCoreTests.testTickClockCatchesUpAfterStall·testTickClockIgnoresClockGoingBackwards가 늦게 온 틱을 몰아서 세는 계산만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 앱이 앞에 있어도 타이머가 제때 끝나 울린다",
+   "outcome": null,
+   "note": "Keynote 슬라이드쇼와 소리가 필요해 못 봤다. TimerCoreTests의 TickClock 테스트 4개가 틱 지연을 흡수하는 계산만 확인한다.",
+   "screenshot": null
+  }
+ ]
+}

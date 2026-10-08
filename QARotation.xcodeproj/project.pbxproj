@@ -10,125 +10,311 @@
 		0010A556C4B4981A859F1B6C /* appicon-com.devkoan.firetracker.png in Resources */ = {isa = PBXBuildFile; fileRef = 35EE495007B15E701CB306C5 /* appicon-com.devkoan.firetracker.png */; };
 		0052A11285D09091C73477A7 /* appicon-com.devkoan.externalize.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C0858E49D79F94A4FB244F /* appicon-com.devkoan.externalize.png */; };
 		00A09F28AC667B10CA7491F9 /* VersionHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F696A06C266F6D893605E /* VersionHistory.swift */; };
+		01144BC7565B416339664D45 /* claude-qa-rotoscope-02-reopen-last.png in Resources */ = {isa = PBXBuildFile; fileRef = 4108C645D566A6F23212B080 /* claude-qa-rotoscope-02-reopen-last.png */; };
+		032CD8DC6C9856FD7E665935 /* claude-qa-cooltime-04-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CF03EA3A3A6ED29057D1390F /* claude-qa-cooltime-04-dark.png */; };
 		03CE20C64E465D3E76579A96 /* appicon-com.leeo.stickypresenter.remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 180A335167BC12B841D40E24 /* appicon-com.leeo.stickypresenter.remote.png */; };
+		03F37FA408190E065A19623A /* claude-qa-familycourt-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = B192537D2C22D70786711C23 /* claude-qa-familycourt-2026-10-08.json */; };
+		06D07056470529ECE9914B15 /* claude-qa-geusaie-01-home.png in Resources */ = {isa = PBXBuildFile; fileRef = A53D453CBCE1205F95F10521 /* claude-qa-geusaie-01-home.png */; };
 		073E3A32CA7A8316C2A85FD7 /* PickChangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC742F77A0846264F10E9FD /* PickChangeCoordinator.swift */; };
 		079491819F893546B86221BC /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7361DA61A45FE63BDA8F084F /* AppSettings.swift */; };
+		07A0A16CCFF789881D7A03AA /* claude-qa-goldweek-05-ax5-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = D4684EB7292088DE16B2A3E7 /* claude-qa-goldweek-05-ax5-calendar.png */; };
 		0826EFB6D26B158893662E2B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA602A0B5D0E2759F1E399 /* SettingsView.swift */; };
 		085DC232C4B9DFCD1E097F61 /* QARotationWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E69D9C341BE673DABBFC9EE1 /* QARotationWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0891538ABE494B15B76E79E2 /* appicon-com.devkoan.indonesiansmalltalk.png in Resources */ = {isa = PBXBuildFile; fileRef = CFBDDB918230DB876293CF94 /* appicon-com.devkoan.indonesiansmalltalk.png */; };
 		09A8848DCC7CAB5FB181D97D /* QARotationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C63205168CBD7C65D0457 /* QARotationApp.swift */; };
 		09F5F86E03D1735CC31E08B1 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3D6C634A5B5AA6BD5F0DA7 /* SessionViewModel.swift */; };
 		09FA90C0B592FA1507E8BE14 /* appicon-com.family.familybank.png in Resources */ = {isa = PBXBuildFile; fileRef = FBED544EC467850F56727F68 /* appicon-com.family.familybank.png */; };
+		0AD91A1209B6D3200A792242 /* claude-qa-dontgomart-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3783A8A63BFB1AC1E3AB3341 /* claude-qa-dontgomart-01-first-launch.png */; };
 		0BC26D1D62453AC667511A6F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261538F46586DBAA9DEA6A /* Persistence.swift */; };
 		0D5DC68C6B8E38C650B73504 /* ITunesLookupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE08DB977009800412878CCE /* ITunesLookupClient.swift */; };
+		0FD09F17BE46904D342E8B0C /* claude-qa-tetratint-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 135D682D29DF8A8CA1CC3CD0 /* claude-qa-tetratint-2026-10-08.json */; };
 		10D3C869C5616CA6B1834D68 /* appicon-com.leeo.slidesnap.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE654F60C159BAFBF36E98D /* appicon-com.leeo.slidesnap.png */; };
+		13A6DA66ABDC7F034D244D8F /* claude-qa-goldweek-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 11572E2EA45FAC783312CF14 /* claude-qa-goldweek-2026-10-08.json */; };
 		14F799567881EB0D1C965F5D /* appicon-com.leeo.jujob.png in Resources */ = {isa = PBXBuildFile; fileRef = A0055E3A94769E4C72F8FB88 /* appicon-com.leeo.jujob.png */; };
+		15E7A0D45602BA5643CB88F5 /* claude-qa-goldweek-02-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB3051C02C5543D53387DB5 /* claude-qa-goldweek-02-home.png */; };
 		15F53885B0B55625B2246285 /* appicon-com.kora.leeo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A8A955910A0C9C5E3BF315 /* appicon-com.kora.leeo.png */; };
+		164F5CC9063468BFBB9789BA /* claude-qa-thinkflow-04-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B31A70599EF000C6DF642B7 /* claude-qa-thinkflow-04-ax5.png */; };
+		167104D1D8114F2E20BB8AF8 /* claude-qa-moonlit-arcade-03-lobby.png in Resources */ = {isa = PBXBuildFile; fileRef = BD7113FF3770E1CDB959F171 /* claude-qa-moonlit-arcade-03-lobby.png */; };
 		16C3B74784D5B91F1229F94C /* SessionDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340B485D686C126CCB88303 /* SessionDraftStore.swift */; };
 		173F1F819BE272A7C8FC0A18 /* ChecklistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8772F5F434D9FBE0CE0D3 /* ChecklistRow.swift */; };
+		19E0F93A0AE1BC8C422A7987 /* claude-qa-stampcamera-01-camera-permission.png in Resources */ = {isa = PBXBuildFile; fileRef = FD973EE41BC63E403748FDF5 /* claude-qa-stampcamera-01-camera-permission.png */; };
 		1A0833D24111667E75DB8191 /* appicon-com.leeo.handsfreemetronome.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48270A9EB6BF3011DDFD28 /* appicon-com.leeo.handsfreemetronome.png */; };
+		1A1249A51E2788DDF2193A83 /* claude-qa-cooltime-02-home.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3C4421A2DA9FD264252552 /* claude-qa-cooltime-02-home.png */; };
+		1AFC51038F2401F72789ED97 /* claude-qa-korea-route-05-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 693658625A69D144E193687C /* claude-qa-korea-route-05-ax5.png */; };
 		1B89648616EB529440A98A22 /* appicon-com.leeo.juniordevmistakes.png in Resources */ = {isa = PBXBuildFile; fileRef = 57463C77F9175756CBFA1815 /* appicon-com.leeo.juniordevmistakes.png */; };
+		1C208D82B3A4EBD0D241F43D /* claude-qa-burningparchment-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 9268B89E89F9F802E6AAB010 /* claude-qa-burningparchment-2026-10-08.json */; };
+		20C47387BEE1F0B7C4B5D84A /* claude-qa-toki-02-dial.png in Resources */ = {isa = PBXBuildFile; fileRef = 04065292D01D93C58EF21CC9 /* claude-qa-toki-02-dial.png */; };
+		21AEE59942443E97BD341A8E /* claude-qa-wifisnap-03-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 381C5C799980518FDBA7DF10 /* claude-qa-wifisnap-03-dark.png */; };
+		232A98161BA929792AA1272F /* claude-qa-dontgomart-04-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 324E619B6935F894C9C45370 /* claude-qa-dontgomart-04-dark.png */; };
+		2397964816A74CD94B0DD476 /* claude-qa-korea-route-01-start-ko.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1BACDF8F53D43DE322729 /* claude-qa-korea-route-01-start-ko.png */; };
 		243BBC43F868007BB4A3FBE0 /* ClaudeQASeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAA23A30BFA465BA8642A6 /* ClaudeQASeeder.swift */; };
+		24E4780706F31BBB671303B3 /* claude-qa-routinecamera-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD2E4729E4A2B29DF93E115 /* claude-qa-routinecamera-01-first-launch.png */; };
 		2567623B9DFD589252C94EAA /* appicon-com.ysoup.leavewise.png in Resources */ = {isa = PBXBuildFile; fileRef = 471115DD2F38F686F8CD2E1D /* appicon-com.ysoup.leavewise.png */; };
 		2812D9A28B6830F4A28F3A41 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4E3463D6EBBC1BE4AC34 /* AppIconView.swift */; };
+		2A3EFD861C772A7A8893E4FE /* claude-qa-reboundjournal-03-goal-limit.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FEBA9CFCF14E8062A88EE96 /* claude-qa-reboundjournal-03-goal-limit.png */; };
+		2C79148198ECC85179CFB75A /* claude-qa-goldweek-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 24E66AF112629B0502FB9F64 /* claude-qa-goldweek-01-first-launch.png */; };
 		2CEA4AF9708729C904544CC9 /* appicon-com.leeo.thinkflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 82253294AF4BA0035471C218 /* appicon-com.leeo.thinkflow.png */; };
 		2D8E03156C8DB24EBCFB88A3 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A402F362F20D3D346F91D5E8 /* TodayView.swift */; };
+		2DF17B8114F23D7426D4A628 /* claude-qa-yeoul-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 345B76F4C32315B94BAD67D7 /* claude-qa-yeoul-2026-10-08.json */; };
+		2F0D99046A8F4F01DC5BEB69 /* claude-qa-korea-route-02-start-en.png in Resources */ = {isa = PBXBuildFile; fileRef = B4A62A87715B9EB5C96A2809 /* claude-qa-korea-route-02-start-en.png */; };
 		30C39541B2C3122D970CA905 /* TodayPickWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DAED30760BDC61CC2444A /* TodayPickWidget.swift */; };
+		31C664B3B104A779F1DD3E66 /* claude-qa-moonlit-arcade-04-role-reconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D1297A08B4CF84244E9860 /* claude-qa-moonlit-arcade-04-role-reconnect.png */; };
+		32BFBBE5CD867FA26572B17F /* claude-qa-geusaie-04-deadline.png in Resources */ = {isa = PBXBuildFile; fileRef = B42C3FDC98B448F3A146845C /* claude-qa-geusaie-04-deadline.png */; };
 		32FDB271502991764C03387A /* ChecklistSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E926AEBCFC01E7BCCA1681 /* ChecklistSeeder.swift */; };
 		337D3F545D49DEE09EFC1273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E2ED3DF60DBD4D7AB8F43BB /* Assets.xcassets */; };
+		33AA2344767D5B4EB74816E8 /* claude-qa-rainbow-desire-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 59F4A08AB5A9DF245943698A /* claude-qa-rainbow-desire-2026-10-08.json */; };
+		3402B093D5DC4819D8529805 /* claude-qa-reboundjournal-02-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4E32A960364CD0124E1D8B /* claude-qa-reboundjournal-02-home.png */; };
 		348278FE32E7A96C3CE0E14C /* appicon-com.ysoup.tokenmemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E965AA8B8291E8B0843E6A /* appicon-com.ysoup.tokenmemo.png */; };
+		34EACFE7E6DCAE4604C29F6D /* claude-qa-toki-05-german.png in Resources */ = {isa = PBXBuildFile; fileRef = E4138E1E68597C4734650F0E /* claude-qa-toki-05-german.png */; };
+		3968DEB5E4E373976D6F00B0 /* claude-qa-externalize-03-list.png in Resources */ = {isa = PBXBuildFile; fileRef = E89BAB2B34E2FB6960ABEE2B /* claude-qa-externalize-03-list.png */; };
 		3C136A335B0D523C11D55EF2 /* appicon-com.leeo.geusaie.png in Resources */ = {isa = PBXBuildFile; fileRef = A103BE72D03FB3EB0231A899 /* appicon-com.leeo.geusaie.png */; };
 		3C9C8C83037621743FDBEDF5 /* appicon-com.leeo.conversationpractice.png in Resources */ = {isa = PBXBuildFile; fileRef = C0059FAD2027BDCFBAC416CA /* appicon-com.leeo.conversationpractice.png */; };
+		3E1F2CBEF119A39C99384AE8 /* claude-qa-footprintdiary-04-ax5-map.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FA3AD5770EE56E7C1B8C67 /* claude-qa-footprintdiary-04-ax5-map.png */; };
+		3EE6605949CA7A1AD4883EA7 /* claude-qa-burningparchment-04-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = FA41BB89F4E8188931EC26EA /* claude-qa-burningparchment-04-ax5.png */; };
+		3F5C3907C0ECEC5138A37A4A /* claude-qa-slidesnap-04-ax5-grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F2A90B7EB5A8EF5D8CF0FEC /* claude-qa-slidesnap-04-ax5-grid.png */; };
 		42BB757964A899DED27B32FF /* appicon-com.leeo.footprintdiary.png in Resources */ = {isa = PBXBuildFile; fileRef = 0209704E0DC497BA8DCC7C99 /* appicon-com.leeo.footprintdiary.png */; };
+		42C667FB7402D413A542FA1A /* claude-qa-dontgomart-05-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A9F999DD62100D7FE7350 /* claude-qa-dontgomart-05-ax5.png */; };
+		432CEABCF3FA7B1ABD78E07C /* claude-qa-stickypresenter-04-timer-running.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D5D6BD9A56476D3A072A03 /* claude-qa-stickypresenter-04-timer-running.png */; };
+		438870666084921318A6BEBD /* claude-qa-familybank-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = D7295F31EAAD7B91C8F62722 /* claude-qa-familybank-01-first-launch.png */; };
 		439DEC2B9B3AA45523C71082 /* SkipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E2F60D733AF4587EAF8F6 /* SkipStore.swift */; };
+		439F04CC4AFA961B204ED857 /* claude-qa-geusaie-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = C68F977EA2C7B5587DF566B1 /* claude-qa-geusaie-2026-10-08.json */; };
+		45F34EFED29E8998F82AAEAC /* claude-qa-sunflower-02-home.png in Resources */ = {isa = PBXBuildFile; fileRef = DA09BE38D9E831517213333E /* claude-qa-sunflower-02-home.png */; };
+		460C75920C4B6CD5F4FABEA7 /* claude-qa-moonlit-arcade-06-sketch-result.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F74E1738F15F2A902AF44F6 /* claude-qa-moonlit-arcade-06-sketch-result.png */; };
+		466886674C1FE25B7B1BC04A /* claude-qa-burningparchment-03-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4D5300D3E2F972D8D62B8B /* claude-qa-burningparchment-03-dark.png */; };
+		468A4F76051C72701315D43F /* claude-qa-cooltime-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = E535F99A938D4F8843FE0522 /* claude-qa-cooltime-03-ax5.png */; };
+		46DC67FE2BAE7DBB452E69FC /* claude-qa-skydex-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 131761D57B685C27A64484AC /* claude-qa-skydex-2026-10-08.json */; };
 		477B09F2C33AFF627630FA44 /* PickResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D3D4CC250AE94A5482990 /* PickResolver.swift */; };
 		47D4A4ED9264B52C6510B700 /* ChecklistIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */; };
+		47D7A27F43288B02BAF688D3 /* claude-qa-slidesnap-02-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C572D30ABA0037F26B5AB8F /* claude-qa-slidesnap-02-list.png */; };
+		47FC9A9FE13E0A192D95775D /* claude-qa-skydex-01-board.png in Resources */ = {isa = PBXBuildFile; fileRef = B409C90319EEB43E82F23D1D /* claude-qa-skydex-01-board.png */; };
 		48810576C71A7271135ADD4F /* SessionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E04BE6CDFD4B2795C782CD6 /* SessionRecorder.swift */; };
 		4A5800C3FD11356AF7F82552 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7361DA61A45FE63BDA8F084F /* AppSettings.swift */; };
 		4ABBE505CA1B4444FCE1B60D /* appicon-com.leeo.tetratint.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B94330B7AC7FA7A710AA13 /* appicon-com.leeo.tetratint.png */; };
 		4ADBED12C1AC5C5149C5191F /* OutcomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C3BC6CB9E3A0A23995DC8 /* OutcomeButtons.swift */; };
 		4B61DA2DE5703990EC1A9DA1 /* appicon-com.ysoup.routinecamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 74BAB12E242BD2E28E9B83E8 /* appicon-com.ysoup.routinecamera.png */; };
+		4C4542D36EC4A4B08CEDDBA3 /* claude-qa-wifisnap-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 9091F511D552FDDF39EE95BA /* claude-qa-wifisnap-01-first-launch.png */; };
+		4E80CA9CACC1390B31077C22 /* claude-qa-familycourt-03-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A73E5C1807A598480A78260 /* claude-qa-familycourt-03-dark.png */; };
+		4E96EC60D701463565549BF2 /* claude-qa-routinecamera-03-feed.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC948A82EB86BF913B3495 /* claude-qa-routinecamera-03-feed.png */; };
+		4F0C068BCCEB9E25DEF2A352 /* claude-qa-sunflower-01-camera-permission.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DF49B43A08C8CE43730EA5 /* claude-qa-sunflower-01-camera-permission.png */; };
 		500D6FC1A5A58385A5EA5891 /* claude-qa-clipkeyboard-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = C0852C774B38044008C64DC5 /* claude-qa-clipkeyboard-01-first-launch.png */; };
+		500F1DBB19E02EE617B77E25 /* claude-qa-restaurantmap-03-notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EF951E35596056267FBEB8 /* claude-qa-restaurantmap-03-notification.png */; };
 		5049FE4E5FA27B302E05C947 /* appicon-com.burningparchment.app.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE1A780135E3E63A916E505 /* appicon-com.burningparchment.app.png */; };
 		50958C89707759652EDFD5FA /* appicon-com.leeo.bookmarkshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 365BC4D7FCBF913FCD734CA6 /* appicon-com.leeo.bookmarkshot.png */; };
+		50DD83BDB12380353BCD8981 /* claude-qa-notmatempo-01-first-launch-speech.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EDD7B4B3F0536E39A42837 /* claude-qa-notmatempo-01-first-launch-speech.png */; };
+		50E44ACB8C968EA72090A696 /* claude-qa-calendarsnap-02-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1795A7475E33356F29631590 /* claude-qa-calendarsnap-02-calendar.png */; };
+		50EE498381C4658B8938BDFA /* claude-qa-sunflower-03-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 53E41383E0BDE0E108B1EB2E /* claude-qa-sunflower-03-dark.png */; };
+		538622EEA09CDE3E93551A41 /* claude-qa-moonlit-arcade-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 806B23543496F8168CA31AEA /* claude-qa-moonlit-arcade-2026-10-08.json */; };
+		5398E08249DF6CD1CFDBE5D1 /* claude-qa-stickypresenter-01-first-note.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A35A4612D6C885DFD3D080 /* claude-qa-stickypresenter-01-first-note.png */; };
+		53E58D755810260285D3CA45 /* claude-qa-bookmarkshot-02-gear-covers-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 09159B9EB7690ACC9C8CA2F6 /* claude-qa-bookmarkshot-02-gear-covers-plus.png */; };
+		5447776A1DCBBBE673E142A4 /* claude-qa-wifisnap-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = B038C388C0817D04DFCB1B36 /* claude-qa-wifisnap-2026-10-08.json */; };
 		548CF54A65363FA745D57B26 /* appicon-com.leeo.dontgomart.png in Resources */ = {isa = PBXBuildFile; fileRef = E3C56F9A7515D9F2441C5E90 /* appicon-com.leeo.dontgomart.png */; };
+		5507A74A6CA3A13C9EDCADE9 /* claude-qa-bookmarkshot-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA75B318A557361DAD70E86 /* claude-qa-bookmarkshot-01-first-launch.png */; };
+		55A79855005C2B08B051699F /* claude-qa-slidesnap-06-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 036147A9A13740214F45613A /* claude-qa-slidesnap-06-dark.png */; };
+		56E256D3030529628559CD9C /* claude-qa-moonlit-arcade-01-home-subtitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9584ADD1E860832592581DFD /* claude-qa-moonlit-arcade-01-home-subtitle.png */; };
+		5A1897C98FAA1CF769731745 /* claude-qa-dontgomart-03-english.png in Resources */ = {isa = PBXBuildFile; fileRef = C5BBE4893E488A55201DD075 /* claude-qa-dontgomart-03-english.png */; };
+		5AD7875DCE4B285C6F348333 /* claude-qa-tapclipkeyboard-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 39317FE2C4AF24DEAB325CA7 /* claude-qa-tapclipkeyboard-2026-10-08.json */; };
+		5BE4510CDA7E59C6864C6EB8 /* claude-qa-thinkflow-02-home.png in Resources */ = {isa = PBXBuildFile; fileRef = DD199DDAF533BA1C2E7A5A1B /* claude-qa-thinkflow-02-home.png */; };
+		6061D9CCC52C8476F8262C03 /* claude-qa-korea-route-06-far.png in Resources */ = {isa = PBXBuildFile; fileRef = D833C1A6B5362373FFEC5F37 /* claude-qa-korea-route-06-far.png */; };
 		60D821D3BEEEB9EFDD34EF40 /* appicon-com.example.moonlitorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D0F1A467896100327FD6503 /* appicon-com.example.moonlitorder.png */; };
 		60F6AD809AA08D328B6D1F70 /* appicon-com.ysoup.restaurantmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B6B543AF25D82DCDE62A2B9 /* appicon-com.ysoup.restaurantmap.png */; };
 		615737F99EBF0DED39C77B46 /* claude-qa-clipkeyboard-08-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CF91D063BE3A07DF5E9FC8 /* claude-qa-clipkeyboard-08-ax5.png */; };
+		616A1C3731D7EF6B68D10C36 /* claude-qa-korea-route-04-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBDB96867551335DAB32882 /* claude-qa-korea-route-04-dark.png */; };
+		61E773DCB45D0DD60ABB62EE /* claude-qa-moonlit-arcade-05-gm-panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 05F40735837FB342A8FBEA3F /* claude-qa-moonlit-arcade-05-gm-panel.png */; };
+		61E8E255BF5FD3770066D5F8 /* claude-qa-geusaie-03-prep-card.png in Resources */ = {isa = PBXBuildFile; fileRef = C8B02A2D6E93880C95F303B1 /* claude-qa-geusaie-03-prep-card.png */; };
+		62EC35D52051B59601A4C403 /* claude-qa-calendarsnap-04-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 15AEE75923917EA098298C03 /* claude-qa-calendarsnap-04-ax5.png */; };
+		62F12E078F701496E2ED27D1 /* claude-qa-geusaie-06-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DE7ADAF69B799687DB3E38 /* claude-qa-geusaie-06-landscape.png */; };
+		6362879DFE6A2383CFBAE6FC /* claude-qa-higgym-02-reason-step.png in Resources */ = {isa = PBXBuildFile; fileRef = 06166EFC456DCD3E17DE8BDD /* claude-qa-higgym-02-reason-step.png */; };
+		63A3C2AC51854D38390A3973 /* claude-qa-rainbow-desire-04-de.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E49F5E5C9460DCBBEE57F11 /* claude-qa-rainbow-desire-04-de.png */; };
 		6459887569088071F956F74F /* AppImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C60964026B039C30F2FD2 /* AppImporter.swift */; };
+		64E16AD246DE2DAB33B292EF /* claude-qa-higgym-03-compare-step.png in Resources */ = {isa = PBXBuildFile; fileRef = DC54E95D6D8F117A5EA49670 /* claude-qa-higgym-03-compare-step.png */; };
+		670F2AD2E511F0089BA2B302 /* claude-qa-thinkflow-03-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC8A4A741FE254DCDD50788 /* claude-qa-thinkflow-03-dark.png */; };
+		67192C3EC20A72EF4109C57B /* claude-qa-yeoul-03-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = F9414FFB71533FA11733D272 /* claude-qa-yeoul-03-dark.png */; };
 		683A64605D5E009F42DBD015 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9093CAAF63FC814645EA5596 /* NotificationScheduler.swift */; };
+		6A17171298A325701D7DCE98 /* claude-qa-stickypresenter-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FC5FF7642A2BD95DA2442CE /* claude-qa-stickypresenter-2026-10-08.json */; };
+		6B0FA70EC4006CA56FDCFB11 /* claude-qa-footprintdiary-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 093E26F08B36293DA0CF7EE2 /* claude-qa-footprintdiary-2026-10-08.json */; };
 		6B31AD1B8713CE51BBCB0C58 /* appicon-com.leeo.lullabyrecipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F5FD8F0DD9F02360486FB9 /* appicon-com.leeo.lullabyrecipe.png */; };
+		6B70D79BF9867694172B003F /* claude-qa-routinecamera-02-empty-feed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F424637A3C81F398CDB23D1 /* claude-qa-routinecamera-02-empty-feed.png */; };
 		6B71F0D27AEC1DD784326A10 /* ReadableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637E8828530E2D0CC80219B /* ReadableColumn.swift */; };
 		6C483CFB53DBC29740631D14 /* appicon-com.bucketclimb.app.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F6E4D67FC4F444D164E51B /* appicon-com.bucketclimb.app.png */; };
+		6E81F90414F316B4900A542D /* claude-qa-stickypresenter-05-teleprompter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7739CFEE9B3794BA23228149 /* claude-qa-stickypresenter-05-teleprompter.png */; };
+		6F04DD4C403607AE8B6259D1 /* claude-qa-restaurantmap-04-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E00B5B5CE48A8C1A1CC13C /* claude-qa-restaurantmap-04-dark.png */; };
 		6F7406F90643E7877ABF027D /* appicon-com.leeo.wifisnap.png in Resources */ = {isa = PBXBuildFile; fileRef = BF51EFB5AFEF1B7D37BE6217 /* appicon-com.leeo.wifisnap.png */; };
 		6F86696E8AD305086ACB8B23 /* DefaultStepsByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */; };
+		6F91144286A9DE63B699AB91 /* claude-qa-rotoscope-03-legacy-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 644A823C0386517C71103F04 /* claude-qa-rotoscope-03-legacy-dark.png */; };
+		6FD6A25A5ED23E944BDDD406 /* claude-qa-externalize-01-onboarding.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF824F792749E083E8AD59 /* claude-qa-externalize-01-onboarding.png */; };
 		70735AB084AF44A863B1EC49 /* ChecklistEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8B236A1231B4DDDAA271F8 /* ChecklistEditorView.swift */; };
+		7073AD1AAAA403154109428E /* claude-qa-dontgomart-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 25C81255317FED7D6D54F627 /* claude-qa-dontgomart-2026-10-08.json */; };
+		7128AF6A037029FB3A7B2619 /* claude-qa-goldweek-03-recommendations.png in Resources */ = {isa = PBXBuildFile; fileRef = FD952B2D05D9EFA4B594EF98 /* claude-qa-goldweek-03-recommendations.png */; };
+		72F65A5CB018597DF315EF6F /* claude-qa-pixelme-01-onboarding.png in Resources */ = {isa = PBXBuildFile; fileRef = 676F425BC9AEEF37254C398E /* claude-qa-pixelme-01-onboarding.png */; };
+		7701832094D1E4DBF4823313 /* claude-qa-tetratint-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 410AD17192BD9998B60CEFD7 /* claude-qa-tetratint-01-first-launch.png */; };
+		772214772F8573AAB61A1DEE /* claude-qa-stickypresenter-remote-01-searching-checklist.png in Resources */ = {isa = PBXBuildFile; fileRef = 60DB2E517A3E8602550AE552 /* claude-qa-stickypresenter-remote-01-searching-checklist.png */; };
+		78D463682C97ED48B3B19D65 /* claude-qa-thinkflow-01-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AE30FD6C7E7D7AEBC68B57 /* claude-qa-thinkflow-01-empty.png */; };
+		792501F6FF8DF776DEE5ECAE /* claude-qa-staffsinger-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 565AE42F2E1330A58CE43A02 /* claude-qa-staffsinger-2026-10-08.json */; };
 		7A31E94AA74E471B99F7D5D4 /* appicon-com.leeo.pixelme.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FADFA86363AC571B0C49185 /* appicon-com.leeo.pixelme.png */; };
 		7CEE7C6CD3E7AD985A8A5CA1 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1A4954AD5E38768C74007 /* AppDetailView.swift */; };
+		7E739F8227A87D820DBC7869 /* claude-qa-externalize-05-ax5-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB1C11F5714F6CDD4A9381F /* claude-qa-externalize-05-ax5-list.png */; };
+		7EE79B535BAFD16F255EF1F7 /* claude-qa-slidesnap-05-slide.png in Resources */ = {isa = PBXBuildFile; fileRef = 268DCC4324881D9AA8CFCA9F /* claude-qa-slidesnap-05-slide.png */; };
+		7F4AE3C38ACF2AB03ABD40B2 /* claude-qa-bookmarkshot-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 02716A9E7DECC81414FD6850 /* claude-qa-bookmarkshot-2026-10-08.json */; };
 		7F77246E553FB6E6D246EB37 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC2CB91320D827700483E4 /* Rotation.swift */; };
+		80F5B8CC81CF32F81CD5BAAF /* claude-qa-firetracker-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E48ABF28479E48878B8A98C /* claude-qa-firetracker-01-first-launch.png */; };
+		8138C507F92A01737E48C384 /* claude-qa-pixelme-02-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 395EA906166430BDD05CCD0A /* claude-qa-pixelme-02-home.png */; };
+		81C8FAC7D3F41DA2D76CF6D0 /* claude-qa-staffsinger-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 450075FF6CCF577711B31E6D /* claude-qa-staffsinger-01-first-launch.png */; };
+		821AFD1D22C93452F6C379E3 /* claude-qa-rainbow-desire-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = AC98ED4491501D573EF2938A /* claude-qa-rainbow-desire-03-ax5.png */; };
+		824E4DC8A697C95C4052BEF1 /* claude-qa-notmatempo-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE864B6ABE6B0C121F1810 /* claude-qa-notmatempo-2026-10-08.json */; };
+		833E87A769D31BA44C9D1368 /* claude-qa-moonlit-arcade-02-practice-intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C41556558EF707CD5356E7F /* claude-qa-moonlit-arcade-02-practice-intro.png */; };
+		83F0A1248E1A514B9720A1AD /* claude-qa-slidesnap-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B1782542480FA6394FCB3EA /* claude-qa-slidesnap-2026-10-08.json */; };
 		845D49460004015F8CDD9598 /* SeedApps.json in Resources */ = {isa = PBXBuildFile; fileRef = C029EF31625015D40449351A /* SeedApps.json */; };
+		849BAEB5E48211341E41D290 /* claude-qa-wifisnap-04-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C655287A375B4779CD2C86F /* claude-qa-wifisnap-04-ax5.png */; };
+		85906421953FC8B45ABB869F /* claude-qa-familybank-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = F83826EC2A3FAA11ABDEA184 /* claude-qa-familybank-03-ax5.png */; };
+		85C6C24927BE1D5C047C6D80 /* claude-qa-dontgomart-02-share-card.png in Resources */ = {isa = PBXBuildFile; fileRef = ABD6DFF44474AD736F6C7C72 /* claude-qa-dontgomart-02-share-card.png */; };
 		86D83EDCABCFF39581CEF7B6 /* appicon-com.lectureq.lectureq.png in Resources */ = {isa = PBXBuildFile; fileRef = 444E079A7FDB92D9CD7D7DF5 /* appicon-com.lectureq.lectureq.png */; };
 		88391CD12A6395E0325DDA98 /* PickResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D3D4CC250AE94A5482990 /* PickResolver.swift */; };
+		890CAC9F0C382F77163CE0C3 /* claude-qa-stickypresenter-remote-02-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7231713F7E350F5643CFDF /* claude-qa-stickypresenter-remote-02-dark.png */; };
+		8AF6D66763D0991D3606E813 /* claude-qa-lectureq-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 818AEA63F4FBD53983FD3EDF /* claude-qa-lectureq-2026-10-08.json */; };
 		8B0F3AE17EA15B50AD680F39 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 42EF56E026EF2DEC29A0AB3B /* Localizable.xcstrings */; };
+		8B17CFD745FA446ADBAF96FB /* claude-qa-stickypresenter-remote-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F7C3A0F7C66C89E369F8F74 /* claude-qa-stickypresenter-remote-2026-10-08.json */; };
+		8B7C6D0559A8B63BA34C44A7 /* claude-qa-reboundjournal-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 34F6107A9CEFA61910594DC8 /* claude-qa-reboundjournal-2026-10-08.json */; };
+		8BE923C9500CB035E2B8D5A0 /* claude-qa-familycourt-01-home.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCEAEDEF4124E7DC21676D3 /* claude-qa-familycourt-01-home.png */; };
 		8C5943AF879B4AE0EB22054E /* BundledApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94B795F592D34D8886B8D2 /* BundledApps.swift */; };
+		8CF4028C7472039C21A293CD /* claude-qa-higgym-05-dark-course.png in Resources */ = {isa = PBXBuildFile; fileRef = 31314FDB372E80399EF91CD8 /* claude-qa-higgym-05-dark-course.png */; };
 		8D40A85CFA12A67EAA4AE6BC /* appicon-com.family.familycourt.png in Resources */ = {isa = PBXBuildFile; fileRef = C171DFB61181C3B365D3633F /* appicon-com.family.familycourt.png */; };
 		8DCF1A55DF1CAADD9C8C03A4 /* appicon-com.ysoup.cooltime.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FE63128DAF517252CF2AE4 /* appicon-com.ysoup.cooltime.png */; };
+		8DFEAD0DB68FFEB4B8A8CB0C /* claude-qa-rotoscope-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = CA449C2B78EC5F58BA9873AD /* claude-qa-rotoscope-2026-10-08.json */; };
+		90666974E271C988851E7114 /* claude-qa-stickypresenter-06-pink-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 7064AB190690C59D1F6B0E22 /* claude-qa-stickypresenter-06-pink-note.png */; };
+		9249FB52F6A5AF6B9E8FC3B2 /* claude-qa-restaurantmap-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 1441AF6504D23EF36237F1B9 /* claude-qa-restaurantmap-2026-10-08.json */; };
 		925EBF7B15DF505EEC5B5042 /* WideButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86241273DEDFF98FB26F2D5 /* WideButtonLabel.swift */; };
 		92CC94C6E14068CAFADC5AD8 /* AppEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6041338D4F7EE03C78B7EA9 /* AppEditView.swift */; };
+		94CAD070EAB23CEAAEDF37C1 /* claude-qa-burningparchment-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 73087C71508335782D1F2512 /* claude-qa-burningparchment-01-first-launch.png */; };
+		95FF9AE09F4A341610D59620 /* claude-qa-geusaie-05-done.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBE71C72873B295584B69B8 /* claude-qa-geusaie-05-done.png */; };
+		969EAD7500E76A5B4201E69B /* claude-qa-stickypresenter-remote-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5828B293A65E62366DDD94C1 /* claude-qa-stickypresenter-remote-03-ax5.png */; };
 		983608BF36E282B2CEE1E14F /* AppChecklistCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6338CB747615ECC984E203BD /* AppChecklistCatalog.swift */; };
+		98D97C7687921BD99D860717 /* claude-qa-korea-route-03-start-zh-hant.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E65DB17CB2DB6A74BDA53B /* claude-qa-korea-route-03-start-zh-hant.png */; };
+		9A38CC24DC1C5740B3B317D6 /* claude-qa-goldweek-06-ax5-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 806D317128F91770E7A2EE5E /* claude-qa-goldweek-06-ax5-home.png */; };
 		9AA764D5A4CC17925875F5B6 /* VersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EA04EDD1569E91BA8B7F9C /* VersionPicker.swift */; };
 		9ABED09CFC3731141A533BF5 /* LastQABadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0600CE88531C423437054971 /* LastQABadge.swift */; };
+		9B695495ECD77B9971F7FD86 /* claude-qa-higgym-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD63F50BC95D0BA4B6C2829 /* claude-qa-higgym-01-first-launch.png */; };
 		9BE180A5BE534D375D27F767 /* appicon-com.ysoup.tokenmemo-tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F49E2AE39EB8EC2A11056F6 /* appicon-com.ysoup.tokenmemo-tap.png */; };
 		9C0CF2755A5E43DA648CC291 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109683E1E99F8D03EA8DA39 /* Router.swift */; };
 		9C5527ACB3B80E27856F81CB /* AppChecklistSeederTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66510E33702D11DF604CA2 /* AppChecklistSeederTests.swift */; };
 		9D4ED03D98DA9FD71994B97E /* ImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F5B110E69145AA37DB4861 /* ImportController.swift */; };
 		9D5DDB83DEAA307E2DAFA899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C0B6CD80FCB7C136E891B /* AppDelegate.swift */; };
+		9DF0E4ED3066F013A87EB5A4 /* claude-qa-calendarsnap-03-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 556AC5A1611A6A5066D89FD7 /* claude-qa-calendarsnap-03-dark.png */; };
 		A0ED6843F1154697110F02EB /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EE61C45A46D0AF482A8CE4 /* DeepLink.swift */; };
+		A1E985392C64CAC538F19D3D /* claude-qa-rainbow-desire-01-todo-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 136ED6E55D46390EC897DAAB /* claude-qa-rainbow-desire-01-todo-empty.png */; };
 		A2EAC922D2A9BD97CB6FF8A9 /* appicon-com.leeo.findme.png in Resources */ = {isa = PBXBuildFile; fileRef = 67CF659E4249DBA75717ED0F /* appicon-com.leeo.findme.png */; };
 		A3729D7278428A100F795C1B /* CarriedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBAA0BC8436DF48798AB424 /* CarriedCard.swift */; };
+		A4ACDB76186495B447F1D367 /* claude-qa-higgym-04-ax5-lesson.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FE5D800C1B8A3ADD8971DD /* claude-qa-higgym-04-ax5-lesson.png */; };
+		A5A238356EF69BDF187CF19D /* claude-qa-familycourt-04-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9687CEEA6A5E7CFAD37E8B94 /* claude-qa-familycourt-04-ax5.png */; };
+		A71525F83445A42D462C70B0 /* claude-qa-firetracker-02-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = F35F8F65BE38EC66CFE3ACF8 /* claude-qa-firetracker-02-dark.png */; };
+		A770B9AAE8F0ACF2A2C5BA83 /* claude-qa-goldweek-04-dark-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A9D0FC6935428B436519A6 /* claude-qa-goldweek-04-dark-calendar.png */; };
+		A797C5153D01ED08016C915E /* claude-qa-notmatempo-05-tuner.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741B4BDD6F38E0647899273 /* claude-qa-notmatempo-05-tuner.png */; };
 		A7DB4B3438E805E8812F258B /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0123C57207E61B466A74561 /* DeviceInfo.swift */; };
+		A7EB39EDAFE5214360352470 /* claude-qa-rotoscope-01-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B56CC3B0F9B222519DD8558 /* claude-qa-rotoscope-01-home.png */; };
+		A815E5479310807B3B821727 /* claude-qa-geusaie-02-ready.png in Resources */ = {isa = PBXBuildFile; fileRef = 1767E0699AC7BDE065400BC1 /* claude-qa-geusaie-02-ready.png */; };
 		A8DE88F8ACF66A72A3F46F1D /* appicon-com.leeo.higgym.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6D582A01A48A7D436C7EDF /* appicon-com.leeo.higgym.png */; };
 		A8F28F106466019CD07E5247 /* claude-qa-clipkeyboard-05-06.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D4B69DFBDADF3910B1391B /* claude-qa-clipkeyboard-05-06.png */; };
+		AB306B6767DB401C15888A52 /* claude-qa-stickypresenter-03-timer-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C2572422B635175DDF9CCA /* claude-qa-stickypresenter-03-timer-empty.png */; };
 		AD2D457A08B7E11EA9EC0F0B /* VersionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB6AE85C5D8A3F178AF0E1 /* VersionSheet.swift */; };
+		AD4A41351A58D03136A6CFE5 /* claude-qa-firetracker-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 719957A8520C8B3307FA61CD /* claude-qa-firetracker-03-ax5.png */; };
+		B0E375CCA3A6870825330A5B /* claude-qa-higgym-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = AED8A73C212AC9970ABE48EF /* claude-qa-higgym-2026-10-08.json */; };
+		B10AADA2EAB5EF17C290C056 /* claude-qa-familycourt-02-easy-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C70B1478ADA68FD74B13B2 /* claude-qa-familycourt-02-easy-badge.png */; };
 		B14116D15B1C9A5433873F7C /* appicon-com.devkoan.staffsinger.png in Resources */ = {isa = PBXBuildFile; fileRef = 92C898300A7DCC93888108E5 /* appicon-com.devkoan.staffsinger.png */; };
 		B15A85A75DBAC5D74E8A5E3E /* AppsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */; };
+		B1D32436F70B3D3DA24D1510 /* claude-qa-yeoul-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2A6C3C1661F634F533DFE /* claude-qa-yeoul-01-first-launch.png */; };
+		B2068828EAB7C804DCD4FE52 /* claude-qa-notmatempo-06-dark-paywall.png in Resources */ = {isa = PBXBuildFile; fileRef = 893F88734FFB464CB67C6CD8 /* claude-qa-notmatempo-06-dark-paywall.png */; };
 		B220FEDD4EE58BF04FBEF5C3 /* StepText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085D0AA92BA1875CA0D34F9 /* StepText.swift */; };
+		B40B035CFBC0E220DF2A1E25 /* claude-qa-reboundjournal-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A29BB48E6F3E20E94DECED /* claude-qa-reboundjournal-01-first-launch.png */; };
 		B5CF152CC4A2B1B6397543A9 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E8324E48C5944AB03D6 /* SessionDetailView.swift */; };
 		B5DA54D1770134E18C7E741D /* appicon-com.leeo.yeoul.png in Resources */ = {isa = PBXBuildFile; fileRef = CB196284F348E330E3FF1229 /* appicon-com.leeo.yeoul.png */; };
+		B5DD56771F901813624EF536 /* claude-qa-reboundjournal-05-records.png in Resources */ = {isa = PBXBuildFile; fileRef = 718C048A6A969AC4795BFD20 /* claude-qa-reboundjournal-05-records.png */; };
+		B6E88926FCD0A11A8B92426C /* claude-qa-stickypresenter-02-guide-shortcuts.png in Resources */ = {isa = PBXBuildFile; fileRef = E9A58B3244E22158B7191500 /* claude-qa-stickypresenter-02-guide-shortcuts.png */; };
+		B6E88B551846E3715CE93D7C /* claude-qa-calendarsnap-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = B72E5F10DD6A9AA757620F8A /* claude-qa-calendarsnap-01-first-launch.png */; };
+		B77675D31C29A88563F1B660 /* claude-qa-bookmarkshot-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D70AE57B7906BD66824F91 /* claude-qa-bookmarkshot-03-ax5.png */; };
 		B7B93B031389271C1B6E192B /* appicon-com.devkoan.stampcamera.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A873C4465EDAA1AC05F21 /* appicon-com.devkoan.stampcamera.png */; };
+		B885CF03D0B6210783630269 /* claude-qa-moonlight-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC640BF9E10CB20EF9B5CF /* claude-qa-moonlight-2026-10-08.json */; };
 		B9363F35242D40D53F8C6213 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EE61C45A46D0AF482A8CE4 /* DeepLink.swift */; };
+		B9A0AEF875058E040A580A5B /* claude-qa-sunflower-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A049541F482B9568B9383B5 /* claude-qa-sunflower-2026-10-08.json */; };
+		B9A71A02A358AC405E2D4A35 /* claude-qa-externalize-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = FCA57D4E6B7C1FF816A242E7 /* claude-qa-externalize-2026-10-08.json */; };
+		BA09E0DE07BD5F92363A98DF /* claude-qa-bookmarkshot-04-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E84AB7A0ED2023AC3CD679 /* claude-qa-bookmarkshot-04-dark.png */; };
+		BB09F23E63F6C63F3EBFB94A /* claude-qa-stampcamera-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 926A64FDC4DC1134E6CB9B5A /* claude-qa-stampcamera-2026-10-08.json */; };
 		BB4BD37C2EE117319AD1F410 /* appicon-com.devkoan.scheduledensityapp.png in Resources */ = {isa = PBXBuildFile; fileRef = A90D85B67F66289F72B765A3 /* appicon-com.devkoan.scheduledensityapp.png */; };
+		BC55672E33A3F9F1AA7E2DB5 /* claude-qa-burningparchment-02-english.png in Resources */ = {isa = PBXBuildFile; fileRef = E8E6C6C311E8AB3E6567F9B7 /* claude-qa-burningparchment-02-english.png */; };
+		BD7C1C3B2886F2FA4A3754A1 /* claude-qa-footprintdiary-05-ax5-onboarding.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B1047329D6482BFB4D77F5 /* claude-qa-footprintdiary-05-ax5-onboarding.png */; };
+		BEB91A7B7D52BE86DFC37D31 /* claude-qa-restaurantmap-01-first-location.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FF98B437473BA248652F11 /* claude-qa-restaurantmap-01-first-location.png */; };
 		BF0AA9DBCE45BC92B0206D7A /* appicon-com.leeo.sunflower.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E415606380C7726E97F87D1 /* appicon-com.leeo.sunflower.png */; };
+		C0E6E9FC15AD40C5B640DBB1 /* claude-qa-footprintdiary-02-empty-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA3886698B73F6642808D56 /* claude-qa-footprintdiary-02-empty-map.png */; };
+		C1439BC68706D2CE8275E268 /* claude-qa-cooltime-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 75EE1E3A1DF2DC807D3D2744 /* claude-qa-cooltime-2026-10-08.json */; };
 		C1935DBF2F7B543DDD309699 /* RotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273AF1D1B76AB1F326D6631C /* RotationTests.swift */; };
+		C1F192A3DE7777790C8FBE44 /* claude-qa-routinecamera-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = BE3251F5F539B2C3F22B6D8B /* claude-qa-routinecamera-2026-10-08.json */; };
 		C210574A039F60EA04B3D751 /* FocusedChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1E15329AFC5AEB395EB871 /* FocusedChecklistView.swift */; };
+		C226542AE68B3E0C4D126EFC /* claude-qa-externalize-02-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D31506C4F15E450230FABBE /* claude-qa-externalize-02-empty.png */; };
 		C2DC50E60A72AC3F3CB07BE5 /* SessionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E76B165260F1452A817D7F3 /* SessionHeaderView.swift */; };
+		C3A82AEA2BD2F1490B94698D /* claude-qa-slidesnap-01-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = EA352CA85865FD73EF36B4E6 /* claude-qa-slidesnap-01-camera.png */; };
 		C40E688ED00CB53B95568229 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC2CB91320D827700483E4 /* Rotation.swift */; };
 		C4506F4D0CA60CE8EFAD2899 /* IssueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AC1D86E27A458418B83170 /* IssueDetailView.swift */; };
+		C4D09642A073B11A8D28CDFC /* claude-qa-familybank-02-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8259ED03027B3A92108473FC /* claude-qa-familybank-02-dark.png */; };
+		C501D04EFACAA7202B7226F3 /* claude-qa-pixelme-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 21785DEAE555658A39BE58C3 /* claude-qa-pixelme-2026-10-08.json */; };
+		C50864BD0941EDB8CEFE9082 /* claude-qa-firetracker-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D7EB4B79C6F895FFDC41B68 /* claude-qa-firetracker-2026-10-08.json */; };
 		C52A1ABBF2007AD0A87B0724 /* appicon-com.leeo.skydex.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E22A4BE04AD4FCCF3813BD /* appicon-com.leeo.skydex.png */; };
 		C5BB28924F0555652B81C306 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBDBA21696D1AF6B6DE48C /* Enums.swift */; };
+		C60C6B91F06714FB32C55B3B /* claude-qa-staffsinger-02-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C7176A472D1354074A02ED /* claude-qa-staffsinger-02-dark.png */; };
 		C75AD7CC901CAE13139403B0 /* appicon-com.leeo.rotoscopeipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8430DDBE767F81E0E8DDCC12 /* appicon-com.leeo.rotoscopeipad.png */; };
+		C7D8EBE13EB899B5E87BE97D /* claude-qa-toki-04-session-running.png in Resources */ = {isa = PBXBuildFile; fileRef = E052229B1368C336DCA5FAEE /* claude-qa-toki-04-session-running.png */; };
 		C8F76F19E8482E589B5FC6B1 /* SessionRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B480C0AFF5A583EFD3FC35 /* SessionRecorderTests.swift */; };
+		CB66EC040EB843295005AB7C /* claude-qa-yeoul-05-home.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB92EF989F8ECFDE9102C59 /* claude-qa-yeoul-05-home.png */; };
+		CC6C5B5B4722F9373C48F7A7 /* claude-qa-restaurantmap-02-always.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D125EDA778C6E56596DDAE5 /* claude-qa-restaurantmap-02-always.png */; };
+		CC8510BA5E8263463EDC7DC5 /* claude-qa-calendarsnap-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 85AEE3DA3F3773DCD3EC9DE7 /* claude-qa-calendarsnap-2026-10-08.json */; };
+		CCB1ADB597A51C85CC32839B /* claude-qa-routinecamera-05-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B0F4168587FBD8A3E05CB0 /* claude-qa-routinecamera-05-ax5.png */; };
 		CD25053366C11C3F9AAEB7E6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82CFD8AF9BD57FC84B67816 /* Models.swift */; };
 		CD727089B374CF1FABA17475 /* CodeTestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */; };
+		CF48DE669C51F119498F49E9 /* claude-qa-externalize-04-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1812872234CD973FCBABFC /* claude-qa-externalize-04-dark.png */; };
+		CF5AEDED6ABE5A48E8E865B0 /* claude-qa-externalize-06-ax5-onboarding.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FF0B2A00EF5A535416431E /* claude-qa-externalize-06-ax5-onboarding.png */; };
 		CF75208136CD136199411591 /* claude-qa-clipkeyboard-2026-09-29.json in Resources */ = {isa = PBXBuildFile; fileRef = 11473643569404EF929DD5E4 /* claude-qa-clipkeyboard-2026-09-29.json */; };
 		CF85F84B30726133B23C9C41 /* ClaudeQASeederTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89143A8E34CB1106D8A974FD /* ClaudeQASeederTests.swift */; };
 		CFB5BDDD726A1FD660D09AAF /* SessionDraftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340B485D686C126CCB88303 /* SessionDraftStore.swift */; };
+		D013219FC29A0970F2AC2ACF /* claude-qa-familybank-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 671CECE11D1C09143EF50DE8 /* claude-qa-familybank-2026-10-08.json */; };
 		D169F3711A53957C003D3F8C /* SkipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E2F60D733AF4587EAF8F6 /* SkipStore.swift */; };
 		D3CDA8C3AA37EFAB9BB0E821 /* appicon-com.ysoup.rapportmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EC376D9D343436124C6B29 /* appicon-com.ysoup.rapportmap.png */; };
+		D603E33BC57A6AA897EC701A /* claude-qa-slidesnap-03-search.png in Resources */ = {isa = PBXBuildFile; fileRef = D91837A2A42280F25D8DA1E7 /* claude-qa-slidesnap-03-search.png */; };
+		D6EB6B5CC9547981AA573B3C /* claude-qa-footprintdiary-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D63F78EFBCA68613F0A584 /* claude-qa-footprintdiary-01-first-launch.png */; };
 		D6F8AB5A7D551A8DF5966551 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBDBA21696D1AF6B6DE48C /* Enums.swift */; };
+		D7B75D6B89BA3A40F98A9115 /* claude-qa-rainbow-workshop-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 20767850FC408E5C638789A4 /* claude-qa-rainbow-workshop-2026-10-08.json */; };
+		D861DD6F81C2AE496E4966A0 /* claude-qa-yeoul-02-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C326AEC34C18FD4678A04E /* claude-qa-yeoul-02-list.png */; };
 		D8F68CA748E7D8AC80F41DF7 /* appicon-com.leeo.stickypresenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 480A51F61D2EA07ED4E5EA63 /* appicon-com.leeo.stickypresenter.png */; };
 		D9DC0CA1BAD0AE6113CD5264 /* appicon-com.devkoan.calendarsnap.png in Resources */ = {isa = PBXBuildFile; fileRef = 693C12CC227EA12A382748AE /* appicon-com.devkoan.calendarsnap.png */; };
 		DA2431379252B973A5D994FC /* SessionDraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA29B35A32B935166EE93A /* SessionDraftTests.swift */; };
+		DB0DC37B686F49948496E5B7 /* claude-qa-reboundjournal-06-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA425897C0F13463A58DF3B /* claude-qa-reboundjournal-06-ax5.png */; };
+		DB435555DF05DEA1040FB6DB /* claude-qa-sunflower-04-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = F37E74343186145CB585050F /* claude-qa-sunflower-04-ax5.png */; };
+		DEC00FCBC51ABA33C57F155E /* claude-qa-staffsinger-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = E06DA5E0C7AB08CD58C72751 /* claude-qa-staffsinger-03-ax5.png */; };
+		DFD4121B3B1EE9A3C16B585D /* claude-qa-skydex-02-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 636421E0E4D32C1249044E2D /* claude-qa-skydex-02-dark.png */; };
 		E2136D2495F1B0DD96894B90 /* appicon-com.leeo.reboundjournal.png in Resources */ = {isa = PBXBuildFile; fileRef = CB680C20B7EF90706D3B6158 /* appicon-com.leeo.reboundjournal.png */; };
+		E38E901B136B6904B5C6DE77 /* claude-qa-routinecamera-04-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = D179A57B813C68E111372D19 /* claude-qa-routinecamera-04-dark.png */; };
+		E47AA9B3E835359812FD35E5 /* claude-qa-notmatempo-04-paywall.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4BF0DAA54D9569A576C57 /* claude-qa-notmatempo-04-paywall.png */; };
+		E4E1A189CA6B42F5F44BB214 /* claude-qa-notmatempo-03-listening-tip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB9A4C6342CF67311045B75 /* claude-qa-notmatempo-03-listening-tip.png */; };
+		E4EFDB0C2B3B9ACF0411C44B /* claude-qa-cooltime-01-onboarding.png in Resources */ = {isa = PBXBuildFile; fileRef = 951FD393440215999511B12A /* claude-qa-cooltime-01-onboarding.png */; };
 		E4F11050895D9759A5AE7E41 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A3BA62A08688DE3877270 /* RootView.swift */; };
+		E5B30617081F9831E0CA16D7 /* claude-qa-toki-03-session.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BCAC7A5AB8789A049FBAA8 /* claude-qa-toki-03-session.png */; };
+		E63BFAA04E3F96289DD40D99 /* claude-qa-yeoul-04-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A55873D14F38D36F968195 /* claude-qa-yeoul-04-ax5.png */; };
+		EA2F5E4FC1DE648C1991A18A /* claude-qa-rainbow-desire-02-dark-zh-hant.png in Resources */ = {isa = PBXBuildFile; fileRef = 81096DF78796C3ED95725E7E /* claude-qa-rainbow-desire-02-dark-zh-hant.png */; };
 		EA8552FA2E643708CF150AA6 /* appicon-com.xa.toki.png in Resources */ = {isa = PBXBuildFile; fileRef = 8460B05A5CA29ADDE66BA4E3 /* appicon-com.xa.toki.png */; };
 		EAC0D9FF75AD274FD9A61223 /* VersionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486E6A575128DE1F060EC95F /* VersionSheetView.swift */; };
+		EE23CACF89049D6F5F3D90D5 /* claude-qa-higgym-06-resume-card.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD596BACAFD891DEB21173 /* claude-qa-higgym-06-resume-card.png */; };
 		EE28020DF30CE855FC62690A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261538F46586DBAA9DEA6A /* Persistence.swift */; };
+		EF2F681DB6AD6E6730BE3694 /* claude-qa-toki-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 7467C28C0E5974FEA9313F2D /* claude-qa-toki-2026-10-08.json */; };
 		F06614EF135341BFF1485B8B /* appicon-com.lottochecker.app.png in Resources */ = {isa = PBXBuildFile; fileRef = D91FB04E501030FE3819BAC3 /* appicon-com.lottochecker.app.png */; };
+		F10AA426A2240E34081F6B40 /* claude-qa-thinkflow-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = 31D1F592EAB2E01C3912952F /* claude-qa-thinkflow-2026-10-08.json */; };
+		F11897725098DD1603C844FD /* claude-qa-pixelme-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E62C3BCBFB092ABC6A5C66A /* claude-qa-pixelme-03-ax5.png */; };
+		F1B2CCDD3A5F6B31C6ECFFE1 /* claude-qa-wifisnap-02-home.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2639037B02013A6FC09969 /* claude-qa-wifisnap-02-home.png */; };
 		F272BC790358EDD8CE6F9E3B /* ImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32B736EB4AD40911A7CFD8B /* ImportTests.swift */; };
+		F2DD925871D4E126FC8D431B /* claude-qa-korea-route-2026-10-08.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFCCF6082437C5F5107F9CD /* claude-qa-korea-route-2026-10-08.json */; };
+		F4493C46184719626CC05178 /* claude-qa-notmatempo-02-main.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2B633A061B3E4C064BAAE4 /* claude-qa-notmatempo-02-main.png */; };
+		F9478FBCE5628CDB05B37B4D /* claude-qa-skydex-03-ax5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B11BEB336C9EF4A3D9E9C11 /* claude-qa-skydex-03-ax5.png */; };
 		F95110B2B7064D1A35B2975F /* appicon-com.example.scheduledensityapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E093D6218FEBD311BB213F8 /* appicon-com.example.scheduledensityapp.png */; };
 		F9C6A2C85A20BA4FE3ED7B2E /* QASessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2CAFBE52C92A2A7B9EA18E /* QASessionView.swift */; };
 		FA660B60D01D90444A03D0E9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82CFD8AF9BD57FC84B67816 /* Models.swift */; };
+		FA6649A6C742D5F1AF0A5AC0 /* claude-qa-footprintdiary-03-dark-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 7358080711ACE9570F78F52C /* claude-qa-footprintdiary-03-dark-map.png */; };
+		FCAD4700FC6BCA88AEBAB670 /* claude-qa-toki-01-first-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 48E5C3060CB309579682404A /* claude-qa-toki-01-first-launch.png */; };
+		FD50544A79348A5DEFE7B89E /* claude-qa-reboundjournal-04-pro.png in Resources */ = {isa = PBXBuildFile; fileRef = DAB383C125C3511863C8829B /* claude-qa-reboundjournal-04-pro.png */; };
 		FD73AE9393D50749B44D000B /* IssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D5DFC0753E937436228E9 /* IssuesView.swift */; };
 /* End PBXBuildFile section */
 
@@ -165,125 +351,311 @@
 
 /* Begin PBXFileReference section */
 		00D4B69DFBDADF3910B1391B /* claude-qa-clipkeyboard-05-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-clipkeyboard-05-06.png"; sourceTree = "<group>"; };
+		01FF0B2A00EF5A535416431E /* claude-qa-externalize-06-ax5-onboarding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-externalize-06-ax5-onboarding.png"; sourceTree = "<group>"; };
 		0209704E0DC497BA8DCC7C99 /* appicon-com.leeo.footprintdiary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.footprintdiary.png"; sourceTree = "<group>"; };
+		02716A9E7DECC81414FD6850 /* claude-qa-bookmarkshot-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-bookmarkshot-2026-10-08.json"; sourceTree = "<group>"; };
 		0340B485D686C126CCB88303 /* SessionDraftStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDraftStore.swift; sourceTree = "<group>"; };
+		036147A9A13740214F45613A /* claude-qa-slidesnap-06-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-slidesnap-06-dark.png"; sourceTree = "<group>"; };
+		04065292D01D93C58EF21CC9 /* claude-qa-toki-02-dial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-toki-02-dial.png"; sourceTree = "<group>"; };
+		05F40735837FB342A8FBEA3F /* claude-qa-moonlit-arcade-05-gm-panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-moonlit-arcade-05-gm-panel.png"; sourceTree = "<group>"; };
 		0600CE88531C423437054971 /* LastQABadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastQABadge.swift; sourceTree = "<group>"; };
+		06166EFC456DCD3E17DE8BDD /* claude-qa-higgym-02-reason-step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-higgym-02-reason-step.png"; sourceTree = "<group>"; };
+		06FE5D800C1B8A3ADD8971DD /* claude-qa-higgym-04-ax5-lesson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-higgym-04-ax5-lesson.png"; sourceTree = "<group>"; };
+		09159B9EB7690ACC9C8CA2F6 /* claude-qa-bookmarkshot-02-gear-covers-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-bookmarkshot-02-gear-covers-plus.png"; sourceTree = "<group>"; };
+		093E26F08B36293DA0CF7EE2 /* claude-qa-footprintdiary-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-footprintdiary-2026-10-08.json"; sourceTree = "<group>"; };
+		0B31A70599EF000C6DF642B7 /* claude-qa-thinkflow-04-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-thinkflow-04-ax5.png"; sourceTree = "<group>"; };
+		0BDC640BF9E10CB20EF9B5CF /* claude-qa-moonlight-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-moonlight-2026-10-08.json"; sourceTree = "<group>"; };
+		0EB1C11F5714F6CDD4A9381F /* claude-qa-externalize-05-ax5-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-externalize-05-ax5-list.png"; sourceTree = "<group>"; };
+		0F2B633A061B3E4C064BAAE4 /* claude-qa-notmatempo-02-main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-notmatempo-02-main.png"; sourceTree = "<group>"; };
+		0FEBA9CFCF14E8062A88EE96 /* claude-qa-reboundjournal-03-goal-limit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-reboundjournal-03-goal-limit.png"; sourceTree = "<group>"; };
 		11473643569404EF929DD5E4 /* claude-qa-clipkeyboard-2026-09-29.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-clipkeyboard-2026-09-29.json"; sourceTree = "<group>"; };
+		11572E2EA45FAC783312CF14 /* claude-qa-goldweek-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-goldweek-2026-10-08.json"; sourceTree = "<group>"; };
+		131761D57B685C27A64484AC /* claude-qa-skydex-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-skydex-2026-10-08.json"; sourceTree = "<group>"; };
+		135D682D29DF8A8CA1CC3CD0 /* claude-qa-tetratint-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-tetratint-2026-10-08.json"; sourceTree = "<group>"; };
+		136ED6E55D46390EC897DAAB /* claude-qa-rainbow-desire-01-todo-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-rainbow-desire-01-todo-empty.png"; sourceTree = "<group>"; };
+		1441AF6504D23EF36237F1B9 /* claude-qa-restaurantmap-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-restaurantmap-2026-10-08.json"; sourceTree = "<group>"; };
+		14C7176A472D1354074A02ED /* claude-qa-staffsinger-02-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-staffsinger-02-dark.png"; sourceTree = "<group>"; };
+		15AEE75923917EA098298C03 /* claude-qa-calendarsnap-04-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-calendarsnap-04-ax5.png"; sourceTree = "<group>"; };
+		16E84AB7A0ED2023AC3CD679 /* claude-qa-bookmarkshot-04-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-bookmarkshot-04-dark.png"; sourceTree = "<group>"; };
+		1767E0699AC7BDE065400BC1 /* claude-qa-geusaie-02-ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-geusaie-02-ready.png"; sourceTree = "<group>"; };
+		1795A7475E33356F29631590 /* claude-qa-calendarsnap-02-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-calendarsnap-02-calendar.png"; sourceTree = "<group>"; };
 		180A335167BC12B841D40E24 /* appicon-com.leeo.stickypresenter.remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.stickypresenter.remote.png"; sourceTree = "<group>"; };
+		19BCAC7A5AB8789A049FBAA8 /* claude-qa-toki-03-session.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-toki-03-session.png"; sourceTree = "<group>"; };
+		1B56CC3B0F9B222519DD8558 /* claude-qa-rotoscope-01-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-rotoscope-01-home.png"; sourceTree = "<group>"; };
+		1C655287A375B4779CD2C86F /* claude-qa-wifisnap-04-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-wifisnap-04-ax5.png"; sourceTree = "<group>"; };
+		1D125EDA778C6E56596DDAE5 /* claude-qa-restaurantmap-02-always.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-restaurantmap-02-always.png"; sourceTree = "<group>"; };
+		1DA425897C0F13463A58DF3B /* claude-qa-reboundjournal-06-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-reboundjournal-06-ax5.png"; sourceTree = "<group>"; };
+		1E49F5E5C9460DCBBEE57F11 /* claude-qa-rainbow-desire-04-de.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-rainbow-desire-04-de.png"; sourceTree = "<group>"; };
+		20767850FC408E5C638789A4 /* claude-qa-rainbow-workshop-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-rainbow-workshop-2026-10-08.json"; sourceTree = "<group>"; };
+		21785DEAE555658A39BE58C3 /* claude-qa-pixelme-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-pixelme-2026-10-08.json"; sourceTree = "<group>"; };
 		22A8A955910A0C9C5E3BF315 /* appicon-com.kora.leeo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.kora.leeo.png"; sourceTree = "<group>"; };
+		24E66AF112629B0502FB9F64 /* claude-qa-goldweek-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-goldweek-01-first-launch.png"; sourceTree = "<group>"; };
+		25C81255317FED7D6D54F627 /* claude-qa-dontgomart-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-dontgomart-2026-10-08.json"; sourceTree = "<group>"; };
 		2637E8828530E2D0CC80219B /* ReadableColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableColumn.swift; sourceTree = "<group>"; };
+		268DCC4324881D9AA8CFCA9F /* claude-qa-slidesnap-05-slide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-slidesnap-05-slide.png"; sourceTree = "<group>"; };
 		273AF1D1B76AB1F326D6631C /* RotationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationTests.swift; sourceTree = "<group>"; };
 		27CF91D063BE3A07DF5E9FC8 /* claude-qa-clipkeyboard-08-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-clipkeyboard-08-ax5.png"; sourceTree = "<group>"; };
 		28FBC295F65F12E11B361D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A3F696A06C266F6D893605E /* VersionHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHistory.swift; sourceTree = "<group>"; };
+		2BD63F50BC95D0BA4B6C2829 /* claude-qa-higgym-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-higgym-01-first-launch.png"; sourceTree = "<group>"; };
+		2F2A90B7EB5A8EF5D8CF0FEC /* claude-qa-slidesnap-04-ax5-grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-slidesnap-04-ax5-grid.png"; sourceTree = "<group>"; };
+		2F4D5300D3E2F972D8D62B8B /* claude-qa-burningparchment-03-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-burningparchment-03-dark.png"; sourceTree = "<group>"; };
+		30E00B5B5CE48A8C1A1CC13C /* claude-qa-restaurantmap-04-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-restaurantmap-04-dark.png"; sourceTree = "<group>"; };
 		30FE63128DAF517252CF2AE4 /* appicon-com.ysoup.cooltime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.cooltime.png"; sourceTree = "<group>"; };
+		31314FDB372E80399EF91CD8 /* claude-qa-higgym-05-dark-course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-higgym-05-dark-course.png"; sourceTree = "<group>"; };
+		31D1F592EAB2E01C3912952F /* claude-qa-thinkflow-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-thinkflow-2026-10-08.json"; sourceTree = "<group>"; };
+		324E619B6935F894C9C45370 /* claude-qa-dontgomart-04-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-dontgomart-04-dark.png"; sourceTree = "<group>"; };
+		32C326AEC34C18FD4678A04E /* claude-qa-yeoul-02-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-yeoul-02-list.png"; sourceTree = "<group>"; };
+		345B76F4C32315B94BAD67D7 /* claude-qa-yeoul-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-yeoul-2026-10-08.json"; sourceTree = "<group>"; };
+		34F6107A9CEFA61910594DC8 /* claude-qa-reboundjournal-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-reboundjournal-2026-10-08.json"; sourceTree = "<group>"; };
 		35EE495007B15E701CB306C5 /* appicon-com.devkoan.firetracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.firetracker.png"; sourceTree = "<group>"; };
 		365BC4D7FCBF913FCD734CA6 /* appicon-com.leeo.bookmarkshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.bookmarkshot.png"; sourceTree = "<group>"; };
+		3783A8A63BFB1AC1E3AB3341 /* claude-qa-dontgomart-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-dontgomart-01-first-launch.png"; sourceTree = "<group>"; };
+		381C5C799980518FDBA7DF10 /* claude-qa-wifisnap-03-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-wifisnap-03-dark.png"; sourceTree = "<group>"; };
+		38AE30FD6C7E7D7AEBC68B57 /* claude-qa-thinkflow-01-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-thinkflow-01-empty.png"; sourceTree = "<group>"; };
 		38F5B110E69145AA37DB4861 /* ImportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
+		39317FE2C4AF24DEAB325CA7 /* claude-qa-tapclipkeyboard-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-tapclipkeyboard-2026-10-08.json"; sourceTree = "<group>"; };
+		395EA906166430BDD05CCD0A /* claude-qa-pixelme-02-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-pixelme-02-home.png"; sourceTree = "<group>"; };
 		3A5C63205168CBD7C65D0457 /* QARotationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QARotationApp.swift; sourceTree = "<group>"; };
 		3B48270A9EB6BF3011DDFD28 /* appicon-com.leeo.handsfreemetronome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.handsfreemetronome.png"; sourceTree = "<group>"; };
+		3B4E32A960364CD0124E1D8B /* claude-qa-reboundjournal-02-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-reboundjournal-02-home.png"; sourceTree = "<group>"; };
 		3D0F1A467896100327FD6503 /* appicon-com.example.moonlitorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.example.moonlitorder.png"; sourceTree = "<group>"; };
 		3D94B795F592D34D8886B8D2 /* BundledApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundledApps.swift; sourceTree = "<group>"; };
+		3DB3051C02C5543D53387DB5 /* claude-qa-goldweek-02-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-goldweek-02-home.png"; sourceTree = "<group>"; };
 		3E04BE6CDFD4B2795C782CD6 /* SessionRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecorder.swift; sourceTree = "<group>"; };
+		3E48ABF28479E48878B8A98C /* claude-qa-firetracker-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-firetracker-01-first-launch.png"; sourceTree = "<group>"; };
+		3EB9A4C6342CF67311045B75 /* claude-qa-notmatempo-03-listening-tip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-notmatempo-03-listening-tip.png"; sourceTree = "<group>"; };
 		40F6E4D67FC4F444D164E51B /* appicon-com.bucketclimb.app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.bucketclimb.app.png"; sourceTree = "<group>"; };
+		4108C645D566A6F23212B080 /* claude-qa-rotoscope-02-reopen-last.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-rotoscope-02-reopen-last.png"; sourceTree = "<group>"; };
+		410AD17192BD9998B60CEFD7 /* claude-qa-tetratint-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-tetratint-01-first-launch.png"; sourceTree = "<group>"; };
 		42EF56E026EF2DEC29A0AB3B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		444E079A7FDB92D9CD7D7DF5 /* appicon-com.lectureq.lectureq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.lectureq.lectureq.png"; sourceTree = "<group>"; };
+		450075FF6CCF577711B31E6D /* claude-qa-staffsinger-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-staffsinger-01-first-launch.png"; sourceTree = "<group>"; };
+		45C2572422B635175DDF9CCA /* claude-qa-stickypresenter-03-timer-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-03-timer-empty.png"; sourceTree = "<group>"; };
 		471115DD2F38F686F8CD2E1D /* appicon-com.ysoup.leavewise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.leavewise.png"; sourceTree = "<group>"; };
+		47E65DB17CB2DB6A74BDA53B /* claude-qa-korea-route-03-start-zh-hant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-korea-route-03-start-zh-hant.png"; sourceTree = "<group>"; };
 		480A51F61D2EA07ED4E5EA63 /* appicon-com.leeo.stickypresenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.stickypresenter.png"; sourceTree = "<group>"; };
 		486E6A575128DE1F060EC95F /* VersionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSheetView.swift; sourceTree = "<group>"; };
+		48E5C3060CB309579682404A /* claude-qa-toki-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-toki-01-first-launch.png"; sourceTree = "<group>"; };
 		4B66510E33702D11DF604CA2 /* AppChecklistSeederTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecklistSeederTests.swift; sourceTree = "<group>"; };
+		4BB4BF0DAA54D9569A576C57 /* claude-qa-notmatempo-04-paywall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-notmatempo-04-paywall.png"; sourceTree = "<group>"; };
 		4CDB6AE85C5D8A3F178AF0E1 /* VersionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSheet.swift; sourceTree = "<group>"; };
 		4FADFA86363AC571B0C49185 /* appicon-com.leeo.pixelme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.pixelme.png"; sourceTree = "<group>"; };
+		4FC5FF7642A2BD95DA2442CE /* claude-qa-stickypresenter-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-stickypresenter-2026-10-08.json"; sourceTree = "<group>"; };
+		4FC8A4A741FE254DCDD50788 /* claude-qa-thinkflow-03-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-thinkflow-03-dark.png"; sourceTree = "<group>"; };
 		50AC2CB91320D827700483E4 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		524D566F201E4DBD141F5C72 /* ChecklistIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistIndexView.swift; sourceTree = "<group>"; };
 		52CD4E3463D6EBBC1BE4AC34 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		52EC376D9D343436124C6B29 /* appicon-com.ysoup.rapportmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.rapportmap.png"; sourceTree = "<group>"; };
+		52EF951E35596056267FBEB8 /* claude-qa-restaurantmap-03-notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-restaurantmap-03-notification.png"; sourceTree = "<group>"; };
+		53E41383E0BDE0E108B1EB2E /* claude-qa-sunflower-03-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-sunflower-03-dark.png"; sourceTree = "<group>"; };
+		54D63F78EFBCA68613F0A584 /* claude-qa-footprintdiary-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-footprintdiary-01-first-launch.png"; sourceTree = "<group>"; };
 		54F5FD8F0DD9F02360486FB9 /* appicon-com.leeo.lullabyrecipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.lullabyrecipe.png"; sourceTree = "<group>"; };
+		556AC5A1611A6A5066D89FD7 /* claude-qa-calendarsnap-03-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-calendarsnap-03-dark.png"; sourceTree = "<group>"; };
+		565AE42F2E1330A58CE43A02 /* claude-qa-staffsinger-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-staffsinger-2026-10-08.json"; sourceTree = "<group>"; };
+		5741B4BDD6F38E0647899273 /* claude-qa-notmatempo-05-tuner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-notmatempo-05-tuner.png"; sourceTree = "<group>"; };
 		57463C77F9175756CBFA1815 /* appicon-com.leeo.juniordevmistakes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.juniordevmistakes.png"; sourceTree = "<group>"; };
+		5828B293A65E62366DDD94C1 /* claude-qa-stickypresenter-remote-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-remote-03-ax5.png"; sourceTree = "<group>"; };
+		59F4A08AB5A9DF245943698A /* claude-qa-rainbow-desire-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-rainbow-desire-2026-10-08.json"; sourceTree = "<group>"; };
 		5A6D582A01A48A7D436C7EDF /* appicon-com.leeo.higgym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.higgym.png"; sourceTree = "<group>"; };
+		5ABE864B6ABE6B0C121F1810 /* claude-qa-notmatempo-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-notmatempo-2026-10-08.json"; sourceTree = "<group>"; };
 		5B53BACEEBE539978F181D0C /* QARotation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QARotation.entitlements; sourceTree = "<group>"; };
 		5CA7752763F59A378DEC7FE5 /* DefaultStepsByApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStepsByApp.swift; sourceTree = "<group>"; };
 		5E2CAFBE52C92A2A7B9EA18E /* QASessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QASessionView.swift; sourceTree = "<group>"; };
+		5E62C3BCBFB092ABC6A5C66A /* claude-qa-pixelme-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-pixelme-03-ax5.png"; sourceTree = "<group>"; };
 		5F49E2AE39EB8EC2A11056F6 /* appicon-com.ysoup.tokenmemo-tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.tokenmemo-tap.png"; sourceTree = "<group>"; };
+		5F7C3A0F7C66C89E369F8F74 /* claude-qa-stickypresenter-remote-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-stickypresenter-remote-2026-10-08.json"; sourceTree = "<group>"; };
+		60D70AE57B7906BD66824F91 /* claude-qa-bookmarkshot-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-bookmarkshot-03-ax5.png"; sourceTree = "<group>"; };
+		60DB2E517A3E8602550AE552 /* claude-qa-stickypresenter-remote-01-searching-checklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-remote-01-searching-checklist.png"; sourceTree = "<group>"; };
 		6338CB747615ECC984E203BD /* AppChecklistCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChecklistCatalog.swift; sourceTree = "<group>"; };
+		636421E0E4D32C1249044E2D /* claude-qa-skydex-02-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-skydex-02-dark.png"; sourceTree = "<group>"; };
+		644A823C0386517C71103F04 /* claude-qa-rotoscope-03-legacy-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-rotoscope-03-legacy-dark.png"; sourceTree = "<group>"; };
+		671CECE11D1C09143EF50DE8 /* claude-qa-familybank-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-familybank-2026-10-08.json"; sourceTree = "<group>"; };
+		676F425BC9AEEF37254C398E /* claude-qa-pixelme-01-onboarding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-pixelme-01-onboarding.png"; sourceTree = "<group>"; };
 		67CF659E4249DBA75717ED0F /* appicon-com.leeo.findme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.findme.png"; sourceTree = "<group>"; };
 		68B94330B7AC7FA7A710AA13 /* appicon-com.leeo.tetratint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.tetratint.png"; sourceTree = "<group>"; };
+		693658625A69D144E193687C /* claude-qa-korea-route-05-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-korea-route-05-ax5.png"; sourceTree = "<group>"; };
 		693C12CC227EA12A382748AE /* appicon-com.devkoan.calendarsnap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.calendarsnap.png"; sourceTree = "<group>"; };
+		6BA3886698B73F6642808D56 /* claude-qa-footprintdiary-02-empty-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-footprintdiary-02-empty-map.png"; sourceTree = "<group>"; };
+		6D7EB4B79C6F895FFDC41B68 /* claude-qa-firetracker-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-firetracker-2026-10-08.json"; sourceTree = "<group>"; };
 		6E093D6218FEBD311BB213F8 /* appicon-com.example.scheduledensityapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.example.scheduledensityapp.png"; sourceTree = "<group>"; };
 		6E3D6C634A5B5AA6BD5F0DA7 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		6F424637A3C81F398CDB23D1 /* claude-qa-routinecamera-02-empty-feed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-routinecamera-02-empty-feed.png"; sourceTree = "<group>"; };
+		7064AB190690C59D1F6B0E22 /* claude-qa-stickypresenter-06-pink-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-06-pink-note.png"; sourceTree = "<group>"; };
 		7085D0AA92BA1875CA0D34F9 /* StepText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepText.swift; sourceTree = "<group>"; };
+		718C048A6A969AC4795BFD20 /* claude-qa-reboundjournal-05-records.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-reboundjournal-05-records.png"; sourceTree = "<group>"; };
+		719957A8520C8B3307FA61CD /* claude-qa-firetracker-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-firetracker-03-ax5.png"; sourceTree = "<group>"; };
 		727C60964026B039C30F2FD2 /* AppImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImporter.swift; sourceTree = "<group>"; };
+		73087C71508335782D1F2512 /* claude-qa-burningparchment-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-burningparchment-01-first-launch.png"; sourceTree = "<group>"; };
+		7358080711ACE9570F78F52C /* claude-qa-footprintdiary-03-dark-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-footprintdiary-03-dark-map.png"; sourceTree = "<group>"; };
 		7361DA61A45FE63BDA8F084F /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		7467C28C0E5974FEA9313F2D /* claude-qa-toki-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-toki-2026-10-08.json"; sourceTree = "<group>"; };
 		74BAB12E242BD2E28E9B83E8 /* appicon-com.ysoup.routinecamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.routinecamera.png"; sourceTree = "<group>"; };
 		75AC1D86E27A458418B83170 /* IssueDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailView.swift; sourceTree = "<group>"; };
+		75EE1E3A1DF2DC807D3D2744 /* claude-qa-cooltime-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-cooltime-2026-10-08.json"; sourceTree = "<group>"; };
 		76E926AEBCFC01E7BCCA1681 /* ChecklistSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistSeeder.swift; sourceTree = "<group>"; };
+		7739CFEE9B3794BA23228149 /* claude-qa-stickypresenter-05-teleprompter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-05-teleprompter.png"; sourceTree = "<group>"; };
+		78D2A6C3C1661F634F533DFE /* claude-qa-yeoul-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-yeoul-01-first-launch.png"; sourceTree = "<group>"; };
+		78D5D6BD9A56476D3A072A03 /* claude-qa-stickypresenter-04-timer-running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-04-timer-running.png"; sourceTree = "<group>"; };
 		78E22A4BE04AD4FCCF3813BD /* appicon-com.leeo.skydex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.skydex.png"; sourceTree = "<group>"; };
 		78E965AA8B8291E8B0843E6A /* appicon-com.ysoup.tokenmemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.tokenmemo.png"; sourceTree = "<group>"; };
 		7A33F1EFFDEBBF24C8ABE908 /* QARotationWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QARotationWidget.entitlements; sourceTree = "<group>"; };
+		7A73E5C1807A598480A78260 /* claude-qa-familycourt-03-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-familycourt-03-dark.png"; sourceTree = "<group>"; };
+		7AEC948A82EB86BF913B3495 /* claude-qa-routinecamera-03-feed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-routinecamera-03-feed.png"; sourceTree = "<group>"; };
+		7C572D30ABA0037F26B5AB8F /* claude-qa-slidesnap-02-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-slidesnap-02-list.png"; sourceTree = "<group>"; };
 		7E2ED3DF60DBD4D7AB8F43BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E415606380C7726E97F87D1 /* appicon-com.leeo.sunflower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.sunflower.png"; sourceTree = "<group>"; };
 		7E76B165260F1452A817D7F3 /* SessionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHeaderView.swift; sourceTree = "<group>"; };
+		7F74E1738F15F2A902AF44F6 /* claude-qa-moonlit-arcade-06-sketch-result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-moonlit-arcade-06-sketch-result.png"; sourceTree = "<group>"; };
+		7FD2E4729E4A2B29DF93E115 /* claude-qa-routinecamera-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-routinecamera-01-first-launch.png"; sourceTree = "<group>"; };
+		806B23543496F8168CA31AEA /* claude-qa-moonlit-arcade-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-moonlit-arcade-2026-10-08.json"; sourceTree = "<group>"; };
+		806D317128F91770E7A2EE5E /* claude-qa-goldweek-06-ax5-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-goldweek-06-ax5-home.png"; sourceTree = "<group>"; };
+		81096DF78796C3ED95725E7E /* claude-qa-rainbow-desire-02-dark-zh-hant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-rainbow-desire-02-dark-zh-hant.png"; sourceTree = "<group>"; };
+		818AEA63F4FBD53983FD3EDF /* claude-qa-lectureq-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-lectureq-2026-10-08.json"; sourceTree = "<group>"; };
 		81CA3982A9A2EBE803BDA28C /* CodeTestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTestList.swift; sourceTree = "<group>"; };
 		82253294AF4BA0035471C218 /* appicon-com.leeo.thinkflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.thinkflow.png"; sourceTree = "<group>"; };
+		8259ED03027B3A92108473FC /* claude-qa-familybank-02-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-familybank-02-dark.png"; sourceTree = "<group>"; };
 		82B480C0AFF5A583EFD3FC35 /* SessionRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecorderTests.swift; sourceTree = "<group>"; };
 		8430DDBE767F81E0E8DDCC12 /* appicon-com.leeo.rotoscopeipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.rotoscopeipad.png"; sourceTree = "<group>"; };
 		8460B05A5CA29ADDE66BA4E3 /* appicon-com.xa.toki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.xa.toki.png"; sourceTree = "<group>"; };
+		85AEE3DA3F3773DCD3EC9DE7 /* claude-qa-calendarsnap-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-calendarsnap-2026-10-08.json"; sourceTree = "<group>"; };
 		864DAED30760BDC61CC2444A /* TodayPickWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPickWidget.swift; sourceTree = "<group>"; };
 		89143A8E34CB1106D8A974FD /* ClaudeQASeederTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeQASeederTests.swift; sourceTree = "<group>"; };
+		893F88734FFB464CB67C6CD8 /* claude-qa-notmatempo-06-dark-paywall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-notmatempo-06-dark-paywall.png"; sourceTree = "<group>"; };
 		8ADB1E8324E48C5944AB03D6 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		8B1782542480FA6394FCB3EA /* claude-qa-slidesnap-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-slidesnap-2026-10-08.json"; sourceTree = "<group>"; };
 		8B6B543AF25D82DCDE62A2B9 /* appicon-com.ysoup.restaurantmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.ysoup.restaurantmap.png"; sourceTree = "<group>"; };
 		8BC8935E246E647CDEBE0529 /* QARotationTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = QARotationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDDEEB2240D03EFE2142711 /* QARotation.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = QARotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCBDBA21696D1AF6B6DE48C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		8CEF824F792749E083E8AD59 /* claude-qa-externalize-01-onboarding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-externalize-01-onboarding.png"; sourceTree = "<group>"; };
 		8D261538F46586DBAA9DEA6A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		8D31506C4F15E450230FABBE /* claude-qa-externalize-02-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-externalize-02-empty.png"; sourceTree = "<group>"; };
+		9091F511D552FDDF39EE95BA /* claude-qa-wifisnap-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-wifisnap-01-first-launch.png"; sourceTree = "<group>"; };
 		9093CAAF63FC814645EA5596 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		9268B89E89F9F802E6AAB010 /* claude-qa-burningparchment-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-burningparchment-2026-10-08.json"; sourceTree = "<group>"; };
+		926A64FDC4DC1134E6CB9B5A /* claude-qa-stampcamera-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-stampcamera-2026-10-08.json"; sourceTree = "<group>"; };
 		92C898300A7DCC93888108E5 /* appicon-com.devkoan.staffsinger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.staffsinger.png"; sourceTree = "<group>"; };
+		951FD393440215999511B12A /* claude-qa-cooltime-01-onboarding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-cooltime-01-onboarding.png"; sourceTree = "<group>"; };
+		9584ADD1E860832592581DFD /* claude-qa-moonlit-arcade-01-home-subtitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-moonlit-arcade-01-home-subtitle.png"; sourceTree = "<group>"; };
+		9687CEEA6A5E7CFAD37E8B94 /* claude-qa-familycourt-04-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-familycourt-04-ax5.png"; sourceTree = "<group>"; };
 		97D8772F5F434D9FBE0CE0D3 /* ChecklistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRow.swift; sourceTree = "<group>"; };
 		981E2F60D733AF4587EAF8F6 /* SkipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipStore.swift; sourceTree = "<group>"; };
+		98A29BB48E6F3E20E94DECED /* claude-qa-reboundjournal-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-reboundjournal-01-first-launch.png"; sourceTree = "<group>"; };
+		9A049541F482B9568B9383B5 /* claude-qa-sunflower-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-sunflower-2026-10-08.json"; sourceTree = "<group>"; };
 		9A0D3D4CC250AE94A5482990 /* PickResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickResolver.swift; sourceTree = "<group>"; };
+		9B11BEB336C9EF4A3D9E9C11 /* claude-qa-skydex-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-skydex-03-ax5.png"; sourceTree = "<group>"; };
+		9C41556558EF707CD5356E7F /* claude-qa-moonlit-arcade-02-practice-intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-moonlit-arcade-02-practice-intro.png"; sourceTree = "<group>"; };
 		9CDA29B35A32B935166EE93A /* SessionDraftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDraftTests.swift; sourceTree = "<group>"; };
 		A0055E3A94769E4C72F8FB88 /* appicon-com.leeo.jujob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.jujob.png"; sourceTree = "<group>"; };
 		A103BE72D03FB3EB0231A899 /* appicon-com.leeo.geusaie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.geusaie.png"; sourceTree = "<group>"; };
 		A32B736EB4AD40911A7CFD8B /* ImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTests.swift; sourceTree = "<group>"; };
 		A402F362F20D3D346F91D5E8 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		A53D453CBCE1205F95F10521 /* claude-qa-geusaie-01-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-geusaie-01-home.png"; sourceTree = "<group>"; };
+		A6C70B1478ADA68FD74B13B2 /* claude-qa-familycourt-02-easy-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-familycourt-02-easy-badge.png"; sourceTree = "<group>"; };
+		A6D1297A08B4CF84244E9860 /* claude-qa-moonlit-arcade-04-role-reconnect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-moonlit-arcade-04-role-reconnect.png"; sourceTree = "<group>"; };
 		A7A1A4954AD5E38768C74007 /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
 		A86241273DEDFF98FB26F2D5 /* WideButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideButtonLabel.swift; sourceTree = "<group>"; };
 		A90D85B67F66289F72B765A3 /* appicon-com.devkoan.scheduledensityapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.scheduledensityapp.png"; sourceTree = "<group>"; };
 		A9627EDC874EF394C6C798D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AAE1A780135E3E63A916E505 /* appicon-com.burningparchment.app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.burningparchment.app.png"; sourceTree = "<group>"; };
+		ABD6DFF44474AD736F6C7C72 /* claude-qa-dontgomart-02-share-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-dontgomart-02-share-card.png"; sourceTree = "<group>"; };
+		AC98ED4491501D573EF2938A /* claude-qa-rainbow-desire-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-rainbow-desire-03-ax5.png"; sourceTree = "<group>"; };
+		ACCEAEDEF4124E7DC21676D3 /* claude-qa-familycourt-01-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-familycourt-01-home.png"; sourceTree = "<group>"; };
+		AED8A73C212AC9970ABE48EF /* claude-qa-higgym-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-higgym-2026-10-08.json"; sourceTree = "<group>"; };
 		AF8A873C4465EDAA1AC05F21 /* appicon-com.devkoan.stampcamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.stampcamera.png"; sourceTree = "<group>"; };
+		AFFCCF6082437C5F5107F9CD /* claude-qa-korea-route-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-korea-route-2026-10-08.json"; sourceTree = "<group>"; };
+		B038C388C0817D04DFCB1B36 /* claude-qa-wifisnap-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-wifisnap-2026-10-08.json"; sourceTree = "<group>"; };
+		B192537D2C22D70786711C23 /* claude-qa-familycourt-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-familycourt-2026-10-08.json"; sourceTree = "<group>"; };
+		B2DE7ADAF69B799687DB3E38 /* claude-qa-geusaie-06-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-geusaie-06-landscape.png"; sourceTree = "<group>"; };
+		B2EDD7B4B3F0536E39A42837 /* claude-qa-notmatempo-01-first-launch-speech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-notmatempo-01-first-launch-speech.png"; sourceTree = "<group>"; };
 		B34C0B6CD80FCB7C136E891B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B409C90319EEB43E82F23D1D /* claude-qa-skydex-01-board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-skydex-01-board.png"; sourceTree = "<group>"; };
+		B42C3FDC98B448F3A146845C /* claude-qa-geusaie-04-deadline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-geusaie-04-deadline.png"; sourceTree = "<group>"; };
+		B4A62A87715B9EB5C96A2809 /* claude-qa-korea-route-02-start-en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-korea-route-02-start-en.png"; sourceTree = "<group>"; };
+		B72E5F10DD6A9AA757620F8A /* claude-qa-calendarsnap-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-calendarsnap-01-first-launch.png"; sourceTree = "<group>"; };
 		B92D5DFC0753E937436228E9 /* IssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesView.swift; sourceTree = "<group>"; };
 		B9BA602A0B5D0E2759F1E399 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BB3C4421A2DA9FD264252552 /* claude-qa-cooltime-02-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-cooltime-02-home.png"; sourceTree = "<group>"; };
+		BD7113FF3770E1CDB959F171 /* claude-qa-moonlit-arcade-03-lobby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-moonlit-arcade-03-lobby.png"; sourceTree = "<group>"; };
 		BDBAA0BC8436DF48798AB424 /* CarriedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarriedCard.swift; sourceTree = "<group>"; };
+		BE3251F5F539B2C3F22B6D8B /* claude-qa-routinecamera-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-routinecamera-2026-10-08.json"; sourceTree = "<group>"; };
 		BF51EFB5AFEF1B7D37BE6217 /* appicon-com.leeo.wifisnap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.wifisnap.png"; sourceTree = "<group>"; };
+		BFBE71C72873B295584B69B8 /* claude-qa-geusaie-05-done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-geusaie-05-done.png"; sourceTree = "<group>"; };
 		BFC742F77A0846264F10E9FD /* PickChangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickChangeCoordinator.swift; sourceTree = "<group>"; };
 		C0059FAD2027BDCFBAC416CA /* appicon-com.leeo.conversationpractice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.conversationpractice.png"; sourceTree = "<group>"; };
 		C029EF31625015D40449351A /* SeedApps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeedApps.json; sourceTree = "<group>"; };
 		C0852C774B38044008C64DC5 /* claude-qa-clipkeyboard-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-clipkeyboard-01-first-launch.png"; sourceTree = "<group>"; };
 		C171DFB61181C3B365D3633F /* appicon-com.family.familycourt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.family.familycourt.png"; sourceTree = "<group>"; };
 		C2EA04EDD1569E91BA8B7F9C /* VersionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionPicker.swift; sourceTree = "<group>"; };
+		C3B0F4168587FBD8A3E05CB0 /* claude-qa-routinecamera-05-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-routinecamera-05-ax5.png"; sourceTree = "<group>"; };
+		C4A35A4612D6C885DFD3D080 /* claude-qa-stickypresenter-01-first-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-01-first-note.png"; sourceTree = "<group>"; };
+		C5A55873D14F38D36F968195 /* claude-qa-yeoul-04-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-yeoul-04-ax5.png"; sourceTree = "<group>"; };
+		C5B1047329D6482BFB4D77F5 /* claude-qa-footprintdiary-05-ax5-onboarding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-footprintdiary-05-ax5-onboarding.png"; sourceTree = "<group>"; };
+		C5BBE4893E488A55201DD075 /* claude-qa-dontgomart-03-english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-dontgomart-03-english.png"; sourceTree = "<group>"; };
+		C68F977EA2C7B5587DF566B1 /* claude-qa-geusaie-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-geusaie-2026-10-08.json"; sourceTree = "<group>"; };
 		C6DE6DAA07137A4586B1DA22 /* AppsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListView.swift; sourceTree = "<group>"; };
+		C8B02A2D6E93880C95F303B1 /* claude-qa-geusaie-03-prep-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-geusaie-03-prep-card.png"; sourceTree = "<group>"; };
+		CA449C2B78EC5F58BA9873AD /* claude-qa-rotoscope-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-rotoscope-2026-10-08.json"; sourceTree = "<group>"; };
 		CB196284F348E330E3FF1229 /* appicon-com.leeo.yeoul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.yeoul.png"; sourceTree = "<group>"; };
 		CB680C20B7EF90706D3B6158 /* appicon-com.leeo.reboundjournal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.reboundjournal.png"; sourceTree = "<group>"; };
+		CBBDB96867551335DAB32882 /* claude-qa-korea-route-04-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-korea-route-04-dark.png"; sourceTree = "<group>"; };
+		CCB92EF989F8ECFDE9102C59 /* claude-qa-yeoul-05-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-yeoul-05-home.png"; sourceTree = "<group>"; };
+		CD7231713F7E350F5643CFDF /* claude-qa-stickypresenter-remote-02-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-remote-02-dark.png"; sourceTree = "<group>"; };
+		CF03EA3A3A6ED29057D1390F /* claude-qa-cooltime-04-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-cooltime-04-dark.png"; sourceTree = "<group>"; };
 		CFBDDB918230DB876293CF94 /* appicon-com.devkoan.indonesiansmalltalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.indonesiansmalltalk.png"; sourceTree = "<group>"; };
+		D179A57B813C68E111372D19 /* claude-qa-routinecamera-04-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-routinecamera-04-dark.png"; sourceTree = "<group>"; };
+		D4684EB7292088DE16B2A3E7 /* claude-qa-goldweek-05-ax5-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-goldweek-05-ax5-calendar.png"; sourceTree = "<group>"; };
+		D4DF49B43A08C8CE43730EA5 /* claude-qa-sunflower-01-camera-permission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-sunflower-01-camera-permission.png"; sourceTree = "<group>"; };
 		D6041338D4F7EE03C78B7EA9 /* AppEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEditView.swift; sourceTree = "<group>"; };
+		D7295F31EAAD7B91C8F62722 /* claude-qa-familybank-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-familybank-01-first-launch.png"; sourceTree = "<group>"; };
 		D82CFD8AF9BD57FC84B67816 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D833C1A6B5362373FFEC5F37 /* claude-qa-korea-route-06-far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-korea-route-06-far.png"; sourceTree = "<group>"; };
+		D91837A2A42280F25D8DA1E7 /* claude-qa-slidesnap-03-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-slidesnap-03-search.png"; sourceTree = "<group>"; };
 		D91FB04E501030FE3819BAC3 /* appicon-com.lottochecker.app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.lottochecker.app.png"; sourceTree = "<group>"; };
 		D96C3BC6CB9E3A0A23995DC8 /* OutcomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeButtons.swift; sourceTree = "<group>"; };
+		DA09BE38D9E831517213333E /* claude-qa-sunflower-02-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-sunflower-02-home.png"; sourceTree = "<group>"; };
+		DAB383C125C3511863C8829B /* claude-qa-reboundjournal-04-pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-reboundjournal-04-pro.png"; sourceTree = "<group>"; };
+		DBBD596BACAFD891DEB21173 /* claude-qa-higgym-06-resume-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-higgym-06-resume-card.png"; sourceTree = "<group>"; };
 		DBE654F60C159BAFBF36E98D /* appicon-com.leeo.slidesnap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.slidesnap.png"; sourceTree = "<group>"; };
+		DC54E95D6D8F117A5EA49670 /* claude-qa-higgym-03-compare-step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-higgym-03-compare-step.png"; sourceTree = "<group>"; };
+		DD199DDAF533BA1C2E7A5A1B /* claude-qa-thinkflow-02-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-thinkflow-02-home.png"; sourceTree = "<group>"; };
 		DE1E15329AFC5AEB395EB871 /* FocusedChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedChecklistView.swift; sourceTree = "<group>"; };
+		DF1A9F999DD62100D7FE7350 /* claude-qa-dontgomart-05-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-dontgomart-05-ax5.png"; sourceTree = "<group>"; };
+		E052229B1368C336DCA5FAEE /* claude-qa-toki-04-session-running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-toki-04-session-running.png"; sourceTree = "<group>"; };
+		E06DA5E0C7AB08CD58C72751 /* claude-qa-staffsinger-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-staffsinger-03-ax5.png"; sourceTree = "<group>"; };
+		E2A9D0FC6935428B436519A6 /* claude-qa-goldweek-04-dark-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-goldweek-04-dark-calendar.png"; sourceTree = "<group>"; };
+		E2FF98B437473BA248652F11 /* claude-qa-restaurantmap-01-first-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-restaurantmap-01-first-location.png"; sourceTree = "<group>"; };
 		E3C56F9A7515D9F2441C5E90 /* appicon-com.leeo.dontgomart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.leeo.dontgomart.png"; sourceTree = "<group>"; };
+		E4138E1E68597C4734650F0E /* claude-qa-toki-05-german.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-toki-05-german.png"; sourceTree = "<group>"; };
 		E52A3BA62A08688DE3877270 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E535F99A938D4F8843FE0522 /* claude-qa-cooltime-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-cooltime-03-ax5.png"; sourceTree = "<group>"; };
 		E69D9C341BE673DABBFC9EE1 /* QARotationWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = QARotationWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E89BAB2B34E2FB6960ABEE2B /* claude-qa-externalize-03-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-externalize-03-list.png"; sourceTree = "<group>"; };
+		E8E6C6C311E8AB3E6567F9B7 /* claude-qa-burningparchment-02-english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-burningparchment-02-english.png"; sourceTree = "<group>"; };
 		E8EAA23A30BFA465BA8642A6 /* ClaudeQASeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeQASeeder.swift; sourceTree = "<group>"; };
+		E9A58B3244E22158B7191500 /* claude-qa-stickypresenter-02-guide-shortcuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stickypresenter-02-guide-shortcuts.png"; sourceTree = "<group>"; };
+		EA2639037B02013A6FC09969 /* claude-qa-wifisnap-02-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-wifisnap-02-home.png"; sourceTree = "<group>"; };
+		EA352CA85865FD73EF36B4E6 /* claude-qa-slidesnap-01-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-slidesnap-01-camera.png"; sourceTree = "<group>"; };
 		EE08DB977009800412878CCE /* ITunesLookupClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesLookupClient.swift; sourceTree = "<group>"; };
+		EF1812872234CD973FCBABFC /* claude-qa-externalize-04-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-externalize-04-dark.png"; sourceTree = "<group>"; };
 		F0123C57207E61B466A74561 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		F109683E1E99F8D03EA8DA39 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F1D1BACDF8F53D43DE322729 /* claude-qa-korea-route-01-start-ko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-korea-route-01-start-ko.png"; sourceTree = "<group>"; };
+		F2FA3AD5770EE56E7C1B8C67 /* claude-qa-footprintdiary-04-ax5-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-footprintdiary-04-ax5-map.png"; sourceTree = "<group>"; };
+		F35F8F65BE38EC66CFE3ACF8 /* claude-qa-firetracker-02-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-firetracker-02-dark.png"; sourceTree = "<group>"; };
+		F37E74343186145CB585050F /* claude-qa-sunflower-04-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-sunflower-04-ax5.png"; sourceTree = "<group>"; };
 		F3EE61C45A46D0AF482A8CE4 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		F5C0858E49D79F94A4FB244F /* appicon-com.devkoan.externalize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.devkoan.externalize.png"; sourceTree = "<group>"; };
+		F83826EC2A3FAA11ABDEA184 /* claude-qa-familybank-03-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-familybank-03-ax5.png"; sourceTree = "<group>"; };
+		F9414FFB71533FA11733D272 /* claude-qa-yeoul-03-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-yeoul-03-dark.png"; sourceTree = "<group>"; };
+		FA41BB89F4E8188931EC26EA /* claude-qa-burningparchment-04-ax5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-burningparchment-04-ax5.png"; sourceTree = "<group>"; };
+		FAA75B318A557361DAD70E86 /* claude-qa-bookmarkshot-01-first-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-bookmarkshot-01-first-launch.png"; sourceTree = "<group>"; };
 		FB8B236A1231B4DDDAA271F8 /* ChecklistEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistEditorView.swift; sourceTree = "<group>"; };
 		FBED544EC467850F56727F68 /* appicon-com.family.familybank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon-com.family.familybank.png"; sourceTree = "<group>"; };
+		FCA57D4E6B7C1FF816A242E7 /* claude-qa-externalize-2026-10-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-qa-externalize-2026-10-08.json"; sourceTree = "<group>"; };
+		FD952B2D05D9EFA4B594EF98 /* claude-qa-goldweek-03-recommendations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-goldweek-03-recommendations.png"; sourceTree = "<group>"; };
+		FD973EE41BC63E403748FDF5 /* claude-qa-stampcamera-01-camera-permission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claude-qa-stampcamera-01-camera-permission.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -512,10 +884,196 @@
 		B806FF83D1B9B59A562C2E03 /* ClaudeQA */ = {
 			isa = PBXGroup;
 			children = (
+				FAA75B318A557361DAD70E86 /* claude-qa-bookmarkshot-01-first-launch.png */,
+				09159B9EB7690ACC9C8CA2F6 /* claude-qa-bookmarkshot-02-gear-covers-plus.png */,
+				60D70AE57B7906BD66824F91 /* claude-qa-bookmarkshot-03-ax5.png */,
+				16E84AB7A0ED2023AC3CD679 /* claude-qa-bookmarkshot-04-dark.png */,
+				02716A9E7DECC81414FD6850 /* claude-qa-bookmarkshot-2026-10-08.json */,
+				73087C71508335782D1F2512 /* claude-qa-burningparchment-01-first-launch.png */,
+				E8E6C6C311E8AB3E6567F9B7 /* claude-qa-burningparchment-02-english.png */,
+				2F4D5300D3E2F972D8D62B8B /* claude-qa-burningparchment-03-dark.png */,
+				FA41BB89F4E8188931EC26EA /* claude-qa-burningparchment-04-ax5.png */,
+				9268B89E89F9F802E6AAB010 /* claude-qa-burningparchment-2026-10-08.json */,
+				B72E5F10DD6A9AA757620F8A /* claude-qa-calendarsnap-01-first-launch.png */,
+				1795A7475E33356F29631590 /* claude-qa-calendarsnap-02-calendar.png */,
+				556AC5A1611A6A5066D89FD7 /* claude-qa-calendarsnap-03-dark.png */,
+				15AEE75923917EA098298C03 /* claude-qa-calendarsnap-04-ax5.png */,
+				85AEE3DA3F3773DCD3EC9DE7 /* claude-qa-calendarsnap-2026-10-08.json */,
 				C0852C774B38044008C64DC5 /* claude-qa-clipkeyboard-01-first-launch.png */,
 				00D4B69DFBDADF3910B1391B /* claude-qa-clipkeyboard-05-06.png */,
 				27CF91D063BE3A07DF5E9FC8 /* claude-qa-clipkeyboard-08-ax5.png */,
 				11473643569404EF929DD5E4 /* claude-qa-clipkeyboard-2026-09-29.json */,
+				951FD393440215999511B12A /* claude-qa-cooltime-01-onboarding.png */,
+				BB3C4421A2DA9FD264252552 /* claude-qa-cooltime-02-home.png */,
+				E535F99A938D4F8843FE0522 /* claude-qa-cooltime-03-ax5.png */,
+				CF03EA3A3A6ED29057D1390F /* claude-qa-cooltime-04-dark.png */,
+				75EE1E3A1DF2DC807D3D2744 /* claude-qa-cooltime-2026-10-08.json */,
+				3783A8A63BFB1AC1E3AB3341 /* claude-qa-dontgomart-01-first-launch.png */,
+				ABD6DFF44474AD736F6C7C72 /* claude-qa-dontgomart-02-share-card.png */,
+				C5BBE4893E488A55201DD075 /* claude-qa-dontgomart-03-english.png */,
+				324E619B6935F894C9C45370 /* claude-qa-dontgomart-04-dark.png */,
+				DF1A9F999DD62100D7FE7350 /* claude-qa-dontgomart-05-ax5.png */,
+				25C81255317FED7D6D54F627 /* claude-qa-dontgomart-2026-10-08.json */,
+				8CEF824F792749E083E8AD59 /* claude-qa-externalize-01-onboarding.png */,
+				8D31506C4F15E450230FABBE /* claude-qa-externalize-02-empty.png */,
+				E89BAB2B34E2FB6960ABEE2B /* claude-qa-externalize-03-list.png */,
+				EF1812872234CD973FCBABFC /* claude-qa-externalize-04-dark.png */,
+				0EB1C11F5714F6CDD4A9381F /* claude-qa-externalize-05-ax5-list.png */,
+				01FF0B2A00EF5A535416431E /* claude-qa-externalize-06-ax5-onboarding.png */,
+				FCA57D4E6B7C1FF816A242E7 /* claude-qa-externalize-2026-10-08.json */,
+				D7295F31EAAD7B91C8F62722 /* claude-qa-familybank-01-first-launch.png */,
+				8259ED03027B3A92108473FC /* claude-qa-familybank-02-dark.png */,
+				F83826EC2A3FAA11ABDEA184 /* claude-qa-familybank-03-ax5.png */,
+				671CECE11D1C09143EF50DE8 /* claude-qa-familybank-2026-10-08.json */,
+				ACCEAEDEF4124E7DC21676D3 /* claude-qa-familycourt-01-home.png */,
+				A6C70B1478ADA68FD74B13B2 /* claude-qa-familycourt-02-easy-badge.png */,
+				7A73E5C1807A598480A78260 /* claude-qa-familycourt-03-dark.png */,
+				9687CEEA6A5E7CFAD37E8B94 /* claude-qa-familycourt-04-ax5.png */,
+				B192537D2C22D70786711C23 /* claude-qa-familycourt-2026-10-08.json */,
+				3E48ABF28479E48878B8A98C /* claude-qa-firetracker-01-first-launch.png */,
+				F35F8F65BE38EC66CFE3ACF8 /* claude-qa-firetracker-02-dark.png */,
+				719957A8520C8B3307FA61CD /* claude-qa-firetracker-03-ax5.png */,
+				6D7EB4B79C6F895FFDC41B68 /* claude-qa-firetracker-2026-10-08.json */,
+				54D63F78EFBCA68613F0A584 /* claude-qa-footprintdiary-01-first-launch.png */,
+				6BA3886698B73F6642808D56 /* claude-qa-footprintdiary-02-empty-map.png */,
+				7358080711ACE9570F78F52C /* claude-qa-footprintdiary-03-dark-map.png */,
+				F2FA3AD5770EE56E7C1B8C67 /* claude-qa-footprintdiary-04-ax5-map.png */,
+				C5B1047329D6482BFB4D77F5 /* claude-qa-footprintdiary-05-ax5-onboarding.png */,
+				093E26F08B36293DA0CF7EE2 /* claude-qa-footprintdiary-2026-10-08.json */,
+				A53D453CBCE1205F95F10521 /* claude-qa-geusaie-01-home.png */,
+				1767E0699AC7BDE065400BC1 /* claude-qa-geusaie-02-ready.png */,
+				C8B02A2D6E93880C95F303B1 /* claude-qa-geusaie-03-prep-card.png */,
+				B42C3FDC98B448F3A146845C /* claude-qa-geusaie-04-deadline.png */,
+				BFBE71C72873B295584B69B8 /* claude-qa-geusaie-05-done.png */,
+				B2DE7ADAF69B799687DB3E38 /* claude-qa-geusaie-06-landscape.png */,
+				C68F977EA2C7B5587DF566B1 /* claude-qa-geusaie-2026-10-08.json */,
+				24E66AF112629B0502FB9F64 /* claude-qa-goldweek-01-first-launch.png */,
+				3DB3051C02C5543D53387DB5 /* claude-qa-goldweek-02-home.png */,
+				FD952B2D05D9EFA4B594EF98 /* claude-qa-goldweek-03-recommendations.png */,
+				E2A9D0FC6935428B436519A6 /* claude-qa-goldweek-04-dark-calendar.png */,
+				D4684EB7292088DE16B2A3E7 /* claude-qa-goldweek-05-ax5-calendar.png */,
+				806D317128F91770E7A2EE5E /* claude-qa-goldweek-06-ax5-home.png */,
+				11572E2EA45FAC783312CF14 /* claude-qa-goldweek-2026-10-08.json */,
+				2BD63F50BC95D0BA4B6C2829 /* claude-qa-higgym-01-first-launch.png */,
+				06166EFC456DCD3E17DE8BDD /* claude-qa-higgym-02-reason-step.png */,
+				DC54E95D6D8F117A5EA49670 /* claude-qa-higgym-03-compare-step.png */,
+				06FE5D800C1B8A3ADD8971DD /* claude-qa-higgym-04-ax5-lesson.png */,
+				31314FDB372E80399EF91CD8 /* claude-qa-higgym-05-dark-course.png */,
+				DBBD596BACAFD891DEB21173 /* claude-qa-higgym-06-resume-card.png */,
+				AED8A73C212AC9970ABE48EF /* claude-qa-higgym-2026-10-08.json */,
+				F1D1BACDF8F53D43DE322729 /* claude-qa-korea-route-01-start-ko.png */,
+				B4A62A87715B9EB5C96A2809 /* claude-qa-korea-route-02-start-en.png */,
+				47E65DB17CB2DB6A74BDA53B /* claude-qa-korea-route-03-start-zh-hant.png */,
+				CBBDB96867551335DAB32882 /* claude-qa-korea-route-04-dark.png */,
+				693658625A69D144E193687C /* claude-qa-korea-route-05-ax5.png */,
+				D833C1A6B5362373FFEC5F37 /* claude-qa-korea-route-06-far.png */,
+				AFFCCF6082437C5F5107F9CD /* claude-qa-korea-route-2026-10-08.json */,
+				818AEA63F4FBD53983FD3EDF /* claude-qa-lectureq-2026-10-08.json */,
+				0BDC640BF9E10CB20EF9B5CF /* claude-qa-moonlight-2026-10-08.json */,
+				9584ADD1E860832592581DFD /* claude-qa-moonlit-arcade-01-home-subtitle.png */,
+				9C41556558EF707CD5356E7F /* claude-qa-moonlit-arcade-02-practice-intro.png */,
+				BD7113FF3770E1CDB959F171 /* claude-qa-moonlit-arcade-03-lobby.png */,
+				A6D1297A08B4CF84244E9860 /* claude-qa-moonlit-arcade-04-role-reconnect.png */,
+				05F40735837FB342A8FBEA3F /* claude-qa-moonlit-arcade-05-gm-panel.png */,
+				7F74E1738F15F2A902AF44F6 /* claude-qa-moonlit-arcade-06-sketch-result.png */,
+				806B23543496F8168CA31AEA /* claude-qa-moonlit-arcade-2026-10-08.json */,
+				B2EDD7B4B3F0536E39A42837 /* claude-qa-notmatempo-01-first-launch-speech.png */,
+				0F2B633A061B3E4C064BAAE4 /* claude-qa-notmatempo-02-main.png */,
+				3EB9A4C6342CF67311045B75 /* claude-qa-notmatempo-03-listening-tip.png */,
+				4BB4BF0DAA54D9569A576C57 /* claude-qa-notmatempo-04-paywall.png */,
+				5741B4BDD6F38E0647899273 /* claude-qa-notmatempo-05-tuner.png */,
+				893F88734FFB464CB67C6CD8 /* claude-qa-notmatempo-06-dark-paywall.png */,
+				5ABE864B6ABE6B0C121F1810 /* claude-qa-notmatempo-2026-10-08.json */,
+				676F425BC9AEEF37254C398E /* claude-qa-pixelme-01-onboarding.png */,
+				395EA906166430BDD05CCD0A /* claude-qa-pixelme-02-home.png */,
+				5E62C3BCBFB092ABC6A5C66A /* claude-qa-pixelme-03-ax5.png */,
+				21785DEAE555658A39BE58C3 /* claude-qa-pixelme-2026-10-08.json */,
+				136ED6E55D46390EC897DAAB /* claude-qa-rainbow-desire-01-todo-empty.png */,
+				81096DF78796C3ED95725E7E /* claude-qa-rainbow-desire-02-dark-zh-hant.png */,
+				AC98ED4491501D573EF2938A /* claude-qa-rainbow-desire-03-ax5.png */,
+				1E49F5E5C9460DCBBEE57F11 /* claude-qa-rainbow-desire-04-de.png */,
+				59F4A08AB5A9DF245943698A /* claude-qa-rainbow-desire-2026-10-08.json */,
+				20767850FC408E5C638789A4 /* claude-qa-rainbow-workshop-2026-10-08.json */,
+				98A29BB48E6F3E20E94DECED /* claude-qa-reboundjournal-01-first-launch.png */,
+				3B4E32A960364CD0124E1D8B /* claude-qa-reboundjournal-02-home.png */,
+				0FEBA9CFCF14E8062A88EE96 /* claude-qa-reboundjournal-03-goal-limit.png */,
+				DAB383C125C3511863C8829B /* claude-qa-reboundjournal-04-pro.png */,
+				718C048A6A969AC4795BFD20 /* claude-qa-reboundjournal-05-records.png */,
+				1DA425897C0F13463A58DF3B /* claude-qa-reboundjournal-06-ax5.png */,
+				34F6107A9CEFA61910594DC8 /* claude-qa-reboundjournal-2026-10-08.json */,
+				E2FF98B437473BA248652F11 /* claude-qa-restaurantmap-01-first-location.png */,
+				1D125EDA778C6E56596DDAE5 /* claude-qa-restaurantmap-02-always.png */,
+				52EF951E35596056267FBEB8 /* claude-qa-restaurantmap-03-notification.png */,
+				30E00B5B5CE48A8C1A1CC13C /* claude-qa-restaurantmap-04-dark.png */,
+				1441AF6504D23EF36237F1B9 /* claude-qa-restaurantmap-2026-10-08.json */,
+				1B56CC3B0F9B222519DD8558 /* claude-qa-rotoscope-01-home.png */,
+				4108C645D566A6F23212B080 /* claude-qa-rotoscope-02-reopen-last.png */,
+				644A823C0386517C71103F04 /* claude-qa-rotoscope-03-legacy-dark.png */,
+				CA449C2B78EC5F58BA9873AD /* claude-qa-rotoscope-2026-10-08.json */,
+				7FD2E4729E4A2B29DF93E115 /* claude-qa-routinecamera-01-first-launch.png */,
+				6F424637A3C81F398CDB23D1 /* claude-qa-routinecamera-02-empty-feed.png */,
+				7AEC948A82EB86BF913B3495 /* claude-qa-routinecamera-03-feed.png */,
+				D179A57B813C68E111372D19 /* claude-qa-routinecamera-04-dark.png */,
+				C3B0F4168587FBD8A3E05CB0 /* claude-qa-routinecamera-05-ax5.png */,
+				BE3251F5F539B2C3F22B6D8B /* claude-qa-routinecamera-2026-10-08.json */,
+				B409C90319EEB43E82F23D1D /* claude-qa-skydex-01-board.png */,
+				636421E0E4D32C1249044E2D /* claude-qa-skydex-02-dark.png */,
+				9B11BEB336C9EF4A3D9E9C11 /* claude-qa-skydex-03-ax5.png */,
+				131761D57B685C27A64484AC /* claude-qa-skydex-2026-10-08.json */,
+				EA352CA85865FD73EF36B4E6 /* claude-qa-slidesnap-01-camera.png */,
+				7C572D30ABA0037F26B5AB8F /* claude-qa-slidesnap-02-list.png */,
+				D91837A2A42280F25D8DA1E7 /* claude-qa-slidesnap-03-search.png */,
+				2F2A90B7EB5A8EF5D8CF0FEC /* claude-qa-slidesnap-04-ax5-grid.png */,
+				268DCC4324881D9AA8CFCA9F /* claude-qa-slidesnap-05-slide.png */,
+				036147A9A13740214F45613A /* claude-qa-slidesnap-06-dark.png */,
+				8B1782542480FA6394FCB3EA /* claude-qa-slidesnap-2026-10-08.json */,
+				450075FF6CCF577711B31E6D /* claude-qa-staffsinger-01-first-launch.png */,
+				14C7176A472D1354074A02ED /* claude-qa-staffsinger-02-dark.png */,
+				E06DA5E0C7AB08CD58C72751 /* claude-qa-staffsinger-03-ax5.png */,
+				565AE42F2E1330A58CE43A02 /* claude-qa-staffsinger-2026-10-08.json */,
+				FD973EE41BC63E403748FDF5 /* claude-qa-stampcamera-01-camera-permission.png */,
+				926A64FDC4DC1134E6CB9B5A /* claude-qa-stampcamera-2026-10-08.json */,
+				C4A35A4612D6C885DFD3D080 /* claude-qa-stickypresenter-01-first-note.png */,
+				E9A58B3244E22158B7191500 /* claude-qa-stickypresenter-02-guide-shortcuts.png */,
+				45C2572422B635175DDF9CCA /* claude-qa-stickypresenter-03-timer-empty.png */,
+				78D5D6BD9A56476D3A072A03 /* claude-qa-stickypresenter-04-timer-running.png */,
+				7739CFEE9B3794BA23228149 /* claude-qa-stickypresenter-05-teleprompter.png */,
+				7064AB190690C59D1F6B0E22 /* claude-qa-stickypresenter-06-pink-note.png */,
+				4FC5FF7642A2BD95DA2442CE /* claude-qa-stickypresenter-2026-10-08.json */,
+				60DB2E517A3E8602550AE552 /* claude-qa-stickypresenter-remote-01-searching-checklist.png */,
+				CD7231713F7E350F5643CFDF /* claude-qa-stickypresenter-remote-02-dark.png */,
+				5828B293A65E62366DDD94C1 /* claude-qa-stickypresenter-remote-03-ax5.png */,
+				5F7C3A0F7C66C89E369F8F74 /* claude-qa-stickypresenter-remote-2026-10-08.json */,
+				D4DF49B43A08C8CE43730EA5 /* claude-qa-sunflower-01-camera-permission.png */,
+				DA09BE38D9E831517213333E /* claude-qa-sunflower-02-home.png */,
+				53E41383E0BDE0E108B1EB2E /* claude-qa-sunflower-03-dark.png */,
+				F37E74343186145CB585050F /* claude-qa-sunflower-04-ax5.png */,
+				9A049541F482B9568B9383B5 /* claude-qa-sunflower-2026-10-08.json */,
+				39317FE2C4AF24DEAB325CA7 /* claude-qa-tapclipkeyboard-2026-10-08.json */,
+				410AD17192BD9998B60CEFD7 /* claude-qa-tetratint-01-first-launch.png */,
+				135D682D29DF8A8CA1CC3CD0 /* claude-qa-tetratint-2026-10-08.json */,
+				38AE30FD6C7E7D7AEBC68B57 /* claude-qa-thinkflow-01-empty.png */,
+				DD199DDAF533BA1C2E7A5A1B /* claude-qa-thinkflow-02-home.png */,
+				4FC8A4A741FE254DCDD50788 /* claude-qa-thinkflow-03-dark.png */,
+				0B31A70599EF000C6DF642B7 /* claude-qa-thinkflow-04-ax5.png */,
+				31D1F592EAB2E01C3912952F /* claude-qa-thinkflow-2026-10-08.json */,
+				48E5C3060CB309579682404A /* claude-qa-toki-01-first-launch.png */,
+				04065292D01D93C58EF21CC9 /* claude-qa-toki-02-dial.png */,
+				19BCAC7A5AB8789A049FBAA8 /* claude-qa-toki-03-session.png */,
+				E052229B1368C336DCA5FAEE /* claude-qa-toki-04-session-running.png */,
+				E4138E1E68597C4734650F0E /* claude-qa-toki-05-german.png */,
+				7467C28C0E5974FEA9313F2D /* claude-qa-toki-2026-10-08.json */,
+				9091F511D552FDDF39EE95BA /* claude-qa-wifisnap-01-first-launch.png */,
+				EA2639037B02013A6FC09969 /* claude-qa-wifisnap-02-home.png */,
+				381C5C799980518FDBA7DF10 /* claude-qa-wifisnap-03-dark.png */,
+				1C655287A375B4779CD2C86F /* claude-qa-wifisnap-04-ax5.png */,
+				B038C388C0817D04DFCB1B36 /* claude-qa-wifisnap-2026-10-08.json */,
+				78D2A6C3C1661F634F533DFE /* claude-qa-yeoul-01-first-launch.png */,
+				32C326AEC34C18FD4678A04E /* claude-qa-yeoul-02-list.png */,
+				F9414FFB71533FA11733D272 /* claude-qa-yeoul-03-dark.png */,
+				C5A55873D14F38D36F968195 /* claude-qa-yeoul-04-ax5.png */,
+				CCB92EF989F8ECFDE9102C59 /* claude-qa-yeoul-05-home.png */,
+				345B76F4C32315B94BAD67D7 /* claude-qa-yeoul-2026-10-08.json */,
 			);
 			path = ClaudeQA;
 			sourceTree = "<group>";
@@ -731,10 +1289,196 @@
 				4B61DA2DE5703990EC1A9DA1 /* appicon-com.ysoup.routinecamera.png in Resources */,
 				9BE180A5BE534D375D27F767 /* appicon-com.ysoup.tokenmemo-tap.png in Resources */,
 				348278FE32E7A96C3CE0E14C /* appicon-com.ysoup.tokenmemo.png in Resources */,
+				5507A74A6CA3A13C9EDCADE9 /* claude-qa-bookmarkshot-01-first-launch.png in Resources */,
+				53E58D755810260285D3CA45 /* claude-qa-bookmarkshot-02-gear-covers-plus.png in Resources */,
+				B77675D31C29A88563F1B660 /* claude-qa-bookmarkshot-03-ax5.png in Resources */,
+				BA09E0DE07BD5F92363A98DF /* claude-qa-bookmarkshot-04-dark.png in Resources */,
+				7F4AE3C38ACF2AB03ABD40B2 /* claude-qa-bookmarkshot-2026-10-08.json in Resources */,
+				94CAD070EAB23CEAAEDF37C1 /* claude-qa-burningparchment-01-first-launch.png in Resources */,
+				BC55672E33A3F9F1AA7E2DB5 /* claude-qa-burningparchment-02-english.png in Resources */,
+				466886674C1FE25B7B1BC04A /* claude-qa-burningparchment-03-dark.png in Resources */,
+				3EE6605949CA7A1AD4883EA7 /* claude-qa-burningparchment-04-ax5.png in Resources */,
+				1C208D82B3A4EBD0D241F43D /* claude-qa-burningparchment-2026-10-08.json in Resources */,
+				B6E88B551846E3715CE93D7C /* claude-qa-calendarsnap-01-first-launch.png in Resources */,
+				50E44ACB8C968EA72090A696 /* claude-qa-calendarsnap-02-calendar.png in Resources */,
+				9DF0E4ED3066F013A87EB5A4 /* claude-qa-calendarsnap-03-dark.png in Resources */,
+				62EC35D52051B59601A4C403 /* claude-qa-calendarsnap-04-ax5.png in Resources */,
+				CC8510BA5E8263463EDC7DC5 /* claude-qa-calendarsnap-2026-10-08.json in Resources */,
 				500D6FC1A5A58385A5EA5891 /* claude-qa-clipkeyboard-01-first-launch.png in Resources */,
 				A8F28F106466019CD07E5247 /* claude-qa-clipkeyboard-05-06.png in Resources */,
 				615737F99EBF0DED39C77B46 /* claude-qa-clipkeyboard-08-ax5.png in Resources */,
 				CF75208136CD136199411591 /* claude-qa-clipkeyboard-2026-09-29.json in Resources */,
+				E4EFDB0C2B3B9ACF0411C44B /* claude-qa-cooltime-01-onboarding.png in Resources */,
+				1A1249A51E2788DDF2193A83 /* claude-qa-cooltime-02-home.png in Resources */,
+				468A4F76051C72701315D43F /* claude-qa-cooltime-03-ax5.png in Resources */,
+				032CD8DC6C9856FD7E665935 /* claude-qa-cooltime-04-dark.png in Resources */,
+				C1439BC68706D2CE8275E268 /* claude-qa-cooltime-2026-10-08.json in Resources */,
+				0AD91A1209B6D3200A792242 /* claude-qa-dontgomart-01-first-launch.png in Resources */,
+				85C6C24927BE1D5C047C6D80 /* claude-qa-dontgomart-02-share-card.png in Resources */,
+				5A1897C98FAA1CF769731745 /* claude-qa-dontgomart-03-english.png in Resources */,
+				232A98161BA929792AA1272F /* claude-qa-dontgomart-04-dark.png in Resources */,
+				42C667FB7402D413A542FA1A /* claude-qa-dontgomart-05-ax5.png in Resources */,
+				7073AD1AAAA403154109428E /* claude-qa-dontgomart-2026-10-08.json in Resources */,
+				6FD6A25A5ED23E944BDDD406 /* claude-qa-externalize-01-onboarding.png in Resources */,
+				C226542AE68B3E0C4D126EFC /* claude-qa-externalize-02-empty.png in Resources */,
+				3968DEB5E4E373976D6F00B0 /* claude-qa-externalize-03-list.png in Resources */,
+				CF48DE669C51F119498F49E9 /* claude-qa-externalize-04-dark.png in Resources */,
+				7E739F8227A87D820DBC7869 /* claude-qa-externalize-05-ax5-list.png in Resources */,
+				CF5AEDED6ABE5A48E8E865B0 /* claude-qa-externalize-06-ax5-onboarding.png in Resources */,
+				B9A71A02A358AC405E2D4A35 /* claude-qa-externalize-2026-10-08.json in Resources */,
+				438870666084921318A6BEBD /* claude-qa-familybank-01-first-launch.png in Resources */,
+				C4D09642A073B11A8D28CDFC /* claude-qa-familybank-02-dark.png in Resources */,
+				85906421953FC8B45ABB869F /* claude-qa-familybank-03-ax5.png in Resources */,
+				D013219FC29A0970F2AC2ACF /* claude-qa-familybank-2026-10-08.json in Resources */,
+				8BE923C9500CB035E2B8D5A0 /* claude-qa-familycourt-01-home.png in Resources */,
+				B10AADA2EAB5EF17C290C056 /* claude-qa-familycourt-02-easy-badge.png in Resources */,
+				4E80CA9CACC1390B31077C22 /* claude-qa-familycourt-03-dark.png in Resources */,
+				A5A238356EF69BDF187CF19D /* claude-qa-familycourt-04-ax5.png in Resources */,
+				03F37FA408190E065A19623A /* claude-qa-familycourt-2026-10-08.json in Resources */,
+				80F5B8CC81CF32F81CD5BAAF /* claude-qa-firetracker-01-first-launch.png in Resources */,
+				A71525F83445A42D462C70B0 /* claude-qa-firetracker-02-dark.png in Resources */,
+				AD4A41351A58D03136A6CFE5 /* claude-qa-firetracker-03-ax5.png in Resources */,
+				C50864BD0941EDB8CEFE9082 /* claude-qa-firetracker-2026-10-08.json in Resources */,
+				D6EB6B5CC9547981AA573B3C /* claude-qa-footprintdiary-01-first-launch.png in Resources */,
+				C0E6E9FC15AD40C5B640DBB1 /* claude-qa-footprintdiary-02-empty-map.png in Resources */,
+				FA6649A6C742D5F1AF0A5AC0 /* claude-qa-footprintdiary-03-dark-map.png in Resources */,
+				3E1F2CBEF119A39C99384AE8 /* claude-qa-footprintdiary-04-ax5-map.png in Resources */,
+				BD7C1C3B2886F2FA4A3754A1 /* claude-qa-footprintdiary-05-ax5-onboarding.png in Resources */,
+				6B0FA70EC4006CA56FDCFB11 /* claude-qa-footprintdiary-2026-10-08.json in Resources */,
+				06D07056470529ECE9914B15 /* claude-qa-geusaie-01-home.png in Resources */,
+				A815E5479310807B3B821727 /* claude-qa-geusaie-02-ready.png in Resources */,
+				61E8E255BF5FD3770066D5F8 /* claude-qa-geusaie-03-prep-card.png in Resources */,
+				32BFBBE5CD867FA26572B17F /* claude-qa-geusaie-04-deadline.png in Resources */,
+				95FF9AE09F4A341610D59620 /* claude-qa-geusaie-05-done.png in Resources */,
+				62F12E078F701496E2ED27D1 /* claude-qa-geusaie-06-landscape.png in Resources */,
+				439F04CC4AFA961B204ED857 /* claude-qa-geusaie-2026-10-08.json in Resources */,
+				2C79148198ECC85179CFB75A /* claude-qa-goldweek-01-first-launch.png in Resources */,
+				15E7A0D45602BA5643CB88F5 /* claude-qa-goldweek-02-home.png in Resources */,
+				7128AF6A037029FB3A7B2619 /* claude-qa-goldweek-03-recommendations.png in Resources */,
+				A770B9AAE8F0ACF2A2C5BA83 /* claude-qa-goldweek-04-dark-calendar.png in Resources */,
+				07A0A16CCFF789881D7A03AA /* claude-qa-goldweek-05-ax5-calendar.png in Resources */,
+				9A38CC24DC1C5740B3B317D6 /* claude-qa-goldweek-06-ax5-home.png in Resources */,
+				13A6DA66ABDC7F034D244D8F /* claude-qa-goldweek-2026-10-08.json in Resources */,
+				9B695495ECD77B9971F7FD86 /* claude-qa-higgym-01-first-launch.png in Resources */,
+				6362879DFE6A2383CFBAE6FC /* claude-qa-higgym-02-reason-step.png in Resources */,
+				64E16AD246DE2DAB33B292EF /* claude-qa-higgym-03-compare-step.png in Resources */,
+				A4ACDB76186495B447F1D367 /* claude-qa-higgym-04-ax5-lesson.png in Resources */,
+				8CF4028C7472039C21A293CD /* claude-qa-higgym-05-dark-course.png in Resources */,
+				EE23CACF89049D6F5F3D90D5 /* claude-qa-higgym-06-resume-card.png in Resources */,
+				B0E375CCA3A6870825330A5B /* claude-qa-higgym-2026-10-08.json in Resources */,
+				2397964816A74CD94B0DD476 /* claude-qa-korea-route-01-start-ko.png in Resources */,
+				2F0D99046A8F4F01DC5BEB69 /* claude-qa-korea-route-02-start-en.png in Resources */,
+				98D97C7687921BD99D860717 /* claude-qa-korea-route-03-start-zh-hant.png in Resources */,
+				616A1C3731D7EF6B68D10C36 /* claude-qa-korea-route-04-dark.png in Resources */,
+				1AFC51038F2401F72789ED97 /* claude-qa-korea-route-05-ax5.png in Resources */,
+				6061D9CCC52C8476F8262C03 /* claude-qa-korea-route-06-far.png in Resources */,
+				F2DD925871D4E126FC8D431B /* claude-qa-korea-route-2026-10-08.json in Resources */,
+				8AF6D66763D0991D3606E813 /* claude-qa-lectureq-2026-10-08.json in Resources */,
+				B885CF03D0B6210783630269 /* claude-qa-moonlight-2026-10-08.json in Resources */,
+				56E256D3030529628559CD9C /* claude-qa-moonlit-arcade-01-home-subtitle.png in Resources */,
+				833E87A769D31BA44C9D1368 /* claude-qa-moonlit-arcade-02-practice-intro.png in Resources */,
+				167104D1D8114F2E20BB8AF8 /* claude-qa-moonlit-arcade-03-lobby.png in Resources */,
+				31C664B3B104A779F1DD3E66 /* claude-qa-moonlit-arcade-04-role-reconnect.png in Resources */,
+				61E773DCB45D0DD60ABB62EE /* claude-qa-moonlit-arcade-05-gm-panel.png in Resources */,
+				460C75920C4B6CD5F4FABEA7 /* claude-qa-moonlit-arcade-06-sketch-result.png in Resources */,
+				538622EEA09CDE3E93551A41 /* claude-qa-moonlit-arcade-2026-10-08.json in Resources */,
+				50DD83BDB12380353BCD8981 /* claude-qa-notmatempo-01-first-launch-speech.png in Resources */,
+				F4493C46184719626CC05178 /* claude-qa-notmatempo-02-main.png in Resources */,
+				E4E1A189CA6B42F5F44BB214 /* claude-qa-notmatempo-03-listening-tip.png in Resources */,
+				E47AA9B3E835359812FD35E5 /* claude-qa-notmatempo-04-paywall.png in Resources */,
+				A797C5153D01ED08016C915E /* claude-qa-notmatempo-05-tuner.png in Resources */,
+				B2068828EAB7C804DCD4FE52 /* claude-qa-notmatempo-06-dark-paywall.png in Resources */,
+				824E4DC8A697C95C4052BEF1 /* claude-qa-notmatempo-2026-10-08.json in Resources */,
+				72F65A5CB018597DF315EF6F /* claude-qa-pixelme-01-onboarding.png in Resources */,
+				8138C507F92A01737E48C384 /* claude-qa-pixelme-02-home.png in Resources */,
+				F11897725098DD1603C844FD /* claude-qa-pixelme-03-ax5.png in Resources */,
+				C501D04EFACAA7202B7226F3 /* claude-qa-pixelme-2026-10-08.json in Resources */,
+				A1E985392C64CAC538F19D3D /* claude-qa-rainbow-desire-01-todo-empty.png in Resources */,
+				EA2F5E4FC1DE648C1991A18A /* claude-qa-rainbow-desire-02-dark-zh-hant.png in Resources */,
+				821AFD1D22C93452F6C379E3 /* claude-qa-rainbow-desire-03-ax5.png in Resources */,
+				63A3C2AC51854D38390A3973 /* claude-qa-rainbow-desire-04-de.png in Resources */,
+				33AA2344767D5B4EB74816E8 /* claude-qa-rainbow-desire-2026-10-08.json in Resources */,
+				D7B75D6B89BA3A40F98A9115 /* claude-qa-rainbow-workshop-2026-10-08.json in Resources */,
+				B40B035CFBC0E220DF2A1E25 /* claude-qa-reboundjournal-01-first-launch.png in Resources */,
+				3402B093D5DC4819D8529805 /* claude-qa-reboundjournal-02-home.png in Resources */,
+				2A3EFD861C772A7A8893E4FE /* claude-qa-reboundjournal-03-goal-limit.png in Resources */,
+				FD50544A79348A5DEFE7B89E /* claude-qa-reboundjournal-04-pro.png in Resources */,
+				B5DD56771F901813624EF536 /* claude-qa-reboundjournal-05-records.png in Resources */,
+				DB0DC37B686F49948496E5B7 /* claude-qa-reboundjournal-06-ax5.png in Resources */,
+				8B7C6D0559A8B63BA34C44A7 /* claude-qa-reboundjournal-2026-10-08.json in Resources */,
+				BEB91A7B7D52BE86DFC37D31 /* claude-qa-restaurantmap-01-first-location.png in Resources */,
+				CC6C5B5B4722F9373C48F7A7 /* claude-qa-restaurantmap-02-always.png in Resources */,
+				500F1DBB19E02EE617B77E25 /* claude-qa-restaurantmap-03-notification.png in Resources */,
+				6F04DD4C403607AE8B6259D1 /* claude-qa-restaurantmap-04-dark.png in Resources */,
+				9249FB52F6A5AF6B9E8FC3B2 /* claude-qa-restaurantmap-2026-10-08.json in Resources */,
+				A7EB39EDAFE5214360352470 /* claude-qa-rotoscope-01-home.png in Resources */,
+				01144BC7565B416339664D45 /* claude-qa-rotoscope-02-reopen-last.png in Resources */,
+				6F91144286A9DE63B699AB91 /* claude-qa-rotoscope-03-legacy-dark.png in Resources */,
+				8DFEAD0DB68FFEB4B8A8CB0C /* claude-qa-rotoscope-2026-10-08.json in Resources */,
+				24E4780706F31BBB671303B3 /* claude-qa-routinecamera-01-first-launch.png in Resources */,
+				6B70D79BF9867694172B003F /* claude-qa-routinecamera-02-empty-feed.png in Resources */,
+				4E96EC60D701463565549BF2 /* claude-qa-routinecamera-03-feed.png in Resources */,
+				E38E901B136B6904B5C6DE77 /* claude-qa-routinecamera-04-dark.png in Resources */,
+				CCB1ADB597A51C85CC32839B /* claude-qa-routinecamera-05-ax5.png in Resources */,
+				C1F192A3DE7777790C8FBE44 /* claude-qa-routinecamera-2026-10-08.json in Resources */,
+				47FC9A9FE13E0A192D95775D /* claude-qa-skydex-01-board.png in Resources */,
+				DFD4121B3B1EE9A3C16B585D /* claude-qa-skydex-02-dark.png in Resources */,
+				F9478FBCE5628CDB05B37B4D /* claude-qa-skydex-03-ax5.png in Resources */,
+				46DC67FE2BAE7DBB452E69FC /* claude-qa-skydex-2026-10-08.json in Resources */,
+				C3A82AEA2BD2F1490B94698D /* claude-qa-slidesnap-01-camera.png in Resources */,
+				47D7A27F43288B02BAF688D3 /* claude-qa-slidesnap-02-list.png in Resources */,
+				D603E33BC57A6AA897EC701A /* claude-qa-slidesnap-03-search.png in Resources */,
+				3F5C3907C0ECEC5138A37A4A /* claude-qa-slidesnap-04-ax5-grid.png in Resources */,
+				7EE79B535BAFD16F255EF1F7 /* claude-qa-slidesnap-05-slide.png in Resources */,
+				55A79855005C2B08B051699F /* claude-qa-slidesnap-06-dark.png in Resources */,
+				83F0A1248E1A514B9720A1AD /* claude-qa-slidesnap-2026-10-08.json in Resources */,
+				81C8FAC7D3F41DA2D76CF6D0 /* claude-qa-staffsinger-01-first-launch.png in Resources */,
+				C60C6B91F06714FB32C55B3B /* claude-qa-staffsinger-02-dark.png in Resources */,
+				DEC00FCBC51ABA33C57F155E /* claude-qa-staffsinger-03-ax5.png in Resources */,
+				792501F6FF8DF776DEE5ECAE /* claude-qa-staffsinger-2026-10-08.json in Resources */,
+				19E0F93A0AE1BC8C422A7987 /* claude-qa-stampcamera-01-camera-permission.png in Resources */,
+				BB09F23E63F6C63F3EBFB94A /* claude-qa-stampcamera-2026-10-08.json in Resources */,
+				5398E08249DF6CD1CFDBE5D1 /* claude-qa-stickypresenter-01-first-note.png in Resources */,
+				B6E88926FCD0A11A8B92426C /* claude-qa-stickypresenter-02-guide-shortcuts.png in Resources */,
+				AB306B6767DB401C15888A52 /* claude-qa-stickypresenter-03-timer-empty.png in Resources */,
+				432CEABCF3FA7B1ABD78E07C /* claude-qa-stickypresenter-04-timer-running.png in Resources */,
+				6E81F90414F316B4900A542D /* claude-qa-stickypresenter-05-teleprompter.png in Resources */,
+				90666974E271C988851E7114 /* claude-qa-stickypresenter-06-pink-note.png in Resources */,
+				6A17171298A325701D7DCE98 /* claude-qa-stickypresenter-2026-10-08.json in Resources */,
+				772214772F8573AAB61A1DEE /* claude-qa-stickypresenter-remote-01-searching-checklist.png in Resources */,
+				890CAC9F0C382F77163CE0C3 /* claude-qa-stickypresenter-remote-02-dark.png in Resources */,
+				969EAD7500E76A5B4201E69B /* claude-qa-stickypresenter-remote-03-ax5.png in Resources */,
+				8B17CFD745FA446ADBAF96FB /* claude-qa-stickypresenter-remote-2026-10-08.json in Resources */,
+				4F0C068BCCEB9E25DEF2A352 /* claude-qa-sunflower-01-camera-permission.png in Resources */,
+				45F34EFED29E8998F82AAEAC /* claude-qa-sunflower-02-home.png in Resources */,
+				50EE498381C4658B8938BDFA /* claude-qa-sunflower-03-dark.png in Resources */,
+				DB435555DF05DEA1040FB6DB /* claude-qa-sunflower-04-ax5.png in Resources */,
+				B9A0AEF875058E040A580A5B /* claude-qa-sunflower-2026-10-08.json in Resources */,
+				5AD7875DCE4B285C6F348333 /* claude-qa-tapclipkeyboard-2026-10-08.json in Resources */,
+				7701832094D1E4DBF4823313 /* claude-qa-tetratint-01-first-launch.png in Resources */,
+				0FD09F17BE46904D342E8B0C /* claude-qa-tetratint-2026-10-08.json in Resources */,
+				78D463682C97ED48B3B19D65 /* claude-qa-thinkflow-01-empty.png in Resources */,
+				5BE4510CDA7E59C6864C6EB8 /* claude-qa-thinkflow-02-home.png in Resources */,
+				670F2AD2E511F0089BA2B302 /* claude-qa-thinkflow-03-dark.png in Resources */,
+				164F5CC9063468BFBB9789BA /* claude-qa-thinkflow-04-ax5.png in Resources */,
+				F10AA426A2240E34081F6B40 /* claude-qa-thinkflow-2026-10-08.json in Resources */,
+				FCAD4700FC6BCA88AEBAB670 /* claude-qa-toki-01-first-launch.png in Resources */,
+				20C47387BEE1F0B7C4B5D84A /* claude-qa-toki-02-dial.png in Resources */,
+				E5B30617081F9831E0CA16D7 /* claude-qa-toki-03-session.png in Resources */,
+				C7D8EBE13EB899B5E87BE97D /* claude-qa-toki-04-session-running.png in Resources */,
+				34EACFE7E6DCAE4604C29F6D /* claude-qa-toki-05-german.png in Resources */,
+				EF2F681DB6AD6E6730BE3694 /* claude-qa-toki-2026-10-08.json in Resources */,
+				4C4542D36EC4A4B08CEDDBA3 /* claude-qa-wifisnap-01-first-launch.png in Resources */,
+				F1B2CCDD3A5F6B31C6ECFFE1 /* claude-qa-wifisnap-02-home.png in Resources */,
+				21AEE59942443E97BD341A8E /* claude-qa-wifisnap-03-dark.png in Resources */,
+				849BAEB5E48211341E41D290 /* claude-qa-wifisnap-04-ax5.png in Resources */,
+				5447776A1DCBBBE673E142A4 /* claude-qa-wifisnap-2026-10-08.json in Resources */,
+				B1D32436F70B3D3DA24D1510 /* claude-qa-yeoul-01-first-launch.png in Resources */,
+				D861DD6F81C2AE496E4966A0 /* claude-qa-yeoul-02-list.png in Resources */,
+				67192C3EC20A72EF4109C57B /* claude-qa-yeoul-03-dark.png in Resources */,
+				E63BFAA04E3F96289DD40D99 /* claude-qa-yeoul-04-ax5.png in Resources */,
+				CB66EC040EB843295005AB7C /* claude-qa-yeoul-05-home.png in Resources */,
+				2DF17B8114F23D7426D4A628 /* claude-qa-yeoul-2026-10-08.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

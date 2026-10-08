@@ -1,0 +1,581 @@
+{
+ "id": "tetratint-2026-10-08-claude",
+ "bundleID": "com.leeo.TetraTint",
+ "startedAt": "2026-10-08T20:38:40+09:00",
+ "durationSeconds": 1500,
+ "deviceModel": "Claude 자동 QA · Mac",
+ "osVersion": "macOS 27.0",
+ "appVersion": "1.0.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "macOS 27.0에서 Debug 빌드를 세 번 켰고 죽지 않았다. 켤 때마다 사이드바(색상·다이나믹 타입·시스템 색상·팔레트)와 색상 화면의 네 변형 카드가 바로 떴다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "hex를 넣고 저장 패널로 .xcassets를 내보내는 데 키 입력과 저장 패널 조작이 필요해 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "소스에 StoreKit·구매 코드가 없다. 무료 앱이다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "소스에 StoreKit·구매 코드가 없다. 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "시스템 전체 다크 모드를 바꾸면 사용자 화면이 바뀌어 못 봤다. 라이트에서 변형 카드는 라이트 둘이 흰 바탕, 다크 둘이 검은 바탕으로 고정돼 있다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "디스플레이 해상도를 바꾸면 사용 중인 화면이 바뀌어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": "fail",
+   "note": "기본 창 크기(900×672)에서 이미 내보내기 줄의 .colorset 저장 단추가 '.color…'로 잘린다. 창 최소 폭이 860(TetraTintApp.swift:74 minWidth)이라 가장 작게 줄이면 더 잘린다. GeneratorView.swift:84의 Label(\"Save .colorset\")이 네 탭 피커와 복사 단추 옆 한 줄에 들어가지 못한다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다. AX 트리상 스포이드 단추는 '화면 어디서든 색을 추출', 프리셋 점은 systemRed 등 이름이 있지만 사이드바 줄과 팔레트에 저장 단추에는 AXDescription이 비어 있었다(제목 글자로 읽힐 수는 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 첫 화면은 어긋남 없이 떴다. 스포이드·색각 프리뷰·저장 패널은 조작이 필요해 못 봤다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "TetraTint 스킴 빌드에서 Swift 컴파일 경고 0개, Localizable.strings 중복 키 경고 없음(appintents 메타데이터 안내 1줄만 있음).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에 색상 화면이 #007AFF로 열린다",
+   "outcome": "pass",
+   "note": "저장값이 없는 상태로 처음 켜니 hex 칸 #007AFF, 색상 이름 칸 brandPrimary이고 네 변형 카드(#007AFF, #0070EB, #1A87FF, #3897FF)가 모두 파랑이다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "사이드바 네 항목을 누르면 각 화면으로 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "macOS 13에서도 열리고 쓸 수 있다",
+   "outcome": null,
+   "note": "macOS 13 기기나 가상 머신이 없어 못 봤다(배포 대상은 13.0).",
+   "screenshot": null
+  },
+  {
+   "title": "인터넷 없이도 모든 기능이 된다",
+   "outcome": null,
+   "note": "Wi-Fi를 끄면 다른 작업자 빌드에 영향이 있어 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "hex 칸에 색을 넣고 Return을 누르면 작업 색상이 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "세 자리 hex를 여섯 자리로 받아들인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잘못된 hex를 넣어도 작업 색상이 그대로다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "헤더 색 우물로 고른 색이 작업 색상이 된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "헤더 스포이드로 다른 앱 화면의 색을 집어 온다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "툴바의 화면에서 색 추출이 색상 화면으로 데려간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "스포이드를 Esc로 그만두면 작업 색상이 그대로다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프리셋 점을 누르면 그 시스템 색이 작업 색상이 된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "렌즈 탭 셋이 눌린 것만 칠해지고 설명이 바뀐다",
+   "outcome": null,
+   "note": "첫 화면에서 변형 만들기 탭만 칠해져 있고 설명이 '라이트, 다크, 고대비 변형을 생성하고 내보냅니다'다. 다른 탭을 누르는 조작은 못 했다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "렌즈를 바꿔도 같은 작업 색상을 본다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "네 변형 카드가 각자 고정 배경 위에 함께 보인다",
+   "outcome": "pass",
+   "note": "변형 만들기 화면에 라이트 (기본)·라이트 고대비 카드는 흰 바탕, 다크·다크 고대비 카드는 검은 바탕으로 네 장이 함께 보였다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "라이트 고대비 변형이 흰 배경 대비 4.5:1을 넘는다",
+   "outcome": null,
+   "note": "#FFCC00으로 바꾸는 조작은 못 했다. 기본 #007AFF에서는 라이트 고대비가 #0070EB 4.65:1, AA 텍스트 배지였다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "다크 고대비 변형이 검은 배경 대비 7:1을 넘는다",
+   "outcome": null,
+   "note": "#5856D6으로 바꾸는 조작은 못 했다. 기본 #007AFF에서는 다크 고대비가 #3897FF 7.04:1이었다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "대비 배지가 수치에 따라 AA 텍스트·UI 3:1·낮음으로 갈린다",
+   "outcome": null,
+   "note": "#007AFF에서 라이트 (기본) 카드가 4.02:1, 주황 UI 3:1 배지인 것은 봤다. #FFCC00(낮음)으로 바꾸는 조작은 못 했다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "카드 색 우물로 한 변형만 손볼 수 있다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 다시 생성이 손본 값을 되돌린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드의 hex 복사가 그 변형 값만 복사한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Contents.json 탭에 네 appearance가 다 들어 있다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "UIKit 탭 코드가 색상 이름과 네 hex를 쓴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "SwiftUI (asset) 탭이 에셋 이름으로 Color를 만든다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "SwiftUI (code) 코드가 에셋 없이 iOS에서 빌드된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사 단추가 잠깐 복사됨으로 바뀌고 지금 탭 코드를 담는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": ".colorset 저장으로 Xcode가 읽는 폴더가 생긴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "색상 이름을 비워도 내보내기 이름이 빈칸이 되지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작업 색상의 라이트·다크 판정이 바로 보인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 예시 네 색을 검사하면 넷 다 고대비 변형이 필요하다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판정이 4.5:1과 3:1을 기준으로 세 갈래로 나뉜다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "붙여넣는 즉시 색 칩 미리보기가 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알아볼 수 없는 값은 물음표 칩과 개수로 알린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "쉼표·세미콜론·공백·줄바꿈을 모두 구분자로 쓴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌘Return으로 검사가 돈다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "둘 다 통과한 색에는 4종 변형 생성 단추가 없다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "4종 변형 생성이 audited 이름으로 팔레트에 저장된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "시뮬레이션 표 열 머리가 한국어 색각 이름으로 나온다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작업 색상 아래에 저장한 팔레트 색이 줄로 붙는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "헷갈리는 색 쌍이 구분 불가 경고로 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "경고 문구의 색각 이름이 한국어로 나온다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "충돌이 없으면 초록 확인 문구가 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "안전 팔레트 셋이 견본과 출처를 보여 준다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "안전 팔레트의 팔레트에 추가가 색마다 네 변형으로 저장한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트 색 이름이 작업 색상이어도 표가 두 줄 다 그린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "색각 프리뷰로 앱 전체가 그 색각으로 보인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프리뷰 중에는 위쪽 배너가 시뮬레이션임을 알린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "배너의 끄기를 누르면 원래 색이 돌아온다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "색각 프리뷰를 켰다 끈 뒤에도 사이드바가 눌린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프리뷰를 켠 채 화면을 옮겨도 필터가 남는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리 기본값이 Large ✻ 17pt다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리 슬라이더를 끌면 미리보기 글자 크기가 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "커스텀 폰트 이름이 SwiftUI 코드에 들어간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "UIKit 탭이 고른 스타일의 UIFontMetrics 코드를 보여 준다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "AX layout 탭이 레이아웃 전환 코드를 보여 준다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "크기 표가 11개 스타일과 7개 카테고리를 보여 준다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "틴트 12색과 그레이 6색이 네 appearance 값으로 보인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "시스템 색상 구역 제목이 한국어로 나온다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "칩을 누르면 hex가 복사되고 복사됨이 잠깐 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "systemBlue 네 값이 HIG 값과 맞다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 팔레트는 안내를 보이고 .xcassets 내보내기가 꺼져 있다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 팔레트 안내가 지금 있는 메뉴 이름을 가리킨다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트에 저장이 색상 이름으로 한 줄을 만든다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 이름으로 다시 저장하면 뒤에 숫자가 붙는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "색상 이름이 비면 Color 번호로 저장된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장하면 견본이 사이드바 팔레트로 날아간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사이드바 팔레트 배지가 새 색 수를 세고 열면 사라진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "막 넣은 줄이 팔레트에서 튀어 오르며 나타난다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트 표 머리와 견본이 같은 세로줄에 맞는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "표 머리에 포인터를 올리면 쓰이는 때가 바르게 나온다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "줄의 내보내기 단추가 그 색 .colorset을 저장한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "휴지통 단추가 그 줄만 지운다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": ".xcassets 내보내기가 저장한 색 전부를 한 카탈로그로 쓴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "변형 카드 색 우물을 VoiceOver가 색 이름과 hex로 읽는다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "어두운 색은 어두운 ○○로 읽힌다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "대비 결과 줄을 VoiceOver가 판정과 함께 읽는다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트 견본을 VoiceOver가 변형 이름과 색으로 읽는다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "색 이름이 색상환 구간에 맞게 붙는다",
+   "outcome": null,
+   "note": "TetraTint에는 테스트 타깃이 없어 이 계산을 확인하는 테스트가 없다. 화면 조작은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드만으로 사이드바와 렌즈 탭을 오간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "한국어 시스템에서 영어 문구가 남지 않는다",
+   "outcome": null,
+   "note": "첫 화면(색상 ▸ 변형 만들기)에서는 Contents.json·UIKit·SwiftUI·brandPrimary 같은 코드 이름 말고 영어 문구가 없었다. 다른 화면과 저장 패널은 못 봤다.",
+   "screenshot": "claude-qa-tetratint-01-first-launch"
+  },
+  {
+   "title": "영어 시스템에서 한국어가 섞이지 않는다",
+   "outcome": null,
+   "note": "시스템 언어를 영어로 바꾸면 사용자 Mac 설정이 바뀌어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지운 팔레트 색은 다시 열어도 돌아오지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장된 팔레트 데이터가 깨져도 빈 팔레트로 열린다",
+   "outcome": null,
+   "note": "TetraTint에는 테스트 타깃이 없어 이 계산을 확인하는 테스트가 없다. 화면 조작은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "샌드박스에서 고른 아무 폴더에나 내보내기가 써진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 첫 화면은 봤지만, 그 뒤 Mac 화면이 잠겨 창 캡처와 손쉬운 사용 조작이 막혔다(사용자가 쓰던 Mac이라 키 입력도 보내지 않았다). 이 조작이 필요해 못 봤다.",
+   "screenshot": null
+  }
+ ]
+}

@@ -1,0 +1,587 @@
+{
+ "id": "skydex-2026-10-08-claude",
+ "bundleID": "com.leeo.SkyDex",
+ "startedAt": "2026-10-09T01:13:06+09:00",
+ "durationSeconds": 900,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0.1",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 다시 켜기 5번(라이트, 다크, 가장 큰 글자) 동안 한 번도 죽지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "하늘을 찍어 칸을 채우는 흐름은 실기기 카메라가 필요해 못 봤다. 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "SkyDexSpec.swift 의 monetization 이 .free 이고 주석대로 타깃에 StoreKit 코드가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "SkyDexSpec.swift 의 monetization 이 .free 이고 StoreKit 사용이 없어 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "빈 판만 다크로 봤고 검은 바탕에 고리가 잘 보인다. 기록·사진 화면은 못 봤다.",
+   "screenshot": "claude-qa-skydex-02-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자에서 빈 판은 글자가 없어 그대로다. 위치 권한 창(시스템)이 화면을 덮어 그 이상은 못 봤다.",
+   "screenshot": "claude-qa-skydex-03-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터(iPhone 18 Pro Max)에서 실행과 빈 판은 정상이다. 촬영, 기록, 위젯은 못 써 봤고 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "SkyDex 와 SkyDexWidgets 스킴 새 빌드에서 Swift 컴파일 경고 0개.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 판은 마흔여덟 개 빈 고리로 보인다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 판이 가로 6 세로 8, 마흔여덟 개 빈 고리로 그려졌다. 고리는 시간대별로 옅은 색 테두리만 있다.",
+   "screenshot": "claude-qa-skydex-01-board"
+  },
+  {
+   "title": "첫 실행에 위치 권한을 한 번만 묻는다",
+   "outcome": null,
+   "note": "첫 실행에 위치 권한 창이 쓰임새 문구(이 자리의 기준 하늘색을 실제 일출·일몰 시각에 맞추기 위해…)와 함께 떴다. 답하지 못해 다시 켤 때마다 같은 창이 떴는데, 답한 뒤 다시 묻지 않는지는 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-skydex-01-board"
+  },
+  {
+   "title": "위치 권한을 거부해도 판이 그려진다",
+   "outcome": null,
+   "note": "위치 권한 창에 답할 수단이 없었다. 창 뒤로 판은 그려져 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "네트워크가 없어도 판이 그대로 그려진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록에 갔다 돌아와도 구슬이 다시 튀어나오지 않는다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "하늘을 찍으면 그 시각의 칸이 채워진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재실행해도 찍은 하늘이 판에 남아 있다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이미 채운 칸을 다시 찍으면 새 사진으로 바뀐다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지난 날의 하늘은 색이 가까운 칸 하나에만 앉는다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "일주일 지난 칸은 옅어지지만 빈 고리가 되지는 않는다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "지금 시각 칸에 테두리 고리가 걸려 있다",
+   "outcome": "pass",
+   "note": "01:13 에 켰을 때 두 번째 고리(한밤 띠 50분 칸 중 00:50–01:40)에 굵은 테두리 고리가 걸려 있었다. SkyBoard.swift 의 띠 나누기와 맞다.",
+   "screenshot": "claude-qa-skydex-01-board"
+  },
+  {
+   "title": "앱을 켜 둔 채 반 시간이 지나면 고리가 다음 칸으로 옮겨 간다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판 전체가 스크롤 없이 한 화면에 들어온다",
+   "outcome": "pass",
+   "note": "iPhone 18 Pro Max 에서 48개 고리와 아래 카메라·기록 단추가 스크롤 없이 한 화면에 다 들어온다.",
+   "screenshot": "claude-qa-skydex-01-board"
+  },
+  {
+   "title": "iPad에서 iPhone 앱으로 열어도 판이 잘리지 않는다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판을 누른 채 끌면 지나는 구슬이 커진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판 밖에서 손을 떼면 아무것도 안 골라진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 칸을 누르면 그 시각대와 색 이름이 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 칸 시트에 맑은 날 기준 색이 한 문장으로 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "채운 구슬을 누르면 그 사진이 판 밑에 깔린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 구슬을 다시 누르면 깔린 사진이 걷힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록에 갔다 오면 깔린 사진이 걷혀 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "깔린 사진 아래 글을 누르면 한 마디 카드가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판에 깔린 사진 위로 한 마디가 한 글자씩 찍힌다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "동작 줄이기를 켜면 한 마디가 한 번에 나온다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이 색 N장을 누르면 같은 색 하늘이 쌓여 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver로 채운 구슬을 열 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라를 켜자마자 셔터를 눌러도 안 꺼진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "촬영 중 핀치로 확대되고 배율이 보인다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라를 뒤집거나 다시 열면 배율이 1배로 돌아간다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "뷰파인더가 정사각이고 결과도 같은 정사각이다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 안에서 앨범 사진을 가져올 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "큰 사진을 앨범에서 가져와도 앱이 안 꺼진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 권한을 거부하면 안내가 보인다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "전면 카메라에서 좌우가 뒤집혀 보인다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "통화나 홈 이동 후 돌아와도 촬영이 된다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록 화면에서 찍어도 판으로 돌아와 칸이 채워진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "찍고 나면 한 마디 카드가 바로 열린다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "비어 있으면 키보드가 저절로 올라온다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이미 쓴 카드를 열면 키보드가 올라오지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 글자라도 쓰면 닫기가 체크로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 닫았다 다시 열면 쓴 글이 남아 있다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 상세에 하늘색 이름이 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 지우면 판의 칸도 함께 빈다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "칩을 고르면 사진의 하늘만 그 색이 된다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "세기 슬라이더로 빌린 색이 옅어진다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "원래 하늘로 버튼을 누르면 되돌아온다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "모은 하늘이 하나뿐이면 다른 날의 하늘로 줄이 없다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빌린 하늘 사진을 공유 단추로 내보낼 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "촬영 전 뷰파인더에도 고른 하늘이 적용된다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빌린 채 찍으면 카드가 그 하늘이 골라진 채로 열린다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "필터를 걸어도 저장되는 색은 원본 그대로다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 닫으면 빌린 하늘이 풀린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "아무것도 없으면 기록에 빈 상태가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록·팔레트·되풀이를 위 단추로 오간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록이 계절별로 묶여 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록의 계절 머리글이 최근 계절부터 나온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록 줄을 왼쪽으로 밀어 지울 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트에서 색이 계열별로 묶여 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트 칩 크기가 계열마다 같다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트 칩을 누르면 그 사진 카드가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "되풀이에 같은 시각의 다른 날이 나란히 선다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 날 같은 시각대 두 장은 되풀이에서 하루로 센다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "되풀이에 가장 비슷했던 두 하늘이 보인다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "\\\"오늘의 판\\\" 위젯에 채운 칸이 보인다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "중간 판 위젯 옆에 오늘의 하늘 이름과 한 마디가 보인다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "\\\"오늘의 하늘\\\" 위젯에 오늘 사진과 색이 보인다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "오늘 안 찍었으면 위젯이 아직 없다고 말한다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "날짜가 바뀌면 오늘의 하늘 위젯이 어제 사진을 안 보인다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 위젯에 색 이름과 시각이 보인다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 한 줄 위젯에 오늘의 하늘과 이름이 나온다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 하늘을 찍으면 위젯이 곧 갱신된다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 마디를 고치고 홈으로 나가면 위젯 글도 바뀐다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯의 지금 시각 고리가 반 시간마다 옮겨 간다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "큰 판 위젯에는 글자가 하나도 없다",
+   "outcome": null,
+   "note": "위젯은 시뮬레이터에서 홈 화면에 올릴 수단이 없어 못 봤다. SkyDexWidgets 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에 보관과 지원 두 구역만 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "모은 하늘이 없어도 기록에서 톱니가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud 스위치는 다음 실행부터 적용된다고 알린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록 맨 아래에 마지막 동기화 시각이 보인다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud에 로그인하지 않으면 이 기기에 저장된다고 알린다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud를 켠 두 기기에 같은 하늘이 나타난다",
+   "outcome": null,
+   "note": "두 기기와 iCloud 계정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 지웠다 다시 깔아도 iCloud에서 기록이 돌아온다",
+   "outcome": null,
+   "note": "iCloud 계정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "예전 버전에서 올려도 사진이 제 시각 칸에 있다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 SkyDex, SkyDexWidgets 뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단도 없어 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기로 문의를 보낼 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "개인정보 처리방침과 지원 페이지가 열린다",
+   "outcome": null,
+   "note": "실기기 카메라나 손 조작이 필요해 못 봤다. 시뮬레이터에서는 빈 판과 위치 권한 창까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "버전을 일곱 번 누르면 개발자 모드가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(빈 판과 위치 권한 창) 너머는 못 봤다.",
+   "screenshot": null
+  }
+ ]
+}

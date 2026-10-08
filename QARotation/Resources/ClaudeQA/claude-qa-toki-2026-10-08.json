@@ -1,0 +1,635 @@
+{
+ "id": "toki-2026-10-08-claude",
+ "bundleID": "com.xa.toki",
+ "startedAt": "2026-10-09T01:47:58+09:00",
+ "durationSeconds": 2400,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "2.3.1",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 2번, 다시 켜기 30번 가까이(타이머·세션 장면, 9개 언어, 다크, 가장 큰 글자) 동안 죽지 않았다. 켤 때마다 원형 다이얼이 바로 떴다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "다이얼 돌리기와 시작은 화면을 누를 수단이 없어 못 봤다. DEBUG 실행 인자 -screenshotScene running 으로 시작된 카운트다운(29:57)이 도는 것은 봤다. 끝나서 알림이 오는 것은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": null,
+   "note": "설정의 Pro 버튼은 화면을 누를 수단이 없어 못 봤다. ProGateTests 26개와 StorePurchaseLatchTests 12개가 잠금 판정만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": null,
+   "note": "실제 App Store 계정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": "pass",
+   "note": "다크 모드로 도는 타이머를 봤다. 앱은 원래 검은 바탕이라 라이트·다크 모두 같고, 큰 남은 시간 숫자(29:58)와 구간 남은 시간이 묻히지 않는다. 설정 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)로 띄우면 알림 허용 시스템 창이 화면 전체를 덮어 앱 버튼 글자를 볼 수 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 단위 테스트 382개 모두 통과, 앱 실행도 정상이다. 이 항목이 보라는 위젯과 다이나믹 아일랜드는 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "앱·알람 위젯(RereminderAlarmExtension)·워치 앱·워치 위젯 빌드에서 지원 종료(deprecated) 경고 0개. 다만 Swift 6 동시성 격리 경고가 CloudTimerSyncManager.swift:51, 53, 166, RereminderAlarmManager.swift:77, StoreManager.swift:142, 143 과 테스트 FeatureSettingsTests.swift 에 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에서 안내가 순서대로 넘어간다",
+   "outcome": null,
+   "note": "새로 깔고 켜니 안내 첫 장(건너뛰기, 다음, 페이지 점 다섯 개)이 떴지만 알림 허용 창이 바로 겹쳐 떴고 다음을 누를 수단이 없어 끝까지 넘기지 못했다.",
+   "screenshot": "claude-qa-toki-01-first-launch"
+  },
+  {
+   "title": "안내 속 데모 타이머가 실제로 돈다",
+   "outcome": null,
+   "note": "OnboardingDemoTests.test_speed_scalesWithLength_soEveryDemoEndsInTenSeconds 가 데모 속도 계산만 확인한다. 데모 단계까지 넘기는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내에서 고른 상황대로 다이얼이 맞춰져 있다",
+   "outcome": null,
+   "note": "OnboardingDemoTests(test_everySuggestedUseCase_hasAtLeastTwoAlerts, test_everyUseCaseFitsOnTheDial)가 상황별 설정 값만 확인한다. 안내에서 발표를 고르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 권한을 거부하면 안내 문구가 뜬다",
+   "outcome": null,
+   "note": "알림 권한 창을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "권한 안내에서 설정 앱으로 바로 간다",
+   "outcome": null,
+   "note": "알림 권한 창을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내를 건너뛰어도 타이머 화면이 열린다",
+   "outcome": null,
+   "note": "건너뛰기 버튼은 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-toki-01-first-launch"
+  },
+  {
+   "title": "설정의 도움말에서 안내를 다시 본다",
+   "outcome": null,
+   "note": "설정 도움말은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다이얼을 돌리면 분·초가 같이 바뀐다",
+   "outcome": null,
+   "note": "다이얼 끌기는 화면을 누를 수단이 없어 못 봤다. DialDragTrackerTests 8개가 끌기 각도 계산만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "다이얼을 돌릴 때 진동이 함께 온다",
+   "outcome": null,
+   "note": "진동은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "시간 칸을 눌러 숫자로 직접 입력한다",
+   "outcome": null,
+   "note": "시간 직접 입력 시트는 화면을 누를 수단이 없어 못 봤다. TimeInputRangeTests 6개가 입력 값 범위 계산만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "켜 둔 알림보다 짧게는 시간이 줄지 않는다",
+   "outcome": "pass",
+   "note": "TimerScreenMinimumLengthTests.test_cannotShrinkBelowAlert, MinimumTimerLengthTests.test_floorIsJustAboveEarliestAlert 가 켜 둔 알림보다 짧게 줄이지 못하는 것을 확인한다. 안내 문구 표시는 화면이라 별도다.",
+   "screenshot": null
+  },
+  {
+   "title": "일시정지 후 재개하면 남은 시간이 이어진다",
+   "outcome": null,
+   "note": "TimerEngineTests.test_pause_movesRunningToPaused, test_resume_movesPausedToRunning 은 상태 전환만 확인하고 남은 시간이 이어지는 값은 보지 않는다(워치 쪽은 WatchTimerStateTests.test_endDate_shiftsByPausedTime 이 본다).",
+   "screenshot": null
+  },
+  {
+   "title": "백그라운드에 뒀다 와도 남은 시간이 맞다",
+   "outcome": null,
+   "note": "아이폰 타이머의 백그라운드 복귀 계산을 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 껐다 켜도 돌던 타이머가 복원된다",
+   "outcome": null,
+   "note": "아이폰 타이머를 앱 재실행 뒤 되살리는 것을 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "가로로 돌려도 다이얼이 잘리지 않는다",
+   "outcome": null,
+   "note": "기기 회전은 돌릴 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림이 꺼져 있으면 시작 전에 경고가 뜬다",
+   "outcome": null,
+   "note": "알림을 끄는 것은 기기 설정이라 못 봤다. NotificationPermissionWarningTests.test_denied_warns 가 거부 상태면 경고하는 판정을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "경고에서 나중에를 누르면 하던 시작이 이어진다",
+   "outcome": null,
+   "note": "NotificationPermissionWarningTests.test_later_startsTimer_andDoesNotAskAgain 이 나중에를 고르면 타이머가 시작되는 판정을 확인한다. 알림 없이 시작했다는 안내 표시는 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "경고의 설정으로 이동이 알림 설정으로 바로 간다",
+   "outcome": null,
+   "note": "설정 앱 이동은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "세션 모드로 시작해도 알림 꺼짐 경고가 뜬다",
+   "outcome": null,
+   "note": "세션 모드 경고를 다루는 테스트가 없다. 알림 끄기도 기기 설정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿 적용으로 시작해도 알림 꺼짐 경고가 뜬다",
+   "outcome": null,
+   "note": "템플릿 적용 경로의 경고를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 꺼짐 경고는 한 번 실행에 한 번만 뜬다",
+   "outcome": "pass",
+   "note": "NotificationPermissionWarningTests.test_onlyOncePerLaunch 가 한 번 실행에 경고를 한 번만 띄우는 판정을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림이 꺼져 있으면 원 아래에 꺼짐 한 줄이 선다",
+   "outcome": null,
+   "note": "NotificationOffNoticeTests.test_showsOnlyWhenDenied 가 판정만 확인한다. 알림을 끄는 것은 기기 설정이라 화면은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "꺼짐 한 줄의 켜기를 누르면 알림 설정이 열린다",
+   "outcome": null,
+   "note": "설정 앱 이동은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림을 켜고 돌아오면 꺼짐 한 줄이 바로 물러난다",
+   "outcome": null,
+   "note": "설정 앱을 오가는 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "꺼짐 한 줄을 닫으면 사흘 뒤 다시 선다",
+   "outcome": "pass",
+   "note": "NotificationOffNoticeTests.test_dismiss_restsThenComesBack 이 X로 닫으면 쉬었다가 사흘 뒤 다시 서는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림을 다시 켜면 닫아 둔 기록도 지워진다",
+   "outcome": "pass",
+   "note": "NotificationOffNoticeTests.test_grantingClearsSnooze_soTurningOffAgainShowsImmediately 가 알림을 다시 켜면 닫은 기록이 지워져 다시 끄면 바로 서는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머가 도는 중에도 꺼짐 한 줄이 남는다",
+   "outcome": null,
+   "note": "알림을 끈 채 도는 화면을 만들 수 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "꺼짐 한 줄이 서 있으면 Pro 권유 줄은 숨는다",
+   "outcome": null,
+   "note": "이 우선순위를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "종료 전 사전 알림이 설정 시점에 온다",
+   "outcome": null,
+   "note": "알림이 와야 볼 수 있어 기다리지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "프리셋을 눌러 사전 알림을 붙였다 뗀다",
+   "outcome": null,
+   "note": "칩 누르기는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "마커를 끌어 사전 알림 시점을 미세 조정한다",
+   "outcome": null,
+   "note": "마커 끌기는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "+ 버튼을 누르면 시작과 첫 알림 사이에 알림이 생긴다",
+   "outcome": null,
+   "note": "+ 버튼은 칩 줄 끝에 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "본 시간보다 긴 예비 알림은 울리지 않는다",
+   "outcome": "pass",
+   "note": "TimerEngineTests.test_configure_filtersInvalidPrealertOffsets 와 OnboardingDemoTests.test_alertsOutsideTheTimer_areDropped, TimerSectionsTests.test_outOfRangeAlerts_areIgnored 가 본 시간보다 긴 예비 알림을 버리는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료에서도 예비 알림을 개수 제한 없이 켠다",
+   "outcome": "pass",
+   "note": "ProGateTests.test_alertCountIsNotAProFeature 가 예비 알림 개수가 Pro 기능이 아닌 것을 확인한다. 데모 장면에서도 무료 상태로 알림 셋이 켜져 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "켜 둔 예비 알림 칩이 줄 맨 앞에 모인다",
+   "outcome": "pass",
+   "note": "AlertPresetOrderTests.test_selectedComesFirst_restStaysInTimeOrder 등 5개가 켜 둔 칩이 앞에 서는 순서를 확인한다. 화면에서도 켜 둔 1:00·5:00·10:00 뒤에 꺼진 3:00 이 섰다.",
+   "screenshot": "claude-qa-toki-02-dial"
+  },
+  {
+   "title": "모드 고르개에서 세션 모드로 넘어간다",
+   "outcome": null,
+   "note": "모드 고르개 누르기는 화면을 누를 수단이 없어 못 봤다. DEBUG 실행 인자 -screenshotScene session 으로 세션 모드 화면은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "세션 모드는 원이 작아지고 아래에 구간 목록이 선다",
+   "outcome": "pass",
+   "note": "DEBUG 실행 인자 -screenshotScene session 으로 연 세션 모드는 원이 작아지고 그 아래 도입·본론·질의응답 구간 카드가 섰다(타이머 모드는 큰 원).",
+   "screenshot": "claude-qa-toki-03-session"
+  },
+  {
+   "title": "구간을 나누면 구간별 남은 시간이 선다",
+   "outcome": "pass",
+   "note": "TimerSectionsTests.test_remainingSeconds_onlyTheCurrentSectionCountsDown 이 구간별 남은 시간을 확인하고, DEBUG 실행 인자 -screenshotScene session 화면에서도 구간마다 20:00, 5:00 같은 남은 시간이 따로 섰다.",
+   "screenshot": "claude-qa-toki-03-session"
+  },
+  {
+   "title": "구간마다 대본을 적어 두고 펼쳐 본다",
+   "outcome": null,
+   "note": "DEBUG 실행 인자 -screenshotScene sessionRunning 에서 지금 구간(도입)의 대본 오늘 이야기할 세 가지를 먼저 소개합니다가 화면에 펴진 것은 봤다. 대본 시트에 적는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-toki-04-session-running"
+  },
+  {
+   "title": "세션을 끝까지 마치면 다음 자리 날짜를 묻는다",
+   "outcome": null,
+   "note": "NextOccasionReminderTests.testAsksAfterASessionRun 이 세션을 마치면 묻는 판정을 확인한다. 시트 표시는 세션을 끝까지 돌려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "0을 지나면 초과 시간이 양수로 쌓인다",
+   "outcome": null,
+   "note": "초과 시간 누적을 직접 다루는 테스트가 없다. TimerSectionsTests.test_phase_afterOvertime_everySectionIsDone 은 구간 표시만 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료는 체험을 다 쓰면 0에서 멈춘다",
+   "outcome": null,
+   "note": "무료 체험을 다 쓴 뒤 0에서 멈추는 것을 직접 다루는 테스트가 없다. ProGateTests.test_whenTrialRunsOut_isExhaustedNotBurning 은 체험 소진 판정만 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "Pro에서 저장한 템플릿이 재실행 후 불러와진다",
+   "outcome": "pass",
+   "note": "TemplateSaveTests.test_proUser_savesNewTemplate, test_appModelContainer_loadsRealStoreAndPersists 가 Pro 템플릿이 실제 저장소에 저장되고 다시 읽히는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿을 눌러 시간·알림이 한 번에 들어간다",
+   "outcome": null,
+   "note": "템플릿 시트는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿 칩을 누르면 시작하지 않고 다이얼에만 올라간다",
+   "outcome": null,
+   "note": "템플릿 칩 누르기는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿을 밀어 이름 수정·삭제가 된다",
+   "outcome": null,
+   "note": "밀기 제스처는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿에 라벨 색을 골라 구분한다",
+   "outcome": null,
+   "note": "템플릿 편집은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿이 없으면 빈 안내가 대신 보인다",
+   "outcome": null,
+   "note": "템플릿 시트는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사용 기록에 완료율과 총 시간이 나온다",
+   "outcome": null,
+   "note": "타이머 기록 화면을 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "Pro는 다시 열면 지난번 설정이 다이얼에 올라온다",
+   "outcome": "pass",
+   "note": "LastUsedConfigRestoreTests.test_applyCurrentSettings_persistsLastUsedConfig, test_restore_appliesPersistedConfigToDial 이 지난번 시간과 알림을 저장했다 다이얼에 올리는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 스타일에서 소리와 진동 중 하나를 고른다",
+   "outcome": null,
+   "note": "알림이 와야 볼 수 있어 기다리지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "무음 스위치에서도 알람 방식은 크게 울린다",
+   "outcome": null,
+   "note": "무음 스위치와 알람 소리는 실기기에서 봐야 한다. FeatureSettingsTests.test_fullAlarmFollowsTheSetting 은 설정 값만 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "종료 알림 반복을 켜면 정지할 때까지 되풀이된다",
+   "outcome": null,
+   "note": "EscalatingAlertTests.test_primary_repeatsFromOneIntervalAfterTheEnd 가 반복 알림 예약 계산을 확인한다. 실제로 되풀이되는지는 알림을 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "종료 메시지를 직접 적어 두면 그대로 뜬다",
+   "outcome": null,
+   "note": "알림이 와야 볼 수 있어 기다리지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "종료 메시지를 비우면 기본 문구가 대신 뜬다",
+   "outcome": null,
+   "note": "빈 종료 메시지의 기본 문구를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "테스트 모드 배속으로 알림 시점이 당겨진다",
+   "outcome": null,
+   "note": "알림이 와야 볼 수 있어 기다리지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "토스트 표시를 끄면 종료 안내가 안 뜬다",
+   "outcome": null,
+   "note": "설정 토글은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금 화면·다이내믹 아일랜드에 타이머가 보인다",
+   "outcome": null,
+   "note": "라이브 액티비티는 홈으로 나가는 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이브 액티비티 버튼으로 앱 없이 멈춘다",
+   "outcome": null,
+   "note": "LiveActivityCommandTests 11개가 라이브 액티비티에서 온 명령 전달만 확인한다. 버튼 누르기는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "제어 센터 컨트롤로 타이머를 켜고 끈다",
+   "outcome": null,
+   "note": "제어 센터는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 위젯이 남은 시간을 따라 줄어든다",
+   "outcome": null,
+   "note": "위젯은 홈 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머 시작 단축어가 음성으로 실행된다",
+   "outcome": null,
+   "note": "Siri 는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "Apple Watch와 타이머가 동기화된다",
+   "outcome": null,
+   "note": "워치 앱(RereminderWatch)과 워치 위젯은 빌드만 했고 워치 시뮬레이터 짝짓기와 실행은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "워치만 켜 두고도 타이머가 끝까지 간다",
+   "outcome": null,
+   "note": "워치 앱(RereminderWatch)과 워치 위젯은 빌드만 했고 워치 시뮬레이터 짝짓기와 실행은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "워치 앱을 껐다 켜도 남은 시간이 이어진다",
+   "outcome": null,
+   "note": "워치 앱(RereminderWatch)과 워치 위젯은 빌드만 했고 워치 시뮬레이터 짝짓기와 실행은 못 했다. WatchTimerStateTests(test_store_roundTripsAndClears, test_running_countsDownFromStart)가 저장한 상태로 남은 시간을 다시 계산하는 논리를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "워치 타이머가 끝나면 확인 버튼 하나만 남는다",
+   "outcome": null,
+   "note": "워치 앱(RereminderWatch)과 워치 위젯은 빌드만 했고 워치 시뮬레이터 짝짓기와 실행은 못 했다. WatchTimerStateTests.test_isActive_isFalseOnceTimeIsUp 이 시간이 다 되면 활성이 아닌 판정만 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "워치 스마트 스택 카드에 남은 시간과 다음 알림이 뜬다",
+   "outcome": null,
+   "note": "워치 앱(RereminderWatch)과 워치 위젯은 빌드만 했고 워치 시뮬레이터 짝짓기와 실행은 못 했다. WatchTimerStateTests.test_nextAlert_isTheSoonestOneStillAhead 가 다음 알림 계산을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "워치가 먼저 울리고 30초 뒤 아이폰도 울린다",
+   "outcome": null,
+   "note": "워치 앱(RereminderWatch)과 워치 위젯은 빌드만 했고 워치 시뮬레이터 짝짓기와 실행은 못 했다. EscalatingAlertTests.test_secondary_joinsAfterTheCrossDeviceDelay 가 다른 기기 알림이 늦게 합류하는 예약 계산을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 기기에서 정지하면 다른 기기 알림도 멈춘다",
+   "outcome": null,
+   "note": "워치 앱(RereminderWatch)과 워치 위젯은 빌드만 했고 워치 시뮬레이터 짝짓기와 실행은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "복원·코드 교환 직후 재실행 없이 잠금이 풀린다",
+   "outcome": null,
+   "note": "샌드박스 계정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료는 템플릿 저장이 잠기고 시드는 남는다",
+   "outcome": null,
+   "note": "ProGateTests.test_canSaveTemplate_freeUser_isAlwaysFalse 와 TemplateSaveTests.test_freeUser_keepsExistingTemplates 가 무료 저장 잠금과 시드 유지를 확인한다. 자물쇠 버튼과 Pro 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료에서 잠긴 템플릿 칩을 누르면 Pro 화면이 뜬다",
+   "outcome": null,
+   "note": "템플릿 칩 누르기는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠긴 기능에 남은 체험 횟수가 표시된다",
+   "outcome": null,
+   "note": "타이머 기록 화면은 화면을 누를 수단이 없어 못 봤다. TrialCounterTests 11개가 체험 횟수 계산만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "여섯 번째에 다섯 번 더 쓰기를 고를 수 있다",
+   "outcome": "pass",
+   "note": "ProGateTests.test_evaluate_atFiveUsesWithoutExtension_returnsBlockedFirstStage, test_acceptExtendedTrial_setsExtensionFlag, test_evaluate_afterAcceptingExtension_returnsAllowedSecondStage 가 다섯 번 뒤 5회 더 쓰기를 고를 수 있는 판정을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "열한 번째부터는 구매만 남는다",
+   "outcome": "pass",
+   "note": "ProGateTests.test_evaluate_atTenUsesWithExtension_returnsBlockedSecondStage, test_fullLifecycle_freeUserUsesAllElevenAttempts 가 열한 번째부터 막히는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 지웠다 깔아도 Pro가 유지된다",
+   "outcome": null,
+   "note": "재설치와 구매가 필요하다. StorePurchaseLatchTests.test_keychainOnlyRecord_survivesEmptyDefaults 가 키체인 기록으로 Pro 가 돌아오는 논리를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "평생 무료 자격이 재설치 뒤에도 남는다",
+   "outcome": null,
+   "note": "재설치가 필요하다. FoundingSupporterTests.testWindowSurvivesReinstallViaKeychain, StorePurchaseLatchTests.test_grandfatheredSurvivesReinstall_viaKeychain 이 키체인으로 자격이 남는 논리를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱으로 돌아올 때마다 구매 상태를 다시 본다",
+   "outcome": null,
+   "note": "Pro 상태와 앱 전환이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "페이월의 플랜 비교 표가 앱 언어로 나온다",
+   "outcome": null,
+   "note": "Pro 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료로 다시 열면 다이얼이 기본값으로 돌아간다",
+   "outcome": null,
+   "note": "DefaultSetupResetTests(test_defaultSetup_is10MinutesWithOneAlert, test_reset_survivesRelaunch)가 기본값 10분·알림 하나와 초기화를 확인한다. 무료로 25분 타이머를 돌린 뒤 다시 여는 흐름은 테스트되지 않는다. 새로 깐 첫 화면 다이얼은 10분에 1:00 알림이었다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료로 다시 열면 지난번 설정 한 줄이 원 아래 뜬다",
+   "outcome": null,
+   "note": "RememberPitchTests.test_recall_showsLastUsedSetupToFreeUser 가 무료 사용자에게 지난번 설정 줄을 보이는 판정을 확인한다. 화면 표시는 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 설정을 다른 날 두 번 쓰면 저장 제안이 뜬다",
+   "outcome": null,
+   "note": "RepeatDetectorTests 18개가 다른 날 두 번이면 제안하는 판정을 확인한다. 알림창 표시는 날짜를 넘겨야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "개편 전에 만든 템플릿은 무료에서도 불러온다",
+   "outcome": "pass",
+   "note": "LegacyFreeNoticeTests.testPreChangeTemplate_loadableOnFree 가 개편 전 템플릿을 무료에서도 불러오는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "강조색을 바꾸면 모든 화면에 바로 퍼진다",
+   "outcome": null,
+   "note": "테마 설정은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "테마를 시스템 대신 직접 고를 수 있다",
+   "outcome": null,
+   "note": "화면 모드 설정은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱 언어를 바꾸면 화면 글이 그 말로 나온다",
+   "outcome": null,
+   "note": "설정 앱의 언어 바꾸기 대신 실행 인자로 영어를 띄우니 다이얼 아래 템플릿 칩(Meeting 1 hr, Exercise 30 min)이 영어로 나왔다. 시뮬레이터에서는 알림 허용 시스템 창이 화면 가운데를 계속 덮어(누를 수단이 없음) 그 밑은 일부만 보였다. 설정 글은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새로 넣은 유럽 다섯 언어로 화면이 번역돼 나온다",
+   "outcome": null,
+   "note": "독일어·프랑스어·스페인어·포르투갈어(pt-PT)·이탈리아어로 띄운 타이머 화면의 템플릿 칩(Meeting 1 Std., Réunion 1h, Reunión 1 h, Reunião 1 h, Riunione 1 h)은 그 언어로 나오고 한국어가 섞이지 않았다. 시뮬레이터에서는 알림 허용 시스템 창이 화면 가운데를 계속 덮어(누를 수단이 없음) 그 밑은 일부만 보였다. 설정 화면은 못 봤다.",
+   "screenshot": "claude-qa-toki-05-german"
+  },
+  {
+   "title": "한국어에서 시간 단위가 min 대신 분으로 나온다",
+   "outcome": null,
+   "note": "타이머 기록과 라이브 액티비티는 못 봤다. 한국어 다이얼 칩은 회의 1시간, 운동 30분처럼 분으로 적혔다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 템플릿 이름이 앱 언어로 나온다",
+   "outcome": "pass",
+   "note": "다이얼 아래 기본 템플릿 칩 이름이 한국어 회의 1시간·운동 30분·공부 25분, 영어 Meeting 1 hr, 일본어 会議 1時間, 러시아어 Встреча 1 ч 처럼 9개 언어 모두 그 언어로 나왔다. 템플릿 시트 목록은 열지 못했다.",
+   "screenshot": "claude-qa-toki-02-dial"
+  },
+  {
+   "title": "내 기기 목록에 연결된 기기가 뜬다",
+   "outcome": null,
+   "note": "워치 짝짓기가 필요해 못 봤다. DevicePresenceTests.test_watchStatus_isConnectedWhenPairedAndInstalled 가 판정만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "네트워크가 없어도 타이머와 알림은 그대로 된다",
+   "outcome": null,
+   "note": "기내 모드와 알림 대기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기로 글이 접수된다",
+   "outcome": null,
+   "note": "피드백 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "완료 횟수 초기화를 누르면 그 숫자가 0이 된다",
+   "outcome": null,
+   "note": "설정 도움말은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  }
+ ]
+}

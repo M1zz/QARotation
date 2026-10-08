@@ -1,0 +1,581 @@
+{
+ "id": "yeoul-2026-10-08-claude",
+ "bundleID": "com.leeo.yeoul",
+ "startedAt": "2026-10-08T19:56:19+09:00",
+ "durationSeconds": 2007,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 끄고 다시 켜기 9번(영어 인자, 다크, 가장 큰 글자 포함) 동안 한 번도 죽지 않았다. 타임라인 4개를 넣어 둔 저장소로 다시 켜도 목록 줄이 그대로 떴다. 서명 없는 빌드라 CloudKit 대신 -localOnly 로 띄웠다.",
+   "screenshot": "claude-qa-yeoul-02-list"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 만들기와 사건 추가 흐름은 못 봤다. 이 앱에는 단위 테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "StoreKit 코드가 없는 무료 앱이다(YeoulSpec.swift 의 monetization = .free, 소스에 StoreKit import 없음).",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "구매가 없는 무료 앱이라 복원할 것이 없다(YeoulSpec.swift monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "빈 목록과 타임라인 4개가 든 목록을 다크로 봤고 글자와 색 점이 잘 보인다. 타임라인 화면과 사건 수정 시트는 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-yeoul-03-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)에서 목록은 이름과 사건 수 줄이 여러 줄로 감겨 잘리지 않고 스크롤된다. 카드와 사건 수정 시트, 태그 칩은 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-yeoul-04-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "SE 크기 시뮬레이터가 없고 타임라인 화면까지 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다. 소스상 오른쪽 위 더하기에 accessibilityLabel 새 타임라인이 붙어 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 실행과 목록 화면은 정상이다. 사진 찾기·직접 찾기·태그 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "Gyeol(iOS)과 YeoulMac(macOS) 전체 빌드에서 Swift 컴파일 경고 0개(appintents 메타데이터 안내 1줄만 있음).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 타임라인이 없어요 안내와 새 타임라인 버튼이 뜬다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 타임라인이 없어요 문구와 첫 타임라인을 만들어보세요 설명 아래 새 타임라인 버튼이 떴다.",
+   "screenshot": "claude-qa-yeoul-01-first-launch"
+  },
+  {
+   "title": "사진 찾기를 누르기 전에는 사진 권한을 묻지 않는다",
+   "outcome": null,
+   "note": "새로 깔고 켠 목록 화면까지는 사진 권한 창이 뜨지 않았다. 사건 추가 시트는 누를 수단이 없어 못 열었다. 소스상 권한 요청은 DayPhotoFinder.swift 의 requestAuthorization 한 곳뿐이다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud에 로그인하지 않은 기기에서도 기록이 저장된다",
+   "outcome": null,
+   "note": "iCloud 로그아웃 기기가 필요하다. 시뮬레이터는 -localOnly(로컬 저장소)로만 띄웠다. 소스상 Store.makeContainer 가 CloudKit 컨테이너를 못 열면 로컬 저장소로 내려간다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 화면에 여울 이름과 아이콘이 보인다",
+   "outcome": "pass",
+   "note": "설치 뒤 홈 화면에 명조 여울 아이콘과 여울 이름이 보인다. 옛 이름 결은 없다(Info.plist CFBundleDisplayName 여울).",
+   "screenshot": "claude-qa-yeoul-05-home"
+  },
+  {
+   "title": "새 타임라인 버튼으로 만들기 시트가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 타임라인 버튼을 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "오른쪽 위 더하기로도 새 타임라인을 만든다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 더하기로 만들어 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록 줄에 사건 수와 마지막 날짜가 보인다",
+   "outcome": "pass",
+   "note": "사건 3개를 넣은 타임라인 줄 아래에 사건 3개 · 마지막 2024.3.13 이 적혀 있다(저장소에 미리 넣은 데이터로 확인).",
+   "screenshot": "claude-qa-yeoul-02-list"
+  },
+  {
+   "title": "사건이 없는 타임라인은 사건 없음으로 보인다",
+   "outcome": "pass",
+   "note": "사건이 없는 타임라인 여행 줄 아래에 사건 없음이 적혀 있다(저장소에 미리 넣은 데이터로 확인).",
+   "screenshot": "claude-qa-yeoul-02-list"
+  },
+  {
+   "title": "태그 타임라인은 # 표시와 태그 타임라인 글로 구분된다",
+   "outcome": "pass",
+   "note": "태그 타임라인 #처음 줄은 동그라미 대신 # 표시이고 아래 글이 태그 타임라인 · 사건 3개 · 마지막 2025.6.1 로 시작한다. 두 타임라인에 걸친 #처음 사건 3개가 모였다(저장소에 미리 넣은 데이터로 확인).",
+   "screenshot": "claude-qa-yeoul-02-list"
+  },
+  {
+   "title": "타임라인을 밀어 지우면 그 안의 사건도 함께 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 밀어 지우기는 못 봤다. 소스상 Timeline.events 가 cascade 삭제다. 이 앱에는 단위 테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "편집 버튼으로 타임라인을 골라 지운다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 편집 모드 삭제는 못 봤다. 목록 왼쪽 위 편집 버튼이 있는 것만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "태그 타임라인을 지워도 원래 사건은 남는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 태그 타임라인은 자기 events 를 비워 두고 태그로 사건을 끌어와 cascade 가 빈 관계에만 걸린다(README 에 수동 검증 기록).",
+   "screenshot": null
+  },
+  {
+   "title": "이름이 비어 있으면 만들기를 누를 수 없다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 시트를 열지 못했다. 소스상 TimelineEditorView 의 만들기 버튼은 이름을 공백 제거 후 비면 disabled 다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름 칸에서 자판의 완료 키를 치면 바로 만들어진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 자판 완료 키는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 타임라인마다 앞과 다른 색이 미리 골라져 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 시트를 두 번 열어 보지 못했다. 소스상 TimelinePalette.next(after: 기존 개수)로 6색을 돌아가며 미리 고른다.",
+   "screenshot": null
+  },
+  {
+   "title": "고른 색이 목록 점과 펼친 카드에 칠해진다",
+   "outcome": null,
+   "note": "목록 점이 타임라인마다 저장된 색(초록·붉은·파랑)으로 칠해진 것은 봤다. 색을 직접 골라 만들고 펼친 카드를 보는 것은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "취소하면 타임라인이 만들어지지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 취소 동작은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름·색 바꾸기로 이름과 색을 고친다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 점 세 개 메뉴를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건이 없는 타임라인은 첫 순간을 남기라는 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건 추가 버튼이 화면 아래 가운데 떠 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건이 날짜순으로 위에서 아래로 쌓인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 화면을 열지 못했다. 소스상 chronological 이 (날짜, 제목) 순으로 정렬한다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 날 사건은 제목 가나다순으로 놓인다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 chronological 이 (날짜, 제목) 튜플 비교라 같은 날은 제목 문자열 순이다.",
+   "screenshot": null
+  },
+  {
+   "title": "사이 거리가 실제로 흐른 날수에 비례한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 화면을 열지 못했다. todo.md 에 개발자가 3일:5일 = 285px:475px 로 확인한 기록이 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "간격마다 실제 기간 글이 붙는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 날 두 사건 사이에는 같은 날이라고 적힌다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 같은 날 간격 글을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "너무 긴 간격은 점선으로 줄여 그린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 화면을 열지 못했다. 소스상 TrackScale 의 maxGap(560pt)을 넘는 간격이 점선이 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "해가 바뀌는 카드에만 연도가 찍힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 카드를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건이 많아도 스크롤이 끊기지 않고 끝 카드가 가리지 않는다",
+   "outcome": null,
+   "note": "사건 50개 성능은 실기기에서 봐야 하고 누를 수단도 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 누르면 사진과 내용이 그 자리에서 펼쳐진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 카드를 펼쳐 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 카드를 누르면 앞 카드는 접히고 새 카드가 펼쳐진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 카드를 펼쳐 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "펼친 카드는 점이 색으로 차고 화면 위쪽으로 당겨진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 카드를 펼쳐 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "접힌 카드에는 사진 표시와 내용 첫 줄만 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 타임라인 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "펼친 카드의 수정을 누르면 사건 수정이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 카드를 펼쳐 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 사건의 날짜는 오늘로 시작한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 추가 시트를 열지 못했다. 소스상 새 사건의 날짜 초기값은 .now 다.",
+   "screenshot": null
+  },
+  {
+   "title": "날짜·제목·내용을 적어 저장하면 카드가 펼쳐진 채 생긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 추가 시트를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목 없이 저장하면 제목 없음으로 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 카드를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목 칸에서 다음 키를 치면 내용 칸으로 넘어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 자판 다음 키는 못 봤다. 소스상 제목 칸 onSubmit 이 focused = .note 로 옮긴다.",
+   "screenshot": null
+  },
+  {
+   "title": "날짜를 바꿔 저장하면 카드가 새 자리로 옮겨 간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 수정을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "수정 중 취소하면 고친 내용이 남지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 수정을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건 삭제는 한 번 더 묻고 지운다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 수정을 열지 못했다. 소스상 사건 삭제는 이 사건을 삭제할까요? 확인을 거친다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 카드는 그 타임라인 마지막 카드의 디자인으로 시작한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 추가를 열지 못했다. 소스상 새 사건 디자인 초기값은 타임라인의 가장 늦은 카드(sortedEvents.last)의 디자인이다.",
+   "screenshot": null
+  },
+  {
+   "title": "태그를 적어 추가하면 칩으로 붙는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 태그 칸을 쓰지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "태그 앞의 #과 사이 공백은 빼고 붙는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 Tag.normalize 가 앞 # 과 사이 공백을 지운다.",
+   "screenshot": null
+  },
+  {
+   "title": "대소문자만 다른 태그는 한 번만 붙는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 Tag.matches 가 소문자로 비교한다.",
+   "screenshot": null
+  },
+  {
+   "title": "태그 칸에 적다 만 글도 저장하면 태그로 붙는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 태그 칸을 쓰지 못했다. 소스상 save() 가 tagDraft 를 정규화해 붙인다.",
+   "screenshot": null
+  },
+  {
+   "title": "칩의 엑스를 누르면 태그가 빠진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 수정을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 사건에 쓴 태그가 추천 칩으로 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 추가를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드의 태그를 누르면 타임라인을 넘어 그 태그 사건이 모인다",
+   "outcome": null,
+   "note": "목록의 #처음 태그 타임라인 줄에서 두 타임라인에 걸친 사건 3개가 모인 것만 봤다. 카드의 칩을 눌러 태그 화면을 여는 것은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 전 태그 화면 아래에 사건 수와 안내 글이 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 태그 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "타임라인으로 저장하면 #태그 이름으로 목록에 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 저장 흐름을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이미 저장한 태그는 저장됨으로 표시된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 태그 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "새로 태그를 단 사건이 저장된 태그 타임라인에 저절로 들어온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 직접 태그를 달아 보지 못했다. 저장소에 미리 넣은 #처음 태그 타임라인 줄이 다른 타임라인의 같은 태그 사건까지 세는 것(사건 3개)은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "태그 타임라인에는 사건 추가가 없다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 태그 타임라인 화면을 열지 못했다. 소스상 TimelineDetailView 는 tagFilter 가 있으면 사건 추가 버튼과 메뉴 항목을 빼고 #태그 태그가 붙은 사건이 모입니다 글만 둔다.",
+   "screenshot": null
+  },
+  {
+   "title": "태그 타임라인에서 고친 사건이 원래 타임라인에도 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 수정 흐름을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "태그를 모두 떼면 태그 타임라인에 빈 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 태그를 떼어 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 안 한 태그 화면 색이 앱을 다시 켜도 같다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 TimelinePalette.forTag 가 hashValue 대신 고정 계산식으로 색을 고른다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드 디자인 네 가지를 고르면 미리보기가 바로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 카드 디자인 섹션을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "미리보기는 저장 전 초안을 그대로 그린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 미리보기를 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "포스터 카드는 사진 위에 큰 흰 명조 제목을 얹는다",
+   "outcome": null,
+   "note": "사진이 든 사건과 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 없는 포스터와 필름 카드도 빈 데 없이 그려진다",
+   "outcome": null,
+   "note": "누를 수단이 없어 카드 디자인을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "필름 카드에 연.월.일 날짜 도장이 찍힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 필름 카드를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "여백 카드는 큰 날짜 숫자와 작은 사진으로 선다",
+   "outcome": null,
+   "note": "누를 수단이 없어 여백 카드를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "긴 사진이 카드 폭을 밀어내지 않는다",
+   "outcome": null,
+   "note": "파노라마 사진과 누를 수단이 없어 못 봤다. todo.md 에 사진이 카드 폭을 밀어내던 버그를 고친 기록이 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "관련된 사진 찾기를 처음 누르면 사진 권한을 묻는다",
+   "outcome": null,
+   "note": "사진 권한 창은 사건 시트에서 버튼을 눌러야 떠서 못 봤다. 빌드된 Info.plist 의 NSPhotoLibraryUsageDescription 이 그 날 찍은 사진을 찾아 사건에 붙이기 위해 사진 접근이 필요해요 다.",
+   "screenshot": null
+  },
+  {
+   "title": "그 날 찍은 사진이 썸네일 줄로 뜬다",
+   "outcome": null,
+   "note": "시뮬레이터 사진 보관함과 누를 수단이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "썸네일을 누르면 그 사진이 사건에 붙는다",
+   "outcome": null,
+   "note": "누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진이 없는 날은 없다고 알리고 직접 찾기로 이끈다",
+   "outcome": null,
+   "note": "누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 접근을 거절하면 설정에서 허용 버튼이 뜬다",
+   "outcome": null,
+   "note": "권한 거절 흐름은 누를 수단이 없어 못 봤다. 소스상 EventEditorView 에 설정에서 허용 버튼(openPhotoPrivacySettings)이 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 일부만 허용해도 그 안에서 그 날 사진을 찾는다",
+   "outcome": null,
+   "note": "제한된 사진 접근은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "날짜를 바꾸면 사진 찾기가 처음으로 돌아간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "직접 찾기로 보관함에서 사진을 고른다",
+   "outcome": null,
+   "note": "PhotosPicker 는 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 불러오는 동안 저장이 막힌다",
+   "outcome": null,
+   "note": "누를 수단이 없어 못 봤다. 소스상 isLoadingPhoto 동안 저장 버튼이 disabled 이고 불러오는 중… 을 보인다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 제거 후 저장하면 카드에서 사진이 빠진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud에만 있는 사진도 받아서 붙는다",
+   "outcome": null,
+   "note": "iCloud 사진 보관함이 있는 실기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "붙인 사진은 긴 변 1200픽셀 JPEG로 줄어 저장된다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 ImageCompressor.jpeg(maxDimension: 1200, quality: 0.8)로 줄인다. todo.md 에 551x1200 / 47KB 로 확인한 기록이 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "입력 칸 바깥을 누르면 키보드가 내려간다",
+   "outcome": null,
+   "note": "키보드 동작은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 입력 칸을 누르면 키보드는 남고 커서만 옮긴다",
+   "outcome": null,
+   "note": "키보드 동작은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드 위 완료 버튼으로 키보드를 내린다",
+   "outcome": null,
+   "note": "키보드 동작은 누를 수단이 없어 못 봤다. 소스상 사건 편집기에 키보드 툴바 완료 버튼이 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드에서 카드가 가운데 읽기 좋은 폭으로 선다",
+   "outcome": null,
+   "note": "아이패드 시뮬레이터로 보지 않았다(묶음 기기는 아이폰). 앱은 아이폰·아이패드 공용(TARGETED_DEVICE_FAMILY 1,2)이다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰을 가로로 돌려도 타임라인과 편집 시트가 깨지지 않는다",
+   "outcome": null,
+   "note": "가로 회전은 시뮬레이터 명령으로 할 수 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 껐다 켜도 사건·사진·태그·디자인이 그대로다",
+   "outcome": null,
+   "note": "저장소에 넣은 타임라인 4개가 다시 켜도 목록에 그대로 있는 것은 봤다. 사진·태그·디자인을 단 사건을 앱에서 저장해 보는 것은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰에서 넣은 사건이 같은 계정 아이패드에 나타난다",
+   "outcome": null,
+   "note": "두 기기 iCloud 동기화는 서명된 빌드와 실기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "여울 Mac 앱에서 넣은 사건이 아이폰에 나타난다",
+   "outcome": null,
+   "note": "Mac 앱과의 iCloud 동기화는 서명된 빌드가 필요하다. YeoulMac 은 경고 없이 빌드된다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 기기에서 지운 사건이 다른 기기에서도 사라진다",
+   "outcome": null,
+   "note": "두 기기 iCloud 동기화는 서명된 빌드와 실기기가 필요하다.",
+   "screenshot": null
+  }
+ ]
+}

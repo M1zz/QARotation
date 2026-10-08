@@ -1,0 +1,731 @@
+{
+ "id": "pixelme-2026-10-08-claude",
+ "bundleID": "com.leeo.PixelMe",
+ "startedAt": "2026-10-09T00:58:45+09:00",
+ "durationSeconds": 1300,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "2.0.1",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 3번, 다시 켜기 15번(한국어, 영어, 다크, 가장 큰 글자) 동안 한 번도 죽지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "사진을 골라 픽셀 아트로 바꾸고 저장하는 흐름은 화면을 누를 수단이 없어 못 봤다. 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": null,
+   "note": "홈 아래 Unlock Pro / Try Free 띠는 보였다. 결제 화면은 눌러야 떠서 못 봤다.",
+   "screenshot": "claude-qa-pixelme-02-home"
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": null,
+   "note": "실제 App Store 계정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "앱이 늘 어두운 화면이라 다크로 바꿔도 홈이 같다. 홈만 봤고 자연스럽다. 나머지 화면은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)에서도 홈이 보통 글자와 똑같이 보인다. 글자가 .system(size:) 고정 크기라 커지지 않아 깨지지는 않지만 큰 글자 설정을 따르지 않는다. 다른 화면은 못 봤다.",
+   "screenshot": "claude-qa-pixelme-03-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터(iPhone 18 Pro Max)에서 실행, 온보딩, 홈은 정상이다. 변환과 에디터는 화면을 누를 수단이 없어 못 써 봤고 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "PixelMe 새 빌드에서 Swift 경고 13개 중 deprecated 4개. ReviewManager.swift:83 SKStoreReviewController.requestReview(in:)(iOS 18, AppStore.requestReview 로), PixelatedPhotoView.swift:2628 과 PaywallView.swift:66 onChange(of:perform:)(iOS 17). 나머지는 안 쓰는 변수와 Swift 6 동시성 경고(ExportManager.swift:299, FreeUsageManager.swift:157)다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에 온보딩 네 장이 넘어간다",
+   "outcome": null,
+   "note": "새로 깔고 켜니 온보딩 첫 장(Photo → Pixel Art)과 네 개 점, 다음·건너뛰기 단추가 떴다. 넘겨 보는 것은 누를 수단이 없어 못 했다. 한국어 기기인데 홈과 온보딩 문구 대부분이 영어로 나온다. Localizable.xcstrings 에 Create, What You Can Create, Unlock Pro, Photo → Pixel Art, 온보딩 설명 문구의 ko 번역이 없고, HomeToolCard 는 title 을 String 으로 받아 Text(title) 로 그려 ko 번역이 있는 Pixelate Photo(사진 픽셀화)도 영어로 나온다(CreatorContentView.swift:906 근처).",
+   "screenshot": "claude-qa-pixelme-01-onboarding"
+  },
+  {
+   "title": "온보딩에서 건너뛰기를 누르면 홈으로 간다",
+   "outcome": null,
+   "note": "건너뛰기 단추가 보이는 것까지 봤다. 누를 수단이 없어 홈으로 가는지는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "온보딩은 다시 켜도 나오지 않는다",
+   "outcome": null,
+   "note": "온보딩을 끝내지 못한 채 다시 켜면 온보딩이 다시 나왔고 이는 정상이다. 끝낸 뒤 다시 안 나오는지는 hasCompletedOnboarding 을 실행 인자로 넣어 홈이 바로 뜨는 것만 봤다. 앱이 그 값을 저장하는 쪽(OnboardingView.swift:95)은 누를 수단이 없어 확인 못 했고 테스트도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈에서 네 가지 만들기 방식이 보인다",
+   "outcome": "pass",
+   "note": "홈 Create 아래에 Pixelate Photo, Follow Along, Free Drawing, Import 네 가지가 보인다. 다만 한국어 기기인데 홈과 온보딩 문구 대부분이 영어로 나온다. Localizable.xcstrings 에 Create, What You Can Create, Unlock Pro, Photo → Pixel Art, 온보딩 설명 문구의 ko 번역이 없고, HomeToolCard 는 title 을 String 으로 받아 Text(title) 로 그려 ko 번역이 있는 Pixelate Photo(사진 픽셀화)도 영어로 나온다(CreatorContentView.swift:906 근처).",
+   "screenshot": "claude-qa-pixelme-02-home"
+  },
+  {
+   "title": "홈의 픽셀 아이콘 샘플이 움직인다",
+   "outcome": null,
+   "note": "홈 아래 Pixel Animation Samples(Runner, Bounce, Campfire, HeartBeat)가 실행할 때마다 다른 프레임으로 찍혀 움직이는 것으로 보이지만 정지 스크린샷이라 확실하지 않다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 버튼마다 VoiceOver 이름이 읽힌다",
+   "outcome": null,
+   "note": "각 버튼에 accessibilityLabel(사진 픽셀화 등)이 붙어 있으나 VoiceOver 로 읽어 보지는 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "만족도 질문에서 아쉬운 점을 고르면 의견 창이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 고르면 정사각형 자르기 화면이 먼저 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 고르면 픽셀 아트로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경 지우기로 인물만 남길 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경 지운 뒤 둘 중 하나를 고를 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경이 안 잡히는 사진은 오류 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "큰 사진을 넣어도 앱이 버틴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "저전력 모드에서도 변환이 끝까지 된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "픽셀 크기를 바꾸면 결과가 즉시 갱신된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경색을 바꾸면 빈 곳이 그 색이 된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트를 고르면 색이 그 팔레트로 줄어든다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "필터 세기 슬라이더가 결과에 반영된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "필터를 고른 뒤 없음으로 되돌릴 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "디더링 방식을 바꾸면 무늬가 달라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "빠른 프리셋 하나로 전체 설정이 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "크기를 고르기 전 에디터로 가도 빈 화면에 갇히지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "픽셀 에디터에서 편집을 누르면 결과가 캔버스에 들어온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "이 픽셀 사용을 누르면 픽셀을 고칠 화면이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "색상 축소를 고르면 팔레트가 원본으로 돌아간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "내 워터마크 이미지를 지정할 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "커스텀 워터마크가 결과 그림 오른쪽 아래에 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "커스텀 워터마크 제거를 누르면 이미지가 빠진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "고급 내보내기로 만든 파일을 파일 앱에서 찾을 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "4K로 내보내도 픽셀 경계가 흐려지지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "이미지를 안 고르면 빈 상태 안내가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "여러 장을 골라 같은 설정으로 변환된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "일괄 처리 중 진행 개수가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "GIF 생성기에서 만든 GIF가 사진 앱에 저장된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "레이어를 합치면 한 장으로 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "레이어 숨김을 켜면 결과에서 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "레이어 편집기 완료를 누르면 합친 그림이 결과에 들어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿을 고르면 그 픽셀 크기와 추천 팔레트가 들어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "필터팩 상점에서 팩별 가격이 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "필터팩을 사면 소유 표시로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "산 팩의 필터를 누르면 결과에 덧입혀진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "필터팩 구매 복원으로 산 팩이 돌아온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 저장 권한을 거부하면 실패 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 그림에 화면의 격자선이 찍히지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "SNS 크기를 고르면 그 비율에 검은 여백을 붙여 공유된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "SNS 공유 링크가 이 앱 App Store 페이지로 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "비포/애프터 이미지로 공유할 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "릴스 버튼을 누르면 세로 비포/애프터 영상이 공유된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "공유 시트를 취소해도 결과가 남아 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드에서 공유 시트가 화면 안에 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "샘플을 고르면 흐린 밑그림과 함께 에디터가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "눈 버튼으로 밑그림을 숨길 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "따라 그리기 팔레트가 샘플 색으로 채워진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "샘플 갤러리 분류와 크기 칩으로 걸러진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "샘플 갤러리를 X로 닫으면 에디터가 열리지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 캔버스에서 고른 크기로 에디터가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "픽셀 에디터에서 되돌리기가 된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "연필·지우개·채우기·스포이드가 각각 동작한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "직선·사각형·원 도구로 도형이 그려진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "도형을 캔버스 밖에서 끝내도 그린 모양이 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "대칭 모드를 켜면 반대편도 같이 그려진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "브러시 크기를 키우면 한 번에 넓게 칠해진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "그리드 선 표시를 끄면 격자가 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "확대 버튼과 두 손가락으로 캔버스를 키울 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "캔버스를 줄이면 잘린다는 경고가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "캔버스 크기를 바꾸면 위쪽 크기 표시도 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 없이 나가려 하면 확인을 묻는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "에디터 도구가 VoiceOver로 이름이 읽힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "레이어를 추가하면 새 레이어가 골라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "레이어 불투명도를 줄이면 아래가 비친다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "고급 색상 선택에서 HEX를 넣으면 그 색이 된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "팔레트 메뉴에서 PICO-8을 고르면 색 줄이 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "AI 팔레트 버튼이 캔버스 색을 뽑아 준다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "타임라인에 프레임을 추가하면 개수가 늘어난다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프레임을 추가해도 앞 프레임 그림이 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "프레임을 복제하면 같은 그림이 다음 칸에 생긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "FPS를 바꾸면 재생 길이가 다시 계산된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프레임 미리보기가 순서대로 재생된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "어니언 스킨을 켜면 앞뒤 프레임이 비친다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배율을 고르면 내보낼 크기가 미리 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "에디터에서 PNG로 저장하면 사진 앱에 생긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 권한 없이 PNG로 저장하면 실패를 알린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "에디터에서 GIF로 저장하면 움직이는 GIF가 생긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "스프라이트 시트를 가로·세로·격자로 저장할 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "Aseprite로 내보내면 공유 시트에 파일이 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "아세프라이트 파일을 열면 프레임이 들어온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없다(스킴 PixelMe 하나, PixelMeTests/ImageProcessingTests.swift 는 프로젝트에 묶여 있지 않다). 화면을 누를 수단도 없어 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "내보낸 Aseprite 파일을 다시 가져오면 같은 그림이 열린다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없다(스킴 PixelMe 하나, PixelMeTests/ImageProcessingTests.swift 는 프로젝트에 묶여 있지 않다). 화면을 누를 수단도 없어 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "깨진 파일을 열면 오류 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 Import로 깨진 파일을 골라도 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "파일 앱에서 .ase 파일을 열면 에디터가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료로 저장하면 워터마크가 찍힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료는 원본 팔레트와 CRT 필터만 쓸 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠긴 팔레트에는 자물쇠가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료는 작은 보드 크기 세 개만 고를 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠긴 항목을 누르면 Pro 결제 화면이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료 상태로 프리셋을 눌러도 잠긴 팔레트가 들어가지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료 상태에서 고급 기능이 잠겨 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "결제 화면에서 요금제마다 버튼 문구가 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 홈 화면 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "결제 화면 무료 체험 기간이 결제창과 같다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "결제 화면 이용약관과 개인정보처리방침이 앱 문서로 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "Pro가 되면 홈의 Unlock Pro 배너가 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "Pro면 저장한 그림에 워터마크가 없다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "예전 프리미엄 구매자는 복원하면 Pro가 된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "비행기 모드로 열어도 Pro가 유지된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 껐다 켜면 마지막 캔버스를 복구할 수 있다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없다(스킴 PixelMe 하나, PixelMeTests/ImageProcessingTests.swift 는 프로젝트에 묶여 있지 않다). 화면을 누를 수단도 없어 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "복구한 애니메이션이 프레임째로 돌아온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없다(스킴 PixelMe 하나, PixelMeTests/ImageProcessingTests.swift 는 프로젝트에 묶여 있지 않다). 화면을 누를 수단도 없어 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "생성으로 새 캔버스를 만들면 복구 기록이 지워진다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없다(스킴 PixelMe 하나, PixelMeTests/ImageProcessingTests.swift 는 프로젝트에 묶여 있지 않다). 화면을 누를 수단도 없어 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 다시 켜도 커스텀 워터마크가 남아 있다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없다(스킴 PixelMe 하나, PixelMeTests/ImageProcessingTests.swift 는 프로젝트에 묶여 있지 않다). 화면을 누를 수단도 없어 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱 안에서 문의하기와 의견 보내기를 찾을 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 사진 고르기나 손 조작이 필요하다.",
+   "screenshot": null
+  }
+ ]
+}

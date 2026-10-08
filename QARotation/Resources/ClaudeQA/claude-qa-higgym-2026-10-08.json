@@ -1,0 +1,725 @@
+{
+ "id": "higgym-2026-10-08-claude",
+ "bundleID": "com.leeo.higgym",
+ "startedAt": "2026-10-08T19:57:17+09:00",
+ "durationSeconds": 3300,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0.1",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔고 첫 실행 1번, 다시 켜기 30번 가까이(디버그 실행 인자로 레슨·자료·실습 화면, 다크, 가장 큰 글자) 동안 한 번도 죽지 않았고 매번 학습 탭이 바로 떴다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "레슨 다섯 단계는 디버그 인자(HG_LESSON·HG_STEP)로 단계마다 열어 봤지만 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 다섯 단계를 이어 넘겨 노트에 쌓이는 흐름은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. HigGymSpec.swift 의 monetization 이 .free 이고 StoreKit 을 쓰는 코드가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(HigGymSpec.swift monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": "pass",
+   "note": "다크로 학습 탭, 자료 탭, 레슨 써보기 단계(예시 노트 앱 화면)를 봤다. 카드와 예시 화면 글자가 모두 또렷하고 묻히는 곳이 없다.",
+   "screenshot": "claude-qa-higgym-05-dark-course"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 레슨 이유 확인 단계를 열면 아래 다음 버튼(어긴 화면과 비교하기)은 두 줄로 잘리지 않지만, 맨 위 단계 줄이 깨진다. 지금 단계 알약의 이유 확인이 한 글자씩 세로로 쌓여 화면 1/4을 차지하고, 레슨 제목은 1. 가장 자주 하…로 잘린다. 빨간 배너 글도 버튼 뒤로 잘려 보인다. LessonPlayerView.swift header 의 단계 HStack 이 lineLimit·fixedSize 없이 글자를 줄바꿈하게 둔 탓이다.",
+   "screenshot": "claude-qa-higgym-04-ax5-lesson"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면(SE) 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 레슨 다섯 단계, 항목 1.1.1 예제 보기, 툴바·탭바·텍스트 실습을 열어 봤다. 툴바와 탭바가 어긋나거나 멈춘 곳이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "HigGym 스킴(앱 단일 타깃) 클린 빌드에서 deprecated 경고 0개. Swift 경고는 6개로 MistakeDemos.swift:357 withAnimation 결과 미사용 1개, LabsHomeView.swift:6~10 main actor 초기화 5개뿐이다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 화면이 목록이 아니라 코스로 열린다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 아래 탭 학습이 켜지고 맨 위에 코스 카드(아직 시작 전입니다 · 1편부터 시작하기)와 23편 목록이 떴다.",
+   "screenshot": "claude-qa-higgym-01-first-launch"
+  },
+  {
+   "title": "시작 전에는 1편부터 시작하기가 나온다",
+   "outcome": "pass",
+   "note": "새로 깔고 첫 화면 맨 위 카드에 1편부터 시작하기 · 1. 가장 자주 하는 일은 어디에 두는가가 적혀 있다.",
+   "screenshot": "claude-qa-higgym-01-first-launch"
+  },
+  {
+   "title": "맨 위 카드에 이어서 하기가 보인다",
+   "outcome": "pass",
+   "note": "디버그 시드(HG_SEED_NOTES)로 2편을 마친 기록을 넣고 다시 켜니 맨 위 카드 버튼이 이어서 하기로 바뀌었다(앞서 1편을 배운 것 단계로 연 기록이 있어 이어서 하기 · 배운 것부터로 떴다).",
+   "screenshot": "claude-qa-higgym-06-resume-card"
+  },
+  {
+   "title": "멈춘 레슨은 카드에 단계 이름까지 적힌다",
+   "outcome": "pass",
+   "note": "1편을 배운 것 단계(HG_STEP=4)로 열었다 닫은 뒤, 여러 번 다시 켠 학습 탭 맨 위 카드에 이어서 하기 · 배운 것부터가 적혀 있다. 비교 단계로 멈춘 경우는 따로 안 봤지만 같은 resumeTitle 경로다.",
+   "screenshot": "claude-qa-higgym-06-resume-card"
+  },
+  {
+   "title": "진행 카드를 누르면 멈춘 단계에서 레슨이 열린다",
+   "outcome": null,
+   "note": "진행 카드를 눌러 레슨을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "마친 편수만큼 진행 막대가 찬다",
+   "outcome": "pass",
+   "note": "두 편을 마친 기록으로 학습 탭을 여니 맨 위 카드에 2 / 23 편 마침, 8%와 함께 가는 막대가 그만큼 차 있다.",
+   "screenshot": "claude-qa-higgym-06-resume-card"
+  },
+  {
+   "title": "마친 레슨 행에 마침 표시가 붙는다",
+   "outcome": "pass",
+   "note": "마친 2편, 5편 줄에 초록 마침 표시가 붙어 있다(디버그 시드로 마친 기록을 넣고 다시 켠 화면).",
+   "screenshot": "claude-qa-higgym-06-resume-card"
+  },
+  {
+   "title": "쓰다 만 레슨에 쓰는 중 표시가 뜬다",
+   "outcome": null,
+   "note": "적어보기에 한 줄만 쓰고 닫는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "학습 탭 아래 안내 글이 실제 편수와 맞는다",
+   "outcome": "fail",
+   "note": "학습 탭 맨 아래 안내 글(CourseHomeView.swift footnote)이 앞의 여덟 편과 뒤의 다섯 편이라고 적혀 있어 8+5=13편인데, 목록 위 편수는 23편이다(Lesson.all 23개, 화면에도 23편). 뒤쪽 편 이름도 다섯 개만 나열한다. README 는 나머지 열다섯 편이라고 적고 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "레슨 5단계를 끝까지 넘길 수 있다",
+   "outcome": null,
+   "note": "다 해봤어요부터 이 레슨 마치기까지 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 각 단계 화면은 디버그 인자로 다 열려 그려진다.",
+   "screenshot": null
+  },
+  {
+   "title": "써보기에서 실제 크기 화면을 만진다",
+   "outcome": null,
+   "note": "써보기 단계의 예시 노트 앱 화면이 실제 크기로 그려지는 것은 봤다. 눌러 보고 스크롤하는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "머리 줄에 지금 단계 이름과 지난 단계 체크가 보인다",
+   "outcome": "pass",
+   "note": "이유 확인 단계(HG_STEP=2)로 열면 맨 위 단계 줄에 이유 확인 이름이 뜨고 앞 두 칸(써보기, 적어보기)은 초록 체크다. 버튼을 눌러 넘긴 것은 아니고 디버그 인자로 바로 연 화면이다.",
+   "screenshot": "claude-qa-higgym-02-reason-step"
+  },
+  {
+   "title": "왼쪽 화살표로 한 단계 앞으로 돌아간다",
+   "outcome": null,
+   "note": "왼쪽 화살표 버튼이 이유 확인 단계 아래에 있는 것은 봤지만 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "적어보기 칸을 비워도 다음으로 넘어간다",
+   "outcome": null,
+   "note": "빈 적어보기 단계 아래 버튼이 건너뛰고 이유 보기인 것은 봤다. 눌러서 넘어가는지는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "적어보기에 글을 쓰면 버튼이 이유 확인하기로 바뀐다",
+   "outcome": null,
+   "note": "글자를 쓰는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이유 확인에 어긴 쪽이었다는 배너가 뜬다",
+   "outcome": "pass",
+   "note": "이유 확인 단계 맨 위 빨간 띠에 방금 만진 화면은 어긴 쪽이었습니다가 적혀 있다.",
+   "screenshot": "claude-qa-higgym-02-reason-step"
+  },
+  {
+   "title": "내가 쓴 글이 기준 설명 위에 나란히 보인다",
+   "outcome": null,
+   "note": "적어보기에 글을 쓰고 넘기는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 빈 상태의 이유 확인 화면에는 내가 쓴 것 칸이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "비교 단계는 고친 화면부터 보여준다",
+   "outcome": "pass",
+   "note": "비교 단계(HG_STEP=3)로 열면 위 전환 버튼에서 이렇게 고쳤다가 먼저 켜져 있고 화면 테두리가 초록이며 지금 보는 건 고친 화면입니다가 붙어 있다.",
+   "screenshot": "claude-qa-higgym-03-compare-step"
+  },
+  {
+   "title": "비교 단계에서 고친·어긴 화면이 바뀐다",
+   "outcome": null,
+   "note": "이렇게 했다를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "레슨 중 책 아이콘으로 근거 본문이 열린다",
+   "outcome": null,
+   "note": "오른쪽 위 책 아이콘은 보이지만 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "단계를 오가도 쓴 글이 지워지지 않는다",
+   "outcome": null,
+   "note": "글을 쓰고 단계를 오가는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "마친 레슨을 다시 열면 써보기부터 시작한다",
+   "outcome": null,
+   "note": "마친 레슨 줄을 다시 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "열어만 본 레슨은 빈 노트를 안 남긴다",
+   "outcome": null,
+   "note": "레슨을 열고 닫는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. NotebookStore.write 가 빈 노트를 지우는 것은 소스로만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "레슨 진도·노트가 재실행 후에도 남는다",
+   "outcome": "pass",
+   "note": "디버그 시드로 두 편의 노트와 마침을 저장한 뒤 앱을 완전히 끄고 다시 켜니 노트 탭에 두 카드의 글이, 학습 탭에 마침 표시가 그대로 있다. 단위 테스트는 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "노트를 마크다운 파일로 공유할 수 있다",
+   "outcome": null,
+   "note": "내보내기 메뉴와 공유 시트는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "노트를 텍스트로 복사하면 복사됨으로 바뀐다",
+   "outcome": null,
+   "note": "텍스트로 복사를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사한 노트에 레슨 제목과 근거가 함께 붙는다",
+   "outcome": null,
+   "note": "복사한 글을 붙여 보는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "노트에서 다시 하기로 그 레슨이 열린다",
+   "outcome": null,
+   "note": "노트 카드에 다시 하기 버튼이 보이지만 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "다시 하기에서 고친 글이 노트 카드에 반영된다",
+   "outcome": null,
+   "note": "다시 하기로 글을 고치는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "노트 위에 쓴 편수·마친 편수가 나온다",
+   "outcome": "pass",
+   "note": "노트 탭 맨 위에 2 쓴 레슨, 2 마친 레슨, 23 전체가 나란히 적혀 있다(두 편을 시드한 상태).",
+   "screenshot": null
+  },
+  {
+   "title": "쓴 글이 없으면 노트 탭이 빈 안내만 보인다",
+   "outcome": "pass",
+   "note": "새로 깔고 노트 탭을 여니 아직 쓴 글이 없습니다 안내만 있고 오른쪽 위 내보내기 버튼이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "자료 탭에 항목·실수·원칙·실습 수가 보인다",
+   "outcome": "pass",
+   "note": "자료 탭에 항목 68개, 실수 100 100편, 원칙 7개, 실습실 5종이 적혀 있다. 다만 맨 아래에 toolbar-annotated.html, Tools/extract_content.py → Tools/build_mistakes.py 를 실행하면 갱신된다는 개발자용 안내가 사용자 화면에 그대로 보인다(LibraryView.swift).",
+   "screenshot": null
+  },
+  {
+   "title": "목업 부위를 누르면 설명이 나온다",
+   "outcome": null,
+   "note": "목업 부위를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 부위를 다시 누르면 설명이 닫힌다",
+   "outcome": null,
+   "note": "부위를 다시 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "항목 검색으로 번호와 상황을 찾는다",
+   "outcome": null,
+   "note": "항목 검색칸은 보이지만 글자를 넣지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색 결과가 없으면 빈 목록만 남는다",
+   "outcome": null,
+   "note": "검색칸에 글자를 넣지 못했다. 소스상 EntriesHomeView 는 결과가 없을 때 따로 안내를 그리지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "항목 상세에 여기서 나온 실수 목록이 붙는다",
+   "outcome": null,
+   "note": "항목 1.1.1 상세 위쪽(예제 보기, 큰 그림)만 봤고 아래 여기서 나온 실수 칸까지 내려 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "항목 상세의 실수 줄을 누르면 그 실수가 열린다",
+   "outcome": null,
+   "note": "실수 줄을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "항목 상세에서 관련 실습으로 넘어간다",
+   "outcome": null,
+   "note": "직접 해보기를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "참고 자료 링크가 사파리로 열린다",
+   "outcome": null,
+   "note": "사파리로 나가는 링크는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "예제를 처음 열면 해보세요 안내가 뜬다",
+   "outcome": "pass",
+   "note": "항목 1.1.1 예제를 처음 열자(HG_DEMO=1) 예제 안내 시트가 저절로 올라와 해보세요 세 줄을 보여 줬다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내 시트를 연 채 뒤 화면을 만질 수 있다",
+   "outcome": null,
+   "note": "시트를 연 채 뒤 화면을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장자리 캡슐로 예제를 닫거나 안내를 다시 연다",
+   "outcome": null,
+   "note": "가장자리 캡슐 버튼을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내에 그 화면의 SwiftUI 코드가 붙는다",
+   "outcome": "pass",
+   "note": "예제 안내 시트 아래 이 화면의 코드 칸에 .toolbar { ToolbarItem(placement: .topBarTrailing) ... } SwiftUI 코드가 적혀 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 예제를 다시 열면 안내가 자동으로 안 뜬다",
+   "outcome": null,
+   "note": "같은 예제를 다시 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. DemoStage.swift 가 본 예제를 UserDefaults 에 적어 두는 것은 소스로만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "예제 속 버튼을 누르면 가운데에 반응이 뜬다",
+   "outcome": null,
+   "note": "예제 속 버튼을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 화면 실행에서 툴바가 점 메뉴로 접힌다",
+   "outcome": null,
+   "note": "실험실에 아이템을 넣고 전체 화면으로 실행하는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크롤 엣지 예제에서 사진이 바 밑을 지나간다",
+   "outcome": null,
+   "note": "스크롤 동작은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색 예제에서 글자를 치면 목록이 실제로 걸러진다",
+   "outcome": null,
+   "note": "검색 캡슐에 글자를 넣는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 화면 커버 예제는 쓸어내려도 안 닫힌다",
+   "outcome": null,
+   "note": "쓸어내리기는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "원칙 화면에 일곱 원칙이 차례로 나온다",
+   "outcome": "pass",
+   "note": "디자인 원칙 화면에 8.1.1 Content-First부터 차례로 원칙이 나온다. 화면에 8.1.1~8.1.4가 보이고 자료 탭에 7개라고 적혀 있다(아래까지 내려 7줄을 다 세지는 못했다).",
+   "screenshot": null
+  },
+  {
+   "title": "원칙 예제 스위치로 어긴·지킨 구성을 뒤집는다",
+   "outcome": null,
+   "note": "원칙 예제 스위치를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "원칙 상세의 실수 줄로 그 실수가 열린다",
+   "outcome": null,
+   "note": "원칙 상세 8.1.1 위쪽(기준, 예제 보기, 기준을 통과한 예)만 봤고 실수 줄을 누르지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "근거가 원칙이면 원칙 화면으로 열린다",
+   "outcome": null,
+   "note": "근거 줄을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실수 목록을 분류 칩으로 걸러낸다",
+   "outcome": null,
+   "note": "실수 100 화면 위쪽에 분류 칩(전체 100, 군더더기 19, 손이 안 닿는 자리 10…)이 보이지만 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "회고 있는 것만을 켜도 백 편이 모두 남는다",
+   "outcome": null,
+   "note": "회고 있는 것만 체크를 켜는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안 본 것만으로 체크한 실수를 숨긴다",
+   "outcome": null,
+   "note": "겪어본 것 표시와 안 본 것만 체크는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실수 검색 결과가 없으면 안내가 뜬다",
+   "outcome": null,
+   "note": "검색칸에 글자를 넣지 못했다. 소스상 MistakesHomeView 에 해당하는 실수가 없습니다 안내가 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "이건 나도 해봤다를 누르면 진행도가 오른다",
+   "outcome": null,
+   "note": "목록 맨 위에 겪어본 것으로 표시한 실수 0 / 100이 보인다. 버튼을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "표시한 실수를 다시 누르면 표시가 풀린다",
+   "outcome": null,
+   "note": "표시를 풀어 보는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "체크한 실수는 번호와 제목이 흐려진다",
+   "outcome": null,
+   "note": "체크한 줄의 모양은 실수를 표시하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "회고 읽기에서 증상부터 기준까지 이어진다",
+   "outcome": null,
+   "note": "실수 3의 회고(HG_STORY=1)를 열어 증상, 그때는 왜 그게 맞아 보였나, 무엇이 무너졌나, 기준, 고친 뒤까지 다섯 칸이 차례로 나오는 것을 봤다. 아래로 내리지 못해 여섯째 칸(남는 것)은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "전용 예제에서 어긴·고친 화면을 갈아 끼운다",
+   "outcome": null,
+   "note": "실수 3에 전용 예제 줄이 붙어 있는 것은 봤지만 갈아 끼우는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "전용 예제가 없는 실수는 항목 예제로 보낸다",
+   "outcome": null,
+   "note": "직접 해보기를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실수 상세의 근거 항목으로 바로 넘어간다",
+   "outcome": null,
+   "note": "실수 3 상세에 근거가 되는 본문 항목(1.1.2, 1.1.3, 8.1.3) 줄이 보이지만 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실습 설정을 바꾸면 목업이 즉시 다시 그려진다",
+   "outcome": null,
+   "note": "실험실에 아이템을 넣는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실시간 판정에 근거 항목 번호가 함께 붙는다",
+   "outcome": "pass",
+   "note": "텍스트 잘림 실습을 열면 실시간 판정 줄(지금 폭에서는 내용이 온전히 들어갑니다…) 아래에 근거 항목 8.1.5가 붙어 있다. 설정을 바꿔 본 것은 아니다.",
+   "screenshot": null
+  },
+  {
+   "title": "툴바 프리셋을 누르면 그 구성으로 바뀐다",
+   "outcome": null,
+   "note": "툴바 실험실 먼저 눌러볼 것에 전부 채우기 프리셋이 보이지만 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "루트 화면을 끄면 왼쪽 자리 판정이 생긴다",
+   "outcome": null,
+   "note": "루트 화면 스위치를 끄는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "생성된 SwiftUI 코드가 설정 따라 바뀐다",
+   "outcome": null,
+   "note": "탭바 구성 실습에서 탭 개수(2·3·4·6개)를 바꾸는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 화면 실행 중에도 설정 시트를 연다",
+   "outcome": null,
+   "note": "전체 화면 실행 중 캡슐을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "탭을 6개로 늘리면 판정이 어김으로 바뀐다",
+   "outcome": null,
+   "note": "탭 개수를 6개로 고르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "탭바 접기와 액세서리가 전체 화면에서 동작한다",
+   "outcome": null,
+   "note": "스크롤 동작은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "텍스트 실습에서 폭을 줄이면 값이 잘린다",
+   "outcome": null,
+   "note": "폭 손잡이를 미는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자 크기 칸을 올리면 그 자리가 무너진다",
+   "outcome": null,
+   "note": "접근성 칸을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "텍스트 실습 로케일을 바꾸면 표기만 바뀐다",
+   "outcome": null,
+   "note": "로케일을 바꾸는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크롤 엣지 실습은 배경을 사진으로도 바꾼다",
+   "outcome": null,
+   "note": "배경 조건을 바꾸는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 배경에서 두꺼운 재료를 켜면 빨간 판정이 빠진다",
+   "outcome": null,
+   "note": "배경과 재료를 바꾸는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "시트 실습에서 비모달을 켜면 뒤 카드가 눌린다",
+   "outcome": null,
+   "note": "비모달 시트를 연 채 뒤를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "다녀온 실습에 체크 표시가 남는다",
+   "outcome": null,
+   "note": "새로 깐 상태의 실습실 목록에는 체크가 없었다. 실습을 열었다 닫아 돌아오는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "항목 상세에서 연 실습도 다녀온 표시가 남는다",
+   "outcome": null,
+   "note": "항목 상세에서 실습을 열었다 닫는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "퀴즈 오답이 복습 목록에 쌓인다",
+   "outcome": null,
+   "note": "퀴즈는 자료 탭의 줄을 눌러야 열리고 디버그 인자(HG_LIB=quiz)로는 열리지 않아(LibraryView Destination 에 quiz 가 없음) 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오답이 없으면 복습 모드가 목록에 없다",
+   "outcome": null,
+   "note": "퀴즈 첫 화면을 열지 못했다. 소스상 QuizHomeView 는 오답이 있을 때만 오답 복습 줄을 그린다.",
+   "screenshot": null
+  },
+  {
+   "title": "오답 복습에서 맞히면 복습 대기가 줄어든다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(HigGym 스킴에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "챕터별 숙련도 막대가 정답률만큼 찬다",
+   "outcome": null,
+   "note": "퀴즈 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "채점 전에는 근거 항목 번호가 가려져 있다",
+   "outcome": null,
+   "note": "퀴즈 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "그림 보기 문제는 채점 후에 이름이 드러난다",
+   "outcome": null,
+   "note": "퀴즈 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "답을 고른 뒤에는 다른 보기로 못 바꾼다",
+   "outcome": null,
+   "note": "퀴즈 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "해설에서 관련 실습으로 바로 넘어간다",
+   "outcome": null,
+   "note": "퀴즈 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "랜덤 10문항을 끝내면 결과와 다시 볼 항목이 나온다",
+   "outcome": null,
+   "note": "퀴즈 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "결과의 다시 볼 항목에서 실습이 열린다",
+   "outcome": null,
+   "note": "퀴즈 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실전 문제는 고르기 전에 두 화면을 만져본다",
+   "outcome": null,
+   "note": "실전 퀴즈는 디버그 인자(HG_LIVE)가 퀴즈 화면 안에서만 읽혀 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실전에서 고르기 전에는 확인이 눌리지 않는다",
+   "outcome": null,
+   "note": "실전 퀴즈를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "채점 후 크게 보기로 실제 크기에서 본다",
+   "outcome": null,
+   "note": "실전 퀴즈를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "실전 결과에서 다시 풀기로 처음부터 푼다",
+   "outcome": null,
+   "note": "실전 퀴즈를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "샘플 앱에서 결정을 누르면 테두리가 켜진다",
+   "outcome": null,
+   "note": "샘플 앱 뜯어보기(HG_CASE)도 퀴즈 화면 안에서만 열려 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "샘플 앱에서 새 노트를 만들 수 있다",
+   "outcome": null,
+   "note": "샘플 앱을 열지 못했다. 레슨 써보기 단계의 같은 노트 앱 화면은 봤지만 누르지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "샘플 앱 노트를 밀어서 지운다",
+   "outcome": null,
+   "note": "밀기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "샘플 앱 제목 메뉴로 폴더를 바꾼다",
+   "outcome": null,
+   "note": "제목 메뉴를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "운송장 노트에서 번호 복사가 된다",
+   "outcome": null,
+   "note": "운송장 노트를 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "인터넷 없이도 모든 자료가 열린다",
+   "outcome": null,
+   "note": "비행기 모드는 시뮬레이터에서 못 켠다. 소스상 콘텐츠는 번들의 entries.json, mistakes.json 에서 읽는다.",
+   "screenshot": null
+  },
+  {
+   "title": "실수 체크와 퀴즈 성적이 재실행 후 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(HigGym 스킴에 테스트 없음) 확인할 근거가 없다. 실수 표시와 퀴즈 풀기를 못 해 재실행 확인도 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "멈춘 레슨 단계가 재실행 후에도 이어진다",
+   "outcome": "pass",
+   "note": "1편을 배운 것 단계로 열었다 닫은 기록이 앱을 십여 번 끄고 다시 켠 뒤에도 남아 학습 탭 카드에 이어서 하기 · 배운 것부터가 떴다. 단위 테스트는 없고, 비교 단계로 멈춘 경우는 따로 안 봤다.",
+   "screenshot": "claude-qa-higgym-06-resume-card"
+  },
+  {
+   "title": "옛 판이 남긴 빈 노트는 불러올 때 사라진다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(HigGym 스킴에 테스트 없음) 확인할 근거가 없다. 소스상 NotebookStore init 이 불러올 때 빈 노트를 걸러낸다(Lesson.swift 407줄).",
+   "screenshot": null
+  },
+  {
+   "title": "전체 화면 예제에서 돌아가기 버튼이 항상 보인다",
+   "outcome": null,
+   "note": "스크롤하는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "자료 탭에서 닫기를 누르면 제자리로 돌아온다",
+   "outcome": null,
+   "note": "닫기를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "백그라운드에서 돌아와도 보던 단계가 그대로다",
+   "outcome": null,
+   "note": "홈으로 나갔다 오는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "세로 고정이라 돌려도 화면이 눕지 않는다",
+   "outcome": null,
+   "note": "시뮬레이터를 돌려 보지 못했다. Info.plist 의 UISupportedInterfaceOrientations 가 세로 하나뿐이다.",
+   "screenshot": null
+  }
+ ]
+}

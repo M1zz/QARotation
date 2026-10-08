@@ -1,0 +1,593 @@
+{
+ "id": "rotoscope-2026-10-08-claude",
+ "bundleID": "com.leeo.RotoscopeiPad",
+ "startedAt": "2026-10-08T20:20:49+09:00",
+ "durationSeconds": 2700,
+ "deviceModel": "Claude 자동 QA · iPad Pro 13-inch (M5) 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0.1",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 iPad Pro 13-inch(M5) 시뮬레이터에서 새로 깔기 2번, 다시 켜기 5번(라이트, 다크, 저장된 프로젝트 두 종류) 동안 앱이 죽지 않았다. 중간에 시뮬레이터 자체가 꺼진 적이 한 번 있었으나 앱 크래시 기록은 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 그리기부터 저장까지 흐름은 못 봤다. 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "RotoscopeiPadSpec.swift 의 monetization 이 .free 이고 소스에 StoreKit 사용이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "RotoscopeiPadSpec.swift 의 monetization 이 .free 이고 소스에 StoreKit 사용이 없어 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "편집 화면만 다크로 봤고 자연스럽다(위 도구줄과 아래 재생 바가 어두운 바탕, 캔버스는 흰 종이 그대로). 홈과 지원 화면은 다크로 못 봤다.",
+   "screenshot": "claude-qa-rotoscope-03-legacy-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "아이콘 위주 화면이라 글자가 거의 없다. 가장 큰 글자로는 시뮬레이터가 중간에 꺼져 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": "na",
+   "note": "아이패드 전용 앱이다(TARGETED_DEVICE_FAMILY = 2). iPhone SE 에서 열리지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 실행, 홈, 저장된 프로젝트 다시 열기는 정상이다. 그리기와 재생, 내보내기는 화면을 누를 수단이 없어 못 써 봤고 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "RotoscopeiPad 새 빌드에서 deprecated 경고 8개(전체 Swift 경고도 8개). VideoSource.swift:22 tracks(withMediaType:), :25 nominalFrameRate 2개, :27 duration, :31 naturalSize, :32 preferredTransform(모두 iOS 16 지원 종료, load(.x) 로 바꾸라는 경고), RotoProject.swift:137 requestRecordPermission(iOS 17), ContentView.swift:51 onChange(of:perform:)(iOS 17).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "따라 그리기 세트를 고르면 가이드 선이 보인다",
+   "outcome": "pass",
+   "note": "저장된 따라 그리기 프로젝트(02_bunny)를 열자 캔버스에 토끼 밑그림 선이 연한 파란색으로 보였다.",
+   "screenshot": "claude-qa-rotoscope-02-reopen-last"
+  },
+  {
+   "title": "홈에 따라 그리기 세트 열 가지가 놓인다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 홈에 카메라, 보관함, 링크, 빈 종이 카드 다음으로 공, 토끼, 새, 물고기, 꽃, 나비, 자동차, 로켓, 개구리, 바람개비 따라 그리기 세트 열 가지가 놓였다.",
+   "screenshot": "claude-qa-rotoscope-01-home"
+  },
+  {
+   "title": "카드가 한 화면에 꽉 차게 배치된다",
+   "outcome": null,
+   "note": "세로 13인치에서 카드 14장이 4열 4줄로 놓이고 화면 아래 3분의 1쯤은 비어 있다. HomeView.swift 의 fixedGrid 는 화면에 들어가는 줄 수만큼 칸을 만들고 남는 칸은 비워 두는 설계라, 카드가 적을 때 빈 칸이 생기는 것이 의도인지 확인이 필요하다.",
+   "screenshot": "claude-qa-rotoscope-01-home"
+  },
+  {
+   "title": "하얀 종이 카드를 누르면 빈 프로젝트가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장된 프로젝트에 마지막 그림이 썸네일로 뜬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "따라 그리기 프로젝트 카드에 밑그림이 비쳐 보인다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 최근에 그린 프로젝트가 맨 앞에 온다",
+   "outcome": null,
+   "note": "프로젝트 두 개를 넣고 켜자 수정 시각이 더 최근인 쪽이 자동으로 열려 RotoProject.listProjects 의 최근 순 정렬은 동작했다. 홈 그리드에서 맨 앞에 오는지는 홈이 자동으로 닫혀 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프로젝트를 꾹 누르면 지우기가 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지우기를 누르면 그 카드가 홈에서 바로 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오른쪽 위 톱니로 지원 화면이 열린다",
+   "outcome": null,
+   "note": "홈 오른쪽 위 톱니가 보이는 것까지 봤다. 누를 수단이 없어 지원 화면은 못 열었다.",
+   "screenshot": null
+  },
+  {
+   "title": "프로젝트가 많아지면 홈이 세로로 스크롤된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 카드로 그 자리에서 영상을 찍는다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 촬영은 30초가 되면 저절로 멈춘다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "보관함에서 고른 영상이 페이지로 나뉜다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 카드는 권한을 묻지 않고 보관함을 연다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "영상은 1초에 여덟 장쯤으로 나뉜다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 RotoscopeiPad 하나뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "링크 카드에 영상 주소를 붙여 열 수 있다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "링크 창의 붙여넣기가 복사한 주소를 채운다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "주소 칸이 비어 있으면 열기가 눌리지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "여는 동안 진행 표시와 안내 문구가 보인다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "네트워크가 없으면 링크 열기가 실패로 끝난다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "동영상이 아닌 주소는 확인해 달라는 문구가 뜬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "가져온 영상은 복사돼 오프라인에서도 열린다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "붓과 지우개를 번갈아 골라 쓴다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "지우개는 밑그림 선은 두고 내 선만 지운다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "색 동그라미를 고르면 자동으로 붓으로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "붓 굵기 점 세 개로 선 두께가 달라진다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "되돌리기로 방금 그은 선만 사라진다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "휴지통으로 지운 페이지가 되돌리기로 돌아온다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "영상 위에서 그릴 때는 영상이 반쯤 흐려진다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "앞 페이지 그림이 다음 페이지에 연하게 비친다",
+   "outcome": "pass",
+   "note": "앞 페이지(3쪽)에 그린 빨간 선이 4쪽 위에 연한 분홍으로 비쳐 보였다(저장된 프로젝트를 열어 확인).",
+   "screenshot": "claude-qa-rotoscope-02-reopen-last"
+  },
+  {
+   "title": "펜슬을 가까이 대면 닿을 자리가 미리 보인다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드를 돌려도 그림 위치가 어긋나지 않는다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "도장을 탭하면 고른 크기로 찍힌다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "양옆 검은 띠가 도장 팔레트로 쓰인다",
+   "outcome": "pass",
+   "note": "편집 화면 캔버스 양옆 검은 띠에 도장 단추가 왼쪽 4개(하트, 동그라미, 네모, 세모), 오른쪽 4개(별, 꽃, 자동차, 새)와 크기 점 세 개로 놓여 있다.",
+   "screenshot": "claude-qa-rotoscope-02-reopen-last"
+  },
+  {
+   "title": "도장 여덟 가지를 골라 바꿀 수 있다",
+   "outcome": null,
+   "note": "도장 여덟 가지가 양옆에 놓인 것은 봤다. 골라 바꾸는 것은 누를 수단이 없어 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "도장 크기 점이 붓 굵기와 따로 조절된다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "색을 바꾸면 도장도 그 색으로 찍힌다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "찍은 도장도 지우개와 되돌리기가 먹는다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장자리를 탭해도 도장이 캔버스 안에 찍힌다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "도장을 고른 채 펜슬을 대면 도장 윤곽이 미리 보인다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음 그림 버튼으로 페이지가 넘어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "페이지를 넘기면 가운데 쪽수가 잠깐 뜬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 페이지에서는 이전 버튼이 눌리지 않는다",
+   "outcome": "pass",
+   "note": "1쪽에 있는 프로젝트를 열자 아래 왼쪽 이전 버튼이 흐리게(눌리지 않는 상태로) 보였다.",
+   "screenshot": "claude-qa-rotoscope-03-legacy-dark"
+  },
+  {
+   "title": "따라 그리기 마지막 쪽에서는 다음 버튼이 눌리지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 프로젝트는 다음을 누를수록 페이지가 늘어난다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "슬라이더를 끌면 원하는 페이지로 이동한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌄ 버튼으로 재생 바를 내려 캔버스를 넓게 쓴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌃ 버튼으로 숨긴 재생 바를 다시 올린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재생하면 밑그림은 사라지고 내 그림만 움직인다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경을 켠 채 재생하면 영상이 또렷하게 돈다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "재생 중 캔버스를 탭하면 그리지 않고 멈춘다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 장뿐인 빈 종이에서는 재생과 녹음이 시작되지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "길게 녹음한 목소리가 재생할 때 끝까지 나온다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "녹음 중에는 애니메이션이 계속 반복된다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "정지 버튼을 누르면 녹음이 끝난다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "녹음 중 마이크 버튼이 빨갛게 바뀐다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "녹음이 있는 프로젝트는 마이크 버튼이 보라색이다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "재생하면 녹음한 목소리가 그림과 함께 나온다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "다시 녹음하면 이전 목소리를 덮어쓴다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "마이크 권한을 거부하면 녹음이 시작되지 않는다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경 가리기를 켜고 재생하면 그림만 흰 종이에서 돈다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경을 가리고 재생하면 그린 페이지만 이어서 돈다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경 가리기 버튼은 영상 프로젝트에만 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경 가리기 설정이 프로젝트마다 저장된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 RotoscopeiPad 하나뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "내보낸 결과가 사진 앱에 저장된다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "내보내는 동안 진행 막대가 찬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝나면 큰 체크 표시가 잠깐 뜬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "녹음한 목소리가 저장한 영상에 함께 들어 있다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "따라 그리기를 저장하면 밑그림 없이 내 선만 담긴다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "배경을 가리고 저장하면 그린 장면만 흰 바탕 영상이 된다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 종이 프로젝트도 영상으로 저장된다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진 권한을 거부하면 저장이 실패로 끝난다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백을 적어 보내면 감사 문구가 뜬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "리뷰 남기기를 누르면 별점 창이 뜬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "버전 줄에 지금 앱 버전이 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 홈 화면과 저장된 프로젝트를 다시 연 편집 화면까지만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "몇 번 쓰고 나면 만족도 질문이 한 번 뜬다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "만족도 질문에서 아쉬운 점을 고르면 피드백 창이 열린다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 프로젝트를 다시 열면 그림이 남아 있다",
+   "outcome": null,
+   "note": "project.json 에 선을 직접 적어 넣고 켜면 그 선이 그대로 그려진다(불러오기 쪽은 됨). 앱이 그림을 저장하는 쪽(saveNow)은 그릴 수단이 없어 확인 못 했고 테스트도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다시 열면 마지막으로 보던 쪽에서 시작한다",
+   "outcome": "pass",
+   "note": "currentFrame 이 3 인 project.json 을 넣고 켜자 4쪽(슬라이더 4/20 위치)에서 바로 시작했다. 앱이 보던 쪽을 적어 두는 쪽은 그릴 수단이 없어 직접 확인하지 않았다.",
+   "screenshot": "claude-qa-rotoscope-02-reopen-last"
+  },
+  {
+   "title": "앱을 다시 열면 마지막 프로젝트가 바로 열린다",
+   "outcome": "pass",
+   "note": "저장된 프로젝트가 있는 상태로 앱을 끄고 다시 켜자 홈을 거치지 않고 가장 최근 프로젝트(토끼 따라 그리기)가 바로 열렸다(ContentView.swift onAppear 의 복원).",
+   "screenshot": "claude-qa-rotoscope-02-reopen-last"
+  },
+  {
+   "title": "집 버튼으로 나가도 그림이 저장돼 있다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "선을 긋고 곧바로 앱을 꺼도 그림이 남는다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "예전 버전에서 만든 프로젝트도 그대로 열린다",
+   "outcome": "pass",
+   "note": "blankPageCount·presetId·hideBackground 키가 없고 선에 색·굵기 속성도 없는 옛 형식 project.json 을 넣고 켜자 빈 종이 프로젝트로 그대로 열리고 빨간 도형이 기본 색으로 그려졌다.",
+   "screenshot": "claude-qa-rotoscope-03-legacy-dark"
+  },
+  {
+   "title": "프로젝트를 지우면 영상 캐시도 함께 사라진다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 RotoscopeiPad 하나뿐) 이를 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "파일 앱의 팔랑북 폴더에 저장한 영상 폴더가 생긴다",
+   "outcome": null,
+   "note": "화면을 누르거나 그릴 수단이 없어 못 봤다. 손가락·펜슬 입력이 필요하다.",
+   "screenshot": null
+  }
+ ]
+}

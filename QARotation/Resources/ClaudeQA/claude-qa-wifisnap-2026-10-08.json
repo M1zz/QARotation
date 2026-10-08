@@ -1,0 +1,611 @@
+{
+ "id": "wifisnap-2026-10-08-claude",
+ "bundleID": "com.leeo.wifisnap",
+ "startedAt": "2026-10-09T00:49:35+09:00",
+ "durationSeconds": 1500,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔고 첫 실행, 다시 켜기 10번(다크, 가장 큰 글자, 저장 목록을 넣은 상태 포함) 동안 한 번도 죽지 않았고 매번 와이파이 추가 카드가 있는 첫 화면이 떴다.",
+   "screenshot": "claude-qa-wifisnap-02-home"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 안내문 사진이 필요하다. 직접 입력으로 QR 만들기도 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. WifiSnapSpec.swift 의 monetization 이 .free 이고 StoreKit 을 쓰는 코드가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(WifiSnapSpec.swift monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "다크로 첫 화면만 봤고 글자가 다 읽힌다. 와이파이 상세(QR 판)는 열지 못했다. 위젯 딥링크 wifisnap://qr 로 열어 보려 했으나 시스템 열기 확인 창을 누를 수 없어 못 봤다.",
+   "screenshot": "claude-qa-wifisnap-03-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 첫 화면 와이파이 추가 카드의 촬영·앨범 버튼 글자가 한 글자씩 세로로 쪼개져(촬/영, 앨/범) 두 줄로 선다. 제목 와이파이 추가와 부제도 네 줄로 늘어난다. ContentView.swift scanCard 의 HStack 에 두 버튼을 maxWidth .infinity 로 나란히 두고 큰 글자에서 세로로 바꾸지 않아서다. 저장된 네트워크 목록은 펼치지 못해 못 봤다.",
+   "screenshot": "claude-qa-wifisnap-04-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면(SE) 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 첫 화면은 어긋남 없이 떴다. 와이파이 상세, 안내판 편집, 위젯은 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "WifiSnap·WifiSnapWidget 두 스킴 클린 빌드에서 Swift 컴파일 경고 0개(deprecated 0개).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에 스캔 팁이 한 번 떴다 닫힌다",
+   "outcome": null,
+   "note": "새로 깔고 켜니 촬영 버튼 위에 사진으로 자동 입력 팁이 떴다. 팁을 닫는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 닫지 않은 채 다시 켜면 매번 다시 떴다(정상 동작).",
+   "screenshot": "claude-qa-wifisnap-02-home"
+  },
+  {
+   "title": "첫 실행에 위치 권한을 묻고 허용하면 연결 카드가 뜬다",
+   "outcome": null,
+   "note": "첫 실행에 위치 권한 창(현재 연결된 와이파이 이름을 확인하기 위해 필요합니다)이 뜨는 것은 봤다. 허용 뒤 지금 연결됨 카드는 실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": "claude-qa-wifisnap-01-first-launch"
+  },
+  {
+   "title": "위치 권한을 거부해도 QR 만들기는 된다",
+   "outcome": null,
+   "note": "직접 입력으로 QR 만들기는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결된 와이파이가 없으면 와이파이 추가 카드가 펼쳐져 있다",
+   "outcome": "pass",
+   "note": "와이파이에 붙지 않은 시뮬레이터에서 앱을 여니 촬영·앨범 버튼이 보이는 와이파이 추가 카드가 맨 위에 펼쳐져 있다(직접 입력 버튼은 팁에 가려 있다).",
+   "screenshot": "claude-qa-wifisnap-02-home"
+  },
+  {
+   "title": "연결된 와이파이가 큰 QR 카드로 보인다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 뒤집으면 손님용 안내판 면이 나온다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 탭해도 뒤집히고 세로 스크롤은 막히지 않는다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 최근에 고친 안내판이 카드 뒷면에 보인다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에서 와이파이를 바꾸고 오면 이름이 갱신된다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "와이파이에 연결되면 와이파이 추가 카드가 저절로 접힌다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내판을 찍으면 ID/PW가 인식돼 연결된다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 안내문 사진이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "앨범 사진에서도 아이디·비밀번호가 읽힌다",
+   "outcome": null,
+   "note": "앨범 사진 고르기는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내판에 인쇄된 QR을 찍으면 그 값이 그대로 채워진다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 안내문 사진이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "한글이 섞인 이름도 사진에서 깨지지 않고 읽힌다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 안내문 사진이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "띄어쓴 라벨이나 조사가 붙은 라벨도 값을 찾는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다. 파서는 WifiCredentialParser.swift 에 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라가 없는 기기에선 촬영 버튼이 꺼진다",
+   "outcome": "pass",
+   "note": "카메라가 없는 시뮬레이터에서 촬영 버튼이 흐리게 꺼져 있다(ContentView.swift 의 .disabled(!ImagePicker.isCameraAvailable)). 앨범 버튼은 켜져 있다.",
+   "screenshot": "claude-qa-wifisnap-02-home"
+  },
+  {
+   "title": "인식 중에는 진행 표시가 돌아간다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 안내문 사진이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자를 못 읽어도 직접 입력 칸이 열린다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 안내문 사진이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결에 성공하면 입력 카드가 닫히고 목록에 저장된다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결에 실패하면 설정을 되돌리고 알려 준다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "대소문자가 틀린 이름은 표기를 바꿔 한 번 더 붙는다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "재시도까지 실패하면 다른 표기 후보를 알려 준다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "비밀번호 길이가 맞지 않으면 연결 전에 바로 알려 준다",
+   "outcome": null,
+   "note": "직접 입력 칸에 글자를 넣는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이미 그 와이파이에 있으면 확인 창 없이 바로 연결된다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "위치 권한이 없으면 연결 확인을 못 했다고 알려 준다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "조각을 탭하면 빈 칸부터 차례로 들어간다",
+   "outcome": null,
+   "note": "사진을 읽혀야 퍼즐 조각이 생긴다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "조각을 길게 눌러 넣을 칸을 고른다",
+   "outcome": null,
+   "note": "사진을 읽혀야 퍼즐 조각이 생긴다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "인식이 틀리면 퍼즐 조각을 끌어 고칠 수 있다",
+   "outcome": null,
+   "note": "끌기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "두 칸끼리 끌면 아이디와 비밀번호가 맞바뀐다",
+   "outcome": null,
+   "note": "끌기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "조각이 여러 줄로 다 보이게 펼쳐진다",
+   "outcome": null,
+   "note": "사진을 읽혀야 조각이 생긴다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "칸에 직접 타이핑해서 고칠 수도 있다",
+   "outcome": null,
+   "note": "퍼즐 편집기를 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이 폰이 아는 이름도 조각으로 함께 뜬다",
+   "outcome": null,
+   "note": "퍼즐 편집기를 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "규격을 넘는 긴 이름은 받아들이지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "와이파이 이름을 넣기 전에는 연결·QR 버튼이 잠겨 있다",
+   "outcome": null,
+   "note": "직접 입력을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 소스상 두 버튼이 credentials.ssid.isEmpty 일 때 disabled 다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결 없이 QR 만들기를 누르면 저장 후 상세가 바로 열린다",
+   "outcome": null,
+   "note": "직접 입력과 QR 만들기를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "미리 적은 이름과 대소문자만 달라도 연결 후 한 항목이 된다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "QR만 만든 와이파이에 나중에 붙으면 그때 위치가 남는다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "핫스팟 이름을 넣으면 QR 만들기가 주 버튼이 된다",
+   "outcome": null,
+   "note": "직접 입력 칸에 이름을 넣는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "핫스팟 이름의 둥근 따옴표가 QR에 그대로 들어간다",
+   "outcome": null,
+   "note": "다른 폰 카메라로 비춰 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "핫스팟은 목록에 핫스팟 뱃지를 달고 위쪽에 선다",
+   "outcome": null,
+   "note": "App Group 저장소에 핫스팟 이름(Leeo의 iPhone)을 넣고 켰지만 저장된 네트워크 머리를 펼치지 못해 목록을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세에서 내 핫스팟을 켜면 연결 버튼이 사라지고 안내가 뜬다",
+   "outcome": null,
+   "note": "와이파이 상세를 열지 못했다. 위젯 딥링크 wifisnap://qr 은 시스템 열기 확인 창을 누를 수 없어 막혔다.",
+   "screenshot": null
+  },
+  {
+   "title": "비밀번호 없이 만든 QR은 개방형으로 연결된다",
+   "outcome": null,
+   "note": "다른 폰 카메라로 비춰 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름에 세미콜론이나 콜론이 있어도 QR이 맞게 읽힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다. 이스케이프는 WifiQRPayload.swift 에 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "한글 이름도 QR로 만들어져 인식된다",
+   "outcome": null,
+   "note": "다른 폰 카메라로 비춰 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "비행기 모드에서도 QR 만들기가 된다",
+   "outcome": null,
+   "note": "비행기 모드는 시뮬레이터에서 못 켜고, 직접 입력도 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장된 게 없으면 목록에 저장된 네트워크 없음이 뜬다",
+   "outcome": null,
+   "note": "새로 깐 상태에서 저장된 네트워크 머리가 접혀 있어 펼치지 못했다. 소스상 비어 있으면 저장된 네트워크 없음을 그린다(ContentView.swift 632줄).",
+   "screenshot": null
+  },
+  {
+   "title": "목록 행을 밀어 연결·QR 공유가 된다",
+   "outcome": null,
+   "note": "밀기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "행을 눌러 큰 QR과 비밀번호 상세가 열린다",
+   "outcome": null,
+   "note": "목록 행을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 딥링크로 상세를 열려 했으나 열기 확인 창에 막혔다.",
+   "screenshot": null
+  },
+  {
+   "title": "비밀번호가 점으로 가려져 보인다",
+   "outcome": null,
+   "note": "와이파이 상세를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세에서 비밀번호를 눌러 복사한다",
+   "outcome": null,
+   "note": "와이파이 상세를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세의 QR 이미지 공유로 공유 시트가 뜬다",
+   "outcome": null,
+   "note": "와이파이 상세를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세의 이 폰 연결을 누르면 시트가 닫히고 연결을 시도한다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세에서 안내판 인쇄·공유로 내 안내판이 열린다",
+   "outcome": null,
+   "note": "와이파이 상세를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "길게 눌러 삭제·안내판 메뉴가 나온다",
+   "outcome": null,
+   "note": "길게 누르기는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "긴 이름도 잘리지 않고 줄바꿈된다",
+   "outcome": null,
+   "note": "아주 긴 이름을 App Group 저장소에 넣어 켰지만 목록을 펼치지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "근처 네트워크가 뱃지를 달고 위에 선다",
+   "outcome": null,
+   "note": "실제 장소 이동과 위치가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "지금 연결된 것에 초록 표시가 붙는다",
+   "outcome": null,
+   "note": "실기기 와이파이(NEHotspotConfiguration)가 필요하다. 시뮬레이터는 와이파이 연결을 지원하지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내판을 여러 장 만들어 목록에 쌓인다",
+   "outcome": null,
+   "note": "내 안내판 화면을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내판을 밀어 복제하면 사본이 맨 위에 생긴다",
+   "outcome": null,
+   "note": "밀기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내판을 모두 지워도 기본 안내판 하나가 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다. 소스상 PosterDesignStore 가 비면 기본 안내판을 하나 만든다.",
+   "screenshot": null
+  },
+  {
+   "title": "테마 일곱 가지를 골라 색이 바로 바뀐다",
+   "outcome": null,
+   "note": "안내판 편집을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드형과 A4 세로 중에서 고를 수 있다",
+   "outcome": null,
+   "note": "안내판 편집을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "매장 이름·로고를 얹어 안내판에 보인다",
+   "outcome": null,
+   "note": "안내판 편집을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "비밀번호 표시를 끄면 안내판에서 비밀번호 줄이 빠진다",
+   "outcome": null,
+   "note": "안내판 편집을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "직접 쓰는 줄을 더하고 지울 수 있다",
+   "outcome": null,
+   "note": "안내판 편집을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자 되돌리기로 인쇄 글자만 기본값이 된다",
+   "outcome": null,
+   "note": "안내판 편집을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내판 문구·테마가 재실행 후 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "인쇄 버튼으로 AirPrint 미리보기가 뜬다",
+   "outcome": null,
+   "note": "AirPrint 는 안내판 편집에서 눌러야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "A4 포스터로 공유하면 인쇄용 큰 이미지가 나온다",
+   "outcome": null,
+   "note": "안내판 공유는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "위치가 남은 와이파이가 없으면 지도 버튼이 숨는다",
+   "outcome": null,
+   "note": "저장된 네트워크 머리를 펼치지 못해 지도 버튼 자리를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지도에 위치가 남은 네트워크가 핀으로 선다",
+   "outcome": null,
+   "note": "여러 장소의 실제 위치가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "핀을 누르면 아래 카드에서 QR을 공유한다",
+   "outcome": null,
+   "note": "지도와 핀은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정 화면 캡처에서 와이파이 이름을 뽑아 온다",
+   "outcome": null,
+   "note": "설정 캡처 사진을 고르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "뽑은 이름을 체크하고 고쳐서 추가한다",
+   "outcome": null,
+   "note": "목록 가져오기 화면은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "가져온 이름이 와이파이 선택 메뉴에 뜬다",
+   "outcome": null,
+   "note": "목록 가져오기 화면은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "가져온 이름은 밀어서 지울 수 있다",
+   "outcome": null,
+   "note": "밀기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "캡처에서 건질 이름이 없으면 그렇게 알려 준다",
+   "outcome": null,
+   "note": "사진 고르기는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "와이파이 QR 위젯이 고른 네트워크 QR을 보인다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "고르지 않은 위젯은 지금 연결된 와이파이를 따라간다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "위젯을 눌러 그 네트워크 QR 상세가 열린다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인). 위젯이 여는 딥링크 wifisnap://qr 은 시뮬레이터에서 열기 확인 창에 막혀 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "고정한 와이파이를 지우면 위젯이 최근 것으로 바뀐다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "잠금 화면 위젯에 이름과 QR이 함께 선다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "원형 위젯은 QR 대신 지름길로 보인다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "한 줄 잠금 화면 위젯에 와이파이 이름이 뜬다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "저장된 게 없으면 위젯에 안내 문구가 뜬다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "목록을 고치면 위젯이 따라 갱신된다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(WifiSnapWidget 타깃은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "저장된 네트워크가 재실행 후 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다. App Group 저장소에 네트워크 넷을 넣고 여러 번 다시 켰지만 목록을 펼치지 못해 남았는지 눈으로 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "삭제한 네트워크는 재실행 후 돌아오지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "보이지 않는 글자가 섞인 이름을 붙여넣어도 QR이 맞다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(WifiSnap 프로젝트에 테스트 없음) 확인할 근거가 없다. 다른 폰 카메라 확인도 필요하다.",
+   "screenshot": null
+  }
+ ]
+}

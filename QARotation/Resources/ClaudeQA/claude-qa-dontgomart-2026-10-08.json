@@ -1,0 +1,581 @@
+{
+ "id": "dontgomart-2026-10-08-claude",
+ "bundleID": "com.leeo.DontGoMart",
+ "startedAt": "2026-10-09T01:41:36+09:00",
+ "durationSeconds": 1500,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "2.0.8",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 다시 켜기 6번(한국어, 영어, 다크, 가장 큰 글자, 공유 카드 실행 인자) 동안 죽지 않았다. 켤 때마다 오늘 갈 수 있나요? 카드가 바로 떴다.",
+   "screenshot": "claude-qa-dontgomart-01-first-launch"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "설정에서 매장을 켜는 것은 화면을 누를 수단이 없어 못 봤다. 기본 매장으로 오늘 상태(오늘 영업해요)와 다음 휴무일(D-2, 10월 11일 대형마트 (일요일))은 바로 떴다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": null,
+   "note": "설정의 응원하기 섹션은 화면을 누를 수단이 없어 못 봤다. DontGoMartTests.tipProductsLoad 가 StoreKit 테스트 설정에서 팁 상품 3종이 불러와지고 가장 싼 것이 커피인 것을 확인한다. 화면의 가격 표시는 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": null,
+   "note": "실제 App Store 계정과 재설치가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "다크 모드로 홈을 봤고 초록 오늘 상태 카드와 분홍 D-2, 파란 매장 이름이 묻히지 않는다. 캘린더는 휴무일 캘린더 보기를 눌러야 열린다. 위젯용 딥링크 dontgomart://calendar 를 simctl openurl 로 열어 보려 했으나 앱 Info.plist 에 URL 스킴이 등록돼 있지 않아 열리지 않았다(위젯 탭은 시스템이 앱에 바로 넘겨 이와 무관할 수 있다).",
+   "screenshot": "claude-qa-dontgomart-04-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)에서 홈 카드 글자(모레 휴무예요 띠, 오늘 영업해요, D-2, 단골 식당 7일)는 줄바꿈되어 잘리지 않았다. 설정 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-dontgomart-05-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 단위 테스트 11개 모두 통과, 앱 실행도 정상이다. 이 항목이 보라는 일요일 영업 여부 위젯과 캘린더는 못 봤다. 위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "DontGoMart·CalendarWidgetExtension 빌드에서 앱 코드 지원 종료 경고가 ReviewManager.swift:81 에 2개 있다(SKStoreReviewController.requestReview(in:), iOS 18.0 지원 종료, AppStore.requestReview(in:)로 바꾸라는 안내). 그 밖에 ClosedDayCalendarView.swift:207 insert 결과 미사용 경고 1개, 테스트 타깃이 불러오는 SDK 헤더 SKTestTransaction.h 의 경고 1개.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 일요일 휴무 대형마트가 켜져 있다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 홈 다음 휴무일과 다가오는 휴무일에 대형마트 (일요일)만 나왔다. 설정 매장 목록 자체는 눌러 열지 못했다.",
+   "screenshot": "claude-qa-dontgomart-01-first-launch"
+  },
+  {
+   "title": "매장을 하나도 안 고르면 안내가 뜬다",
+   "outcome": null,
+   "note": "매장을 모두 끄는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "여러 마트 선택이 재실행 후 남는다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지역별 대형마트 휴무 요일을 골라 켠다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다. 설정 조작은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "울산·제주 대형마트는 두 요일이 섞여 잡힌다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "코스트코 지점을 따로 선택할 수 있다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "설날·추석을 켜면 명절 당일이 휴무로 잡힌다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정을 닫으면 홈 숫자가 바로 갱신된다",
+   "outcome": null,
+   "note": "설정 조작은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매장을 모두 끄면 다음 휴무일이 비어 보인다",
+   "outcome": null,
+   "note": "설정 조작은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오늘 갈 수 있는지 한 줄로 크게 답한다",
+   "outcome": "pass",
+   "note": "홈 맨 위 오늘 갈 수 있나요? 카드에 초록 체크와 함께 오늘 영업해요가 한 줄로 크게 나왔다(영어는 Open today).",
+   "screenshot": "claude-qa-dontgomart-01-first-launch"
+  },
+  {
+   "title": "전부 휴무면 🚫, 일부면 ⚠️로 바뀐다",
+   "outcome": null,
+   "note": "휴무일에 홈을 봐야 해 못 봤다(오늘은 영업일).",
+   "screenshot": null
+  },
+  {
+   "title": "여러 마트를 고르면 휴무 매장이 나열된다",
+   "outcome": null,
+   "note": "매장을 둘 켜고 둘째 일요일에 봐야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음 휴무일 카드에 D-Day가 표시된다",
+   "outcome": "pass",
+   "note": "홈 다음 휴무일 카드에 분홍 큰 글씨 D-2 와 그 아래 2026년 10월 11일, 대형마트 (일요일)이 보였다.",
+   "screenshot": "claude-qa-dontgomart-01-first-launch"
+  },
+  {
+   "title": "다가오는 휴무일은 같은 날 매장을 한 칸에 묶는다",
+   "outcome": null,
+   "note": "같은 날 쉬는 매장 둘을 켜는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "2주 넘게 남은 휴무일은 몇 주 뒤인지 보인다",
+   "outcome": null,
+   "note": "홈 목록을 아래로 내리지 못해 못 봤다. 공유 카드의 다가오는 휴무 칸에는 3주 뒤 일요일 10월 25일이 적혀 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "자정을 넘겨 돌아오면 오늘 상태가 갱신된다",
+   "outcome": null,
+   "note": "기기 날짜 바꾸기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 다가오는 휴무일 한 줄을 한 문장으로 읽는다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "선택한 마트의 휴무일이 캘린더에 표시된다",
+   "outcome": null,
+   "note": "캘린더는 휴무일 캘린더 보기를 눌러야 열린다. 위젯용 딥링크 dontgomart://calendar 를 simctl openurl 로 열어 보려 했으나 앱 Info.plist 에 URL 스킴이 등록돼 있지 않아 열리지 않았다(위젯 탭은 시스템이 앱에 바로 넘겨 이와 무관할 수 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "화살표로 지난 달·다음 달을 넘긴다",
+   "outcome": null,
+   "note": "캘린더는 휴무일 캘린더 보기를 눌러야 열린다. 위젯용 딥링크 dontgomart://calendar 를 simctl openurl 로 열어 보려 했으나 앱 Info.plist 에 URL 스킴이 등록돼 있지 않아 열리지 않았다(위젯 탭은 시스템이 앱에 바로 넘겨 이와 무관할 수 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "날짜를 누르면 그 날 휴무 매장이 나온다",
+   "outcome": null,
+   "note": "캘린더는 휴무일 캘린더 보기를 눌러야 열린다. 위젯용 딥링크 dontgomart://calendar 를 simctl openurl 로 열어 보려 했으나 앱 Info.plist 에 URL 스킴이 등록돼 있지 않아 열리지 않았다(위젯 탭은 시스템이 앱에 바로 넘겨 이와 무관할 수 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "휴무가 없는 날은 없다고 알려 준다",
+   "outcome": null,
+   "note": "캘린더는 휴무일 캘린더 보기를 눌러야 열린다. 위젯용 딥링크 dontgomart://calendar 를 simctl openurl 로 열어 보려 했으나 앱 Info.plist 에 URL 스킴이 등록돼 있지 않아 열리지 않았다(위젯 탭은 시스템이 앱에 바로 넘겨 이와 무관할 수 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "점은 세 개까지만 찍히고 아래 목록엔 모두 나온다",
+   "outcome": null,
+   "note": "캘린더는 휴무일 캘린더 보기를 눌러야 열린다. 위젯용 딥링크 dontgomart://calendar 를 simctl openurl 로 열어 보려 했으나 앱 Info.plist 에 URL 스킴이 등록돼 있지 않아 열리지 않았다(위젯 탭은 시스템이 앱에 바로 넘겨 이와 무관할 수 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "내년 12월까지 휴무 점이 이어진다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다. DontGoMartTests.biweeklyWednesdayRule 은 2024년 한 해 계산만 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "마트마다 다른 색으로 구분되어 보인다",
+   "outcome": null,
+   "note": "캘린더는 휴무일 캘린더 보기를 눌러야 열린다. 위젯용 딥링크 dontgomart://calendar 를 simctl openurl 로 열어 보려 했으나 앱 Info.plist 에 URL 스킴이 등록돼 있지 않아 열리지 않았다(위젯 탭은 시스템이 앱에 바로 넘겨 이와 무관할 수 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 날짜와 휴무 여부를 함께 읽는다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "커스텀 매장 휴무 패턴이 저장·표시된다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다. 나만의 마트 만들기는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새로 추가한 나만의 마트는 켜진 채로 목록에 선다",
+   "outcome": null,
+   "note": "나만의 마트 추가는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매주·격주·매월 주차 세 방식을 고른다",
+   "outcome": null,
+   "note": "패턴 추가는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "격주는 첫 휴무일을 달력에서 고른다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다. biweeklyWednesdayRule 은 매월 2·4주 규칙이라 격주(첫 날부터 2주 간격)와 다르다.",
+   "screenshot": null
+  },
+  {
+   "title": "매월 주차는 칸을 골라 2·4주 화요일을 만든다",
+   "outcome": null,
+   "note": "패턴 추가 화면은 화면을 누를 수단이 없어 못 봤다. DontGoMartTests.biweeklyWednesdayRule 이 매월 2·4주 수요일 규칙의 날짜 계산을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "패턴을 고르면 미리보기 문구가 나온다",
+   "outcome": null,
+   "note": "패턴 추가 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름이나 패턴이 비면 저장이 막힌다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 요일을 두 패턴으로 겹쳐도 하루로 센다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "연필을 눌러 이름과 패턴을 고치면 바로 반영된다",
+   "outcome": null,
+   "note": "편집 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "나만의 마트 토글을 끄면 홈과 캘린더에서 빠진다",
+   "outcome": null,
+   "note": "토글 조작은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "커스텀 매장을 지우면 캘린더에서도 빠진다",
+   "outcome": null,
+   "note": "휴지통 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "휴무 카드 이미지를 만들어 공유한다",
+   "outcome": null,
+   "note": "DEBUG 실행 인자 -ScreenshotShareCard 로 휴무 소식 알리기 화면을 열어 카드 이미지(모레 휴무 D-2, 2주 휴무 달력, 다가오는 휴무)와 공유하기·인스타그램에 올리기 버튼을 봤다. 공유하기를 눌러 공유 시트를 여는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-dontgomart-02-share-card"
+  },
+  {
+   "title": "3초가 지나면 공유 버튼이 동그랗게 접힌다",
+   "outcome": null,
+   "note": "3초 뒤 접힘을 화면 두 장(6초, 11초)으로 찍었는데 두 장 모두 확성기 아이콘만 보여 접히기 전 글씨를 못 봤다. 판정할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "공유 카드에 휴무 매장 이름이 들어간다",
+   "outcome": "pass",
+   "note": "공유 카드 그림에 휴무 매장 이름 칩 대형마트 (일요일)이 들어가 있었다. 매장 하나만 켠 상태로 봤다.",
+   "screenshot": "claude-qa-dontgomart-02-share-card"
+  },
+  {
+   "title": "오늘 휴무면 공유 카드가 오늘 휴무로 만들어진다",
+   "outcome": null,
+   "note": "오늘이 영업일이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매장을 모두 끄면 공유가 글로만 나간다",
+   "outcome": null,
+   "note": "매장을 모두 끄는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림이 설정한 시각에 정확히 온다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 시간을 안 건드려도 오전 9시에 온다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "며칠 전에 알릴지 고를 수 있다",
+   "outcome": null,
+   "note": "알림 설정 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "전날 장보기 좋은 날 알림이 온다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 날 쉬는 두 매장 알림이 각각 온다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매장을 바꾸면 알림도 새 매장 기준으로 온다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매장을 많이 켜도 가까운 휴무일 알림이 빠지지 않는다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 권한을 거부하면 토글이 꺼진 채 안내된다",
+   "outcome": null,
+   "note": "알림 권한 거부는 기기 설정이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iOS 설정에서 알림을 끄면 앱 토글도 꺼져 보인다",
+   "outcome": null,
+   "note": "알림 권한 거부는 기기 설정이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림을 꺼도 예약이 남지 않는다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림을 탭하면 앱이 열린다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "일요일 영업 여부 위젯이 앱과 같게 보인다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "마트를 고르지 않으면 일요일 위젯이 마트 선택을 안내한다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "휴무 임박 위젯이 일주일 안에 경고한다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음 휴무 두 개를 보여 주는 위젯이 있다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 위젯에 일요일 영업 여부가 뜬다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯을 누르면 앱의 휴무일 캘린더가 열린다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다. 위젯은 widgetURL(Utillity.calendarDeepLink)을 쓰고 앱은 onOpenURL 로 캘린더를 연다. 앱 Info.plist 에 dontgomart 스킴(CFBundleURLTypes)이 없어 simctl openurl 은 실패했다. 위젯 탭은 시스템이 앱에 바로 넘겨 열릴 수 있으니 실기기에서 확인이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 안 열어도 자정이 지나면 위젯 날짜가 넘어간다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매장을 바꾸면 위젯 내용도 따라 바뀐다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯 갤러리에 이름과 설명이 한국어로 나온다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "영어 기기에서 위젯 날짜도 영어로 나온다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오늘 휴무일에만 홈에 커피 카드가 뜬다",
+   "outcome": null,
+   "note": "휴무일과 사용 횟수 조건이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "커피·케이크·식사 세 가지를 고를 수 있다",
+   "outcome": null,
+   "note": "설정 응원하기는 화면을 누를 수단이 없어 못 봤다. tipProductsLoad 테스트가 상품 3종이 불러와지는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "후원 완료 시 콘페티와 ☕️ 배지가 뜬다",
+   "outcome": null,
+   "note": "샌드박스 구매가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "동작 줄이기를 켜면 색종이 없이 감사 카드만 뜬다",
+   "outcome": null,
+   "note": "샌드박스 구매가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "후원하면 설정 맨 위에 후원자 배지가 생긴다",
+   "outcome": null,
+   "note": "샌드박스 구매가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "상품을 못 불러오면 다시 시도가 뜬다",
+   "outcome": null,
+   "note": "기내 모드를 켤 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "후원 결제를 취소하면 알림 없이 그대로 돌아온다",
+   "outcome": null,
+   "note": "샌드박스 구매가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "승인 대기 결제는 기다린다는 안내를 준다",
+   "outcome": null,
+   "note": "구매 승인 요청 계정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "후원자에게 가끔 감사 인사가 다시 뜬다",
+   "outcome": null,
+   "note": "후원 기록과 휴무일 조건이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "감사 인사의 한 번 더 응원하기로 다시 후원한다",
+   "outcome": null,
+   "note": "후원 기록과 휴무일 조건이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "후원 카드를 다음에로 닫으면 한동안 안 뜬다",
+   "outcome": null,
+   "note": "휴무일 조건과 버튼 누르기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에서 문의를 보내고 리뷰를 남긴다",
+   "outcome": null,
+   "note": "설정 지원 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "만족도 질문에서 아쉬운 점을 고르면 피드백으로 간다",
+   "outcome": null,
+   "note": "만족도 질문 조건이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "개인정보 처리방침과 지원 페이지 링크가 열린다",
+   "outcome": null,
+   "note": "설정 지원 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "버전 행을 일곱 번 누르면 개발자 항목이 나타난다",
+   "outcome": null,
+   "note": "버전 줄 누르기는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "네트워크 없이도 휴무일 계산이 된다",
+   "outcome": null,
+   "note": "휴무일 계산은 네트워크 없는 ClosureRuleEngine 으로 하고 biweeklyWednesdayRule 테스트가 오프라인으로 통과한다. 기내 모드에서 앱을 여는 것은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "기기를 돌려도 캘린더 칸이 깨지지 않는다",
+   "outcome": null,
+   "note": "기기 회전은 돌릴 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iPad 가로 화면에서 홈과 설정이 어색하지 않다",
+   "outcome": null,
+   "note": "iPad 시뮬레이터로는 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "영어 기기에서 화면 글이 모두 영어로 나온다",
+   "outcome": null,
+   "note": "영어로 띄운 홈은 모두 영어였다(Can I go today?, Open today, Next Closed Day, October 11, 2026, Supermarket (Sun)). 캘린더는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-dontgomart-03-english"
+  },
+  {
+   "title": "나만의 마트가 앱을 껐다 켜도 남는다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "예전 버전에서 만든 나만의 마트가 업데이트 후에도 보인다",
+   "outcome": null,
+   "note": "이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 다시 깔아도 후원자 배지가 돌아온다",
+   "outcome": null,
+   "note": "후원 기록과 재설치가 필요하다.",
+   "screenshot": null
+  }
+ ]
+}

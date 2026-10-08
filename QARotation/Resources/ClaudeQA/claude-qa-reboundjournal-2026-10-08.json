@@ -1,0 +1,587 @@
+{
+ "id": "reboundjournal-2026-10-08-claude",
+ "bundleID": "com.leeo.ReboundJournal",
+ "startedAt": "2026-10-09T02:02:57+09:00",
+ "durationSeconds": 549,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "2.1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 다시 켜기 20번 넘게(영어 인자, 다크, 가장 큰 글자, DEBUG -shot·-debug.open 화면 인자 포함) 동안 한 번도 죽지 않았다. 매번 징검돌 화면과 조약돌 인사가 바로 떴다.",
+   "screenshot": "claude-qa-reboundjournal-02-home"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화를 끝까지 이어 가는 흐름은 못 봤다. 이 앱에는 단위 테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "pass",
+   "note": "DEBUG 인자(-debug.open paywall, -debug.pro NO)로 연 징검돌 프로 화면에 혜택 네 줄, ZinggumDol Pro (Lifetime) $4.99, 구매하기, 구매 복원, 한 번 사면 계속 써요. 구독이 아니에요 가 빈칸 없이 보였다. 설정의 알아보기 버튼을 눌러 연 것은 아니다. 한국어 화면인데 상품 이름과 설명이 영어로, 가격이 달러로 나온다(시뮬레이터 스토어프런트 영향일 수 있다).",
+   "screenshot": "claude-qa-reboundjournal-04-pro"
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": null,
+   "note": "실제 App Store 계정이 필요하다. 설정 맨 위에 구매 복원 줄이 있는 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": "pass",
+   "note": "다크 모드에서 징검돌 홈, 지나온 길, 남긴 것들을 봤다. 말풍선·답 버튼·기록 카드 글자가 어두운 배경에 또렷이 보인다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)로 켜도 홈 말풍선·답 버튼·목표 추가·대화 화면의 글자가 전혀 커지지 않는다. 잘리지는 않지만 PebbleTheme.swift 의 글꼴(companionFont·title·body·label)이 .system(size:) 고정 크기라 다이내믹 타입을 따르지 않는다.",
+   "screenshot": "claude-qa-reboundjournal-06-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "SE 크기 시뮬레이터가 없고 키보드를 올릴 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 홈·대화·지나온 길·남긴 것들·목표 추가·설정·프로·내 목표 화면은 어긋남 없이 떴다. 위젯은 홈 화면에 얹어 봐야 해서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "ZinggumDol·ZinggumDolWidget 빌드의 Swift 경고 7개 중 지원 종료 경고 2개: ChatBubble.swift:289 Text 의 + 연산자(iOS 26 에서 지원 종료, 문자열 보간을 쓰라고 함), PasscodeView.swift:59 UIScreen.main(iOS 26 에서 지원 종료). 나머지 5개는 Combine·CoreData import 누락 경고다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 조약돌이 먼저 말을 건다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 조약돌이 먼저 안녕하세요. 저는 징검돌이에요. 로 말풍선을 띄웠다.",
+   "screenshot": "claude-qa-reboundjournal-01-first-launch"
+  },
+  {
+   "title": "목표가 없으면 적어볼게요 하나만 뜬다",
+   "outcome": "pass",
+   "note": "목표가 없는 첫 실행에서 인사가 끝나자 아래 답 줄에 적어볼게요 하나만 놓였다.",
+   "screenshot": "claude-qa-reboundjournal-01-first-launch"
+  },
+  {
+   "title": "목록도 그래프도 먼저 나오지 않는다",
+   "outcome": "pass",
+   "note": "새로 깐 첫 화면에 조약돌과 말풍선, 적어볼게요 버튼만 있고 기록 목록이나 그래프가 없다.",
+   "screenshot": "claude-qa-reboundjournal-01-first-launch"
+  },
+  {
+   "title": "조약돌 글자가 하나씩 찍히며 나온다",
+   "outcome": "pass",
+   "note": "첫 실행 8초째 화면은 셋째 말풍선이 요즘 해보려는 거 있어요?| 에서 커서와 함께 찍히는 중이었고, 몇 초 뒤 하나만 알려줄래요? 까지 이어졌다. 글자가 차례로 찍힌다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면을 누르면 타이핑을 건너뛴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "조약돌이 숨 쉬듯 천천히 움직인다",
+   "outcome": null,
+   "note": "움직임은 정지 화면으로 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "추적 허용을 묻는 창이 뜨지 않는다",
+   "outcome": "pass",
+   "note": "새로 깔고 첫 실행부터 스무 번 넘게 켜는 동안 앱 추적 허용 창은 한 번도 뜨지 않았다(알림 허락 창도 첫 실행에 뜨지 않았다). 소스에 AppTrackingTransparency 가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "조약돌 표정이 요즘 기록에 따라 바뀐다",
+   "outcome": null,
+   "note": "표정 변화는 대화를 마쳐야 해서 못 봤다. 해낸 기록이 많은 심은 데이터에서는 홈 조약돌이 웃는 표정이었다.",
+   "screenshot": null
+  },
+  {
+   "title": "매듭짓지 못한 기록을 먼저 물어본다",
+   "outcome": "pass",
+   "note": "어제 못 했어요로 남긴(매듭 안 된) 기록이 있는 채로 켜니 홈 인사가 7시에 일어나기 에 대해 어제 … 라고 적으셨어요. 지금은 어떤가요? 로 그 일부터 물었다(DEBUG 실행 인자 -shot 이 심는 목표 3개·기록 7개로 확인).",
+   "screenshot": "claude-qa-reboundjournal-02-home"
+  },
+  {
+   "title": "답을 고르면 말풍선이 아래에 쌓인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 답을 골라 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "말풍선이 늘어나도 화면이 따라 내려간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 답을 골라 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정을 다녀와도 인사를 다시 찍지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 설정에 다녀오는 흐름은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "대화를 끝내면 홈 인사가 새로 만들어진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화를 마치지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "메뉴에서 내 목표·목표 추가·남긴 것들·설정이 열린다",
+   "outcome": null,
+   "note": "DEBUG 인자로 내 목표·목표 추가·남긴 것들·설정이 각각 열리는 것은 봤다. 오른쪽 위 메뉴를 눌러 여는 것은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지나온 길 버튼을 음성으로 읽어 준다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "조약돌을 톡 건드리면 반응하며 한마디 한다",
+   "outcome": null,
+   "note": "조약돌을 누르거나 문지를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "조약돌을 톡톡 치면 간지러워 부르르 떤다",
+   "outcome": null,
+   "note": "조약돌을 누르거나 문지를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "조약돌을 문지르면 기울며 쓰다듬는 반응을 한다",
+   "outcome": null,
+   "note": "조약돌을 누르거나 문지를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "보이스오버로도 조약돌을 건드리고 쓰다듬는다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "조약돌 대화 기록이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 대화 기록 저장을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "조약돌이 말하는 동안은 답할 자리가 없다",
+   "outcome": null,
+   "note": "홈 첫 인사가 찍히는 동안에는 답 줄이 없다가 다 찍힌 뒤 적어볼게요가 나타나는 것은 봤다. 대화 화면 안에서는 확인하지 못했다.",
+   "screenshot": "claude-qa-reboundjournal-01-first-launch"
+  },
+  {
+   "title": "무슨 일이 있었는지와 마음을 따로 묻는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화를 이어 가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "감정 눈금을 고르면 낱말 칩이 나타난다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화를 이어 가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "고른 감정을 다시 눌러 되돌릴 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화를 이어 가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "감정이 가장 낮으면 더 묻지 않고 끝난다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화를 이어 가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "여기까지로 멈춰도 여태 말한 건 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화를 이어 가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자마다 조약돌 소리와 진동이 난다",
+   "outcome": null,
+   "note": "소리와 진동은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면에 실패나 리바운드 같은 낱말이 없다",
+   "outcome": null,
+   "note": "본 화면(홈·대화 첫 단계·지나온 길·남긴 것들·설정·프로)에는 실패나 리바운드라는 말이 없었다. 대화 전 과정은 누를 수단이 없어 다 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "음성으로 말한 내용이 대화에 들어간다",
+   "outcome": null,
+   "note": "음성 입력은 마이크가 있는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "마이크 권한을 거절하면 적어도 된다고 알린다",
+   "outcome": null,
+   "note": "음성 입력은 마이크가 있는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "듣는 동안 말풍선에 글이 실시간으로 쌓인다",
+   "outcome": null,
+   "note": "음성 입력은 마이크가 있는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "듣는 중에는 조약돌이 듣는 표정이 된다",
+   "outcome": null,
+   "note": "음성 입력은 마이크가 있는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "흐릿하면 이런 뜻인지 정리해서 되묻는다",
+   "outcome": null,
+   "note": "음성 입력은 마이크가 있는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "조금 다르다를 고르면 문장이 편집칸에 온다",
+   "outcome": null,
+   "note": "음성 입력은 마이크가 있는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "다시 말해 달라는 말이 나오지 않는다",
+   "outcome": null,
+   "note": "음성 입력은 마이크가 있는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표를 적으면 작은 일 하나를 되묻는다",
+   "outcome": null,
+   "note": "DEBUG 인자로 목표 추가를 열어 첫 질문 무엇을 향해 가고 있어요? 까지 봤다. 적고 다음을 누르는 것은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표를 더하면 홈 인사가 다시 만들어진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 목표를 더해 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "남긴 것들에서 날짜순으로 훑어본다",
+   "outcome": "pass",
+   "note": "남긴 것들이 오늘, 어제, 10월 7일 수요일, 10월 6일 화요일… 처럼 최근 날짜부터 차례로 놓여 있다(DEBUG 실행 인자 -shot 이 심는 목표 3개·기록 7개로 확인).",
+   "screenshot": "claude-qa-reboundjournal-05-records"
+  },
+  {
+   "title": "기록마다 점 세 개 메뉴에 고치기와 지우기가 있다",
+   "outcome": null,
+   "note": "기록마다 오른쪽에 점 세 개가 있는 것은 봤다. 눌러 메뉴를 여는 것은 못 했다.",
+   "screenshot": "claude-qa-reboundjournal-05-records"
+  },
+  {
+   "title": "지우기 전에 한 번 더 확인한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "고친 기록이 지나온 길에도 반영된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오늘과 어제는 날짜 대신 말로 표시된다",
+   "outcome": "pass",
+   "note": "남긴 것들에서 오늘과 어제 기록의 날짜 자리에 오늘, 어제 라고 적혀 있다(DEBUG 실행 인자 -shot 이 심는 목표 3개·기록 7개로 확인).",
+   "screenshot": "claude-qa-reboundjournal-05-records"
+  },
+  {
+   "title": "기록이 없으면 아직 기록 없음이 보인다",
+   "outcome": null,
+   "note": "새로 깐 상태에서 남긴 것들을 여는 인자는 데이터를 심어 버려 빈 화면을 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "내 목표에서 목표를 누르면 그 얘기로 인사가 바뀐다",
+   "outcome": null,
+   "note": "DEBUG 인자로 내 목표 목록(목표 세 개와 주간 돌)을 봤다. 목표를 누르는 것은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표 이름을 고치면 남긴 기록도 새 이름을 따른다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표를 내려놓아도 남긴 기록은 그대로다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지난 주 징검돌에서 기록이 보인다",
+   "outcome": null,
+   "note": "지난 주로 넘기는 것은 누를 수단이 없어 못 봤다. 이번 주 돌에는 기록한 날마다 채워진 돌이 보인다.",
+   "screenshot": null
+  },
+  {
+   "title": "밟지 않은 돌도 윤곽으로 남아 있다",
+   "outcome": null,
+   "note": "이번 주 아직 오지 않은 토요일 자리가 흐린 윤곽 돌로 남은 것은 봤다. 기록하지 않은 지난 날이 낀 주는 데이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "못 지킨 날에 붉은색을 쓰지 않는다",
+   "outcome": "pass",
+   "note": "어제 못 했어요로 남긴 날(목요일)의 돌이 다른 날과 같은 모래색이고 붉은색이 어디에도 없다(라이트·다크 모두).",
+   "screenshot": null
+  },
+  {
+   "title": "연속 일수나 달성률 같은 숫자가 없다",
+   "outcome": "pass",
+   "note": "지나온 길 화면을 위에서 아래로 봤고 연속 며칠이나 몇 퍼센트 같은 셈이 없다. 목표 줄에는 오늘 남김, 3일 전에 남김 같은 마지막 기록 시점만 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표를 고르면 조약돌이 그 얘기를 시작한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오래된 이야기는 접어 뒀다고 알려 준다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록 없는 날 돌을 누르면 이날은 지나갔다고 알려 준다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "돌 하나하나를 음성이 날짜로 읽는다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "네 번째 목표를 적으려 하면 프로 안내가 뜬다",
+   "outcome": "pass",
+   "note": "프로 없이(-debug.pro NO) 목표 세 개를 둔 채 목표 추가를 여니 지금 해보려는 게 벌써 3개예요. 와 프로로 더 적을래요, 지금은 그냥 둘게요 가 떴다.",
+   "screenshot": "claude-qa-reboundjournal-03-goal-limit"
+  },
+  {
+   "title": "대화에서 정한 다음 걸음은 목표가 차도 막지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 대화에서 다음 걸음을 적어 보내지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠긴 조약돌 결을 누르면 프로 화면이 뜬다",
+   "outcome": null,
+   "note": "설정 조약돌 고르기에 강돌·이끼돌 등 자물쇠 붙은 결이 있는 것은 봤다. 눌러 보는 것은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "프로에서 고른 조약돌 결이 홈과 위젯에 입혀진다",
+   "outcome": null,
+   "note": "프로 결 선택과 위젯은 누를 수단이 없고 위젯은 홈 화면에 얹어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료에서 기록 내보내기를 누르면 프로 화면이 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프로에서 기록 내보내기로 글 파일을 건넨다",
+   "outcome": null,
+   "note": "공유 시트와 파일 앱은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프로를 사면 설정 맨 위가 고마워요 문구로 바뀐다",
+   "outcome": null,
+   "note": "샌드박스 구매가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯을 누르면 바로 조약돌과 대화가 열린다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯 글이 앱 첫마디와 같다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록을 남기면 위젯 문구가 바뀐다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 위젯에도 한 마디가 뜬다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "비밀번호 설정 후 재실행하면 잠긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 비밀번호·알림 설정을 바꾸지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "비밀번호 숫자 버튼이 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 비밀번호·알림 설정을 바꾸지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "틀린 비밀번호로는 화면이 안 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 비밀번호·알림 설정을 바꾸지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "비밀번호를 지우면 다시 안 잠긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 비밀번호·알림 설정을 바꾸지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림을 켜면 시간 고르는 줄이 나타난다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 비밀번호·알림 설정을 바꾸지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "정한 시각에 하루 알림이 온다",
+   "outcome": null,
+   "note": "정해진 시각 알림은 기기에서 기다려 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "말투를 바꾸면 처음부터 다시 인사한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 말투를 바꾸지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "고른 말투 예시 문장이 바로 바뀐다",
+   "outcome": null,
+   "note": "설정 말투 칸에 존댓말이 골라져 있고 아래 보기 문장 오늘은 어땠어요? 가 있는 것은 봤다. 반말로 바꾸는 것은 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "말할 때 소리를 끄면 글자만 찍힌다",
+   "outcome": null,
+   "note": "소리와 진동은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "말할 때 진동만 따로 켤 수 있다",
+   "outcome": null,
+   "note": "소리와 진동은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "소리와 진동 설정이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 설정 저장을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "말투 안내 팁이 메뉴 위에 떠 준다",
+   "outcome": null,
+   "note": "대화를 마친 뒤 홈 메뉴 위 팁은 못 봤다. 설정 화면 말투 칸 위에 편한 쪽으로 두세요 팁이 뜬 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "익명 사용 통계를 끄면 다시 열어도 꺼져 있다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 설정 저장을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "영어 기기에서 대화가 영어로 나온다",
+   "outcome": "pass",
+   "note": "-AppleLanguages (en) 으로 켜니 조약돌이 Hello. I'm ZinggumDol. 로 시작해 영어로 말을 걸고 답 버튼도 I'll write it 로 나왔다.",
+   "screenshot": null
+  },
+  {
+   "title": "영어에서는 말투 고르는 칸이 감춰진다",
+   "outcome": "pass",
+   "note": "영어로 연 설정에는 ZinggumDol Pro, Pebble finish, Sound/Haptics when speaking 은 있고 존댓말·반말 말투 칸이 없다(한국어 설정에는 있다).",
+   "screenshot": null
+  },
+  {
+   "title": "영어 기기에서 앱 이름이 ZinggumDol로 보인다",
+   "outcome": "pass",
+   "note": "영어로 켠 앱 맨 위 제목이 ZinggumDol 이고, 빌드된 en.lproj/InfoPlist.strings 의 CFBundleDisplayName 도 ZinggumDol 이다. 영어 기기 홈 화면 아이콘 이름은 기기 언어를 바꿔야 해서 직접 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "예전 버전에서 쓴 기록이 그대로 보인다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 예전 버전 데이터로 덮어 설치해 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "모든 기록 지우기는 지우기를 적어야 진행된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 기록 지우기 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "모든 기록을 지우면 목표와 기록이 다 빈다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 기록 지우기 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "지운 기록이 재실행 후에도 돌아오지 않는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 예전 버전 기록 삭제 후 재실행을 확인할 수단이 없다.",
+   "screenshot": null
+  }
+ ]
+}

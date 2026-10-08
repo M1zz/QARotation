@@ -1,0 +1,701 @@
+{
+ "id": "familybank-2026-10-08-claude",
+ "bundleID": "com.family.FamilyBank",
+ "startedAt": "2026-10-09T01:30:04+09:00",
+ "durationSeconds": 900,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔고 첫 실행, 다시 켜기 3번(다크, 가장 큰 글자 포함) 동안 한 번도 죽지 않았다. 다만 첫 설정을 마치지 못해 매번 쑥쑥용돈 시작하기 화면이 떴고 대시보드와 가족 카드는 못 봤다.",
+   "screenshot": "claude-qa-familybank-01-first-launch"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. FamilyBankSpec.swift 의 monetization 이 .free 이고 StoreKit 을 쓰는 코드가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(FamilyBankSpec.swift monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "다크로 첫 설정 화면만 봤고 글자와 화폐 이름 카드가 다 보인다. 첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": "claude-qa-familybank-02-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 첫 설정 화면 글이 말줄임으로 잘린다. 소개 글이 용돈을 주고, 결제…, 칸 제목이 우리집 화폐 이…로 끊기고 화면이 스크롤되지 않는다(OnboardingView.swift welcomeStep 이 ScrollView 없이 Spacer 로만 세워져 있음). 대시보드와 용돈 관리 화면은 첫 설정을 넘기지 못해 못 봤다.",
+   "screenshot": "claude-qa-familybank-03-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면(SE) 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "아이패드 시뮬레이터로 열어 보지 못했다(이번 QA는 iPhone 18 Pro Max 시뮬레이터).",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "FamilyBank 스킴 빌드에서 Swift 컴파일 경고 0개(deprecated 0개). 확장 타깃은 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "화폐 이름을 비우면 코인으로 정해진다",
+   "outcome": null,
+   "note": "첫 화면 화폐 이름 칸에 코인이 미리 들어가 있는 것은 봤다. 칸을 비우고 다음·이전을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 소스상 비어 있으면 다음에서 코인으로 채운다(OnboardingView.swift).",
+   "screenshot": "claude-qa-familybank-01-first-launch"
+  },
+  {
+   "title": "PIN이 4자리가 아니면 다음으로 못 넘어간다",
+   "outcome": null,
+   "note": "PIN 단계로 넘어가지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "PIN 두 번이 다르면 다음으로 못 넘어간다",
+   "outcome": null,
+   "note": "PIN 단계로 넘어가지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "부모와 자녀 역할을 골라 구성원을 등록한다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름을 비우면 구성원이 추가되지 않는다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "부모나 자녀가 빠지면 시작하기가 막힌다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이모지를 고르면 구성원 카드에 그대로 뜬다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정을 마치면 온보딩이 다시 뜨지 않는다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "시작하면 기본 투자 상품 세 개가 깔린다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가족별 총자산이 카드로 한눈에 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "우리집에 도는 돈이 가족 총자산의 합과 같다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다. 첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구성원을 누르면 지갑·저축·투자가 나뉘어 뜬다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "찍어서 결제 버튼은 자녀 상세에만 있다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "보유 투자 상품이 상세에 수익과 함께 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "액션 탭은 부모 PIN을 넣어야 열린다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "액션 탭을 열면 Face ID를 한 번 저절로 묻는다",
+   "outcome": null,
+   "note": "Face ID 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "Face ID를 취소하면 PIN 패드와 다시 열기 버튼이 남는다",
+   "outcome": null,
+   "note": "Face ID 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠그기를 누르면 다시 PIN을 묻는다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구성원 추가에서 이름이 없으면 추가가 꺼진다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀를 추가하면 바로 초대장이 뜬다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀 초대 QR 코드가 보이고 공유된다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구성원을 지우면 그 사람 거래 기록도 사라진다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "용돈을 지급하면 잔액과 거래 기록에 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "차감하면 잔액이 줄고 차감으로 기록된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지갑보다 많이 차감하면 잔액 부족이 뜬다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모 없이 주면 기록에 용돈으로 적힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀가 없으면 용돈 버튼이 꺼진다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잔액보다 큰 금액은 결제가 실패한다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "결제 이유를 적으면 기록에 함께 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "0이나 빈 금액으로는 보내기가 막힌다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "결제가 끝나면 완료 알림이 한 번 뜬다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "받은 사람 지갑에 받은 돈으로 들어간다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "받을 사람이 없으면 안내 문구가 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저축 입금을 하면 지갑에서 그만큼 빠진다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "출금하면 저축이 줄고 지갑이 는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "저축보다 큰 금액은 출금이 막힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 주가 지나면 밀린 이자가 한 번에 붙는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다. 기기 날짜를 바꿀 수단도 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "이자가 붙으면 거래 기록에 이자로 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 입금한 날부터 한 주를 센다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "이자율이 0%면 이자가 붙지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "12주 복리 예상 금액이 미리 보기로 나온다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "저축·투자 잔액이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "모의 펀드 매수·매도가 잔액에 반영된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "위험도별로 안정·보통·위험 상품이 나뉜다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "투자자 선택으로 자녀를 바꾸면 지갑이 바뀐다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "하루가 지나면 시세가 한 번 바뀐다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다. 기기 날짜를 바꿀 수단도 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "오르면 빨간 ▲, 내리면 파란 ▼로 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지갑이 모자라면 매수가 안 되고 필요 금액이 뜬다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "보유 수량과 평균 단가, 수익률이 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "없는 수량을 팔려 하면 매도가 막힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "일부를 팔아도 평균 단가가 그대로다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다 팔면 보유 목록에서 사라진다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "가격 기록이 적으면 차트 대신 안내가 뜬다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀가 없으면 투자 화면이 등록 안내를 띄운다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 투자 상품을 위험도와 함께 추가한다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "상품을 끄면 목록에서 판매가 중지된다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "원 가격을 넣으면 화폐 가격이 자동 계산된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "물품 추가는 이름과 가격이 있어야 된다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가게에서 사기를 누르면 확인 뒤 결제된다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "시장 탭 가게는 가격표만 보이고 사기 버튼이 없다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가게 결제 돈은 부모 지갑으로 들어간다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "물품 스위치를 끄면 가게와 바코드 목록에서 빠진다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물품 바코드가 가격표처럼 크게 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물품이 없으면 먼저 등록하라고 안내한다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 찍어서 결제를 열면 카메라 권한을 묻는다",
+   "outcome": null,
+   "note": "실기기 카메라가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "바코드를 찍으면 가게 물품이 결제된다",
+   "outcome": null,
+   "note": "실기기 카메라와 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 QR 코드를 비추면 아무 일도 없다",
+   "outcome": null,
+   "note": "실기기 카메라가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "꺼 둔 물품의 바코드는 찍어도 반응이 없다",
+   "outcome": null,
+   "note": "실기기 카메라가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "잔액이 모자라면 결제 실패가 뜬다",
+   "outcome": null,
+   "note": "실기기 카메라가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 권한을 거부하면 스캔이 막힌다",
+   "outcome": null,
+   "note": "실기기 카메라가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "시장 위쪽 지표 네 개가 지금 설정과 맞다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물가 카드가 지수와 오른 비율을 보여 준다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 주가 지나면 물가지수가 오른다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(FamilyBank 프로젝트에 테스트 없음) 확인할 근거가 없다. 기기 날짜를 바꿀 수단도 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "물가 추이 그래프가 주 단위로 이어진다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물가 상승률이 0%면 인플레이션 없음으로 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "우리집 통화량이 원 환산으로 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "거래 기록이 날짜별로 묶여 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "들어온 돈은 초록 +, 나간 돈은 빨간 -로 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "필터로 구성원과 거래 종류를 고른다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "거래가 없으면 빈 기록 안내가 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "부모 가이드에 10단계 수업이 차례로 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "수업을 열면 다섯 가지 안내 카드가 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "복리 계산기의 값을 바꾸면 결과가 바뀐다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "인플레이션 체험이 1,000의 진짜 힘 변화를 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이자율이 물가보다 높으면 저축이 힘을 지킨다고 나온다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀를 고르면 이 기기가 그 자녀 화면으로 바뀐다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀 폰 모드에서는 부모 탭이 보이지 않는다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀 폰 모드 기록과 투자는 그 자녀 것만 보인다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀 폰 모드는 앱을 다시 열어도 유지된다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀 폰 모드는 PIN 없이 못 벗어난다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "맞는 PIN을 넣으면 원래 다섯 탭으로 돌아온다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자녀 폰 모드는 이 기기에만 걸린다",
+   "outcome": null,
+   "note": "같은 iCloud 의 두 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "화폐 이름을 바꾸면 모든 화면 단위가 바뀐다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "환율을 바꾸면 가게 가격이 다시 계산된다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이자율과 물가 상승률을 슬라이더로 바꾼다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "PIN 변경은 네 자리를 채워야 저장된다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "PIN 변경 뒤에는 새 PIN으로만 열린다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기로 의견을 보낼 수 있다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다. 피드백 화면은 은행 설정 안에 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "리뷰 남기기를 누르면 별점 창이 뜬다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "초기화 확인에서 취소하면 아무것도 안 지워진다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 초기화를 하면 첫 설정으로 돌아간다",
+   "outcome": null,
+   "note": "첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 iCloud 기기에서 같은 자료가 보인다",
+   "outcome": null,
+   "note": "같은 iCloud 의 두 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud에서 로그아웃해도 기기 안에 저장된다",
+   "outcome": null,
+   "note": "iCloud 로그아웃은 기기 설정이라 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "인터넷이 없어도 지급과 결제가 동작한다",
+   "outcome": null,
+   "note": "비행기 모드는 시뮬레이터에서 못 켠다. 첫 설정(온보딩)을 넘길 수단이 없어(화면 누르기 불가, 디버그 인자 없음) 첫 화면 너머를 못 봤다.",
+   "screenshot": null
+  }
+ ]
+}

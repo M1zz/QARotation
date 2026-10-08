@@ -1,0 +1,563 @@
+{
+ "id": "bookmarkshot-2026-10-08-claude",
+ "bundleID": "com.leeo.bookmarkshot",
+ "startedAt": "2026-10-09T01:01:02+09:00",
+ "durationSeconds": 1200,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0.1",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔고 첫 실행, 다시 켜기 4번(다크, 가장 큰 글자 포함) 동안 죽지 않았고 서재 탭이 떴다. 다만 한 번은 켜고 4초 뒤에도 화면이 하얗게 비어 있었다(SwiftData CloudKit 컨테이너를 만드는 동안으로 보인다). 책이 없어 격자는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. BookmarkShotSpec.swift 의 monetization 이 .free 이고 StoreKit 을 쓰는 코드가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(BookmarkShotSpec.swift monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "다크로 서재 빈 화면만 봤고 글자가 다 보인다. 탭을 옮길 수 없어 문장과 오늘의 문장 탭은 못 봤다.",
+   "screenshot": "claude-qa-bookmarkshot-04-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 서재 빈 화면의 첫 책 추가하기 버튼이 아래 탭 줄 뒤로 들어가 두 줄 중 아랫줄(추가하기)이 탭 줄에 가려진다. 화면이 스크롤되지 않아 버튼을 온전히 볼 수 없다(LibraryView.swift 빈 상태). 오늘의 문장 탭은 열지 못했다.",
+   "screenshot": "claude-qa-bookmarkshot-03-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면(SE) 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 서재 빈 화면은 정상으로 떴다. 구절 스크랩과 위젯은 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "BookmarkShot·BookmarkShotWidgetExtension 두 스킴 빌드에서 Swift 컴파일 경고 0개(deprecated 0개).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "책이 없으면 첫 책을 담으라는 안내가 뜬다",
+   "outcome": "pass",
+   "note": "새로 깔고 서재 탭 가운데에 아직 등록된 책이 없어요 안내와 첫 책 추가하기 버튼이 선다. 버튼 글자 끝(기)이 버튼 오른쪽 가장자리에 바짝 붙어 있다.",
+   "screenshot": "claude-qa-bookmarkshot-01-first-launch"
+  },
+  {
+   "title": "표지를 찍으면 제목·저자가 채워진다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목 인식 신뢰도가 퍼센트로 나온다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "뒤표지 바코드를 찍으면 ISBN이 들어간다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "인식이 틀려도 저장 전에 고칠 수 있다",
+   "outcome": null,
+   "note": "책 추가 화면을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목이 비어 있으면 저장 버튼이 잠긴다",
+   "outcome": null,
+   "note": "책 추가 화면을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "표지 없이 저장한 책은 제목 색판으로 선다",
+   "outcome": null,
+   "note": "책 추가 화면을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 권한을 거부해도 앨범에서 고를 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "책 표지가 격자로 늘어선다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "서재 위에 모은 책 권수가 나온다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "책 상세에 그 책의 스크랩 수가 나온다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크랩이 없는 책은 첫 구절을 담으라고 안내한다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "책 상세에서 밀어서 스크랩을 지운다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "책을 지울 때 한 번 더 묻는다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "네 모서리를 맞추면 페이지가 반듯이 펴진다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "모서리 초기 위치가 자동으로 잡혀 있다",
+   "outcome": null,
+   "note": "페이지 사진을 고르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 고르자마자 옮긴 점이 제자리로 튀지 않는다",
+   "outcome": null,
+   "note": "끌기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "편 뒤에는 글자가 더 크고 또렷해진다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "기울게 찍어도 반듯하게 펴진다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "가로로 들고 찍어도 글자가 바로 선다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "페이지 번호가 자동으로 잡히고 고칠 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자가 없는 사진은 인식 실패를 알린다",
+   "outcome": null,
+   "note": "사진을 고르고 구문 추출을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "네트워크가 없어도 글자 인식이 된다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다. 비행기 모드도 시뮬레이터에서 못 켠다.",
+   "screenshot": null
+  },
+  {
+   "title": "손가락으로 그은 문장만 추출된다",
+   "outcome": null,
+   "note": "문지르기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "영어 페이지도 단어별로 그어진다",
+   "outcome": null,
+   "note": "문지르기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "지우개 모드로 잘못 그은 단어를 뺀다",
+   "outcome": null,
+   "note": "문지르기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 지우기로 그은 것이 한 번에 사라진다",
+   "outcome": null,
+   "note": "밑줄 화면을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "페이지 전체 버튼으로 모든 단어가 잡힌다",
+   "outcome": null,
+   "note": "밑줄 화면을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "두 손가락으로 확대·이동해 정밀하게 긋는다",
+   "outcome": null,
+   "note": "확대 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이동 모드에서는 그어지지 않고 화면만 움직인다",
+   "outcome": null,
+   "note": "확대 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내 문구가 처음 세 번만 보인다",
+   "outcome": null,
+   "note": "구문 추출을 세 번 하는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 소스상 ScanPageView.swift 의 @AppStorage highlightHintShownCount 로 센다.",
+   "screenshot": null
+  },
+  {
+   "title": "아무것도 안 그으면 저장이 잠긴다",
+   "outcome": null,
+   "note": "밑줄 화면을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "닫기를 누르면 아무것도 저장되지 않는다",
+   "outcome": null,
+   "note": "구절 스크랩을 열지 못했다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크랩이 없으면 문장 탭이 안내를 띄운다",
+   "outcome": null,
+   "note": "아래 탭을 문장으로 옮길 수 없어 못 봤다(TabView 에 선택 바인딩이나 디버그 인자가 없다).",
+   "screenshot": null
+  },
+  {
+   "title": "문장 줄에 책 제목·쪽번호·날짜가 붙는다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 문장 검색으로 스크랩이 찾아진다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모와 책 제목으로도 검색이 된다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "즐겨찾기한 문장만 따로 모아 본다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "즐겨찾기가 없을 때 하트 필터는 알맞은 안내를 띄운다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색 결과가 없으면 빈 화면이 안내된다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "책을 지우면 그 책 문장도 함께 정리된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(BookmarkShot 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "추출된 문장을 직접 고쳐 저장한다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "페이지 번호와 메모를 나중에 적어 넣는다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "즐겨찾기를 켜면 하트 필터에 잡힌다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "원본 페이지 사진을 다시 열어 본다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "문장을 카드 이미지로 공유할 수 있다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "긴 문장도 공유 카드에 잘리지 않고 담긴다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서도 공유 카드 글자가 또렷하다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "텍스트로 공유하면 문장과 출처가 함께 간다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크랩 삭제를 누르면 문장 목록에서 사라진다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매일 문장 하나가 골라져 뜬다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자정이 지나면 다른 문장으로 바뀐다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(BookmarkShot 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 문장을 누르면 다음 문장으로 넘어간다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모가 있으면 그때 남긴 메모가 함께 보인다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱과 위젯의 오늘의 문장이 같다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다. 위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "스크랩이 없으면 안내 문구가 대신 선다",
+   "outcome": null,
+   "note": "아래 탭을 오늘의 문장으로 옮길 수 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오늘의 문장에서 바로 공유 카드를 만든다",
+   "outcome": null,
+   "note": "책과 스크랩을 넣을 수단이 없어(SwiftData 저장, 디버그 시드 없음) 빈 상태만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오늘의 문장 위젯이 스크랩을 보여 준다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "작은 위젯은 문장이 다섯 줄까지 보인다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "큰 위젯에 책 제목과 페이지가 함께 선다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "위젯은 즐겨찾기한 문장 중에서 고른다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(BookmarkShot 프로젝트에 테스트 없음) 확인할 근거가 없다. 위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "잠금 화면 사각 위젯에 문장이 들어간다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "원형 위젯에 스크랩 개수가 나온다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "인라인 위젯에 문장 한 줄이 나온다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "문장을 담으면 위젯이 따라 갱신된다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "스크랩이 없는 위젯은 담으라고 알려 준다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 놓아 봐야 해서 확인하지 못했다(BookmarkShotWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "설정 톱니에서 지원 화면이 열린다",
+   "outcome": null,
+   "note": "오른쪽 위 톱니는 보이지만 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "톱니가 서재 더하기와 문장 하트를 가리지 않는다",
+   "outcome": "fail",
+   "note": "서재 탭 오른쪽 위에서 톱니가 서재 더하기 버튼을 덮는다. 톱니 동그라미 뒤로 툴바 더하기 버튼의 유리 원이 살짝 비어져 보이고 더하기 기호는 안 보인다. ContentView.swift 가 톱니를 TabView 전체에 .overlay(alignment: .topTrailing) 로 얹어, LibraryView.swift 의 ToolbarItem(placement: .primaryAction) 더하기와 같은 자리에 놓인다. 문장 탭 하트와 책 상세 휴지통도 같은 자리라 같은 문제로 보이지만 열어 보지는 못했다.",
+   "screenshot": "claude-qa-bookmarkshot-02-gear-covers-plus"
+  },
+  {
+   "title": "피드백 보내기로 의견을 보낼 수 있다",
+   "outcome": null,
+   "note": "피드백 화면은 톱니를 눌러야 열린다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "리뷰 남기기를 누르면 별점 창이 뜬다",
+   "outcome": null,
+   "note": "톱니를 눌러야 열린다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에 지금 앱 버전이 적힌다",
+   "outcome": null,
+   "note": "톱니를 눌러야 열린다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 빌드의 CFBundleShortVersionString 은 1.0.1 이다.",
+   "screenshot": null
+  },
+  {
+   "title": "버전을 일곱 번 누르면 개발자 피드백함이 열린다",
+   "outcome": null,
+   "note": "버전 줄을 일곱 번 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "며칠 쓰면 즐겁게 쓰고 계신지 한 번 묻는다",
+   "outcome": null,
+   "note": "설치 이틀 뒤 조건이라 볼 수 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이콘이 다크·틴티드에서도 어울린다",
+   "outcome": null,
+   "note": "홈 화면 아이콘은 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드에서 열어도 촬영과 밑줄이 된다",
+   "outcome": null,
+   "note": "아이패드 시뮬레이터로 열어 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "서재 더하기와 문장 하트가 이름으로 읽힌다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다. 톱니에는 accessibilityLabel 설정이 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "표지가 많은 서재도 스크롤이 끊기지 않는다",
+   "outcome": null,
+   "note": "대량 데이터 성능 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 문장이 재실행 후에도 서재에 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(BookmarkShot 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud가 안 되면 기기에만 저장된다",
+   "outcome": null,
+   "note": "iCloud 를 끄는 것은 기기 설정이라 못 했다. 소스상 CloudKit 컨테이너를 못 만들면 로컬 저장으로 넘어간다(BookmarkShotApp.swift).",
+   "screenshot": null
+  },
+  {
+   "title": "기기를 바꿔도 같은 계정이면 서재가 따라온다",
+   "outcome": null,
+   "note": "두 기기 iCloud 동기화는 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진이 밖으로 나가지 않고 기기에서 처리된다",
+   "outcome": null,
+   "note": "실기기 카메라와 실제 책 페이지가 필요하다. 비행기 모드도 시뮬레이터에서 못 켠다.",
+   "screenshot": null
+  }
+ ]
+}

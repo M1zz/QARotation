@@ -1,0 +1,623 @@
+{
+ "id": "lectureq-2026-10-08-claude",
+ "bundleID": "com.lectureq.LectureQ",
+ "startedAt": "2026-10-09T01:08:49+09:00",
+ "durationSeconds": 406,
+ "deviceModel": "Claude 자동 QA · Mac",
+ "osVersion": "macOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "macOS 27.0에서 Debug 빌드를 네 번 켜고 끝냈다(데모 데이터 세 번, 빈 저장 폴더 한 번). 매번 6초 안에 메인 창(데모는 '머신러닝 입문 · 3강 경사하강법', 빈 상태는 '질문 노트')이 떴고 죽지 않았다. 세 칸 화면 자체는 화면이 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "질문 입력·답 적기에 키 입력이 필요하고 화면이 잠겨 있어 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "소스에 StoreKit·구매 코드가 없다. 무료 앱이다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "소스에 StoreKit·구매 코드가 없다. 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "LectureQ 스킴 빌드에서 Swift 컴파일 경고 0개.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 강의 없이 안내 문구만 보인다",
+   "outcome": null,
+   "note": "저장 폴더(~/Library/Application Support/LectureQ)가 없는 상태로 켜니 튕기지 않고 '질문 노트' 창이 떴다. 강의를 선택하세요 안내는 화면이 잠겨 있어 눈으로 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "강의가 없을 때 질문 추가 시트가 강의 없음을 알린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다시 열면 마지막으로 보던 강의가 열린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "보던 강의를 지운 뒤 다시 열면 가장 최근 강의가 열린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "강의 추가로 새 강의와 블록 하나가 생긴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가운데 열에서 강의 이름을 고치면 툴바 메뉴도 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "강의 메뉴에서 다른 강의로 바꾸면 질문과 블록이 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "강의를 바꾸면 질문 상세가 비워진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "현재 강의 삭제가 질문과 블록까지 함께 지운다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌘⇧N으로 질문 추가 시트가 뜨고 바로 입력된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "질문 추가 시트의 시점에 지금 시각이 미리 들어간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Return을 누르면 질문이 저장되고 시트가 닫힌다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장하고 계속은 시트를 열어 둔 채 칸만 비운다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 질문은 저장 버튼이 눌리지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Esc로 닫으면 적던 질문이 생기지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "시점을 지우고 저장하면 목록에 시각이 안 붙는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오후 시각도 오전·오후 없이 24시간으로 찍힌다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물음표를 누르면 해결 여부와 색이 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "미해결만을 켜면 해결된 질문이 숨는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "미해결이 없으면 미해결 질문이 없어요가 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "질문이 없는 강의는 단축키 안내를 띄운다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "꼬리질문이 원질문 바로 아래 들여써 보인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록에서 질문을 우클릭해 지우면 상세도 비워진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "원질문을 지워도 꼬리질문은 목록에 남는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "질문을 잇달아 넣어도 목록이 튕기지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세에서 질문 글을 고치면 목록에도 바로 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "해결됨을 켜야 배운 점에 포함이 나타난다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세의 지금 버튼이 시점을 지금 시각으로 바꾼다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "답을 적으면 안내 문구가 사라지고 저장된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 꼬리질문 칸에서 Return으로 꼬리질문이 생긴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "직접 만든 꼬리질문에 만든 시각이 시점으로 찍힌다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기존 질문을 꼬리질문으로 연결할 수 있다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결 후보에 자기 자신과 이미 이은 질문과 다른 강의 질문이 없다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "꼬리질문은 질문 위에 원질문을 한 줄로 보여 준다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "해제를 누르면 연결만 끊기고 질문은 남는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "AI 프롬프트 복사가 질문을 담아 클립보드에 넣는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사하면 답 제목 옆에 무엇을 복사했는지 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "답 찾기에 강의 이름과 그 시점 메모와 학습 상태가 들어간다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "비어 있는 맥락은 프롬프트에 줄로 남지 않는다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "꼬리질문의 답 찾기에 원질문이 맥락으로 붙는다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "답이 비어 있으면 내 답 채점받기가 꺼져 있다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "내 답 채점받기에 내가 적은 답이 들어간다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가이드 링크가 브라우저에서 AI 가이드를 연다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 추가가 지금 블록을 만들고 앞 블록을 지금까지로 늘린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 메모가 강의를 바꿔도 남는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "질문 시점에 맞는 높이에 물음표가 선다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 물음표 색과 채움이 해결과 답 상태를 따른다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 물음표를 누르면 그 질문 상세가 열린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 시각 질문이 몰려도 물음표가 겹치지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 밖 시점의 질문을 넣으면 그 시각 블록이 생긴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지운 블록이 자동으로 되살아나지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 설정에서 색을 바꾸면 카드와 세로 줄 색이 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 시작을 바꾸면 순서와 물음표 위치가 맞춰진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 기간을 고르면 끝 시각과 높이가 바뀐다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 삭제는 한 번 더 묻고 취소하면 남는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "블록 세로 줄을 우클릭해 지울 수 있다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "모아보기에 모든 강의 블록이 시간순으로 선다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "모아보기에서 고친 메모가 메인에도 보인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "모아보기에서 지운 블록이 메인에서도 사라진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "강의가 없으면 요약과 그래프와 학습 상태가 꺼져 있다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "요약 맨 위 숫자가 실제 질문 수와 맞다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "던질 질문에 미해결 질문만 시점과 함께 모인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "해결한 질문이 없으면 배운 점에 안내가 뜬다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "배운 점에서 제외하면 제외한 답으로 옮겨 간다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "요약 메모 칸에 블록 메모가 시간순으로 합쳐진다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "그래프가 강의를 맨 위에 두고 꼬리질문을 화살표로 잇는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "그래프 노드 색과 채움이 범례와 맞다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "그래프 노드에서 이동하면 그 질문이 열린다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "그래프 확대 축소와 배율 버튼이 맞게 움직인다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "트랙패드 핀치로 그래프를 확대한다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "질문이 많은 그래프에서 이웃 라벨이 겹치지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "학습 상태 세 칸이 강의마다 따로 저장된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "요약과 그래프와 타임블록과 학습 상태가 Esc로 닫힌다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "대화 마크다운을 가져오면 제목과 질문과 답이 강의가 된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "섹션 첫 질문 아래 나머지 질문이 꼬리질문으로 달린다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "답이 붙은 가져온 질문만 해결로 들어간다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "코드펜스 안의 화자 줄은 새 발화로 나뉘지 않는다",
+   "outcome": null,
+   "note": "LectureQ에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 화면은 잠겨 있어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "UTF-8이 아닌 파일은 가져오기 실패 알림을 띄운다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가져온 강의를 바로 눌러 봐도 멈추지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌘+로 키우면 세 칸과 시트 글씨가 함께 커진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "글씨 크기 메뉴가 지금 배율을 보여 주고 끝에서 꺼진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "줄인 글씨 배율이 다시 켜도 남고 ⌘0으로 돌아온다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 목록 물음표를 해결 여부로 읽는다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 블록 물음표를 질문 글로 읽는다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 파일이 컨테이너의 LectureQ 폴더에 생긴다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 폴더를 복사해 두면 그대로 되살아난다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이전 빌드 데이터를 새 빌드가 그대로 연다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "옛 강의 메모는 첫 블록 메모로 옮겨진다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "네트워크 없이도 모든 기능이 된다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "질문 수백 개인 강의도 목록과 그래프가 끊기지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "출시 빌드에서는 데모 모드 인자가 먹히지 않는다",
+   "outcome": null,
+   "note": "macOS 27.0에서 Debug 빌드를 띄워 창이 뜨는 것까지는 확인했지만, QA 하는 동안 Mac 화면이 잠겨 있어 창 캡처와 손쉬운 사용 조작이 막혔다. 화면을 보고 누르는 확인이 필요해 못 봤다.",
+   "screenshot": null
+  }
+ ]
+}

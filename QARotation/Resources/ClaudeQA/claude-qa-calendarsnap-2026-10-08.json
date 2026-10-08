@@ -1,0 +1,689 @@
+{
+ "id": "calendarsnap-2026-10-08-claude",
+ "bundleID": "com.devkoan.CalendarSnap",
+ "startedAt": "2026-10-09T01:33:07+09:00",
+ "durationSeconds": 1200,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0.3",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔고 첫 실행, 다시 켜기 5번(다크, 가장 큰 글자 포함) 동안 한 번도 죽지 않았다. 일정이 없을 땐 스캔 탭, App Group 저장소에 일정을 넣은 뒤에는 달력 탭이 바로 떴다.",
+   "screenshot": "claude-qa-calendarsnap-02-calendar"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. CalendarSnapSpec.swift 의 monetization 이 .free 이고 StoreKit 을 쓰는 코드가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(CalendarSnapSpec.swift monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "다크로 달력 탭만 봤다. 날짜 점과 글자, 다음 일정이 다 보인다. 스캔 탭은 일정이 있으면 달력 탭으로 열려 다크로는 못 봤다.",
+   "screenshot": "claude-qa-calendarsnap-03-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 달력 탭의 날짜 숫자가 9일부터 모두 •••로 바뀌어 날짜를 읽을 수 없다. 이 날 일정 추가 줄도 아래 탭 줄 뒤로 들어간다. MonthCalendarView.swift 의 날짜 칸이 .frame(width: 32, height: 32) 고정 크기에 .callout 글꼴(267~272줄)이라 큰 글자에서 숫자가 칸을 넘친다. 스캔 목록 저장 바는 일정을 추출하지 못해 못 봤다.",
+   "screenshot": "claude-qa-calendarsnap-04-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면(SE) 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 스캔 탭과 달력 탭은 어긋남 없이 떴다. 카메라·앨범과 위젯은 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "CalendarSnap·ScheduleWidgetExtension 두 스킴 빌드에서 deprecated 경고 0개. Swift 경고는 OCRService.swift 의 Sendable 관련 3개(2줄 @preconcurrency 권유, 87줄 VNImageRequestHandler·VNRecognizeTextRequest 캡처)뿐이다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 스캔 탭에 안내 화면이 보인다",
+   "outcome": "fail",
+   "note": "새로 깔고 켜면 스캔 탭에 안내 카드가 뜨지만 제목이 기본 글자 크기에서도 어린이집 알림장을 찍거나 문자를 붙…로 잘려 끝까지 읽을 수 없다. ContentView.swift 335줄의 ContentUnavailableView 제목이 List Section 안에서 한 줄로 줄어든다.",
+   "screenshot": "claude-qa-calendarsnap-01-first-launch"
+  },
+  {
+   "title": "달력 사진에서 한 달 일정이 추출된다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "눕혀 찍은 달력 사진도 일정이 읽힌다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "거꾸로 찍은 달력 사진도 일정이 읽힌다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "요일 머리글이 흐릿해도 달력 격자가 읽힌다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 권한을 거부해도 앨범으로는 일정이 읽힌다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "글씨가 없는 사진이면 못 찾았다고 알려 준다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처리 중에는 진행 표시가 화면에 뜬다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 여러 장 찍으면 일정이 쌓여 더해진다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "앨범에서 여러 장을 한 번에 골라 함께 읽힌다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "매주 반복 특별활동이 한 달 치로 펼쳐진다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "기간으로 적힌 일정은 시작일에 서고 끝날이 메모로 붙는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "오전 오후 표기가 없는 3시는 오후 3시로 읽힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "올린 사진을 좌우로 넘기고 탭하면 크게 본다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "크게 보기에서 핀치와 두 번 탭으로 확대된다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "휴지통을 누르면 사진과 추출 목록이 모두 비워진다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "추출된 일정 개수가 목록 위에 적힌다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목과 시각을 그 자리에서 고칠 수 있다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "종일 스위치를 켜면 시간이 사라진다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "준비물 메모를 일정마다 적을 수 있다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "필요 없는 일정은 밀어서 지운다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 일정이 두 번 들어오면 하나만 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "스캔 탭에서 아이를 바꾸면 추출 일정이 모두 그 아이로 바뀐다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "줄의 동그라미로 한 일정만 다른 아이나 공통으로 바꾼다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "반 이름으로 어느 아이의 문서인지 알아맞힌다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "붙여넣은 문자에서 날짜와 준비물이 읽힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "내일·이번 주 금요일 같은 말도 날짜가 된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음 주 월요일은 이번 주가 아닌 다음 주로 잡힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "클립보드 버튼 한 번으로 내용이 채워진다",
+   "outcome": null,
+   "note": "문자로 일정 추가 화면을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아무 날짜도 없으면 일정이 만들어지지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지우기를 누르면 입력칸이 비워진다",
+   "outcome": null,
+   "note": "문자로 일정 추가 화면을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "추출한 결과를 저장 전에 고칠 수 있다",
+   "outcome": null,
+   "note": "문자로 일정 추가 화면을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "하단 저장 바가 개수와 함께 늘 보인다",
+   "outcome": null,
+   "note": "추출 목록이 없어 저장 바를 볼 수 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이 미등록이면 저장 전에 이름을 묻는다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장하면 스캔 목록이 비고 저장 완료 표시가 뜬다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 바 아래에 알림 예약과 캘린더 추가 결과가 적힌다",
+   "outcome": null,
+   "note": "애플 캘린더 연동은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "추가한 일정이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다. App Group 저장소(scannedEvents)에 일정 다섯 개를 넣고 켠 화면이다. 앱을 두 번 끄고 다시 켜도 달력 점과 다음 일정이 그대로였지만, 앱이 저장한 일정이 아니라 저장소에 직접 넣은 값이라 저장 경로까지는 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "인터넷이 없어도 스캔과 저장은 된다",
+   "outcome": null,
+   "note": "비행기 모드는 시뮬레이터에서 못 켜고 실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "일정 직접 추가로 한 건을 손으로 넣는다",
+   "outcome": null,
+   "note": "일정 직접 추가 버튼이 스캔 탭에 보이지만 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "직접 추가에서 제목이 비면 추가 버튼이 꺼져 있다",
+   "outcome": null,
+   "note": "일정 직접 추가 화면을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이 없이 직접 추가하면 적은 이름이 아이로 등록된다",
+   "outcome": null,
+   "note": "일정 직접 추가 화면을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "전날 저녁·당일 아침 알림 시점을 고른다",
+   "outcome": null,
+   "note": "알림 설정 시트는 톱니를 눌러야 열린다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스캔 목록의 알림 설정 줄이 고른 시점을 보여 준다",
+   "outcome": null,
+   "note": "추출 목록이 없어 볼 수 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "종일 일정에는 한 시간 전 알림이 안 걸린다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "전날 저녁 알림은 오후 8시에 울린다",
+   "outcome": null,
+   "note": "알림이 오길 기다려 봐야 해서 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "준비물 메모가 알림 본문에 보인다",
+   "outcome": null,
+   "note": "알림이 오길 기다려 봐야 해서 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 제목 앞에 아이 이름이 붙는다",
+   "outcome": null,
+   "note": "알림이 오길 기다려 봐야 해서 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 권한이 없으면 허용 안내가 뜬다",
+   "outcome": null,
+   "note": "알림 권한을 끄고 저장하는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림 시점을 모두 끄면 꺼져 있다고 알려 준다",
+   "outcome": null,
+   "note": "알림 설정을 바꾸는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에서 알림 시점을 바꾸면 다시 예약된다",
+   "outcome": null,
+   "note": "알림이 오길 기다려 봐야 해서 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "달력에서 지운 일정은 알림이 오지 않는다",
+   "outcome": null,
+   "note": "알림이 오길 기다려 봐야 해서 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "일정이 많아도 가까운 60개까지만 알림이 예약된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "달력에서 일정이 있는 날에 점이 찍힌다",
+   "outcome": "pass",
+   "note": "App Group 저장소(scannedEvents)에 일정 다섯 개를 넣고 켠 화면이다. 일정이 있는 7일, 10일, 12일, 14일, 19일 아래에 주황 점(아이 없는 공통 색)이 찍혀 있고 나머지 날에는 없다.",
+   "screenshot": "claude-qa-calendarsnap-02-calendar"
+  },
+  {
+   "title": "월간과 주간 보기를 접었다 펼 수 있다",
+   "outcome": null,
+   "note": "손잡이를 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "일정 목록을 위로 올리면 달력이 주간으로 접힌다",
+   "outcome": null,
+   "note": "쓸어 올리기는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "주간 보기에서 화살표는 한 주씩 넘어간다",
+   "outcome": null,
+   "note": "주간 보기로 접는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "오늘 버튼을 누르면 이번 달로 돌아온다",
+   "outcome": null,
+   "note": "달을 넘기는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "날짜를 고르면 그 날 일정이 아래에 뜬다",
+   "outcome": null,
+   "note": "일정이 있는 날을 누르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다. 처음 열릴 때 골라진 오늘(9일)에는 일정이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "일정이 없는 날은 없다고 표시된다",
+   "outcome": "pass",
+   "note": "App Group 저장소(scannedEvents)에 일정 다섯 개를 넣고 켠 화면이다. 달력 탭이 열릴 때 골라진 오늘(10월 9일 금요일) 아래에 이 날은 일정이 없어요가 보인다.",
+   "screenshot": "claude-qa-calendarsnap-02-calendar"
+  },
+  {
+   "title": "일정 없는 날을 고르면 다음 일정이 미리 보인다",
+   "outcome": "pass",
+   "note": "App Group 저장소(scannedEvents)에 일정 다섯 개를 넣고 켠 화면이다. 일정 없는 오늘을 고른 상태에서 다음 일정 칸에 10월 10일 (토) 가을 소풍과 준비물 도시락, 돗자리 지참이 보인다.",
+   "screenshot": "claude-qa-calendarsnap-02-calendar"
+  },
+  {
+   "title": "유형 필터로 반복 일정만 골라 본다",
+   "outcome": null,
+   "note": "거름망 버튼은 보이지만 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록에서 밀면 그 일정이 삭제된다",
+   "outcome": null,
+   "note": "밀기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "그 날 일정 추가가 날짜를 미리 채운다",
+   "outcome": null,
+   "note": "날짜를 고르는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이를 등록하면 일정이 아이별로 나뉜다",
+   "outcome": null,
+   "note": "아이 등록은 설정에서 해야 한다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아바타로 아이별 일정만 골라 본다",
+   "outcome": null,
+   "note": "아이를 등록하지 못해 볼 수 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "동그라미를 눌러 프로필 사진을 넣는다",
+   "outcome": null,
+   "note": "사진 고르기는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "반을 추가하면 이름 아래에 반 칩이 붙는다",
+   "outcome": null,
+   "note": "아이 설정은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "반을 적으면 다른 반 일정이 걸러진다",
+   "outcome": null,
+   "note": "실제 어린이집 달력 사진(카메라나 앨범)이 필요하고 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이를 지우면 확인을 한 번 더 묻는다",
+   "outcome": null,
+   "note": "밀기 제스처는 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이를 지우면 그 아이 일정도 달력에서 사라진다",
+   "outcome": null,
+   "note": "아이를 등록하지 못해 볼 수 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "애플 캘린더에 중복 없이 일정이 들어간다",
+   "outcome": null,
+   "note": "애플 캘린더 연동은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이마다 이름 어린이집 달력이 따로 생긴다",
+   "outcome": null,
+   "note": "애플 캘린더 연동은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이 달력이 생기면 옛 어린이집 달력이 정리된다",
+   "outcome": null,
+   "note": "애플 캘린더 연동은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "캘린더 권한이 없으면 권한 안내가 뜬다",
+   "outcome": null,
+   "note": "애플 캘린더 연동은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "미러링을 끄면 애플 캘린더에 안 올라간다",
+   "outcome": null,
+   "note": "애플 캘린더 연동은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "가족 초대 링크로 일정이 공유된다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "초대받은 사람이 고친 일정이 초대한 쪽에도 반영된다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "참여자 목록에 함께 보는 사람이 나온다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "지금 동기화를 누르면 양쪽이 맞춰진다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "공유 중에는 아이 목록도 양쪽에 맞춰진다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "공유 중에 지운 아이가 동기화 뒤 다시 생기지 않는다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud에 로그인하지 않으면 초대 버튼이 꺼지고 안내가 뜬다",
+   "outcome": null,
+   "note": "iCloud 로그아웃은 기기 설정이라 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 가족 공유에 참여 중이면 새 초대를 막는다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "공유를 중단해도 받은 일정은 남아 있다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "초대한 사람이 공유를 끊으면 참여자에게 종료 안내가 뜬다",
+   "outcome": null,
+   "note": "가족 공유는 iCloud(CloudKit) 계정과 두 번째 기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 일정이 없으면 공유 메뉴가 꺼져 있다",
+   "outcome": null,
+   "note": "일정이 없을 때는 스캔 탭으로 열려 달력 탭의 공유 버튼을 볼 수 없었다. 일정이 있는 상태에서는 공유 버튼이 켜져 보인다.",
+   "screenshot": null
+  },
+  {
+   "title": "일정 파일을 보내면 상대 앱에 채워진다",
+   "outcome": null,
+   "note": "두 번째 기기와 공유 시트가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "카카오톡으로 보낸 일정이 글이 아닌 파일로 간다",
+   "outcome": null,
+   "note": "카카오톡과 공유 시트가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "받은 일정 파일을 열면 가져온 개수를 알려 준다",
+   "outcome": null,
+   "note": "받은 파일을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 형식의 파일이면 가져오지 못했다고 알린다",
+   "outcome": null,
+   "note": "받은 파일을 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "ics 파일과 텍스트로도 공유된다",
+   "outcome": null,
+   "note": "공유 메뉴를 여는 것은 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "텍스트 공유에 날짜와 아이와 준비물이 한 줄씩 담긴다",
+   "outcome": null,
+   "note": "테스트 타깃이 없어(CalendarSnap 프로젝트에 테스트 없음) 확인할 근거가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯이 다가오는 일정을 보여 준다",
+   "outcome": null,
+   "note": "위젯은 홈 화면에 놓아 봐야 해서 확인하지 못했다(ScheduleWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "작은 위젯은 하나, 중간 위젯은 세 개를 보여 준다",
+   "outcome": null,
+   "note": "위젯은 홈 화면에 놓아 봐야 해서 확인하지 못했다(ScheduleWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "위젯의 종일 일정에 엉뚱한 시각이 붙지 않는다",
+   "outcome": null,
+   "note": "위젯은 홈 화면에 놓아 봐야 해서 확인하지 못했다(ScheduleWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "일정을 저장하거나 지우면 위젯이 바로 바뀐다",
+   "outcome": null,
+   "note": "위젯은 홈 화면에 놓아 봐야 해서 확인하지 못했다(ScheduleWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "일정이 없으면 위젯이 찍으라고 안내한다",
+   "outcome": null,
+   "note": "위젯은 홈 화면에 놓아 봐야 해서 확인하지 못했다(ScheduleWidgetExtension 은 빌드만 확인).",
+   "screenshot": null
+  },
+  {
+   "title": "설정 시트가 스캔과 달력 탭 어디서나 열린다",
+   "outcome": null,
+   "note": "스캔 탭과 달력 탭 모두 오른쪽 위에 톱니가 보이지만 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기로 의견을 보낼 수 있다",
+   "outcome": null,
+   "note": "피드백 화면은 설정에서 눌러야 열린다. 화면을 누를 수단이 없어 직접 눌러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "만족도 질문에서 아쉬운 점을 고르면 피드백 창이 열린다",
+   "outcome": null,
+   "note": "만족도 질문은 여러 번 써야 뜬다.",
+   "screenshot": null
+  },
+  {
+   "title": "iPad에서 아이폰 화면으로 열려도 잘리지 않는다",
+   "outcome": null,
+   "note": "아이패드 시뮬레이터로 열어 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이전 버전 데이터가 업데이트 뒤에도 남는다",
+   "outcome": null,
+   "note": "이전 판에서 올려 깔아 보지 못했다.",
+   "screenshot": null
+  }
+ ]
+}

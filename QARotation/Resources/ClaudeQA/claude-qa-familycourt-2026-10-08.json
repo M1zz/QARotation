@@ -1,0 +1,551 @@
+{
+ "id": "familycourt-2026-10-08-claude",
+ "bundleID": "com.family.familycourt",
+ "startedAt": "2026-10-08T20:30:16+09:00",
+ "durationSeconds": 2700,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 끄고 다시 켜기 7번(영어 인자, 다크, 가장 큰 글자, 기록 파일을 넣은 상태 포함) 동안 한 번도 죽지 않았다. 매번 법원 탭 타일 여섯 개가 바로 떴다.",
+   "screenshot": "claude-qa-familycourt-01-home"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 접수 흐름은 못 봤다. 이 앱에는 단위 테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "인앱 결제가 없는 무료 앱이다(FamilyCourtSpec.swift monetization = .free, 소스에 StoreKit 없음).",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "구매가 없는 무료 앱이라 복원할 것이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "법원 탭을 다크로 봤고 흰 타일이 어두운 회색으로 바뀌어 글자가 잘 보인다. 법전·가족·설정 탭과 판결문은 탭을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-familycourt-03-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)에서 법원 탭 타일은 잘리지 않지만 글자가 전혀 커지지 않는다. ActionTile(HomeView.swift)이 .font(.system(size: 16/12))처럼 고정 크기를 써서 다이내믹 타입을 따르지 않는다(CaseDetailView·TrialView·SupportViews 에도 고정 크기 26곳). 재판 진행 화면은 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-familycourt-04-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "SE 크기 시뮬레이터가 없고 접수 시트를 열 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 법원 탭은 정상이다. 다른 탭은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "FamilyCourt 빌드에서 Swift 경고 5개 중 지원 종료 경고 3개: FilingView.swift:104, :105, TrialView.swift:217 의 onChange(of:perform:)(iOS 17 에서 지원 종료). 나머지 2개는 TrialView.swift:134 의 Combine import 누락 경고다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 가족 목록이 비어 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 가족 탭을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름을 비우면 등록 버튼이 안 눌린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 가족 추가 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "고른 이모지에 파란 테두리가 생긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "등록한 가족이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 가족 세 명을 넣은 기록 파일(Documents/familycourt.json)을 두고 다시 켜니 법원 탭이 그 파일대로 떴다. 가족 탭은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가족을 왼쪽으로 밀어 지울 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가족이 셋보다 적으면 접수 화면에 경고가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 접수 화면을 열지 못했다. 소스상 FilingView.swift 27행이 가족 3명 미만이면 경고를 띄운다.",
+   "screenshot": null
+  },
+  {
+   "title": "가족이 셋보다 적으면 접수가 안내창으로 막힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 접수 화면을 열지 못했다. 소스상 FilingView.swift 133행이 3명 미만이면 안내창으로 막는다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 타일 여섯 개가 한 화면에 들어온다",
+   "outcome": "pass",
+   "note": "iPhone 18 Pro Max 시뮬레이터에서 법원 탭 타일 여섯 개(억울함 호소하기, 법 위반 신고하기, 소환 요청 보기, 판례 보기, 법원 공부하기, 우리 집 법전)가 스크롤 없이 한 화면에 다 들어온다. 작은 화면은 따로 봐야 한다.",
+   "screenshot": "claude-qa-familycourt-01-home"
+  },
+  {
+   "title": "기본 법 다섯 조가 법전에 들어 있다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 법전 탭은 누를 수단이 없어 못 봤다. 소스상 AppState.defaultLaws 에 존중·내 물건과 남의 물건·정리정돈·약속·화해 다섯 조가 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 법을 올리면 마지막 조로 붙는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "법 이름이 비면 저장 버튼이 꺼진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "법을 밀어서 고치기·없애기가 된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "법을 지우면 조 번호가 다시 매겨진다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 조 번호는 저장하지 않고 lawLabel 에서 배열 위치(i + 1)로 매번 매긴다.",
+   "screenshot": null
+  },
+  {
+   "title": "법전을 다 비우면 빈 안내가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "민사 소송 접수 후 사건 화면이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "법 위반 신고하기는 검사·피고인 칸으로 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판사는 원고·피고 외 사람만 고를 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목 없이 접수하면 안내창이 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "원고와 피고가 같으면 접수가 막힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판사를 안 고르면 판사를 골라 달라고 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "형사는 어긴 법을 골라야 접수된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "고른 법 옆에 체크 표시가 붙는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판사였던 사람을 원고로 고르면 판사 선택이 풀린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "접수를 취소하면 사건이 생기지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건번호가 연도와 순번으로 붙는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 사건번호는 연도 + 민사/형사 + caseSeq 이고 caseSeq 는 민사·형사 공용 순번이라 민사 1호 다음 형사 사건은 형사2호가 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "접수·재판·판결·약속 네 단계가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음 할 일 문구가 상태에 맞게 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건 내용이 비면 적은 내용이 없다고 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "상태 띠 색이 대기·진행·완료로 달라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사건 목록을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "역할 줄에 변호인·서기가 정한 만큼만 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "약속 없이 판결하면 사건이 바로 끝난다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판결 칸에 판결일과 판사와 결과가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지운 가족이 맡던 역할은 미정으로 보인다",
+   "outcome": null,
+   "note": "누를 수단이 없어 사건 화면을 못 봤다. 소스상 Store.memName 이 없는 가족을 ❓ 미정으로 돌려준다.",
+   "screenshot": null
+  },
+  {
+   "title": "어긴 법을 법전에서 지워도 사건 화면이 열린다",
+   "outcome": null,
+   "note": "누를 수단이 없어 사건 화면을 못 봤다. 소스상 lawLabels 가 지워진 법을 compactMap 으로 건너뛴다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건을 지우면 목록에서 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드에서 열어도 사건 화면이 안 깨진다",
+   "outcome": null,
+   "note": "아이패드에서 보지 않았다. 빌드된 Info.plist 의 UIDeviceFamily 가 1(아이폰)뿐이라 아이패드에서는 아이폰 호환 모드로 뜬다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰을 가로로 돌려도 세로 화면 그대로다",
+   "outcome": "pass",
+   "note": "빌드된 Info.plist 의 UISupportedInterfaceOrientations~iphone 이 UIInterfaceOrientationPortrait 하나뿐이라 아이폰에서는 가로로 돌지 않는다. 실제 회전은 시뮬레이터 명령으로 못 해 화면으로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "변호인과 서기는 없음으로 둘 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "역할 확인에서 닫기를 누르면 사건이 대기로 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재판 시작을 누르면 의사봉 소리가 난다",
+   "outcome": null,
+   "note": "소리는 기기에서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "의사봉 단계에서 망치를 누르면 탕탕탕 소리가 난다",
+   "outcome": null,
+   "note": "소리와 진동은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머를 시작·멈춤·다시로 다룰 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재판 타이머가 끝나면 알림음이 울린다",
+   "outcome": null,
+   "note": "소리와 진동은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "+30초를 누르면 남은 시간이 늘어난다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "대본에 고른 가족 이름이 들어가 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 재판 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "변호인이 없으면 피고가 스스로 변론하는 대본이 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 재판 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "서기를 정하면 사건 소개를 서기가 읽는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 재판 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "형사 대본에 검사의 구형과 바라는 벌칙이 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 재판 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 단계에서는 이전 버튼이 안 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 재판 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "진행 점이 지나온 단계만큼 초록으로 찬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 재판 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "마지막 단계에서 다음 버튼이 판결 내리러 가기로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 재판 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "재판을 멈추면 사건이 대기로 돌아간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "무음 모드에서도 의사봉 진동이 온다",
+   "outcome": null,
+   "note": "무음 스위치와 진동은 실기기에서 봐야 한다. 소스상 Sound.swift 가 오디오 세션을 .ambient 로 두어 무음 모드에서는 소리가 안 나고, 진동은 UIImpactFeedbackGenerator 로 따로 낸다.",
+   "screenshot": null
+  },
+  {
+   "title": "판결 선고 때 의사봉 소리가 난다",
+   "outcome": null,
+   "note": "소리는 기기에서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "판결문이 비면 써 달라는 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "추천 벌칙을 고르면 칸에 채워진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "형사 벌칙 칸에 검사의 구형이 안내로 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "형사·민사에 따라 판결 선택지가 다르다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "약속 체크가 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 약속 체크 저장을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다 지킨 약속에 취소선이 그어진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판결이 끝난 사건은 판례에 쌓인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "소환 타일 배지에 대기 사건 수가 뜬다",
+   "outcome": "pass",
+   "note": "대기 사건 두 건을 넣은 기록 파일로 켜니 소환 타일(쉬운 말에서는 재판에 모여요)에 빨간 배지 2 와 기다리는 재판 2개가 보인다.",
+   "screenshot": "claude-qa-familycourt-02-easy-badge"
+  },
+  {
+   "title": "기다리는 사건이 없으면 평화 문구가 보인다",
+   "outcome": null,
+   "note": "새로 깐 상태의 소환 타일 아래에 지금은 조용해요 🕊️ 가 보인다. 소환 요청 보기 안의 평화 문구는 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-familycourt-01-home"
+  },
+  {
+   "title": "끝난 사건이 없으면 판례가 비어 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 판례 보기를 열지 못했다. 새로 깐 상태의 판례 타일 아래 글은 끝난 사건과 판결 기록이다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록에서 사건을 누르면 그 사건이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "공부 화면에 민사·형사 순서가 나뉜다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재판 약속 다섯 가지가 번호로 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "말투 단계를 바꾸면 홈 문구가 바뀐다",
+   "outcome": null,
+   "note": "설정 탭을 누를 수단이 없어 직접 바꾸지는 못했다. 기록 파일의 vocabLevel 을 easy 로 넣고 켜니 첫 타일이 억울해요!, 둘째가 약속을 어겼어요! 로 바뀌어 홈 문구가 말투를 따르는 것은 확인했다.",
+   "screenshot": "claude-qa-familycourt-02-easy-badge"
+  },
+  {
+   "title": "말투 미리보기 줄이 바로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 설정 탭을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "법정 용어로 바꾸면 재판 단계 이름도 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "법원 이름을 바꾸면 대본에 반영된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록 저장으로 파일이 공유 시트에 뜬다",
+   "outcome": null,
+   "note": "공유 시트는 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 기록 파일을 불러오면 복원된다",
+   "outcome": null,
+   "note": "파일 앱 흐름은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "엉뚱한 파일을 고르면 못 읽는다고 뜬다",
+   "outcome": null,
+   "note": "파일 앱 흐름은 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "예전 웹 버전 백업도 불러와진다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 소스상 모델 디코더가 웹 버전 키와 빠진 값(decodeIfPresent)과 옛 상태값(접수됨)을 받아 준다. 웹 버전 백업 원본이 없어 직접 불러 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사건과 판결이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 판결까지 끝낸 사건은 누를 수단이 없어 만들지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기로 의견을 보낼 수 있다",
+   "outcome": null,
+   "note": "피드백 전송은 서명된 빌드와 iCloud 가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "리뷰 남기기를 누르면 평점 창이 뜬다",
+   "outcome": null,
+   "note": "App Store 평점 창은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자를 쓰다 빈 곳을 누르면 키보드가 내려간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 키보드 동작은 못 봤다. 소스상 FamilyCourtApp.swift 가 창 전체에 endEditing 탭 제스처를 단다.",
+   "screenshot": null
+  }
+ ]
+}

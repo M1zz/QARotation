@@ -1,0 +1,449 @@
+{
+ "id": "stickypresenter-remote-2026-10-08-claude",
+ "bundleID": "com.leeo.StickyPresenter.Remote",
+ "startedAt": "2026-10-09T00:46:34+09:00",
+ "durationSeconds": 213,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0.8",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터(iPhone 18 Pro Max 복제본)에서 새로 깔고 켜기 1번, 다시 켜기 5번(다크, 가장 큰 글자 포함) 동안 죽지 않았고 매번 Mac을 찾는 중 화면이 떴다.",
+   "screenshot": "claude-qa-stickypresenter-remote-01-searching-checklist"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "리모컨 소스(RemoteApp.swift, RemoteClient.swift)에 StoreKit·구매 코드가 없다. 무료 앱이다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "리모컨 소스에 StoreKit·구매 코드가 없다. 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "다크에서 Mac 찾는 중 화면과 점검표는 글자가 다 읽히고 자연스럽다. 코드 화면과 타이머 화면은 연결이 필요해 못 봤다.",
+   "screenshot": "claude-qa-stickypresenter-remote-02-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)에서 점검표 설명이 잘리지 않고 줄바꿈된다. 다만 StickyPresent/er가처럼 단어 중간에서 끊기고, 화면을 내릴 수단이 없어 아래 줄과 타이머 목록은 못 봤다.",
+   "screenshot": "claude-qa-stickypresenter-remote-03-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터로는 띄워 보지 않았다. 타이머 목록은 연결이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 Mac 목록(찾는 중) 화면까지는 정상이다. 연결 코드·타이머 화면과 위치 판 끌기는 연결이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "StickyPresenterRemote 스킴(iOS 시뮬레이터) 빌드에서 Swift 컴파일 경고 0개(appintents 메타데이터 안내 1줄만 있음).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 로컬 네트워크 허용을 묻는다",
+   "outcome": null,
+   "note": "시뮬레이터는 로컬 네트워크 허용 알림을 띄우지 않아 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "로컬 네트워크를 거부해도 멈추지 않고 점검표가 나온다",
+   "outcome": null,
+   "note": "로컬 네트워크 거부는 실기기에서만 만들 수 있다. 시뮬레이터에서 Mac을 못 찾을 때 점검표가 나오는 것은 봤다.",
+   "screenshot": "claude-qa-stickypresenter-remote-01-searching-checklist"
+  },
+  {
+   "title": "Mac 목록이 뜨고 네 자리 코드로 짝이 맺어진다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac을 못 찾으면 다섯 줄 점검표가 나온다",
+   "outcome": "pass",
+   "note": "Mac 앱이 켜져 있지 않은 채 리모컨을 여니 확인해 보세요 아래 다섯 줄(StickyPresenter 켜짐, 같은 Wi-Fi, iPhone 로컬 네트워크, Mac 쪽 허용, VPN)과 iPhone 설정 열기 단추가 보였다. 화면을 내리지 않아도 다 보인다.",
+   "screenshot": "claude-qa-stickypresenter-remote-01-searching-checklist"
+  },
+  {
+   "title": "iPhone 설정 열기가 로컬 네트워크로 데려간다",
+   "outcome": null,
+   "note": "iPhone 설정 열기 단추를 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "찾는 동안 위쪽 기호가 천천히 뛴다",
+   "outcome": null,
+   "note": "맨 위 기호가 움직이는지는 정지 스크린샷으로 판단할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "옛 Mac 앱은 업데이트가 필요하다며 안 눌린다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지난번에 연결한 Mac이라고 줄 밑에 적힌다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 Wi-Fi의 Mac 두 대가 목록에 따로 뜬다",
+   "outcome": null,
+   "note": "Mac 두 대나 외장 모니터가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 보는 Mac 줄에는 코드 4자리가 필요하다고 적힌다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "코드 안내가 Mac 메뉴의 리모컨 ▸ 연결 코드를 가리킨다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac 앱을 끄면 목록에서 그 줄이 빠진다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자를 키워도 점검표 설명이 안 잘린다",
+   "outcome": null,
+   "note": "가장 큰 글자에서 첫 줄 제목과 설명이 잘리지 않고 여러 줄로 감긴다(StickyPresent/er가처럼 단어 중간 줄바꿈은 있다). 화면을 내릴 수단이 없어 아래 네 줄은 못 봤다.",
+   "screenshot": "claude-qa-stickypresenter-remote-03-ax5"
+  },
+  {
+   "title": "코드 칸이 열리자마자 숫자 판이 올라온다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "네 자리를 다 채워야 연결 단추가 켜진다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "코드를 틀리면 그 자리에 안내가 뜬다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "숫자가 아닌 붙여넣기는 걸러져 들어온다",
+   "outcome": null,
+   "note": "리모컨 프로젝트에는 테스트 타깃이 없어 이 판정을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "붙는 순간 코드 화면이 저절로 닫힌다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "코드 숫자가 넓게 벌어져 세기 좋다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "취소를 누르면 Mac 목록으로 되돌아간다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 Mac 요청을 기다리는 중이면 그렇게 알려 준다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac에서 코드를 새로 만들면 옛 코드는 안 먹는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "아라비아 숫자나 ½은 코드로 받지 않는다",
+   "outcome": null,
+   "note": "리모컨 프로젝트에는 테스트 타깃이 없어 이 판정을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "남은 시간·진행률이 1초마다 갱신된다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "3/5/10/15분 프리셋으로 새 타이머가 시작된다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타이머가 없으면 프리셋만 있는 빈 화면이 된다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝난 타이머 줄에 빨간 완료 딱지가 붙는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "감춘 타이머에는 눈 가림 표시가 붙는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "뽀모도로는 집중·휴식과 회차가 함께 보인다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자를 키우면 프리셋이 두 줄로 접힌다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "프리셋으로 만든 타이머는 Mac에 5m처럼 적힌다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 ±30초와 재생 단추 이름을 읽는다",
+   "outcome": null,
+   "note": "VoiceOver는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "시작·일시정지·±30초가 Mac 타이머에 반영된다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "S·M·L을 고르면 Mac 위젯 크기가 바뀐다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "초기화를 누르면 시간이 처음으로 돌아간다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝난 타이머에서 재생을 누르면 처음부터 다시 돈다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "표시·감추기로 Mac 위젯이 사라졌다 나온다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "정렬을 누르면 위젯이 패널 옆으로 간다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "삭제하면 Mac 목록에서도 그 타이머가 빠진다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 시간이 넘어도 숫자가 한 줄에 담긴다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "미니 화면에서 끌면 Mac 위젯이 옮겨진다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판을 톡 찍기만 해도 위젯이 그 자리로 간다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면이 두 대면 판에도 두 대가 그려진다",
+   "outcome": null,
+   "note": "Mac 두 대나 외장 모니터가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "옆 화면 네모로 끌면 위젯이 그 화면으로 넘어간다",
+   "outcome": null,
+   "note": "Mac 두 대나 외장 모니터가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면 사이 빈 곳에 놓아도 가까운 화면에 붙는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메뉴 막대가 있는 화면에 얇은 띠가 있다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "감춘 위젯은 점선 사각형으로 옅게 보인다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "판 구석까지 끌면 위젯이 화면 안에 멈춘다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "손을 뗄 때 짧은 진동이 한 번 온다",
+   "outcome": null,
+   "note": "진동은 실기기에서만 느낄 수 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯 창이 없으면 판이 흐려져 안 눌린다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재실행하면 코드 없이 짝지은 Mac에 붙는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac 앱을 다시 켜면 리모컨이 저절로 붙는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac이 리모컨을 잊으면 자동 연결 실패 안내가 뜬다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "두 Mac 중 연결한 Mac 타이머만 움직인다",
+   "outcome": null,
+   "note": "Mac 두 대나 외장 모니터가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결 표시를 눌러 짝을 풀고 다른 Mac을 고를 수 있다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈으로 나갔다 돌아오면 다시 붙는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오른쪽 위 점이 초록과 주황으로 갈린다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac 앱을 끄면 곧 연결 끊긴 화면이 된다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Wi-Fi를 끄면 점검표 화면으로 되돌아간다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Mac 이름이 길어도 제목을 밀지 않는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결을 풀면 다음 실행에 자동으로 안 붙는다",
+   "outcome": null,
+   "note": "Mac 앱과 짝을 맺어야 볼 수 있는 화면이다. 시뮬레이터에서 화면을 누를 수단이 없어 코드를 넣어 연결하지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "위치 정보 없는 옛 Mac 상태도 읽힌다",
+   "outcome": null,
+   "note": "리모컨 프로젝트에는 테스트 타깃이 없어 이 판정을 확인하는 테스트가 없다.",
+   "screenshot": null
+  }
+ ]
+}

@@ -1,0 +1,719 @@
+{
+ "id": "moonlit-arcade-2026-10-08-claude",
+ "bundleID": "com.example.MoonlitOrder",
+ "startedAt": "2026-10-09T01:31:00+09:00",
+ "durationSeconds": 1500,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0.1",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 다시 켜기 15번(게임방법 네 종류, 대기실·게임 미리보기, GM 패널, 방 만들기, 다크, 가장 큰 글자) 동안 죽지 않았다. 켤 때마다 달빛 오락실 홈과 게임 카드 넷(달빛 결사, 라이어 게임, 달 없는 밤, 달빛 화실)이 떴다.",
+   "screenshot": "claude-qa-moonlit-arcade-01-home-subtitle"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "다음 버튼을 누를 수단이 없어 라이어 게임 연습을 끝까지 못 했다. 대신 실행 인자 -demoSketchAuto 로 돌린 달빛 화실 연습은 혼자 결과 화면(달토끼 승리!)까지 갔다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. MoonlitOrderSpec.monetization 이 .free 이고 소스에 StoreKit 이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(MoonlitOrderSpec.monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": "pass",
+   "note": "시스템을 라이트로 둔 채와 다크로 바꾼 채 각각 홈을 띄웠다. 두 경우 모두 앱은 어두운 남색 배경 그대로고 글자가 다 읽힌다. 대기실도 어두운 화면으로 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)에서 홈 글자는 잘리지 않고 커졌지만 첫 화면에 카드가 하나만 보인다. 아래로 쓸어 네 카드를 다 보는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터 한 대에서 실행 인자 -autoHost 로 방을 만들어 대기실까지는 열렸다. 다른 기기가 들어오는 것은 여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "MoonlitOrder 빌드에서 Swift 컴파일 경고 2개가 모두 지원 종료 경고다. onChange(of:perform:) — MoonlitOrderApp.swift:90, SketchViews.swift:393.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "닉네임이 재실행 후 그대로 남는다",
+   "outcome": "pass",
+   "note": "닉네임 테스터로 방을 연 뒤(-autoHost -playerName 테스터) 앱을 완전히 끄고 다시 여니 홈 닉네임 칸에 테스터가 그대로 있었다. 칸에 직접 친 것은 아니다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 부제의 게임 수가 카드 수와 맞다",
+   "outcome": "fail",
+   "note": "홈 부제가 가까운 친구들과 즐기는 파티게임 3종인데 아래 게임 카드는 넷(달빛 결사, 라이어 게임, 달 없는 밤, 달빛 화실)이다. HomeView.swift 52줄의 문구가 3종으로 남아 있다.",
+   "screenshot": "claude-qa-moonlit-arcade-01-home-subtitle"
+  },
+  {
+   "title": "게임 4종 카드가 각각 게임 메뉴를 연다",
+   "outcome": null,
+   "note": "카드 누르기는 화면을 누를 수단이 없어 못 봤다. 네 게임의 게임방법 화면은 실행 인자로 각각 따로 열렸다.",
+   "screenshot": null
+  },
+  {
+   "title": "닉네임을 비우면 플레이어라는 이름으로 들어간다",
+   "outcome": null,
+   "note": "닉네임을 비우고 방 만들기를 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 닉네임이 들어오면 뒤에 번호가 붙는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면에서도 홈이 스크롤로 다 보인다",
+   "outcome": null,
+   "note": "가장 큰 글자에서 아래로 쓸어 넘길 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "게임 중 앱을 다시 열면 이어서 하기 카드가 보인다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이어서 하기 카드의 X로 카드를 치울 수 있다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "오른쪽 위 톱니로 지원 화면이 열린다",
+   "outcome": null,
+   "note": "톱니 버튼은 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "방 만들기 때 로컬 네트워크 권한 요청이 뜬다",
+   "outcome": null,
+   "note": "-autoHost 로 방을 열었을 때 시뮬레이터에서는 로컬 네트워크 권한 창이 뜨지 않았다. 시뮬레이터는 이 권한을 묻지 않아 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "참가 화면에 주변 방 목록이 나타난다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "게임 메뉴의 게임 참가는 그 게임 방만 보여 준다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "주변의 모든 방 찾기는 게임 이름과 함께 모든 방을 보여 준다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "방이 하나도 없으면 찾는 중 안내가 뜬다",
+   "outcome": null,
+   "note": "주변의 모든 방 찾기 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 Wi-Fi가 없어도 가까운 기기끼리 연결된다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "대기실에 참가자 수와 필요한 인원이 보인다",
+   "outcome": "pass",
+   "note": "실행 인자 -kickPreview 로 연 대기실 위쪽에 참가자 5명 · 5~15명 필요가 적혀 있었다(봇 4명 포함). 혼자 연 방은 참가자 1명 · 5~15명 필요였다.",
+   "screenshot": "claude-qa-moonlit-arcade-03-lobby"
+  },
+  {
+   "title": "달빛 결사 대기실에 인원별 진영 수가 보인다",
+   "outcome": "pass",
+   "note": "다섯 명 대기실의 참가자 목록 아래에 이 인원이면 그림자 진영 2명 · 달빛 결사 3명이 적혀 있었다.",
+   "screenshot": "claude-qa-moonlit-arcade-03-lobby"
+  },
+  {
+   "title": "최소 인원이 안 차면 시작 버튼이 막힌다",
+   "outcome": "pass",
+   "note": "-autoHost 로 혼자 달빛 결사 방을 여니 아래 버튼이 최소 5명이 필요합니다로 흐려져 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "참가자가 들어오면 대기실 목록이 바로 늘어난다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "방장이 대기실에서 참가자를 내보낼 수 있다",
+   "outcome": null,
+   "note": "호스트 대기실에서 참가자마다 빨간 사람 아이콘은 보였다. 누르고 내보내는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-moonlit-arcade-03-lobby"
+  },
+  {
+   "title": "내보내진 기기에 내보냈다는 알림이 뜬다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "방장이 방을 닫으면 참가자에게 알림이 뜬다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "호스트가 방을 닫으면 방 목록에서 빠진다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "게임이 시작된 방은 새 참가자 목록에 안 보인다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "아홉 명 이상도 한 방에 모두 들어온다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "역할 카드는 버튼을 눌러야 공개된다",
+   "outcome": "pass",
+   "note": "실행 인자 -kickPreviewGame 으로 연 달빛 결사 판에서 역할 화면은 물음표 카드로 가려져 있고 내 역할 확인하기 버튼이 있었다.",
+   "screenshot": "claude-qa-moonlit-arcade-04-role-reconnect"
+  },
+  {
+   "title": "예언자는 그림자 단원 이름을 본다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 역할을 열어 보는 것은 화면을 누를 수단이 없어 못 봤다. GM 패널 미리보기에서 플레이어가 예언자인 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "리더가 정해진 인원만큼만 원정대를 고른다",
+   "outcome": null,
+   "note": "원정대 고르기는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "투표 중 누가 투표를 마쳤는지 표시된다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "찬반 투표 결과가 전원에게 공개된다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "찬반이 같으면 부결된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "연속 부결 횟수가 화면에 표시된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 원정 트랙 아래 부결 0/5 표시는 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다섯 번 연속 부결되면 그림자가 이긴다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "결사단원은 실패 카드를 낼 수 없다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "일곱 명 이상이면 넷째 원정은 실패 카드 2장이 필요하다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 다섯 명 판의 원정 트랙(2 3 2 3 3)만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "원정 3회 실패하면 그림자가 이긴다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "원정 3회 성공 뒤 암살 단계가 열린다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "암살자가 예언자를 맞히면 그림자가 역전승한다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "단계 타이머가 줄다가 시간 초과로 바뀐다",
+   "outcome": null,
+   "note": "타이머가 0 이 될 때까지 지켜보지 못했다. 게임 화면 오른쪽 위에 타이머(43, 85)가 도는 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "종료 화면에서 전원 역할이 공개된다",
+   "outcome": null,
+   "note": "한 판을 끝까지 하는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 멤버로 다시 하기를 누르면 모두 대기실로 간다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이어에게만 제시어가 감춰져 보인다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리가 화면 위에 표시된다",
+   "outcome": null,
+   "note": "라이어 게임 진행은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "발언 순서가 차례로 넘어간다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "발언자가 바뀌면 타이머가 처음부터 다시 간다",
+   "outcome": null,
+   "note": "발언 완료 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "표가 갈리면 라이어가 이긴다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "엉뚱한 사람을 지목하면 라이어가 이긴다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "잡힌 라이어에게 마지막 추측 기회가 온다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이어가 제시어를 맞히면 역전승한다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이어 결과 화면에 제시어와 투표 내역이 나온다",
+   "outcome": null,
+   "note": "라이어 게임을 끝까지 하는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "밤에 무당·밤손님·장난꾼이 각자 행동한다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "도깨비가 혼자면 중앙 카드를 볼 수 있다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "무당은 플레이어 한 명과 중앙 두 장 중에 고른다",
+   "outcome": null,
+   "note": "무당 화면 조작은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "밤손님은 훔친 뒤 새 카드를 확인한다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "낮 토론 뒤 방장이 투표를 시작한다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "동률이면 지목된 사람이 모두 추방된다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "아무도 2표를 못 받으면 아무도 추방되지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "도깨비가 모두 중앙에 있고 추방이 없으면 마을이 이긴다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "결과에서 바뀐 카드가 원래와 최종으로 함께 보인다",
+   "outcome": null,
+   "note": "달 없는 밤을 끝까지 하는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "결과에서 중앙 카드까지 공개된다",
+   "outcome": null,
+   "note": "달 없는 밤을 끝까지 하는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "화가가 제시어 셋 중 하나를 고른다",
+   "outcome": null,
+   "note": "-demoSketchAuto 는 제시어를 저절로 골라 고르는 화면은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "맞히는 사람에게 카테고리와 글자 수만 보인다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "그린 선이 다른 기기에 곧바로 나타난다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "되돌리기와 전체 지우기가 동작한다",
+   "outcome": null,
+   "note": "그리기는 화면을 누를 수단이 없어 못 봤다. 화가 화면 아래 되돌리기와 휴지통 아이콘은 보였다.",
+   "screenshot": null
+  },
+  {
+   "title": "정답을 쳐도 채팅에 제시어가 드러나지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "띄어쓰기와 대소문자가 달라도 정답으로 친다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "정답을 맞히면 점수가 올라간다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "모두 맞히면 라운드가 바로 끝난다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "화가의 다 그렸어요로 라운드를 끝낼 수 있다",
+   "outcome": null,
+   "note": "다 그렸어요 버튼은 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "그림을 탭하면 키보드가 내려간다",
+   "outcome": null,
+   "note": "키보드 조작은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드 위 키보드 내리기 버튼이 동작한다",
+   "outcome": null,
+   "note": "키보드 조작은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "라운드 수와 최종 순위가 표시된다",
+   "outcome": null,
+   "note": "-demoSketchAuto 연습이 끝나자 게임 종료 화면에 1~5위 이름과 점수(100, 90, 85, 70, 55점)가 줄지어 나왔다. 최종 순위 보기 버튼을 누르는 길은 못 봤다.",
+   "screenshot": "claude-qa-moonlit-arcade-06-sketch-result"
+  },
+  {
+   "title": "연습 전에 게임의 목적과 승리 조건이 먼저 나온다",
+   "outcome": "pass",
+   "note": "네 게임의 게임방법 첫 화면(실행 인자 -demo, -demoLiar, -demoWolf, -demoSketch)에 게임의 목적, 승리 조건, 연습 시작하기 버튼이 있었다.",
+   "screenshot": "claude-qa-moonlit-arcade-02-practice-intro"
+  },
+  {
+   "title": "게임방법에서 봇과 한 판을 끝까지 할 수 있다",
+   "outcome": null,
+   "note": "라이어 게임 연습은 다음 버튼을 눌러야 해 못 봤다. 달빛 화실 자동 연습(-demoSketchAuto)은 결과 화면까지 갔다.",
+   "screenshot": "claude-qa-moonlit-arcade-06-sketch-result"
+  },
+  {
+   "title": "단계마다 안내 문구가 먼저 뜬다",
+   "outcome": null,
+   "note": "달빛 화실 연습 그리기 단계 위에 노란 안내 카드(제시어를 그림으로 표현하세요…)가 있는 것은 봤다. 단계마다 넘기는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "봇이 알아서 투표와 카드를 제출한다",
+   "outcome": null,
+   "note": "달빛 화실 자동 연습에서 봇들이 점수를 받은 것은 봤지만 다른 게임의 봇 투표·카드는 다음 버튼을 눌러야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "달 없는 밤 연습에서는 늘 행동할 역할을 받는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "달 없는 밤 연습에서만 밤사이 일어난 일이 공개된다",
+   "outcome": null,
+   "note": "달 없는 밤 연습을 진행하는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "달빛 화실 연습에서는 내가 화가로 한 라운드를 한다",
+   "outcome": "pass",
+   "note": "-demoSketchAuto 로 연 달빛 화실 연습이 1 / 1 라운드, 내가 화가! 로 시작했다. 제시어 고르기 화면은 자동 모드라 건너뛰었다.",
+   "screenshot": null
+  },
+  {
+   "title": "연습 도중 홈으로 빠져나올 수 있다",
+   "outcome": null,
+   "note": "X 버튼과 확인 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "게임방법은 인터넷 없이 혼자서도 된다",
+   "outcome": null,
+   "note": "게임방법이 여러 기기 연결 없이 시뮬레이터 혼자서 진행되는 것은 봤다. 기내 모드는 켜지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "방장 왕관 버튼으로 GM 제어판이 열린다",
+   "outcome": null,
+   "note": "왕관 버튼은 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다. -gmPreview 로 GM 진행자 모드 시트가 열리는 것은 봤다.",
+   "screenshot": "claude-qa-moonlit-arcade-05-gm-panel"
+  },
+  {
+   "title": "참가자 기기에는 왕관 버튼이 없다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "멈춘 단계를 강제로 넘길 수 있다",
+   "outcome": null,
+   "note": "-gmPreview 는 8초 뒤 코드로 강제 진행을 부르고, 그 뒤 화면이 역할 배정에서 1번째 원정(리더: 별이)으로 넘어간 것을 봤다. 버튼과 확인 창을 누른 것은 아니다.",
+   "screenshot": "claude-qa-moonlit-arcade-05-gm-panel"
+  },
+  {
+   "title": "응답 없는 참가자를 내보낼 수 있다",
+   "outcome": null,
+   "note": "GM 패널 참가자 관리에 이름마다 빨간 내보내기 아이콘은 보였다. 내보내는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "역할·정답 열람 전에 경고가 먼저 뜬다",
+   "outcome": null,
+   "note": "-gmPreview 는 비공개 정보를 처음부터 켠 채 열어(GMPanelView.showSecrets) 켜기 전 경고 문구를 확인 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "역할·정답 공개를 켜면 이름 옆에 역할이 붙는다",
+   "outcome": null,
+   "note": "달빛 결사 판에서 역할·정답 공개가 켜진 GM 패널의 이름 옆에 예언자·그림자 단원·결사단원·암살자가 붙은 것은 봤다. 라이어 게임에서는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "암살자를 내보내면 달빛 결사 승리로 끝난다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이어를 내보내면 시민 승리로 끝난다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "화가를 내보내면 다음 화가로 라운드가 넘어간다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "게임 중단하고 대기실로 돌아갈 수 있다",
+   "outcome": null,
+   "note": "X 버튼과 확인 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "게임 중 화면이 자동으로 잠기지 않는다",
+   "outcome": null,
+   "note": "자동 잠금은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "연결이 끊기면 재접속 대기 배너가 뜬다",
+   "outcome": null,
+   "note": "-kickPreviewGame 미리보기 판 위쪽에 난희 님의 재접속을 기다리는 중입니다 배너가 뜨는 것은 봤다. 실제로 연결을 끊는 것은 여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": "claude-qa-moonlit-arcade-04-role-reconnect"
+  },
+  {
+   "title": "재접속 대기 배너에서 방장이 바로 내보낼 수 있다",
+   "outcome": null,
+   "note": "재접속 배너 안의 난희 내보내기 버튼은 봤다. 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-moonlit-arcade-04-role-reconnect"
+  },
+  {
+   "title": "호스트와 끊긴 참가자에게 재접속 시도 배너가 뜬다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "1분 넘게 못 붙으면 알림 뒤 홈으로 가고 이어서 하기가 남는다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 다시 열면 같은 역할로 돌아간다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "호스트와 멀어져도 가까운 다른 기기를 거쳐 다시 붙는다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "참가자가 빠져도 남은 인원으로 진행된다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "백그라운드에 다녀와도 단계가 유지된다",
+   "outcome": null,
+   "note": "홈 화면에 나갔다 오는 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "직접 나가면 이어서 하기 카드가 남지 않는다",
+   "outcome": null,
+   "note": "여러 기기 연결(MultipeerConnectivity)이 필요해 시뮬레이터 한 대로는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기는 내용을 써야 보낼 수 있다",
+   "outcome": null,
+   "note": "설정 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백을 보내면 감사 문구가 뜬다",
+   "outcome": null,
+   "note": "설정 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "리뷰 남기기를 누르면 평점 요청이 뜬다",
+   "outcome": null,
+   "note": "설정 화면은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정의 버전이 지금 버전과 맞다",
+   "outcome": null,
+   "note": "설정 화면은 화면을 누를 수단이 없어 못 봤다. 소스 MARKETING_VERSION 은 1.0.1 이다.",
+   "screenshot": null
+  },
+  {
+   "title": "세 번 이상 쓰면 만족도 질문이 한 번 뜬다",
+   "outcome": null,
+   "note": "설치 이틀 뒤 조건이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드에서 아이폰 화면 그대로 잘리지 않고 열린다",
+   "outcome": null,
+   "note": "iPad 시뮬레이터로는 보지 않았다.",
+   "screenshot": null
+  }
+ ]
+}

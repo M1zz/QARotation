@@ -1,0 +1,587 @@
+{
+ "id": "cooltime-2026-10-08-claude",
+ "bundleID": "com.Ysoup.CoolTime",
+ "startedAt": "2026-10-09T02:15:58+09:00",
+ "durationSeconds": 300,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "fail",
+   "note": "entitlements 를 넣어 서명한 Debug 빌드를 새로 깔아 켜면 매번 바로 죽는다(4번 재현, CoolTimeApp.swift:25 fatalError). 콘솔: CloudKit integration requires that all attributes be optional, or have a default value set … CooldownItem: breakCount, category, cooldownDuration, createdAt, emoji, id, isActive, name, totalUseCount, usageHistory. CoolTime.entitlements 에 피드백용 iCloud.com.Ysoup.FeedbackHub CloudKit 컨테이너가 들어가(커밋 f62a10c, 2026-07-23) SwiftData 의 기본 ModelConfiguration(cloudKitDatabase 기본값 .automatic)이 앱 기록 저장소까지 CloudKit 으로 열려다 실패한다. ModelConfiguration 에 cloudKitDatabase: .none 을 주면 될 것으로 보인다. 실기기 배포 빌드에서도 같은지 확인이 필요하다. 서명 없이 빌드한 앱은 다시 켜기 10번 넘게 죽지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사용 완료 흐름은 못 봤다. 이 앱에는 단위 테스트 타깃이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "인앱 결제가 없는 무료 앱이다(CoolTimeSpec.swift monetization = .free, 소스에 StoreKit 없음).",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "구매가 없는 무료 앱이라 복원할 것이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "홈을 다크로 봤고 요약 카드·아이템 카드 글씨와 쿨타임 원이 잘 보인다(아래 화면 확인은 실행 직후 죽지 않도록 서명 없이(entitlements 없이) 빌드한 앱으로 했다). 통계와 템플릿 화면은 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-cooltime-04-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 홈 요약 카드가 깨진다. 두 칸짜리 카드에 글자가 커지면서 준수율이 준수/율로, 예상 절약 금액 ₩325,000 이 ₩3/25,/00/0 으로 네 줄에 걸쳐 숫자 중간에서 끊기고, 쿨타임 중 도 쿨타/임 중으로 갈린다(HomeView 요약 카드 2열 격자)(아래 화면 확인은 실행 직후 죽지 않도록 서명 없이(entitlements 없이) 빌드한 앱으로 했다). 새 쿨타임 화면은 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-cooltime-03-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "SE 크기 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "서명한 빌드가 iOS 27.0 시뮬레이터에서 실행 직후 죽는다(1번 항목 참고). 서명 없는 빌드로는 홈이 정상으로 떴다. 위젯은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "CoolTime·widgetExtension 빌드에서 지원 종료(deprecated) 경고는 0개다. 다른 Swift 경고 3개가 있다: StatsView.swift:122(2개) TupleContent 의 View 채택이 iOS 26 이상에서만 가능, StatsView.swift:126 ViewBuilder 에 buildLimitedAvailability 가 없어 이전 OS 에서 죽을 수 있다는 경고.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 온보딩 네 장이 넘어간다",
+   "outcome": null,
+   "note": "새로 깔고 켜니 쿨타임으로 충동을 관리하세요 첫 장과 점 네 개, 다음·건너뛰기가 떴다(아래 화면 확인은 실행 직후 죽지 않도록 서명 없이(entitlements 없이) 빌드한 앱으로 했다). 왼쪽으로 밀어 넘기는 것은 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-cooltime-01-onboarding"
+  },
+  {
+   "title": "건너뛰기를 누르면 바로 홈으로 간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 건너뛰기를 누르지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "온보딩을 마치면 다시 열어도 안 뜬다",
+   "outcome": null,
+   "note": "시작하기를 누를 수단이 없어 못 봤다. 소스상 완료 시 hasCompletedOnboarding 을 저장하고, 그 값을 실행 인자로 켜고 띄우면 소개 없이 홈이 바로 떴다.",
+   "screenshot": null
+  },
+  {
+   "title": "페이지 점이 현재 장에 맞춰 커진다",
+   "outcome": null,
+   "note": "첫 장에서 첫 점만 커지고 파랗게 칠해진 것은 봤다. 장을 넘기는 것은 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-cooltime-01-onboarding"
+  },
+  {
+   "title": "아이템이 없으면 빈 화면 안내가 보인다",
+   "outcome": "pass",
+   "note": "아이템 없이 온보딩 완료 상태로 켜니 홈 가운데에 아직 쿨타임이 없어요 와 템플릿에서 추가하거나 직접 만들어보세요, 템플릿·직접 추가 버튼이 떴다(아래 화면 확인은 실행 직후 죽지 않도록 서명 없이(entitlements 없이) 빌드한 앱으로 했다).",
+   "screenshot": null
+  },
+  {
+   "title": "빈 화면의 템플릿과 직접 추가 버튼이 각 화면을 연다",
+   "outcome": null,
+   "note": "빈 홈의 템플릿·직접 추가 버튼은 봤다. 눌러서 시트가 열리는지는 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "요약 카드에 준수율과 절약 금액이 뜬다",
+   "outcome": "pass",
+   "note": "홈 맨 위 요약 카드에 준수율 87% 와 예상 절약 ₩325,000 이 함께 적혀 있다(저장소에 아이템 6개·사용 기록을 미리 넣어 확인).",
+   "screenshot": "claude-qa-cooltime-02-home"
+  },
+  {
+   "title": "요약 카드의 사용 가능과 쿨타임 중 개수가 목록과 맞는다",
+   "outcome": "pass",
+   "note": "요약 카드의 사용 가능 3개·쿨타임 중 3개가 아래 사용 가능 칸 카드 3장(게임 아이템, 러닝화 구매, 온라인 쇼핑)과 쿨타임 중 칸 3줄(호캉스, 배달음식, 카페)과 맞는다(저장소에 아이템 6개·사용 기록을 미리 넣어 확인). 직접 사용해서 바뀌는 것은 못 봤다.",
+   "screenshot": "claude-qa-cooltime-02-home"
+  },
+  {
+   "title": "준수율이 떨어지면 요약 아이콘 색이 바뀐다",
+   "outcome": null,
+   "note": "준수율을 50% 아래로 내린 데이터는 넣지 않았다. 87% 에서는 방패 아이콘이 초록이다.",
+   "screenshot": null
+  },
+  {
+   "title": "사용 가능과 쿨타임 중이 따로 묶여 보인다",
+   "outcome": "pass",
+   "note": "홈 목록이 사용 가능(가로 카드)과 쿨타임 중(세로 줄) 칸으로 나뉘어 보인다(저장소에 아이템 6개·사용 기록을 미리 넣어 확인).",
+   "screenshot": "claude-qa-cooltime-02-home"
+  },
+  {
+   "title": "사용 가능 카드가 많으면 옆으로 밀어 본다",
+   "outcome": null,
+   "note": "카드를 옆으로 밀 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색창에 이름을 치면 목록이 걸러진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 검색창에 입력하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리 이름으로도 검색된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 검색창에 입력하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색 결과가 없으면 안내 문구가 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 검색창에 입력하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 꾹 눌러 삭제·쿨타임 리셋이 된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 꾹 누르기는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임 원이 남은 비율만큼 채워진다",
+   "outcome": null,
+   "note": "쿨타임 중 카드 원에 지난 만큼 보라 테두리가 찬 것은 봤다(호캉스는 조금, 배달음식은 일부). 비율을 정확히 재지는 않았다.",
+   "screenshot": "claude-qa-cooltime-02-home"
+  },
+  {
+   "title": "화면을 보는 동안 남은 시간이 줄어든다",
+   "outcome": null,
+   "note": "1분 넘게 지켜보는 화면 변화는 정지 화면으로 확인하지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임이 끝나면 카드가 사용 가능 칸으로 옮겨 간다",
+   "outcome": null,
+   "note": "쿨타임이 끝날 때까지 기다려 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "가로로 돌려도 홈 카드가 잘리지 않는다",
+   "outcome": null,
+   "note": "가로 회전은 시뮬레이터 명령으로 할 수 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름을 비우면 추가 버튼이 눌리지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름에 빈칸만 넣으면 추가되지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이모지 팔레트에서 고른 아이콘이 카드에 붙는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "3일·1주 같은 빠른 선택이 쿨타임에 들어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "단위를 시간으로 바꾸면 미리보기 문구가 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "고른 카테고리로 아이템이 묶인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "비용을 넣으면 절약 금액 계산에 들어간다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 절약 금액 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "취소로 닫으면 아무것도 추가되지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "추가한 아이템이 사용 가능 칸에 들어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 새 쿨타임 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿으로 아이템이 추가된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 템플릿 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리별로 추천 템플릿이 묶여 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 템플릿 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "담은 템플릿 카드는 체크로 바뀌고 다시 눌리지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 템플릿 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "이미 담은 템플릿에는 표시가 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 템플릿 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿 카드에 쿨타임과 예상 비용이 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 템플릿 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿 주기가 개월·주·일로 맞게 적힌다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 템플릿 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이템을 쓰면 쿨타임 원이 줄기 시작한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 사용 시트를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임 중에 쓰면 경고가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 깨기 시트를 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모를 적어 사용 기록에 남긴다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 이 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "실제 비용을 넣으면 예상값 대신 쓰인다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 이 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "예상 비용이 없는 아이템은 실제 비용 칸이 없다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사용 시트를 취소하면 사용으로 치지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임을 깨면 깬 횟수가 하나 늘어난다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 이 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임 리셋을 누르면 바로 사용 가능해진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "리셋해도 사용 횟수와 깬 횟수는 그대로다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 이 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "통계에 준수율이 반영된다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 이 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 준수율 링이 비율만큼 차고 색이 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 통계 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "총 아이템·총 사용·깬 횟수가 맞게 센다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 이 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이템별 준수율이 막대로 늘어선다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 통계 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리별 개수와 준수율이 함께 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 통계 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "최근 활동에 날짜별 사용 횟수가 쌓인다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 이 계산을 확인할 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록이 없으면 활동 없음 문구가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 통계 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세 기록에 총 사용과 추정 지출이 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 통계 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 아이템을 쓸 때 알림 권한을 묻는다",
+   "outcome": null,
+   "note": "알림 권한 창은 아이템을 써야 떠서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임이 끝나면 종료 알림이 온다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "절반을 지나면 응원 알림이 온다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "하루보다 짧은 쿨타임은 절반 알림이 없다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림을 밀면 지금 사용하기 버튼이 보인다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "권한을 거부하면 홈 위에 안내 띠가 뜬다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내 띠의 설정 버튼이 iOS 설정을 연다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 열면 아이콘 배지가 지워진다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이템을 지우면 예약된 알림도 사라진다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임을 리셋하면 예약된 알림도 사라진다",
+   "outcome": null,
+   "note": "알림은 시간이 지나야 오거나 설정을 바꿔야 해서 시뮬레이터 명령으로 확인하지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 위젯이 쿨타임 현황을 보여 준다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "쿨타임 중인 게 없으면 작은 위젯에 모두 사용 가능이 뜬다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "중간 위젯에 준수율과 대기 목록이 함께 나온다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "중간 위젯은 대기 목록을 셋까지 보이고 나머지는 더로 센다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "큰 위젯에 이번 달 절약 금액이 보인다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 원형 위젯에 사용 가능 수가 뜬다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 원형 위젯이 다음 종료까지 링으로 보여 준다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 직사각형 위젯에 이름과 남은 시간이 나온다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 한 줄 위젯에 남은 시간이 나온다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이템을 쓰면 위젯 숫자도 곧 따라 바뀐다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이템이 없으면 위젯이 추가 안내를 띄운다",
+   "outcome": null,
+   "note": "위젯은 홈·잠금 화면에 얹어 봐야 해서 시뮬레이터 명령으로는 확인할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에서 개발자에게 메일을 보낼 수 있다",
+   "outcome": null,
+   "note": "설정 화면과 외부 앱 열기는 누를 수단이 없거나 실기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에서 인스타그램 DM 링크가 열린다",
+   "outcome": null,
+   "note": "설정 화면과 외부 앱 열기는 누를 수단이 없거나 실기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기로 개발자에게 의견이 간다",
+   "outcome": null,
+   "note": "설정 화면과 외부 앱 열기는 누를 수단이 없거나 실기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 내용이 비면 보내기가 꺼져 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 피드백 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "리뷰 남기기를 누르면 별점 창이나 리뷰 페이지가 열린다",
+   "outcome": null,
+   "note": "설정 화면과 외부 앱 열기는 누를 수단이 없거나 실기기가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "버전을 일곱 번 누르면 접수된 피드백 줄이 생긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 설정 화면을 열지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "몇 번 써 본 뒤 만족도 질문이 한 번 뜬다",
+   "outcome": null,
+   "note": "설치 이틀 뒤 조건이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "만족도에서 아쉬운 점을 고르면 개선 제안 창이 뜬다",
+   "outcome": null,
+   "note": "만족도 질문이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 껐다 켜도 아이템과 사용 기록이 남는다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 저장소에 넣은 아이템과 사용 기록이 열 번 넘게 다시 켜도 그대로인 것은 봤다(서명 없는 빌드). 앱에서 직접 만들고 써 본 것은 아니다.",
+   "screenshot": null
+  },
+  {
+   "title": "남은 쿨타임이 재실행 후에도 맞다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 남은 시간이 마지막 사용 시각(lastUsedDate)에서 계산되는 것은 소스로만 확인했다.",
+   "screenshot": null
+  },
+  {
+   "title": "오래 백그라운드에 뒀다 와도 남은 시간이 맞다",
+   "outcome": null,
+   "note": "이 앱에는 단위 테스트 타깃이 없다. 하룻밤 백그라운드는 시험하지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "비행기 모드에서도 쿨타임이 정상 동작한다",
+   "outcome": null,
+   "note": "비행기 모드는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "iPad에서 아이폰 화면으로 열려도 다 쓸 수 있다",
+   "outcome": null,
+   "note": "iPad 에서 보지 않았다. 빌드된 Info.plist 의 UIDeviceFamily 가 1(아이폰)뿐이라 iPad 에서는 호환 모드로 뜬다.",
+   "screenshot": null
+  }
+ ]
+}

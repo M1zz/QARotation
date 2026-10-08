@@ -1,0 +1,563 @@
+{
+ "id": "geusaie-2026-10-08-claude",
+ "bundleID": "com.leeo.geusaie",
+ "startedAt": "2026-10-09T00:50:09+09:00",
+ "durationSeconds": 1500,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 다시 켜기 20번 넘게(데모 레시피 두 개, 글자 크기 4단계, 가로, 다크, 가장 큰 글자) 동안 죽지 않았다. 켤 때마다 알리오 올리오와 토마토 크림 파스타 카드가 떴다.",
+   "screenshot": "claude-qa-geusaie-01-home"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "다음 버튼을 누를 수단이 없어 끝까지 넘기는 흐름은 못 봤다. DEBUG 실행 인자(-demoRecipe aglio-olio -demoAt <초>)로 그 시각까지 진행된 조리 화면을 띄워 봤다. 16분 40초 시점으로 열면 완성됐어요 🍴 접시에 담으세요와 완료 버튼이 뜨는 것은 확인했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. GeusaieSpec.monetization 이 .free 이고 소스에 StoreKit 이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(GeusaieSpec.monetization = .free, StoreKit 없음).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": "pass",
+   "note": "다크 모드로 바꿔 홈과 조리 화면을 봤다. 앱이 .preferredColorScheme(.light)로 고정돼 크림색 밝은 화면 그대로고 안 보이는 글자가 없다. 확인 창은 눌러야 떠서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "pass",
+   "note": "가장 큰 글자(AX5)로 홈과 조리 화면을 봤다. 홈 카드 이름과 약 15분 · 냄비 2개가 줄바꿈되어 다 보이고, 조리 화면 위쪽 바는 시간 칸 두 개가 아랫줄로, 아래 버튼은 마이크·일시정지와 다음이 두 줄로 나뉘어 잘리지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 조리 화면과 타임라인은 어긋남 없이 그려졌다. 마이크 배너와 냄비 알림은 데모 실행이 마이크·알림을 끄고 열어서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "Geusaie 스킴 빌드에서 Swift 컴파일 경고 1개가 지원 종료 경고다. VoiceCue.swift:78 의 AVAudioSession 옵션 .allowBluetooth(iOS 8.0 지원 종료, allowBluetoothHFP 로 이름이 바뀜).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 알림 허용을 한 번 묻는다",
+   "outcome": null,
+   "note": "새로 깔고 켠 뒤 5초 동안 홈만 보였고 알림 허용 팝업은 찍히지 않았다. 소스상 CookSession.init 에서 requestAuthorization 을 부른다. 팝업이 늦게 뜨는지 기기에서 다시 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "알림을 거부해도 요리를 끝까지 할 수 있다",
+   "outcome": null,
+   "note": "시스템 팝업을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈에 레시피 카드 두 장이 선다",
+   "outcome": "pass",
+   "note": "홈에 알리오 올리오와 토마토 크림 파스타 카드 두 장이 보였다.",
+   "screenshot": "claude-qa-geusaie-01-home"
+  },
+  {
+   "title": "카드에 걸리는 시간과 냄비 수가 적혀 있다",
+   "outcome": "pass",
+   "note": "알리오 올리오 카드 이름 아래에 약 15분 · 냄비 2개가 적혀 있다(토마토 크림 파스타는 약 20분 · 냄비 2개).",
+   "screenshot": "claude-qa-geusaie-01-home"
+  },
+  {
+   "title": "카드를 누르면 전체 화면 조리 화면이 열린다",
+   "outcome": null,
+   "note": "카드 탭은 화면을 누를 수단이 없어 못 봤다. 데모 인자로 연 조리 화면은 홈이 가려진 전체 화면이었다(fullScreenCover).",
+   "screenshot": null
+  },
+  {
+   "title": "시작 전 화면에 첫 할 일이 먼저 보인다",
+   "outcome": "pass",
+   "note": "-demoRecipe 로 연 시작 전 화면 위쪽 카드에 시작하면 이것부터 · 물 올리고 센 불 켜기가 있었다.",
+   "screenshot": "claude-qa-geusaie-02-ready"
+  },
+  {
+   "title": "시작 전에는 냄비 칸이 모두 비어 있다",
+   "outcome": "pass",
+   "note": "시작 전 화면에서 면냄비와 소스팬 칸이 둘 다 비어 있음이었다.",
+   "screenshot": "claude-qa-geusaie-02-ready"
+  },
+  {
+   "title": "요리 시작을 누르기 전에는 시계가 돌지 않는다",
+   "outcome": "pass",
+   "note": "시작 전 화면을 띄우고 30초 뒤 다시 찍어도 진행 시간 칸이 0:00 그대로였다.",
+   "screenshot": "claude-qa-geusaie-02-ready"
+  },
+  {
+   "title": "시작 전 화면 아래에 요리 시작 버튼 하나만 있다",
+   "outcome": "pass",
+   "note": "시작 전 화면 아래에는 요리 시작 버튼 하나만 있고 일시정지와 다음이 없었다.",
+   "screenshot": "claude-qa-geusaie-02-ready"
+  },
+  {
+   "title": "시작 전에는 확인 없이 바로 홈으로 닫힌다",
+   "outcome": null,
+   "note": "닫기 화살표는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "완성 예정 시각이 24시간 표기로 보인다",
+   "outcome": "pass",
+   "note": "시작 전 화면 포크 칸에 완성 예정 시각이 1:06, 1:07처럼 오전·오후 없는 24시간 표기로 잘리지 않고 보였다(시뮬레이터 실제 시각이 새벽 1시 무렵).",
+   "screenshot": "claude-qa-geusaie-02-ready"
+  },
+  {
+   "title": "요리를 시작하면 물 올리기가 지금 할 일이 된다",
+   "outcome": null,
+   "note": "요리 시작 버튼은 화면을 누를 수단이 없어 못 봤다. 시작 전 화면 카드에 물 올리고 센 불 켜기와 물 넉넉히, 소금은 바닷물처럼 짜게 팁은 보였다.",
+   "screenshot": null
+  },
+  {
+   "title": "다 됐다는 신호가 체크 표시와 함께 보인다",
+   "outcome": null,
+   "note": "물 올리기가 지금 할 일인 조리 화면은 데모 인자로 띄우지 못했다(5초 시점으로 연 실행이 홈으로 떴다). 마늘·유화 카드의 체크 표시 신호(소스가 뿌옇게 엉겨 면에 붙으면)는 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "도마 일은 천천히 해도 된다고 초록 카드로 보인다",
+   "outcome": "pass",
+   "note": "DEBUG 실행 인자(-demoRecipe aglio-olio -demoAt <초>)로 그 시각까지 진행된 조리 화면을 띄워 봤다. 1분 시점에 지금 할 일 · 천천히 해도 돼요와 재료 꺼내고 팬 올리기가 초록 카드로 떴다.",
+   "screenshot": "claude-qa-geusaie-03-prep-card"
+  },
+  {
+   "title": "도마 일 막대는 숫자 없이 차오르다 멈춘다",
+   "outcome": null,
+   "note": "막대가 멈추는 것은 1분 넘게 지켜봐야 해서 못 봤다. 도마 일 카드에 초 숫자 없이 초록 막대만 있는 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "도마 일 아래에 다음 냄비 일이 미리 보인다",
+   "outcome": "pass",
+   "note": "1분 시점 도마 일 카드 아래에 → 다음 · ⬇️ 끓으면 면 넣기 줄이 보였다.",
+   "screenshot": "claude-qa-geusaie-03-prep-card"
+  },
+  {
+   "title": "냄비가 부르면 하던 도마 일이 아래로 밀려난다",
+   "outcome": null,
+   "note": "끓을 때까지 그대로 두어 밀려나는 것을 보려면 실제로 5분을 기다리며 화면을 지켜봐야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "냄비 일을 마치면 하던 도마 일로 이어서 돌아온다",
+   "outcome": null,
+   "note": "다음 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "못 미루는 일은 테라코타 테두리와 미룰 수 없어요로 뜬다",
+   "outcome": "pass",
+   "note": "DEBUG 실행 인자(-demoRecipe aglio-olio -demoAt <초>)로 그 시각까지 진행된 조리 화면을 띄워 봤다. 13분 시점에 지금 · 미룰 수 없어요와 면수 남기고 면 건지기가 테라코타 테두리 카드로 떴다.",
+   "screenshot": "claude-qa-geusaie-04-deadline"
+  },
+  {
+   "title": "마감을 넘기면 늦었어요 · 지금 바로로 바뀐다",
+   "outcome": null,
+   "note": "카드가 뜬 뒤 30초 넘게 지켜보는 것은 못 했다(데모 인자는 그 시각까지의 일을 해 둔 것으로 본다).",
+   "screenshot": null
+  },
+  {
+   "title": "손 일이 끝나면 냄비만 기다리라고 알려 준다",
+   "outcome": null,
+   "note": "도마 일을 다 넘기는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음을 누르면 지금 할 일이 바로 다음 일로 넘어간다",
+   "outcome": null,
+   "note": "다음 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "냄비가 도는 동안 남은 시간을 숫자로 센다",
+   "outcome": "pass",
+   "note": "1분 시점 면냄비 칸에 물 끓이는 중과 3:58 이 보였고, 3분 시점엔 1:36 으로 줄어 있었다.",
+   "screenshot": "claude-qa-geusaie-03-prep-card"
+  },
+  {
+   "title": "냄비 칸의 네모가 남은 시간만큼 줄어든다",
+   "outcome": null,
+   "note": "네모가 줄어드는 것은 1분 지켜봐야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "냄비가 30초 안 남으면 숫자가 테라코타색이 된다",
+   "outcome": null,
+   "note": "30초 남은 순간을 띄우지 못해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "내가 냄비에 붙어 있으면 내가 하는 중이 뜬다",
+   "outcome": "pass",
+   "note": "면 건지기(13분) 때 면냄비 칸, 유화·버무리기(14분) 때 소스팬 칸에 손 모양과 내가 하는 중이 보였다.",
+   "screenshot": "claude-qa-geusaie-04-deadline"
+  },
+  {
+   "title": "다 쓴 냄비는 체크와 다 썼어요로 바뀐다",
+   "outcome": "pass",
+   "note": "14분 시점(면 건지기 뒤) 면냄비 칸이 체크 표시와 다 썼어요로 바뀌어 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "냄비가 다 되는 순간 진동이 울린다",
+   "outcome": null,
+   "note": "진동은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "타임라인에 내 손과 냄비 두 줄이 나뉘어 그려진다",
+   "outcome": "pass",
+   "note": "조리 화면 타임라인 카드에 내 손 · 면냄비 · 소스팬 세 줄로 막대가 나뉘어 그려졌다.",
+   "screenshot": "claude-qa-geusaie-03-prep-card"
+  },
+  {
+   "title": "도마 일 막대는 점선으로 그려진다",
+   "outcome": "pass",
+   "note": "타임라인 제목이 타임라인 · 점선은 미뤄도 되는 일이고, 내 손 줄의 도마 일 막대만 점선 테두리였다(시작 전·1분·3분 화면).",
+   "screenshot": null
+  },
+  {
+   "title": "지금 선과 경과 시간 말풍선이 왼쪽에서 오른쪽으로 움직인다",
+   "outcome": null,
+   "note": "1분 동안 지켜봐야 해 못 봤다. 말풍선 시각이 진행 시간과 같은 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "트랙이 길어지면 지금 선을 따라 가로로 스크롤된다",
+   "outcome": null,
+   "note": "몇 분 동안 지켜봐야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "타임라인 막대 이름이 잘리거나 서로 겹치지 않는다",
+   "outcome": null,
+   "note": "토마토 크림 파스타 6분 시점 화면만 봤고 옆으로 넘기는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물을 늦게 올리면 뒤 일정과 완성 예정이 함께 밀린다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 일정이 밀리는 계산을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "소스는 면을 건지는 시각에 맞춰 거꾸로 잡힌다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 미리 계획 계산(previewPlan)을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "도마 일은 손이 냄비에 가 있는 동안 늘지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 도마 일 진행량 계산을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "체크리스트가 계획된 순서대로 줄지어 있다",
+   "outcome": null,
+   "note": "체크리스트 위쪽 몇 줄(물 올리기, 재료 꺼내기, 물 끓이기, 마늘 썰기)만 보였고 끝까지 내려 순서를 견주지는 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "끝낸 일은 초록 체크와 가운데 줄로 지워진다",
+   "outcome": "pass",
+   "note": "데모로 진행된 조리 화면에서 끝낸 일(물 올리고 센 불 켜기 등)에 초록 체크와 취소선이 그어져 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "못 미루는 일 옆에 못 미룸 표시가 있다",
+   "outcome": null,
+   "note": "체크리스트를 면 건지기 줄까지 내릴 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "일시정지하면 진행 시간과 냄비 숫자가 멈춘다",
+   "outcome": null,
+   "note": "일시정지 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재개하면 멈춘 데서 시간이 다시 흐른다",
+   "outcome": null,
+   "note": "재개 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "일시정지 중 다음을 누르면 일을 넘기지 않고 재개만 된다",
+   "outcome": null,
+   "note": "버튼 누르기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "조리 중 나가려 하면 중단할지 먼저 묻는다",
+   "outcome": null,
+   "note": "닫기 화살표는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "계속 조리하기를 고르면 진행이 그대로 남는다",
+   "outcome": null,
+   "note": "확인 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "중단하고 나가면 다음에 처음부터 다시 시작한다",
+   "outcome": null,
+   "note": "확인 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "조리 중에는 화면이 저절로 꺼지지 않는다",
+   "outcome": null,
+   "note": "자동 잠금은 실기기에서 봐야 한다. 소스상 runFrom 에서 isIdleTimerDisabled 를 켠다.",
+   "screenshot": null
+  },
+  {
+   "title": "일시정지하거나 끝나면 화면이 다시 저절로 꺼진다",
+   "outcome": null,
+   "note": "자동 잠금은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 앱에 다녀와도 흐른 시간만큼 진행돼 있다",
+   "outcome": null,
+   "note": "다른 앱에 다녀오는 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "마지막 일을 다음으로 넘기면 완성 화면과 알림음이 난다",
+   "outcome": null,
+   "note": "DEBUG 실행 인자(-demoRecipe aglio-olio -demoAt <초>)로 그 시각까지 진행된 조리 화면을 띄워 봤다. 16분 40초 시점에 완성됐어요 🍴 접시에 담으세요 화면은 봤다. 마지막 일을 다음으로 넘기는 순간의 알림음은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-geusaie-05-done"
+  },
+  {
+   "title": "완성되면 진행 칸이 체크로 바뀌고 지금 선이 사라진다",
+   "outcome": "pass",
+   "note": "완성 화면에서 위쪽 포크 칸이 초록 체크로 바뀌고 타임라인의 세로선과 말풍선이 없었다.",
+   "screenshot": "claude-qa-geusaie-05-done"
+  },
+  {
+   "title": "완료를 누르면 홈으로 돌아간다",
+   "outcome": null,
+   "note": "완료 버튼은 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-geusaie-05-done"
+  },
+  {
+   "title": "요리를 시작하면 마이크와 음성 인식 권한을 묻는다",
+   "outcome": null,
+   "note": "권한 팝업은 요리 시작 버튼을 눌러야 떠서 못 봤다(데모 실행은 마이크를 켜지 않는다).",
+   "screenshot": null
+  },
+  {
+   "title": "준비 화면에서는 마이크가 켜지지 않는다",
+   "outcome": "pass",
+   "note": "시작 전 화면을 30초 띄워 두는 동안 상태 막대에 주황 점이 없고 마이크 배너도 없었다.",
+   "screenshot": "claude-qa-geusaie-02-ready"
+  },
+  {
+   "title": "다음이라고 말하면 할 일이 넘어간다",
+   "outcome": null,
+   "note": "음성은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "다음을 한 번 말하면 한 단계만 넘어간다",
+   "outcome": null,
+   "note": "음성은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "앞에서 한 번 말한 다음이 계속 넘기기로 걸리지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. hearsNext 를 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "마이크가 켜지면 말로 넘기라는 안내가 뜬다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "마이크 권한을 거부하면 마이크 버튼이 흐려진다",
+   "outcome": null,
+   "note": "권한 거부는 시스템 팝업이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "조용한 부엌에 오래 둬도 마이크가 쓸 수 없게 굳지 않는다",
+   "outcome": null,
+   "note": "실기기에서 5분 둬야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "마이크가 켜진 동안 위쪽 빨간 배너가 늘 보인다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "배너가 소리를 저장하지 않는다고 알려 준다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "배너의 끄기로 마이크와 배너가 함께 꺼진다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "일시정지하면 마이크가 꺼지고 재개하면 다시 켜진다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 벗어나면 마이크가 꺼진다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "직접 끈 마이크는 재개나 복귀 때 다시 켜지지 않는다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "완성되거나 화면을 닫으면 마이크가 꺼진다",
+   "outcome": null,
+   "note": "데모 실행은 마이크를 켜지 않아 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물이 다 끓으면 면 넣으라는 알림이 온다",
+   "outcome": null,
+   "note": "알림은 기다려야 해 못 봤다. 데모 실행은 알림을 걸지 않는다(CookSession.isDemoRun).",
+   "screenshot": null
+  },
+  {
+   "title": "면이 다 삶기면 면 건지기 알림이 집중 모드도 뚫는다",
+   "outcome": null,
+   "note": "집중 모드와 알림은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "일시정지하면 예약된 냄비 알림이 오지 않는다",
+   "outcome": null,
+   "note": "일시정지와 알림 대기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "재개하면 남은 시간에 맞춰 알림이 다시 걸린다",
+   "outcome": null,
+   "note": "재개와 알림 대기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "중단하고 나가면 냄비 알림이 남지 않는다",
+   "outcome": null,
+   "note": "중단하고 나가기와 알림 대기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "도마 일에는 알림이 오지 않는다",
+   "outcome": null,
+   "note": "알림 대기가 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자 크기 메뉴에 네 단계가 있다",
+   "outcome": null,
+   "note": "글자 크기 메뉴는 화면을 누를 수단이 없어 못 봤다. 오른쪽 위 가가 단추는 보였다.",
+   "screenshot": null
+  },
+  {
+   "title": "글자 크기를 바꾸면 조리 화면 글씨가 바로 커진다",
+   "outcome": "pass",
+   "note": "-demoTextScale 3(아주 크게)으로 연 조리 화면에서 지금 할 일 카드 글씨가 커지고 제목이 두 줄로 넘어가 잘리지 않았다. 메뉴로 바꾸는 순간의 반영은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "더 크게부터는 위쪽 바와 아래 버튼이 두 줄로 나뉜다",
+   "outcome": "pass",
+   "note": "-demoTextScale 2(더 크게)부터 위쪽 바의 시간 칸 두 개가 아랫줄로, 아래 다음 버튼이 마이크·일시정지 아랫줄로 내려간다. 0·1 단계는 한 줄이다.",
+   "screenshot": null
+  },
+  {
+   "title": "고른 글자 크기가 앱을 다시 열어도 남는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 소스상 textScale 을 @AppStorage 로 저장한다.",
+   "screenshot": null
+  },
+  {
+   "title": "아주 크게에서도 냄비 칸 글이 잘리지 않는다",
+   "outcome": null,
+   "note": "SE 시뮬레이터가 없다. Pro Max 에서 아주 크게로 본 냄비 칸 두 개(물 끓이는 중 1:38, 비어 있음)는 잘리지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드에서 홈 카드가 화면 끝까지 늘어나지 않는다",
+   "outcome": null,
+   "note": "아이패드 시뮬레이터로는 이번에 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "가로로 두면 할 일과 타임라인이 나란히 선다",
+   "outcome": "pass",
+   "note": "-demoLandscape 로 아이폰을 가로로 돌린 조리 화면에서 왼쪽에 지금 할 일과 냄비 칸, 오른쪽에 타임라인과 체크리스트가 나란히 섰다.",
+   "screenshot": "claude-qa-geusaie-06-landscape"
+  },
+  {
+   "title": "가로 배치에서 양쪽이 따로 스크롤된다",
+   "outcome": null,
+   "note": "스크롤 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "조리 중 화면을 돌려도 진행이 이어진다",
+   "outcome": null,
+   "note": "조리 중 회전 조작이 필요해 못 봤다.",
+   "screenshot": null
+  }
+ ]
+}

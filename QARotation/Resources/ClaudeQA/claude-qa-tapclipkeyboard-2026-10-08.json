@@ -1,0 +1,719 @@
+{
+ "id": "tapclipkeyboard-2026-10-08-claude",
+ "bundleID": "com.ysoup.TokenMemo-tap",
+ "startedAt": "2026-10-09T01:08:22+09:00",
+ "durationSeconds": 184,
+ "deviceModel": "Claude 자동 QA · Mac",
+ "osVersion": "macOS 27.0",
+ "appVersion": "5.1.6",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다. ClipKeyboard.tap 스킴 Debug 빌드는 성공했다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": null,
+   "note": "Models.swift·ClipKeyboardTapSpec.swift에 StoreKit 코드가 있지만 앱을 띄우지 못해 구매 화면을 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": null,
+   "note": "실제 App Store 계정이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver는 직접 켜서 들어 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "fail",
+   "note": "ClipKeyboard.tap 스킴 빌드의 Swift 경고 50개 중 6개가 지원 종료 API다. onChange(of:perform:)가 macOS 14.0부터 deprecated: MacPasteFlow.swift:233, MacPreferencesView.swift:65, MemoListView.swift:153, MenuBarPopoverView.swift:133, 172, 254. 나머지 44개는 MemoSyncEngine.swift 등의 Swift 6 동시성(main actor) 경고다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에 쓸 수 있는 예시 단축어가 깔린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰 백업이 있으면 새 맥에 단축어가 저절로 들어온다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 깐 맥에서 카테고리를 맞출지 묻는 띠가 뜨지 않는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "메뉴 막대 클립보드 아이콘이 팝오버를 연다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이콘을 우클릭하면 짧은 메뉴가 열린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이콘에 마우스를 올리면 ⌃⇧V가 적혀 보인다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "우클릭 메뉴의 온보딩 보기로 환영 화면이 다시 뜬다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "창을 다 닫아도 앱이 메뉴 막대에 남는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "스포트라이트에서 앱 이름을 치면 목록이 열린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "팝오버에서 카테고리를 바꾸면 그 항목만 보인다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "팝오버를 다시 열면 방금 만든 단축어가 있다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "검색 칸에 몇 글자만 쳐도 항목이 걸린다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "⌘1~9로 그 자리 단축어가 바로 복사된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "위아래 화살표로 고르고 Enter로 복사한다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "항목을 우클릭해 수정·삭제를 고른다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "팝오버에서 수정…을 고르면 단축어 수정 창이 뜬다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "삭제는 다른 기기에서도 사라진다고 먼저 묻는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "팝오버 밖을 클릭하면 창이 닫힌다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "팝오버 아래 단추로 새 단축어·기록·목록·환경설정이 열린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "보안 단축어는 내용 대신 점으로 가려진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "팝오버에서 이미지 단축어를 고르면 그림이 복사된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌃⇧V로 어디서나 빠른 붙여넣기 창이 뜬다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "항목을 누르면 복사되고 ⌘V 안내 후 창이 닫힌다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "창이 떠도 쓰던 앱의 커서가 그대로 남는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목줄 없이 한 줄짜리 행으로 촘촘히 보인다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "일반 마우스 휠로도 카테고리 줄이 옆으로 굴러간다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어가 없으면 비었다는 안내가 뜬다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌃⇧V를 한 번 더 누르면 창이 닫힌다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "보안 단축어는 Touch ID를 통과해야 복사된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌃⇧V 패널을 열기만 해도 아이폰에서 지운 단축어가 빠진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿을 고르면 값 채우기 창이 열린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "값 채우기 창 아래에 완성된 글이 미리 보인다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "비워 둔 칸은 {이름} 그대로 복사된다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "{날짜} 같은 자동 칸은 묻지 않고 오늘 날짜로 채워진다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "값 채우기 창을 닫으면 쓰던 앱으로 돌아간다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "스택은 칸을 하나씩 골라 차례로 복사한다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "스택 창에 2/4처럼 어디까지 넣었는지 나온다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "스택 창을 닫았다 열면 넣던 칸에서 이어진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "스택을 끝까지 넣고 다시 열면 첫 칸부터 시작한다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "값 자리에 아이폰에서 지은 칸 이름이 보인다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "\\\"무료 플랜·단축어 10개\\\" 문구가 보이지 않는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "끌어서 단축어 순서를 바꾼다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색 중에는 순서 바꾸기가 잠긴다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "같은 단축어가 있을 때만 중복 정리 단추가 뜬다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "중복 정리는 몇 개를 지울지 먼저 알려 준다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "마우스를 올린 행에만 수정·삭제가 나타난다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "여러 값 단축어는 고르는 창이 먼저 열린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색 결과가 없으면 없다고 알려 준다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "우클릭 메뉴로 즐겨찾기를 켜고 끈다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록에서 이미지 단축어를 누르면 그림이 복사된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록 창의 동기화 띠에서 나중에를 누르면 바로 사라진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "제목이나 내용이 비면 저장 단추가 잠긴다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리는 쳐 넣지 않고 목록에서 고른다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 카테고리…로 만든 이름이 저장하면 탭으로 선다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어가 없는 카테고리는 탭으로 서지 않는다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "자동으로 채워지는 값 칩을 누르면 내용에 칸이 들어간다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "클립보드의 이미지를 붙여 이미지 단축어를 만든다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록 창을 연 채로 저장해도 새 단축어가 바로 보인다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 단축어를 저장하고 다시 열면 빈 칸으로 열린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "보안 단축어를 수정하면 내용 대신 잠금 안내가 뜬다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "맥에서 고쳐도 아이폰에서 적은 힌트가 지워지지 않는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "방금 복사한 글이 클립보드 기록에 쌓인다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사한 이미지도 기록에 그림으로 남는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록 줄의 단축어로 저장 단추로 단축어가 생긴다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 삭제로 기록이 한 번에 비워진다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "복사하면 아래에 알림 띠가 잠깐 떴다 진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록이 없으면 빈 안내 화면이 나온다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "백그라운드 감시를 끄면 기록이 더 안 쌓인다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 글을 두 번 복사하면 기록에 한 줄만 남는다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "보안 단축어를 복사해도 기록에 내용이 남지 않는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "로그인 시 실행을 켜면 다시 켜도 유지된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "⌃⇧N·⌃⇧H·⌃⇧B가 각 창을 연다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "순서 탭에서 화살표로 단축어를 올리고 내린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축키 탭에 조합이 표로 정리돼 있다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "정보 탭에서 사용 설명서와 피드백이 열린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "정보 탭의 버전이 지금 앱 버전과 같다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰에서 추가한 단축어가 맥에 동기화된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "맥에서 만든 단축어가 아이폰에 나타난다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰에서 지운 단축어가 맥에서도 빠진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "동기화가 꺼져 있으면 켜라는 띠가 세워진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "\\\"나중에\\\"를 누르면 이번 실행에는 띠가 안 뜬다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud 기호를 누르면 그 자리에서 다시 받아온다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "마지막으로 확인한 시각이 툴팁에 적힌다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰에서 켜고 끈 카테고리 탭이 맥에 온다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리 맞추기 띠의 맞추기로 아이폰 탭 구성이 된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰에서 바꾼 카테고리 이름이 맥 칩에도 바뀐다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰에서 지운 카테고리가 맥 칩 줄에서도 빠진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "맥 순서 탭에서 바꾼 순서가 아이폰 목록에도 간다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "맥의 예시 단축어는 아이폰으로 넘어가지 않는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "같은 단축어가 겹친 데이터여도 동기화가 앱을 끄지 않는다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "지금 동기화를 누르면 마지막 확인 시각이 바뀐다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud 안 살펴보기가 양쪽 단축어 수를 보여 준다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "지운 것이 없으면 반영하기가 지울 것이 없다고 한다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "받아올 것이 없으면 다시 받기를 막는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "이 맥 것을 지우고 다시 받기는 앱을 다시 켠다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "다시 받기 전에 지우기 전 사본을 남긴다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "백업하면 단축어 개수와 시각이 갱신된다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어가 반 넘게 줄면 백업 전에 한 번 묻는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "복구는 지금 데이터가 바뀐다고 먼저 묻는다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "시점 목록에서 예전 형상으로 되돌린다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이폰에서 백업해도 맥의 마지막 백업 시각이 바뀐다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "백업 삭제 뒤 마지막 백업 줄이 사라진다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud에 로그인하지 않으면 연결 안 됨으로 백업이 잠긴다",
+   "outcome": null,
+   "note": "앱을 띄워 보지 못했다. 이 Mac에 실제 ClipKeyboard.tap.app이 깔려 쓰이고 있고, 같은 번들 ID의 Debug 빌드는 사용자의 App Group(group.com.Ysoup.TokenMemo)과 iCloud 단축어를 함께 써서 실데이터를 바꿀 수 있어 실행하지 않았다. QA 하는 동안 Mac 화면도 잠겨 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "파일로 내보내고 다시 가져온다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "가져오기는 지우지 않고 합쳐 넣는다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "백업 파일이 아닌 파일을 가져오면 손상됐다고 알린다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  },
+  {
+   "title": "기록에서 담은 이미지 단축어도 내보낸 파일에 그림이 들어간다",
+   "outcome": null,
+   "note": "탭클립키보드 프로젝트에는 테스트 타깃이 없어 이 동작을 확인하는 테스트가 없다. 앱은 실행하지 못했다(실데이터 보호).",
+   "screenshot": null
+  }
+ ]
+}

@@ -1,0 +1,731 @@
+{
+ "id": "stampcamera-2026-10-08-claude",
+ "bundleID": "com.devkoan.StampCamera",
+ "startedAt": "2026-10-09T00:44:41+09:00",
+ "durationSeconds": 1500,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 2번, 다시 켜기 4번 동안 앱이 죽지 않았다. 매번 카메라 권한 창이 떴다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "촬영부터 수집함 담기까지는 실기기 카메라가 필요해 못 봤다. 우표 저장·수집함·컬렉션 로직은 StampCameraTests 84개(7개 묶음)가 모두 통과했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "StampCameraSpec.swift 의 monetization 이 .free 이고 앱·키보드·스티커 소스에 StoreKit 사용이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "StampCameraSpec.swift 의 monetization 이 .free 이고 StoreKit 사용이 없어 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "카메라 화면은 원래 검은 바탕이라 다크와 상관이 적다. 권한 창 너머 모음·설정 화면은 못 봐서 다크도 확인 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "권한 창 너머 화면을 못 봐서 가장 큰 글자도 확인 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터(iPhone 18 Pro Max)에서 단위 테스트 84개 모두 통과, 앱 실행 정상. 카메라 기능은 실기기에서 따로 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "StampCamera(앱+테스트), keyboard, sticker 스킴 새 빌드에서 Swift 컴파일 경고 0개. Assets.xcassets 에 AccentColor 가 없다는 에셋 경고 1줄만 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음 열면 카메라 권한을 묻고 허용하면 미리보기가 뜬다",
+   "outcome": null,
+   "note": "새로 깔고 켜니 카메라 권한 창이 바로 떴고 설명 문구(우표 펀칭 프레임으로 사진을 찍기 위해 카메라를 사용해요.)가 나왔다. 허용 뒤 미리보기는 실기기 카메라가 필요해 못 봤다.",
+   "screenshot": "claude-qa-stampcamera-01-camera-permission"
+  },
+  {
+   "title": "처음 열면 찍은 장소 기록을 위한 위치 권한을 묻는다",
+   "outcome": null,
+   "note": "카메라 권한 창에서 더 나아가지 못해 위치 권한 창이 뜨는지는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 권한을 거부하면 안내 화면이 뜬다",
+   "outcome": null,
+   "note": "simctl privacy revoke camera 로 거부 상태를 만들려 했으나 시뮬레이터가 권한 창을 다시 띄워 거부 안내 화면은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "좌상단 칩에 담길 수집함 이름이 보인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "칩 메뉴에서 새 수집함을 만들 수 있다",
+   "outcome": null,
+   "note": "CollectionStoreTests 의 createAlbumActivatesIt, createAlbumRejectsBlank 가 새 수집함을 만들면 활성이 되고 빈 이름은 거절하는 것만 확인한다. 칩 메뉴는 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "칩 메뉴에서 다른 수집함을 고르면 담기는 곳이 바뀐다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "긴 수집함 이름은 말줄임되고 오른쪽 단추와 겹치지 않는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "셀피 버튼을 누르면 아이콘이 돌며 앞 카메라로 바뀐다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면을 탭하면 노란 초점 링이 생긴다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "두 손가락으로 벌리면 배율 숫자가 뜬다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "두 손가락으로 줌하다 떼도 사진이 찍히지 않는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "배율 슬라이더로 줌을 미세하게 맞춘다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "프레임 바깥이 흐려져 창 안만 또렷하다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "아이패드에서 열어도 프레임과 단추가 화면 안에 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "촬영하면 우표 모양으로 잘려 수집함에 담긴다",
+   "outcome": null,
+   "note": "StampShapeTests·StampCompositorTests(perforationBitesAtHoleCenter, cropNormMapsWindowToSourcePixels 등)가 우표 모양 자르기 계산을, CollectionStoreTests 의 addGoesIntoActiveAlbum 이 담기는 것을 확인한다. 실제 촬영은 실기기 카메라가 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "프레임을 누르면 눌렸다 떼며 펀칭 소리가 난다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "음악을 듣다 찍어도 음악이 멈추지 않는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "프레임을 빠르게 두 번 눌러도 우표는 한 장만 생긴다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "잘린 우표가 창에서 튀어올라 프레임 위에 떨어진다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "리빌 카드를 옆으로 끌면 뒷면 소인이 보인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이브 우표 카드는 리빌에서 바로 움직인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "리빌 화면에서 캡션을 바로 적어 담는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "버리기를 누르면 카드가 굴러떨어지며 지워진다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "위치 권한을 거부해도 촬영은 그대로 된다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "셀피로 찍은 우표가 미리보기와 같은 방향으로 담긴다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 모습을 스티커로 두면 배경이 지워진 채 담긴다",
+   "outcome": null,
+   "note": "StyleCorrectnessTests 의 스티커_스타일은_절대_톱니_우표가_되지_않는다가 스티커 모습이 톱니 우표로 바뀌지 않는 것만 확인한다. 실제 배경 지우기(피사체 인식)는 실기기 사진이 필요하다.",
+   "screenshot": null
+  },
+  {
+   "title": "피사체를 못 찾으면 스티커를 만들지 못했어요가 뜬다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "모음을 열면 마지막으로 본 수집함이 바로 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표가 3×4 포켓에 꽂히고 옆으로 넘어간다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "페이지 아래에 쪽수 표시가 나온다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표 위에서 옆으로 밀어도 쪽이 넘어간다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "하루 안에 찍은 우표에 NEW 배지가 붙는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표를 한 번 열어 보면 NEW 배지가 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "열 번째 우표마다 금박 바탕과 왕관이 붙는다",
+   "outcome": null,
+   "note": "열 번째 우표 금박 표시를 다루는 테스트가 없다. 화면은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "움직이는 우표에는 라이브 심볼이 보인다",
+   "outcome": null,
+   "note": "LiveStampTests 의 라이브_표식은_진짜_재생가능한_클립에만_붙는다가 표식 판정(isPlayablyLive)만 확인한다. 모음 화면 심볼은 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "깔때기 메뉴로 움직이는 우표만 걸러 본다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "선택 모드에서 여러 장을 한 번에 지운다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "수집함 이름을 바꾸면 우표가 따라 옮겨진다",
+   "outcome": "pass",
+   "note": "CollectionStoreTests 의 renameAlbumMovesStamps 가 수집함 이름을 바꾸면 안의 우표가 새 이름으로 따라 옮겨지는 것을 확인한다. 이름 바꾸기 화면은 별도다.",
+   "screenshot": null
+  },
+  {
+   "title": "여기에 모으기를 누르면 카메라 칩이 그 수집함으로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "수집함 삭제는 안의 우표 수를 알리고 함께 지운다",
+   "outcome": null,
+   "note": "CollectionStoreTests 의 deleteAlbumRemovesItsStampsButKeepsOne 이 수집함을 지우면 안의 우표도 함께 지워지는 것은 확인한다. 우표 수를 알리는 확인 창은 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "수집함이 하나뿐이면 수집함 삭제가 없다",
+   "outcome": null,
+   "note": "CollectionStoreTests 의 deleteAlbumRefusesToRemoveLastAlbum 이 마지막 수집함은 저장소가 지우지 않는 것만 확인한다. 메뉴에서 삭제 항목이 빠지는지는 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈 수집함에는 안내 문구가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체사진 단추로 원본 사진과 우표만을 오간다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표를 꾹 누르면 크롭 전 원본 사진이 보인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "꾸미기에서 세피아를 고르면 우표 색감이 바뀐다",
+   "outcome": null,
+   "note": "ColorHexTests(blackAndWhite 등)가 색 변환 계산 일부만 본다. 꾸미기 세피아가 우표에 입혀지는지는 테스트가 없고 화면도 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "꾸미기를 바꾼 뒤 공유한 PNG에도 그 색감이 남는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스티커 모습에 꾸미기를 입혀도 배경 없는 스티커로 남는다",
+   "outcome": null,
+   "note": "StyleCorrectnessTests 가 스티커 모습이 톱니 우표로 바뀌지 않는 것은 확인하지만 꾸미기를 입힌 경우는 다루지 않는다.",
+   "screenshot": null
+  },
+  {
+   "title": "모습의 움직임을 켜면 정지 우표가 움직인다",
+   "outcome": null,
+   "note": "StyleCorrectnessTests 의 applyStyle는_고른_스타일을_즉시_기록한다와 LiveStampTests 의 스타일_전환은_클립을_만들고_되돌리면_지운다가 움직임 스타일 선택과 클립 생성을 확인한다. 정지 우표가 화면에서 움직이는지는 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "모습의 모양을 스티커로 바꾸면 배경이 지워진다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "정지로 바꿨다 다시 움직임으로 돌려도 움직임이 살아 있다",
+   "outcome": "pass",
+   "note": "LiveStampTests 의 마스터없는_옛우표도_모습을_바꿨다_되돌리면_움직임이_산다와 스타일_전환은_클립을_만들고_되돌리면_지운다가 정지로 바꿨다 움직임으로 돌리면 모션 마스터에서 6프레임 클립이 다시 살아나는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "움직임이 없는 우표는 움직임 칸이 흐려 눌리지 않는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세에서 고친 캡션이 다시 열어도 남아 있다",
+   "outcome": null,
+   "note": "CollectionStoreTests 의 captionPersists 가 캡션이 저장소에 남는 것을 확인한다. 상세 화면에서 고치는 흐름은 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "장소 이름이 우표 아래에 핀과 함께 뜬다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사를 누르면 복사됨 표시로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "상세 아래 수집함 단추로 다른 수집함에 옮긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "수집함에서 우표를 길게 눌러 컬렉션에 건다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "컬렉션에 걸어도 수집함에서 빠지지 않는다",
+   "outcome": "pass",
+   "note": "ExhibitionTests 의 placeKeepsStampInCollection 과 placementsReloadFromDisk(걸어도 수집함엔 그대로 3장)가 컬렉션에 걸어도 우표가 수집함에서 빠지지 않는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 컬렉션을 만들 때 속지 배경 열 가지를 고른다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표 걸기 단추를 누르면 우표가 부채처럼 펼쳐진다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "부채에서 고른 우표를 탭한 자리에 붙인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "왼손잡이 모드로 부채가 반대쪽에서 펼쳐진다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "걸어 둔 우표를 끌어 순서를 바꾼다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "컬렉션에서 내리기로 우표가 벽에서 빠진다",
+   "outcome": null,
+   "note": "ExhibitionTests 의 returnBringsStampBackToItsAlbum 이 내린 우표가 수집함으로 돌아오는 저장소 동작만 확인한다. 내리기 메뉴는 UI라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 컬렉션에 걸면 앞 컬렉션에서는 빠진다",
+   "outcome": "pass",
+   "note": "ExhibitionTests 의 singleMembershipAcrossExhibitions 가 A 컬렉션에 건 우표를 B 에 걸면 A 에서 빠지고 B 에만 있는 것(복제 아님)을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "컬렉션을 지워도 우표는 수집함에 남는다",
+   "outcome": "pass",
+   "note": "ExhibitionTests 의 deleteExhibitionReturnsStampsNotDeletes 가 컬렉션을 지워도 우표가 지워지지 않고 수집함으로 돌아오는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "걸린 우표가 없으면 비어 있다고 알려 준다",
+   "outcome": null,
+   "note": "빈 컬렉션 안내를 다루는 테스트가 없다. 화면도 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "컬렉션에서 인쇄용 스티커 시트 PDF가 만들어진다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스티커 시트에 톱니 칼선과 모서리 재단 표시가 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "인쇄 가이드가 여섯 단계로 설명해 준다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "컬렉션을 한 장 이미지로 공유할 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표를 투명 배경 PNG로 내보낸다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스티커 모습 우표를 공유하면 배경 없는 PNG가 나온다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "원본이 있는 우표는 인쇄 때 더 또렷하게 나온다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "메시지 스티커 서랍에 모은 우표가 보인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "서랍 위 칩으로 컬렉션별로 걸러 본다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이브 우표가 서랍에서도 움직인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "대화에 보낸 라이브 스티커가 보낸 뒤에도 움직인다",
+   "outcome": null,
+   "note": "LiveStampTests 의 메시지_스티커는_500KB_예산을_지킨다와 StyleCorrectnessTests 의 움직이는_스티커는_절대_한장으로_얼지_않는다가 스티커 파일이 움직임을 유지하는 것만 확인한다. 메시지 앱에서 보낸 뒤 모습은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "서랍에 우표가 없으면 만들라는 안내가 뜬다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표를 지우면 스티커 서랍에서도 빠진다",
+   "outcome": null,
+   "note": "CollectionStoreTests 의 deleteRemovesStampAndAllSidecars 가 우표와 부속 파일이 지워지는 것만 확인한다. 메시지 서랍 반영은 익스텐션 동작이라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "모습을 바꾸면 서랍 스티커도 그 모습으로 바뀐다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드 전체 접근이 꺼져 있으면 켜는 길을 알려 준다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스티커 키보드에서 우표를 누르면 복사된다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드에 우표가 없으면 안내 문구가 뜬다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스티커 점검에서 안 움직이는 항목을 바로잡는다",
+   "outcome": null,
+   "note": "StyleCorrectnessTests 의 점검은_움직임설정인데_안움직이는_것만_골라낸다가 고칠 대상 고르기만 확인한다. 점검 화면에서 바로잡는 동작은 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "Siri에 \\\"펀칭 열기\\\"라고 하면 카메라가 바로 열린다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "제어센터 버튼을 누르면 카메라로 바로 간다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 버튼에서도 카메라가 열린다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "모음 화면이 열려 있으면 닫고 카메라로 돌아간다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정 시트가 열려 있어도 카메라 열기가 카메라로 돌아간다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어 앱에서 꾹 카메라 열기가 검색된다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "kkuk://camera 주소로 카메라가 열린다",
+   "outcome": null,
+   "note": "CameraLaunchRouter.handle 이 kkuk://camera 를 받는 것은 소스에 있지만 이를 확인하는 테스트가 없고, 시뮬레이터는 카메라 권한 창에서 멈춰 열어 봐도 확인이 안 됐다.",
+   "screenshot": null
+  },
+  {
+   "title": "카메라 톱니를 누르면 설정 시트가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 첫 화면이 카메라 권한 창에 막혀 그 너머는 못 봤다. 시뮬레이터에서 simctl privacy grant/revoke camera 를 줘도 권한 창이 그대로 다시 떠서 권한을 넘길 수단이 없었다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 모습을 바꾸면 다음 촬영이 그 모습으로 담긴다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정의 피드백 보내기로 문의를 보낼 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정의 개인정보 처리방침과 지원 페이지가 열린다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "몇 번 쓰고 나면 즐겁게 쓰고 계신가요를 한 번 묻는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "움직임 자동 재생을 끄면 어디서나 정지로 보인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "책처럼 넘기기를 켜면 페이지가 넘어가듯 돈다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "펀칭 프레임 모양을 골라 바꿀 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "프레임을 바꾼 뒤 찍어도 창 안 장면이 그대로 잘린다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "보관함 사진을 가져와 우표로 만든다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "가져온 사진을 스티커 배경 제거로 만들 수 있다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "재실행해도 우표와 캡션이 남아 있다",
+   "outcome": "pass",
+   "note": "CollectionStoreTests 의 everythingReloadsFromDisk 와 captionPersists, placePersists 가 저장소를 다시 열어도 우표와 캡션이 남는 것을 확인한다. legacyStampWithoutMetaStillLoads 도 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "재실행해도 컬렉션 배경과 걸린 순서가 남아 있다",
+   "outcome": "pass",
+   "note": "ExhibitionTests 의 placementsReloadFromDisk(배치 유지), createWithBackgroundPersists, setBackgroundChangesAndPersists, backgroundSurvivesRenameAndRearrange 가 컬렉션 배경과 걸린 순서가 다시 열어도 남는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "라이브 우표의 움직임이 재실행 뒤에도 살아 있다",
+   "outcome": "pass",
+   "note": "LiveStampTests 의 인코딩_저장_디코딩_왕복후에도_움직임이_남는다(템포와 프레임 차이 유지)와 모션마스터는_저장하고_그대로_되읽는다, StyleCorrectnessTests 의 선택한_스타일이_정확히_기록되고_되읽힌다가 다시 열어도 움직임이 사는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "모음 화면을 열면 카메라 초록불이 꺼진다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈에 다녀와도 카메라가 다시 움직인다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "비행기 모드에서도 촬영과 수집이 된다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "우표가 백 장 넘어도 수집함 넘기기가 끊기지 않는다",
+   "outcome": null,
+   "note": "실기기 카메라와 손 조작이 필요해 못 봤다. 시뮬레이터에서는 카메라 권한 창에서 더 나아가지 못했다.",
+   "screenshot": null
+  }
+ ]
+}

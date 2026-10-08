@@ -1,0 +1,473 @@
+{
+ "id": "externalize-2026-10-08-claude",
+ "bundleID": "com.devkoan.externalize",
+ "startedAt": "2026-10-09T01:22:01+09:00",
+ "durationSeconds": 1500,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 1번, 다시 켜기 10번(한국어, 영어, 다크, 가장 큰 글자) 동안 죽지 않았다. 온보딩을 마친 상태로 켜면 저장한 메모 목록이 바로 떴다. (레포 작업 트리에 커밋 안 된 큰 변경(메모를 미루는 앱으로 바꾸는 중)이 있어, 출시본인 HEAD(09b2694)를 따로 꺼내 빌드해 봤다. 메모는 App Group 저장소에 직접 넣어 띄웠다.)",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "더하기와 저장은 화면을 누를 수단이 없어 못 봤다. 넣어 둔 메모가 여러 번 다시 켜도 그대로 남는 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "무료 앱이다. ExternalizeSpec.monetization 이 .free 이고 커밋 ce73ff8(결제 제거) 뒤로 StoreKit 이 없다. 목록 왼쪽 위 칸 수 단추도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "무료 앱이라 복원할 구매가 없다(ExternalizeSpec.monetization = .free).",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "다크 모드로 메모 목록과 온보딩을 봤고 값 글씨와 남은 시간 막대(파랑·주황)가 다 보인다. 기억하기 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-externalize-04-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 메모 목록 둘째 카드의 남은 시간이 23시간 48분 후… 로 잘린다(첫 카드는 같은 글이 두 줄로 넘어감). ContentView.swift MemoRow 의 Forgets in … 텍스트가 TimelineView 안 HStack 에 있어 줄 높이를 다시 못 잡는다. 온보딩 첫 장도 아래 기능 목록(주차한 위치)이 페이지 점과 다음 버튼 뒤로 가려진다.",
+   "screenshot": "claude-qa-externalize-05-ax5-list"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다. 소스상 카드에 accessibilityElement(children: .combine)과 Double-tap to copy 힌트가 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터에서 메모 목록은 정상이다. 위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "앱·위젯(ExternalizeWidgetExtension) 빌드에서 Swift 컴파일 경고 0개.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에 다섯 장짜리 안내가 뜬다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 안내가 떴고 아래 페이지 점이 다섯 개다. 한국어·영어 같다.",
+   "screenshot": "claude-qa-externalize-01-onboarding"
+  },
+  {
+   "title": "건너뛰기를 누르면 바로 목록으로 간다",
+   "outcome": null,
+   "note": "건너뛰기 버튼은 첫 장 오른쪽 위에 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-externalize-01-onboarding"
+  },
+  {
+   "title": "마지막 장에서는 건너뛰기가 사라진다",
+   "outcome": null,
+   "note": "다섯째 장까지 넘기는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "물음표 단추로 안내를 다시 본다",
+   "outcome": null,
+   "note": "물음표 단추는 목록 오른쪽 위에 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "안내를 끝내면 다시 켜도 안 뜬다",
+   "outcome": null,
+   "note": "시작하기로 끝내는 것은 화면을 누를 수단이 없어 못 봤다. 안내를 끝내지 않고 다시 켜면 안내가 다시 뜨는 것은 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "한국어 기기에서 앱 이름이 뇌모리로 보인다",
+   "outcome": null,
+   "note": "홈 화면 아이콘 이름은 보지 못했다. 앱 안 큰 제목은 한국어 기기에서 뇌모리, 영어에서 Externalize 였다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모가 없으면 기억할 것 없다는 화면이 나온다",
+   "outcome": "pass",
+   "note": "저장한 메모가 하나도 없는 상태로 켜니 가운데 기억할 게 없어요 화면과 기억할 것 추가 단추가 떴다. 밀어 지우는 과정은 거치지 않았다.",
+   "screenshot": "claude-qa-externalize-02-empty"
+  },
+  {
+   "title": "빈 화면의 기억할 것 추가 단추로 저장 창이 열린다",
+   "outcome": null,
+   "note": "기억할 것 추가 단추는 보였지만 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": "claude-qa-externalize-02-empty"
+  },
+  {
+   "title": "저장 창을 열면 값 칸에 커서가 있다",
+   "outcome": null,
+   "note": "기억하기 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 창은 주차와 24시간이 골라진 채 열린다",
+   "outcome": null,
+   "note": "기억하기 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "주차·사물함·방·코드·메모 칩 중에 고른다",
+   "outcome": null,
+   "note": "기억하기 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "종류를 바꾸면 값 칸 예시 글이 바뀐다",
+   "outcome": null,
+   "note": "기억하기 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사물함·방·코드를 고르면 숫자 자판이 올라온다",
+   "outcome": null,
+   "note": "자판은 실기기에서 봐야 한다. 소스상 사물함·방·코드는 prefersNumericKeyboard 가 참이다.",
+   "screenshot": null
+  },
+  {
+   "title": "값 칸에 친 영문이 대문자로 들어간다",
+   "outcome": null,
+   "note": "값 입력은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름표를 비우면 종류 이름이 대신 쓰인다",
+   "outcome": "pass",
+   "note": "이름 없이 넣은 메모 카드 제목이 종류 이름(주차, 방)으로 적혔다. 테스트 타깃이 없다. 판정은 화면으로 봤다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "이름을 적으면 카드 제목이 그 이름이 된다",
+   "outcome": "pass",
+   "note": "이름을 렌터카로 넣은 메모 카드 위쪽에 렌터카와 종류 아이콘이 보였다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "값이 비면 저장 단추가 눌리지 않는다",
+   "outcome": null,
+   "note": "기억하기 창은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "띄어쓰기만 넣으면 저장되지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 띄어쓰기만 넣은 값 저장 막기를 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "자판의 완료로도 바로 저장된다",
+   "outcome": null,
+   "note": "자판 완료는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "취소하면 적던 값이 저장되지 않는다",
+   "outcome": null,
+   "note": "취소 버튼은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "1시간·8시간·24시간 중 만료를 고른다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 1시간짜리로 넣은 메모 카드는 4분 53초 후 삭제처럼 한 시간 안쪽으로 적히는 것을 봤지만, 창에서 1시간을 고르는 것은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "새로 저장한 메모가 목록 맨 위에 선다",
+   "outcome": null,
+   "note": "저장 버튼은 화면을 누를 수단이 없어 못 봤다. 넣어 둔 메모는 만든 시각이 최근인 것부터 위에 섰다(MemoRepository.load 의 createdAt 내림차순).",
+   "screenshot": null
+  },
+  {
+   "title": "메모를 탭하면 값이 복사된다",
+   "outcome": null,
+   "note": "탭 복사는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사한 카드에 초록 체크가 잠깐 뜬다",
+   "outcome": null,
+   "note": "탭 복사는 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사할 때 짧은 진동이 함께 온다",
+   "outcome": null,
+   "note": "진동은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "값이 크고 둥근 글씨로 한눈에 읽힌다",
+   "outcome": "pass",
+   "note": "네 자리 코드 4719#, 방 1207 같은 값이 카드에서 40pt 굵은 둥근 글씨로 크게 보였다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "긴 값은 두 줄로 줄어들어 담긴다",
+   "outcome": "pass",
+   "note": "스무 글자 넘는 값(서울역 3번 출구 앞 파란 우산 쓴 사람 찾기)이 두 줄로 담겨 잘리지 않았다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "남은 시간 막대가 줄어들며 보인다",
+   "outcome": null,
+   "note": "몇 분 뒤 다시 보는 것은 못 했다. 만든 지 1시간 남짓 된 8시간짜리 메모의 막대는 짧아져 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "15% 아래로 떨어지면 막대가 주황이 된다",
+   "outcome": "pass",
+   "note": "남은 시간이 5분 안쪽(약 8%)인 1시간짜리 메모 카드의 막대가 주황으로 보였다. 나머지는 파랑이다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "목록 아래에 사용법과 잠금화면 위젯 안내가 있다",
+   "outcome": "pass",
+   "note": "메모 목록 아래에 탭하면 복사돼요… 문구와 그 밑 잠금화면에 띄워두세요 안내가 있었다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "기기를 돌려도 화면이 세로로 남는다",
+   "outcome": null,
+   "note": "기기 회전은 돌릴 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 카드를 한 덩어리로 읽어 준다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "재실행해도 아직 만료되지 않은 메모가 남아 있다",
+   "outcome": "pass",
+   "note": "24시간짜리 메모를 넣고 앱을 여러 번 끄고 다시 열어도 그 카드가 목록에 그대로 있었다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "스와이프하면 만료가 24시간 늘어난다",
+   "outcome": null,
+   "note": "스와이프는 제스처라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "1시간짜리를 늘리면 24시간 뒤 삭제로 바뀐다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 소스상 Memo.extended 가 만료를 지금부터 24시간으로 다시 잡는다.",
+   "screenshot": null
+  },
+  {
+   "title": "시간을 늘린 카드가 목록 맨 위로 올라간다",
+   "outcome": null,
+   "note": "스와이프는 제스처라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "만료 시간이 지난 메모는 목록에서 사라진다",
+   "outcome": "pass",
+   "note": "만료 시각이 이미 지난 사물함 메모를 같이 넣고 켜니 그 카드는 목록에 나오지 않았다.",
+   "screenshot": "claude-qa-externalize-03-list"
+  },
+  {
+   "title": "왼쪽으로 밀면 그 자리에서 지워진다",
+   "outcome": null,
+   "note": "스와이프는 제스처라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지운 메모는 앱을 다시 열어도 돌아오지 않는다",
+   "outcome": null,
+   "note": "테스트 타깃이 없다. 지운 뒤 재실행을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "화면을 켜 둔 채로도 만료된 카드가 사라진다",
+   "outcome": null,
+   "note": "1분 넘게 지켜봐야 해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈으로 나갔다 돌아오면 목록이 최신이 된다",
+   "outcome": null,
+   "note": "홈으로 나갔다 오는 조작이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯 목록에 네 가지 모양이 모두 있다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠금화면 위젯에 저장한 메모가 보인다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "원형 위젯에 값 한 줄이 크게 나온다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "한 줄 위젯에 값들이 가운뎃점으로 이어진다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사각 위젯에서 남은 시간이 초 단위로 준다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모가 여럿이면 +1처럼 개수가 붙는다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "홈 화면 작은 위젯에 최대 세 개가 보인다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱에서 저장하거나 지우면 위젯이 바로 바뀐다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "위젯은 가장 최근 메모를 맨 앞에 보인다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "만료 시각이 되면 위젯에서도 메모가 빠진다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모가 없으면 위젯이 빈 안내로 바뀐다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모가 없으면 원형·한 줄·작은 위젯도 빈 모양이 된다",
+   "outcome": null,
+   "note": "위젯은 홈 화면·잠금 화면에 얹을 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "Siri에 답한 값이 24시간 뒤 잊는다는 말과 함께 저장된다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "값을 말하지 않으면 무엇을 기억할지 되묻는다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "\\\"뇌모리에 기억해 줘\\\"로도 같은 저장이 시작된다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어 앱에 뇌모리 기억하기가 바로 보인다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어 앱에서 종류와 이름표까지 지정한다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "종류를 안 고르면 메모 종류로 24시간 저장된다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "액션 버튼에 걸면 앱을 열지 않고 저장된다",
+   "outcome": null,
+   "note": "액션 버튼은 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "Siri로 저장한 메모가 앱을 열면 목록에 있다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "Siri로 저장하면 잠금화면 위젯에 바로 뜬다",
+   "outcome": null,
+   "note": "Siri·단축어는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "메모를 몇 개 저장해도 막히거나 결제를 권하지 않는다",
+   "outcome": null,
+   "note": "메모 4개가 있는 목록에 칸 수 단추나 결제 안내가 없었다. 다섯 개 넘게 저장하고 더하기를 다시 누르는 것은 화면을 누를 수단이 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "비행기 모드에서도 저장·복사·위젯이 다 된다",
+   "outcome": null,
+   "note": "비행기 모드와 위젯이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iPad에서는 iPhone 화면 크기로 열린다",
+   "outcome": null,
+   "note": "iPad 시뮬레이터로는 보지 않았다(TARGETED_DEVICE_FAMILY = 1).",
+   "screenshot": null
+  },
+  {
+   "title": "지원 페이지와 개인정보 처리방침이 열린다",
+   "outcome": null,
+   "note": "스토어 페이지 링크는 못 열어 봤다.",
+   "screenshot": null
+  }
+ ]
+}

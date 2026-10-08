@@ -1,0 +1,725 @@
+{
+ "id": "firetracker-2026-10-08-claude",
+ "bundleID": "com.devkoan.FireTracker",
+ "startedAt": "2026-10-08T19:55:59+09:00",
+ "durationSeconds": 1485,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "1.1.0",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 새로 깔기 3번, 다시 켜기 6번(라이트, 다크, 가장 큰 글자) 동안 한 번도 죽지 않았고 매번 대시보드 탭이 떴다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 자산 추가 흐름은 못 봤다. 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "na",
+   "note": "FireTrackerSpec.swift 의 monetization 이 .free(전 기능 무료, 페이월 없음)이고 소스에 StoreKit 사용이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": "na",
+   "note": "FireTrackerSpec.swift 의 monetization 이 .free 이고 소스에 StoreKit 사용이 없어 복원할 구매가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": null,
+   "note": "자산 없는 첫 화면(시작 안내 카드, 처음이신가요? 띠, 탭바)만 다크로 봤고 자연스럽다. 도넛과 여정 그래프는 자산이 있어야 보여 못 봤다.",
+   "screenshot": "claude-qa-firetracker-02-dark"
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": null,
+   "note": "가장 큰 글자(AX5)에서 첫 화면만 봤다. 처음이신가요? 띠가 화면 위 3분의 1을 차지하고 시작 안내 카드가 탭바 뒤로 이어지지만 스크롤 표시가 있어 내려 볼 수 있어 보인다. 탭바 글자는 커지지 않는다. 대시보드 카드 금액과 자산 목록은 자산이 없어 못 봤다.",
+   "screenshot": "claude-qa-firetracker-03-ax5"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "작은 화면 시뮬레이터가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": null,
+   "note": "iOS 27.0 시뮬레이터(iPhone 18 Pro Max)에서 실행과 첫 화면은 정상이다. 자산 추가, 여정 차트, 계산 탭, 백업은 화면을 누를 수단이 없어 못 써 봤고 테스트 타깃도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "FireTracker 스킴(LeeoKit 3.7.1 포함) 새 빌드에서 deprecated 경고 0개. Swift 경고는 AssetsView.swift:74 의 var lines 를 let 으로 바꾸라는 1개뿐이다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "자산이 없으면 시작 안내 카드가 보인다",
+   "outcome": "pass",
+   "note": "새로 깔고 켜니 대시보드에 FIRE 여정을 시작해볼까요? 카드와 세 단계(보유 자산 등록, FIRE 목표 설정, 자동으로 쌓이는 기록), 자산 등록하기 버튼이 떴다. 다만 2단계 문구가 설정 탭에서 연 목표 지출·인출률 입력이라고 적혀 있는데 목표 입력은 여정 탭(과녁 아이콘)으로 옮겨졌다(DashboardView.swift:433, GoalSettingsView.swift 주석 '예전엔 설정 탭에 있었다').",
+   "screenshot": "claude-qa-firetracker-01-first-launch"
+  },
+  {
+   "title": "자산 등록하기 버튼이 자산 추가 화면을 연다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "처음이신가요? 띠의 스위치로 데모를 켤 수 있다",
+   "outcome": null,
+   "note": "데이터가 없는 첫 화면 맨 위에 처음이신가요? 띠와 스위치가 보이는 것까지 봤다. 스위치를 켜는 것은 화면을 누를 수단이 없어 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "데모 데이터를 켜면 예시 자산이 채워진다",
+   "outcome": null,
+   "note": "설정 탭을 열 수단이 없어 못 봤다. 데모는 DemoData.enable 이 데이터를 바꿔 끼워야 들어오는 것이라 실행 인자로 켤 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "데모를 끄면 원래 데이터로 돌아온다",
+   "outcome": null,
+   "note": "데모 켜고 끄기는 화면을 눌러야 해서 못 했다. 원래 데이터를 real-data-stash.json 으로 보관했다 되돌리는 로직(DemoData.swift)을 확인하는 테스트도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "다섯 개 탭이 아래에 나란히 보인다",
+   "outcome": "pass",
+   "note": "첫 화면 아래 탭바에 대시보드, 자산, 여정, 계산, 설정 다섯 개가 나란히 보인다. 라이트, 다크, 가장 큰 글자에서 모두 같다.",
+   "screenshot": "claude-qa-firetracker-01-first-launch"
+  },
+  {
+   "title": "첫 화면 맨 위에 FIRE 달성률이 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지난주 대비 순자산 변화가 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "비교할 기록이 없으면 변화 카드가 안내만 보여 준다",
+   "outcome": null,
+   "note": "자산을 넣어야 변화 카드가 나와 못 봤다. 화면을 누를 수단이 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "쓸 수 있는 돈과 묶인 돈이 나뉘어 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "패시브 인컴이 월·주·연으로 환산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "재정 신호등이 색으로 상태를 알려 준다",
+   "outcome": null,
+   "note": "자산을 넣어야 신호등 카드가 나와 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표 패시브 인컴에 필요한 자금이 계산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "올해 말 예측에서 근거 보기가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "만약에 화면에서 빚 갚기와 투자가 비교된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드의 ⓘ를 누르면 계산 설명이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "총자산/순자산 토글이 도넛 그래프에 반영된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "부채가 도넛에 빨간 조각으로 들어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "도넛 조각을 누르면 가운데에 그 종류 금액이 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "도넛 가운데 금액이 조각에 가려지지 않는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리를 접었다 펴면 종목이 숨는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "묶음의 종목 추가는 종류가 고정된 채 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리 추가에서 고른 종류로 입력이 이어진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자산 도감 빈 칸을 누르면 그 종류 추가가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "내역 보기에서 순자산이 자산과 부채로 풀린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "패시브 인컴 만들기 항목이 그 자산 추가를 연다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자산을 지우면 도넛에서도 빠진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "새 자산은 간단 입력으로 시작해 세부 설정이 접혀 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "부채를 고르면 남은 빚 칸과 차감 안내로 바뀐다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "눈금 룰러를 밀면 평가액이 단위만큼 오른다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "부동산을 전세 줌으로 바꾸면 보증금 칸이 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "투자 원금을 넣으면 평가 손익이 계산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "배당률 칩을 누르면 월 수입이 자동 계산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "세부 종목 합계가 평가액보다 크면 경고가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "더하기를 안 눌러도 적어 둔 세부 종목이 저장된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "부채 이자를 넣으면 부채가 가져가는 돈에 잡힌다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "매매 원장에 기록하면 평단이 다시 계산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "지금 보유분을 최초 매수로 한 번에 옮긴다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "매도를 넣으면 실현 손익이 나온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "자산을 고치면 그날 기록이 자동 저장된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "새로고침을 누르면 시세와 배당이 갱신된다",
+   "outcome": null,
+   "note": "실제 시세 서버와 화면을 눌러야 해서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "네트워크가 없으면 시세가 예전 값으로 남는다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다. 비행기 모드도 시뮬레이터에서 재현할 수 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "종목코드를 넣고 칸을 떠나면 이름이 채워진다",
+   "outcome": null,
+   "note": "실제 네트워크로 종목명을 불러와야 하고 화면을 눌러야 해서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "미국 주식과 코인은 키 없이 시세를 불러온다",
+   "outcome": null,
+   "note": "실제 시세 서버와 화면을 눌러야 해서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "직접 넣은 배당액은 새로고침이 덮어쓰지 않는다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷으로 추가에서 종목과 금액이 읽힌다",
+   "outcome": null,
+   "note": "증권 앱 스크린샷과 사진 선택이 필요해 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷에서 고른 종목만 주식으로 추가된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "여정 탭 과녁 아이콘에서 목표를 고칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "나이를 안 넣으면 기간별 목표 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기간별 목표가 이번 달·올해·5년·은퇴로 나뉜다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기간별 목표 차트에 지금에서 목표까지 점선이 그려진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "그래프의 점을 탭하면 날짜와 값이 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표까지 필요한 저축액이 계산돼 나온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "차트 모드 세그먼트가 차트 위에 놓인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "순자산 차트가 자산·부채 막대와 순자산 선으로 그려진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "이번 달 카드에 한 달 안의 기록과 오늘이 그려진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "데이터가 없는 차트 모드는 고를 수 없다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "월간 목표 지출을 넣으면 FIRE 목표 금액이 계산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "세후 월급과 월 지출로 월 저축이 계산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "목표를 고치고 돌아오면 대시보드 달성률이 바뀐다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "시계 아이콘에서 기록 목록이 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "자동으로 쌓인 기록이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록에 저축률과 자산 개수가 함께 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록 상세에서 패시브 인컴을 고칠 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "이 기록 삭제를 누르면 그래프에서도 빠진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "기록이 없으면 자동으로 쌓인다고 안내한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "여섯 가지 계산기가 가로 칩으로 넘어간다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "계산기 입력값이 재실행 후에도 남는다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "입력을 비우면 참고용 안내만 남는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "생애주기 차트에 돈이 일하는 지점이 표시된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "생애주기에서 자산이 버티는 나이나 고갈 나이를 알려 준다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "생애주기 값을 반영하면 내 목표가 바뀐다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "대출 종류를 고르면 금리·기간이 자동 입력된다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "상환 방식을 바꾸면 월 상환액이 달라진다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "대출 결과를 자산 탭에 부채로 넣는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "예금 결과를 현금·예금 자산으로 넣는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "투자 예측이 보수적부터 낙관까지 범위를 그린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 못 봤다. 자산을 넣어야 보이는 화면이다.",
+   "screenshot": null
+  },
+  {
+   "title": "자산이 없으면 투자 예측 대신 등록 안내가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "AI 해석은 지원 기기에서만 보인다",
+   "outcome": null,
+   "note": "Apple Intelligence 지원 기기와 미지원 기기를 함께 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매력 탭에서 과거 월급의 실질 가치가 나온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매력에서 나라를 바꾸면 그 나라 물가로 계산된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "시간 탭이 시급 세 가지를 나눠 보여 준다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "구매력에 적은 월급으로 시간 탭 시급이 채워진다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "시간을 사는 지출을 넣으면 하루의 밀도와 순증이 나온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "결과 아래 저장 버튼으로 이름을 붙여 담는다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "책갈피 아이콘에서 저장한 계산이 모여 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 종류가 둘 이상이면 칩으로 거를 수 있다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 계산을 불러오면 그때 입력값이 복원된다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 계산을 지우면 목록에서 사라진다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장한 게 없으면 빈 상태 안내가 보인다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "숫자로만 표시를 켜면 억·만 표기가 사라진다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱 잠금을 켜면 Face ID를 통과해야 열린다",
+   "outcome": null,
+   "note": "Face ID 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱 전환기로 넘기면 자산 화면이 가려진다",
+   "outcome": null,
+   "note": "앱 잠금을 켜려면 설정을 눌러야 하고 앱 전환기 미리보기는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "생체인증이 없으면 기기 암호로 넘어간다",
+   "outcome": null,
+   "note": "생체인증 끄기와 기기 암호 화면은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "시세 API 키를 넣으면 입력됨 표시가 뜬다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "피드백 보내기로 의견을 보내면 접수 완료가 뜬다",
+   "outcome": null,
+   "note": "실제 iCloud 로 피드백을 보내야 해서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "리뷰 남기기가 App Store 리뷰 화면을 연다",
+   "outcome": null,
+   "note": "App Store 리뷰 화면은 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "여러 번 쓰면 만족도 질문이 한 번 뜬다",
+   "outcome": null,
+   "note": "여러 날에 걸쳐 써야 뜨는 창이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사용 통계 칸에 마지막 전송 시각이 나온다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "백업 파일 내보내기로 공유 시트가 열린다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "복원 전에 데이터가 교체된다고 경고한다",
+   "outcome": null,
+   "note": "화면을 누를 수단이 없어 첫 화면(자산 없는 대시보드) 너머는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "백업 파일로 복원하면 기록이 되돌아온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다. BackupManager 복원 로직을 확인하는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "백업에 저장한 계산과 매매 내역도 담긴다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "잘못된 파일을 고르면 실패 알림만 뜬다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "자동 백업 목록에서 최근 것이 맨 위에 있다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "내용이 같으면 자동 백업이 새로 쌓이지 않는다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "데모를 켠 채 여러 번 실행해도 내 데이터가 돌아온다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 껐다 켜도 자산과 설정이 그대로다",
+   "outcome": null,
+   "note": "앱에 테스트 타깃이 없어(스킴 FireTracker 하나뿐) 이 계산을 확인한 테스트가 없다. 화면을 누를 수단이 없어 직접 보지도 못했다.",
+   "screenshot": null
+  }
+ ]
+}
