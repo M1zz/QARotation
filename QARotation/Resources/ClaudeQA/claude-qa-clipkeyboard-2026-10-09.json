@@ -1,0 +1,839 @@
+{
+ "id": "clipkeyboard-2026-10-09-claude",
+ "bundleID": "com.Ysoup.TokenMemo",
+ "startedAt": "2026-10-09T07:28:34+09:00",
+ "durationSeconds": 8462,
+ "deviceModel": "Claude 자동 QA · iPhone 18 Pro Max 시뮬레이터",
+ "osVersion": "iOS 27.0",
+ "appVersion": "5.1.9",
+ "results": [
+  {
+   "title": "크래시 없이 실행된다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터(iPhone 18 Pro Max 복제본)에서 새로 깔기 1번, 다시 켜기 20번 넘게(9개 언어, 다크, 가장 큰 글자, 딥링크 콜드 런치 포함) 하는 동안 한 번도 죽지 않았다. 켤 때마다 프로세스가 살아 있고(XCUIApplication state=4) 목록 또는 키보드 무대가 떴다.",
+   "screenshot": null
+  },
+  {
+   "title": "핵심 흐름을 끝까지 마칠 수 있다",
+   "outcome": null,
+   "note": "남의 앱 위에 클립키보드를 띄우는 것은 실기기 키보드 익스텐션 동작이라 못 봤다. 앱 안 키보드 무대에서는 단축어 키를 누르면 입력창에 그 글(example@email.com)이 들어가는 것을 봤다(BasicScenarioTests/test_만든_단축어를_키보드에서_쓰고_고치고_지운다 도 통과).",
+   "screenshot": null
+  },
+  {
+   "title": "구매 화면이 뜬다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 설정 맨 위 무료로 쓰는 중 ▸ Pro 보기를 누르니 결제 화면이 떴다. 처음 몇 초는 평생 Pro 줄에 로딩 원만 돌다가 10초쯤 뒤 평생 Pro $9.99, 연 구독 $4.99 두 줄이 다 섰다(시뮬레이터 스토어 지역이 미국이라 달러로 나온다).",
+   "screenshot": null
+  },
+  {
+   "title": "구매 복원이 된다",
+   "outcome": null,
+   "note": "실제 App Store 계정이 필요하다. 결제 화면과 설정에 이전 구매 복원 버튼이 있는 것만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "다크 모드에서 자연스럽다",
+   "outcome": "pass",
+   "note": "다크 모드로 목록(카테고리 색 페이지 포함), 설정, 키보드 무대를 봤다. 카드 글자와 무대의 키가 묻히지 않고 띠·안내 카드도 어두운 바탕에 맞게 그려진다.",
+   "screenshot": null
+  },
+  {
+   "title": "가장 큰 글자 크기에서도 안 깨진다",
+   "outcome": "fail",
+   "note": "가장 큰 글자(AX5)에서 목록 맨 위 '아직 다른 앱에서는 못 써요' 켜기 띠가 무너진다. 왼쪽 키보드 아이콘과 오른쪽 켜기 버튼이 가로로 자리를 지키느라 가운데 글이 두세 글자 폭으로 눌려 한 줄에 한 낱말씩 세로로 늘어서고, 띠 하나가 첫 화면을 통째로 차지해 카드가 한 장도 안 보인다(KeyboardSetupRequiredBanner.swift 의 HStack). 키보드 무대 위 같은 띠도 같다. 설정 탭은 글이 커져도 줄바꿈되어 읽힌다.",
+   "screenshot": "claude-qa-clipkeyboard-v2-04-ax5-keyboard-band"
+  },
+  {
+   "title": "작은 화면(SE)에서 레이아웃이 맞다",
+   "outcome": null,
+   "note": "iOS 27 런타임에 SE 크기 기기가 없어 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "메인 화면을 VoiceOver로 쓸 수 있다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다. 접근성 트리에는 카드가 '업무테스트, 즐겨찾기'처럼 이름과 상태로 읽히게 붙어 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "최신 iOS에서 잘 동작한다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 단위 테스트 1,408개(매개변수 실행 포함 1,434회) 모두 통과, 앱 실행·튜토리얼·목록·설정·결제 화면이 정상이다. 위젯과 실기기 붙여넣기는 따로 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지원 종료 API 경고가 보이지 않는다",
+   "outcome": "pass",
+   "note": "앱·키보드·위젯·공유·액션 익스텐션 다섯 스킴을 새 DerivedData 에서 전부 빌드했다. Swift 컴파일 경고 0개, deprecated 0개(appintentsmetadataprocessor 안내 3줄만 있음).",
+   "screenshot": null
+  },
+  {
+   "title": "스크린샷과 설명이 지금 앱과 맞다",
+   "outcome": null,
+   "note": "스토어 페이지와 비교는 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "첫 실행에 키보드 무대와 튜토리얼이 뜬다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 새로 깔고 켜니 키보드 탭 위에 환영 화면(바로 써 볼 수 있게 준비해 뒀어요, 준비되었어요 / 지금 말고 다음에 할래요)이 뜨고, 준비되었어요를 누르니 키보드 모양 무대와 '이걸 눌러보세요' 안내가 떴다. 검색은 탭 막대 밖 동그라미로 따로 섰다.",
+   "screenshot": null
+  },
+  {
+   "title": "튜토리얼에서 단축어·템플릿·스택을 눌러 써 본다",
+   "outcome": "fail",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 빛나는 키를 차례로 눌러 단축어(example@email.com), 템플릿, 스택 두 값(홍길동 → 010-0000-0000)까지 다 들어간다. 그런데 템플릿 장에서 들어가는 문장이 '고객님님, 문의 주셔서 감사합니다.' 로 '님'이 두 번 붙는다. 샘플 템플릿이 '{이름}님, ...' 인데 빈칸에 미리 넣어 둔 값이 '고객님/대표님/선생님'이다(ClipKeyboardApp.swift 1033줄 값과 1102줄 템플릿). 처음 보는 사람이 보는 첫 템플릿이라 눈에 띈다.",
+   "screenshot": "claude-qa-clipkeyboard-v2-01-tutorial-template-double-honorific"
+  },
+  {
+   "title": "튜토리얼 끝에 연습 단축어를 치울지 한 번 묻는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 튜토리얼을 끝까지 하고 직접 하나(QA 메일) 만들어 저장하니 '연습용 단축어를 치울까요?' 알림이 떴고 그대로 둘게요 / 치우기 둘 중 고를 수 있다. 그대로 둘게요 뒤로 다시 켜도 다시 묻지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "튜토리얼을 마치고 재실행하면 다시 틀지 않는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 튜토리얼을 마친 뒤 앱을 끄고 다시 켜니 환영 화면·빛나는 키 없이 바로 키보드 무대와 카드가 나왔다. 대신 '이 탭에는 화면이 둘이에요' 한 번짜리 띠가 위에 떴다(알겠어요로 닫힘).",
+   "screenshot": null
+  },
+  {
+   "title": "설정에서 튜토리얼을 처음부터 다시 볼 수 있다",
+   "outcome": "fail",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 설정 ▸ 사용법과 문의 ▸ 튜토리얼 다시 하기 ▸ 다시 하기를 눌러도 아무것도 다시 흐르지 않는다. 그 화면에 그대로 있고, 키보드 탭으로 가도, 앱을 껐다 켜도 환영 화면과 빛나는 키가 없다(화면이 둘이에요 띠만 다시 뜸). 저장값은 firstShortcut.done.v1=false, startedFresh=true 로 초기화돼 있다. SnippetsTab.swift 의 onboardingStep 이 stateAllows: userState.isVisible(.tutorialStage) 로 '이미 쓰고 있는 사람'(7번 사용)을 걸러 .done 을 돌려서, TutorialFlow.restartAll() 이 지운 표식이 소용없다.",
+   "screenshot": "claude-qa-clipkeyboard-v2-06-tutorial-restart-nothing"
+  },
+  {
+   "title": "설정 가이드대로 키보드와 전체 접근을 켤 수 있다",
+   "outcome": null,
+   "note": "iOS 설정 앱에서 키보드와 전체 접근을 켜는 일은 시뮬레이터에서 해 보지 않았다(실기기 확인 필요).",
+   "screenshot": null
+  },
+  {
+   "title": "키보드를 안 켰으면 목록 맨 위에 닫기 없는 켜기 띠가 선다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 키보드를 켜지 않은 채 목록으로 바꾸니 맨 위에 '아직 다른 앱에서는 못 써요 / 키보드를 켜야 어느 앱에서든 단축어를 넣을 수 있어요' 띠에 켜기 버튼만 있고 닫기 버튼이 없다. 모든 카테고리 페이지에 같이 선다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드를 안 켰으면 키보드 화면 위에 켜기 띠가 남는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 키보드를 켜지 않은 채 키보드 무대를 여니 무대 위쪽에 '아직 다른 앱에서는 못 써요' 띠와 켜기 버튼이 붙어 있다(튜토리얼 동안에는 쉬다가 마친 뒤 섰다). KeyboardSetupBannerGate 테스트도 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "iOS 설정에서 키보드를 빼면 켜기 띠가 다시 뜬다",
+   "outcome": null,
+   "note": "iOS 설정에서 키보드를 빼는 것은 실기기에서 봐야 한다. KeyboardInstallState 의 '설정에서 뺐으면 꺼진 것이다' 판정 테스트는 통과한다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록 화면과 키보드 화면을 툴바로 오간다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 무대 오른쪽 위 격자 버튼(단축어 목록)을 누르면 카드 목록으로, 목록의 키보드 버튼(키보드 화면)을 누르면 무대로 바뀌는 것을 여러 번 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iOS 27에서 검색 탭이 탭 막대 밖에 따로 선다",
+   "outcome": "pass",
+   "note": "iOS 27.0 시뮬레이터에서 탭 막대가 키보드(목록)·사용 기록·설정 세 칸이고, 검색은 막대 오른쪽에 따로 선 동그라미다(모든 언어 스크린샷에서 같음).",
+   "screenshot": null
+  },
+  {
+   "title": "새 단축어를 열자마자 이름 칸에 커서가 있다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 키보드 무대의 + 로 새 단축어 시트를 열자마자 접근성 트리에서 이름 칸이 Keyboard Focused 였고 바로 친 글자(업무테스트)가 이름 칸에 들어갔다. 다만 튜토리얼 코치 중에 연 첫 시트에서는 포커스가 없어 칸을 한 번 눌러야 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "내용의 이메일 첫 글자가 대문자로 바뀌지 않는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 새 단축어 내용 칸에 소프트 키보드로 hong@company.com 을 치니 첫 글자가 소문자 그대로 저장됐다(목록·검색에도 hong@company.com). 내용 칸은 autocapitalizationType = .none 이다.",
+   "screenshot": null
+  },
+  {
+   "title": "공백이나 줄바꿈만 적으면 저장되지 않는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 이름에 공백, 내용에 공백과 줄바꿈만 넣으니 저장(체크) 버튼이 비활성이라 눌러도 저장되지 않았고 빈 카드가 생기지 않았다. BasicScenarioTests/test_이름이나_내용이_없으면_저장되지_않는다 도 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "저장하면 고른 카테고리 화면으로 옮겨 간다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 기본 페이지에서 새 단축어(개인메모)를 만들며 카테고리를 개인가족으로 골라 저장하니 목록이 개인가족 페이지로 옮겨 가 그 카드가 보였다. SaveIntoCategoryTests 13개도 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 탭하면 그 카드 위에 복사됨이 잠깐 덮인다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 목록에서 업무테스트 카드를 한 번 탭하니 그 카드 위에 체크와 복사됨이 덮였다가 1초 남짓 뒤 걷혔고 탭 막대는 가리지 않았다. 시뮬레이터 클립보드에 그 값(work test value)이 들어갔다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드를 꾹 눌러 수정·카테고리 이동·삭제 확인이 된다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 카드를 길게 누르니 복사·즐겨찾기 추가·카테고리에 추가·여러 개 고르기·순서 바꾸기·수정·템플릿으로 만들기·보안 단축어로 설정·삭제가 뜨고, 삭제를 누르니 '단축어 삭제 ... 이 작업은 취소할 수 없습니다' 확인 창이 떴다(취소로 닫음).",
+   "screenshot": null
+  },
+  {
+   "title": "두 손가락 탭으로 여러 개 골라 옮기거나 지운다",
+   "outcome": null,
+   "note": "두 손가락 탭은 하네스가 제스처를 만들지 못해(Unable to compute coordinates) 못 봤다. 같은 선택 화면을 길게 누르기 ▸ 여러 개 고르기로 열어 카드 두 개를 골라 카테고리로 옮기기 ▸ 개인가족을 누르니 둘 다 함께 옮겨졌다. BulkSelectionTests 18개도 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "즐겨찾기해도 단축어가 원래 카테고리에 남는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 업무테스트 카드를 길게 눌러 즐겨찾기 추가를 고르니 기본 페이지에 '업무테스트, 즐겨찾기'로 그대로 남고 즐겨찾기 페이지에도 생겼다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리를 좌우로 넘겨도 제목과 목록이 맞는다",
+   "outcome": null,
+   "note": "목록을 좌우로 넘길 때 제목과 카드가 맞는 것은 페이지 세 장(즐겨찾기·업무·개인)에서 봤다. 빠르게 여러 번 넘기는 것은 해 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "검색은 대소문자를 가리지 않고 보안 내용은 찾지 않는다",
+   "outcome": "fail",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 검색 탭에서 WORK 를 치면 소문자 내용(work test value)의 단축어가 나오고, 보안 단축어의 내용(SECRET...)으로는 걸리지 않는다. 그런데 보안 단축어를 제목으로 찾으면 결과 줄 둘째 줄에 암호문 'smenc1:C6V2gGO0T9...' 이 그대로 보인다. ClipKeyboardApp.swift 의 MemoSearchView.searchRow 가 보안 메모에도 MemoPreviewFormatter.preview(memo.value) 를 그린다. 또 iOS 27 에서는 검색 탭을 눌러도 검색 칸이 안 보이고 목록을 아래로 당겨야 나타난다.",
+   "screenshot": "claude-qa-clipkeyboard-v2-03-search-shows-ciphertext"
+  },
+  {
+   "title": "작성 중 닫았다 다시 열면 초안이 돌아온다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 새 단축어에 이름(초안제목)과 내용(draft body 123)을 적고 시트를 아래로 내린 뒤 + ▸ 임시 저장 보기를 누르니 그 초안이 있었고, 누르니 이름과 내용이 그대로 돌아왔다.",
+   "screenshot": null
+  },
+  {
+   "title": "여러 줄을 붙여넣어 단축어 여러 개를 한 번에 만든다",
+   "outcome": null,
+   "note": "한번에 많은 단축어 정리하기 화면은 열어 보지 않았다. BulkImportNudgeTests·BulkImportBundlingTests 는 줄 감지와 초안 합치기만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어 마트에서 빈칸만 채워 단축어를 만든다",
+   "outcome": null,
+   "note": "단축어 마트 채우기 화면은 열어 보지 않았다. 이를 다루는 단위 테스트도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록 맨 위 필수 단축어 세 칸을 채워 만든다",
+   "outcome": null,
+   "note": "목록 맨 위에 '가장 자주 다시 치는 세 가지부터 1 / 3 채움' 카드(입금 계좌·집 주소·내 연락처)가 서는 것은 봤다. 칸을 눌러 채워 저장하는 것은 해 보지 않았다. PersonaEditionTests 21개 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "앱을 열면 방금 복사한 글을 저장하자고 권한다",
+   "outcome": null,
+   "note": "설치일을 9월 1일로 돌린 실행 인자로 켜 클립보드에 메일 주소를 넣어 두니 '붙여넣기 팝업이 자꾸 뜨나요?' 안내 띠만 떴고, iOS 허용 창이나 저장 권유 카드는 보지 못했다(시뮬레이터 붙여넣기 권한 상태에 달려 판정 못 함). 그 띠는 '설정 → ClipKeyboard → ...' 라고 적는데 한국어 기기에서 설정 앱의 앱 이름은 '클립키보드'다.",
+   "screenshot": null
+  },
+  {
+   "title": "새로 깔면 기본 카테고리 두 개가 페이지로 선다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 새로 깔고 튜토리얼을 마친 뒤 목록을 옆으로 넘기니 기본·즐겨찾기 다음에 업무·개인 두 카테고리 페이지가 있다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 카테고리는 비어도 페이지와 추가 카드가 남는다",
+   "outcome": null,
+   "note": "업무 페이지의 카드를 다 지워 보지는 않았다(대신 업무를 숨기며 옮겼다). DefaultCategoryTests 4개가 기본 카테고리 판정만 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 카테고리 페이지에 이름을 바꿀지 묻는 카드가 선다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 업무·개인 페이지 맨 위에 '업무' 이름을 바꿀까요? 카드가 서고 버튼은 그대로 쓰기 / 이름 바꾸기 둘뿐, 닫기가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "이름 바꾸기 창을 취소하면 묻는 카드가 그대로 남는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 개인 페이지 묻는 카드에서 이름 바꾸기 ▸ 취소를 누르니 묻는 카드가 그대로 남아 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "묻는 카드에서 바꾼 이름으로 페이지가 바뀐다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 이름 바꾸기 창에 새 이름을 넣고 바꾸기를 누르니 페이지 제목이 새 이름(개인가족)으로 바뀌고 묻는 카드가 걷혔다. 카드들의 카테고리도 따라갔다.",
+   "screenshot": null
+  },
+  {
+   "title": "기본 탭과 같은 이름의 카테고리는 새로 만들어지지 않는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 설정 ▸ 단축어 ▸ 카테고리 관리에서 새 이름에 '즐겨찾기'를 넣고 추가를 누르니 아무 것도 생기지 않고 개수가 2개 그대로다(안내 문구는 없음). DefaultCategoryTests/testDefaultNames_AreNotReserved 등 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "보던 카테고리가 비면 다음 카테고리로 넘어간다",
+   "outcome": null,
+   "note": "직접 만든 카테고리를 비워 보지 않았다. HiddenCategoryReachabilityTests 의 testSelectedTabMovesWhenItsTabRests 는 빈 탭에서 남은 탭으로 옮겨 가는 것만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "방금 만든 카테고리에서 더하기를 누르면 그 카테고리가 골라져 있다",
+   "outcome": null,
+   "note": "목록에서 새 카테고리를 만들어 보지 않았다. 앱이 만든 업무 페이지에서 + ▸ 새 단축어 만들기를 누르면 카테고리 칸이 업무로 서는 것은 봤다. 설정에서 만든 빈 카테고리는 단축어가 없어 페이지가 안 생긴다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드 화면에서 보던 카테고리에 새 단축어가 들어간다",
+   "outcome": "fail",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 앱의 키보드 무대에서 아래 키보드를 업무 페이지로 넘기고(App Group 의 keyboardCurrentCategoryKey.v1 = 업무 확인) 오른쪽 위 + 를 누르니 카테고리 칸이 기본으로 섰고, 그대로 저장한 업무테스트가 업무가 아니라 기본 페이지에 들어갔다. 두 번 되풀이해 같았다. 같은 때 목록의 업무 페이지에서 + 로 열면 업무로 선다. InAppKeyboardStage.swift 의 categoryForNewSnippet/currentKeyboardCategory 길이 MemoAdd 에 업무를 넘기지 못하고 있다.",
+   "screenshot": "claude-qa-clipkeyboard-v2-02-stage-plus-goes-to-default"
+  },
+  {
+   "title": "직접 만든 카테고리 페이지는 그 색으로 옅게 물든다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 업무(파랑)·개인(초록) 페이지 바탕이 그 카테고리 색으로 옅게 물들어 있고 기본·즐겨찾기 페이지는 물들지 않았다(다크에서도 같음).",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리 색 바탕이 위아래에서 잘리지 않는다",
+   "outcome": "pass",
+   "note": "색이 든 카테고리 페이지에서 상태 막대 쪽과 탭 막대 아래까지 색이 이어지고 다른 색 띠가 드러나지 않았다(라이트·다크 스크린샷).",
+   "screenshot": null
+  },
+  {
+   "title": "배경 사진을 넣으면 카테고리 색으로 덮지 않는다",
+   "outcome": null,
+   "note": "배경 사진을 넣어 보지 않았다(사진 보관함 선택이 필요).",
+   "screenshot": null
+  },
+  {
+   "title": "빈 카테고리 페이지를 밀어 올려도 카드가 큰 제목 밑에 깔리지 않는다",
+   "outcome": null,
+   "note": "빈 업무 페이지를 만들어 밀어 올려 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "위 카드가 걷혀 내용이 줄면 스크롤이 맨 위로 돌아간다",
+   "outcome": null,
+   "note": "위 안내 카드를 닫으며 스크롤 위치를 보는 것은 해 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리를 숨길 때 안의 단축어를 한 번에 옮긴다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 카테고리 관리에서 카드 2개가 든 업무를 끄니 '업무에 단축어 2개가 있어요' 창이 떴고, 다른 카테고리로 옮기기 ▸ 개인가족 ▸ 옮기기를 누르니 '옮겼어요'와 함께 업무 탭이 꺼지고 두 카드가 개인가족으로 옮겨졌다(memos.data 확인). 옮길 곳 목록에 기본과 함께 '텍스트'·'이미지'가 따로 서 있어 헷갈린다.",
+   "screenshot": null
+  },
+  {
+   "title": "템플릿 빈칸을 채워 입력된다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 앱 안 키보드 무대에서 템플릿 키(회신 템플릿)를 누르니 빈칸 칩(고객님·대표님·선생님)이 펼쳐지고 입력을 누르니 채운 문장이 입력창에 들어갔다. BasicScenarioTests/test_템플릿은_빈칸을_채워야_들어간다 통과. 남의 앱 위 진짜 키보드는 별도다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈칸에 친 값은 별을 눌러야만 저장된다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 목록에서 템플릿을 눌러 빈칸에 '큐에이값'을 치고 별을 누르지 않은 채 복사하니 클립보드에 '큐에이값님, ...'이 들어갔고, 같은 템플릿을 다시 여니 칩은 고객님·대표님·선생님 세 개뿐이었다. 빈칸 관리에도 그 값이 없다. 앱 목록의 채우기 시트로 본 것이다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈칸 관리에서 끌어 바꾼 값 순서가 칩에 그대로 간다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 설정 ▸ 단축어 ▸ 빈칸 관리 ▸ 이름 ▸ 편집에서 선생님을 맨 위로 끌어 옮기니 목록이 선생님·고객님·대표님이 됐고, 키보드 무대에서 그 템플릿을 펴니 칩도 같은 순서로 섰다.",
+   "screenshot": null
+  },
+  {
+   "title": "빈칸 이름을 바꾸면 쓰는 단축어 내용도 바뀐다",
+   "outcome": "pass",
+   "note": "PlaceholderRenameTests 11개(testBodyTextFollowsTheNewName, testTemplateVariableListFollowsTheNewName, testUnrelatedMemoIsLeftAlone 등) 통과. 빈칸 이름을 바꾸면 쓰는 단축어 본문과 변수 목록이 함께 바뀐다.",
+   "screenshot": null
+  },
+  {
+   "title": "날짜 빈칸이 설정한 날짜 형식으로 들어간다",
+   "outcome": "pass",
+   "note": "DateTokenFormatTests 26개(test_고른_모양대로_적힌다 등)와 TemplateVariableProcessor '{날짜}/{date}는 고른 모양으로 치환된다' 통과. 화면에서도 날짜 빈칸이 2026-10-09 로 채워졌다.",
+   "screenshot": null
+  },
+  {
+   "title": "번호 빈칸은 다음 번호 칩이 맨 앞에 선다",
+   "outcome": null,
+   "note": "PlaceholderSequenceTests 10개가 다음 번호 계산만 확인한다. 칩을 맨 앞에 세우는 것은 화면 코드라 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "스택 칸 이름이 보이고 화살표로 값을 넘긴다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 앱 안 키보드의 스택 키(이름 + 연락처)에서 오른쪽 → 를 누르니 키에 적힌 값이 홍길동 1/2 에서 010-0000-0000 2/2 로 바뀌었고, 왼쪽을 누르니 그 값이 들어갔다.",
+   "screenshot": null
+  },
+  {
+   "title": "스택 편집 중 칸을 지워도 앱이 멈추지 않는다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 스택 단축어를 수정으로 열어 값 칸을 세 개 더 만든 뒤 '이 단계 삭제'를 쉬지 않고 네 번 눌렀다. 앱이 멈추지 않고 수정 화면이 그대로 남았다(취소로 닫음).",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 붙인 단축어를 누르면 사진이 복사된다",
+   "outcome": null,
+   "note": "사진 단축어를 만들고 다른 앱에 붙여넣는 것은 못 해 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "글과 사진을 함께 담은 단축어가 둘 다 붙는다",
+   "outcome": null,
+   "note": "글과 사진을 함께 붙여넣는 것은 못 해 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진을 스캔해 문지른 글자만 내용으로 들어간다",
+   "outcome": null,
+   "note": "사진 스캔과 문지르기는 못 해 봤다. SmearTextPickTests 7개가 고른 낱말만 글로 만드는 논리를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "사진에서 읽은 카드번호는 보안 단축어로 잠긴다",
+   "outcome": null,
+   "note": "OCR 경로는 못 해 봤다. FeatureFitTests '사진에서 읽은 여권·카드 번호는 잠근다'가 규칙만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 앱에서 복사한 글이 클립보드 기록에 쌓인다",
+   "outcome": null,
+   "note": "다른 앱에서 복사해 클립보드 기록에 쌓이는 것은 못 봤다. SmartClipboardLifecycleTests 11개가 추가·중복·한도·보존 기간을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "이메일·전화·주민번호가 맞는 종류로 분류된다",
+   "outcome": "fail",
+   "note": "이메일·전화는 ClipboardClassificationServiceTests(testClassify_SimpleEmail, testClassify_PhoneKR_Hyphen 등)로 통과. 주민번호는 지금 소스에도 감지하는 곳이 없다(ClipKeyboard/Service 에 주민번호 패턴 없음, 지난 결과지와 같음). 일부러 뺀 것이면 항목 문구를 바꾸면 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "클립보드 항목을 단축어로 저장할 수 있다",
+   "outcome": null,
+   "note": "클립보드 기록에서 단축어로 저장하는 화면은 못 봤다. BasicScenarioTests/test_복사한_것을_단축어로_저장하면_키보드에_실린다 는 통과한다.",
+   "screenshot": null
+  },
+  {
+   "title": "클립보드에서 보안으로 저장한 값도 인증해야 열린다",
+   "outcome": null,
+   "note": "화면으로는 못 봤다. BasicScenarioTests/test_복사한_카드번호를_보안으로_저장하면_암호화된다 가 파일에 평문이 없음을 확인한다. Face ID 를 거치는지는 검증 안 된다.",
+   "screenshot": null
+  },
+  {
+   "title": "설치 직후엔 붙여넣기 허용 팝업이 뜨지 않는다",
+   "outcome": "pass",
+   "note": "클립보드에 메일 주소를 넣어 둔 채 새로 깔아 켜고, 다시 켜도(설치 당일) 붙여넣기 허용 창이 뜨지 않았다. PastePermissionGuidanceTests 도 설치 뒤 3일은 자동 읽기를 막는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드에서 단축어를 탭하면 입력된다",
+   "outcome": null,
+   "note": "남의 앱 위 진짜 키보드는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드를 띄울 때 저절로 닫히지 않는다",
+   "outcome": null,
+   "note": "실기기 키보드 익스텐션 동작이라 못 봤다. SmartClipboardLifecycleTests/testLegacyImages_LoadWithoutImagePayload(뜨다 죽던 원인) 는 통과한다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱에서 추가한 단축어가 키보드에 바로 보인다",
+   "outcome": null,
+   "note": "앱 안 키보드 무대에는 방금 만든 키가 바로 보였다. 진짜 키보드는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "지구본 키로 다음 키보드로 넘어간다",
+   "outcome": null,
+   "note": "지구본 키 전환은 시스템 키보드 동작이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "지구본을 길게 누르면 이모지 키보드를 고를 수 있다",
+   "outcome": null,
+   "note": "지구본 길게 누르기 메뉴는 시스템 UI라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드가 마지막에 보던 카테고리로 열린다",
+   "outcome": null,
+   "note": "진짜 키보드는 못 봤다. 앱 안 무대는 다시 켜도 마지막에 보던 개인가족 페이지로 열렸다.",
+   "screenshot": null
+  },
+  {
+   "title": "위줄 … 키로 조작 키가 펼쳐지고 > 로 다시 접힌다",
+   "outcome": null,
+   "note": "진짜 키보드는 못 봤다. 앱 안 무대 위줄 오른쪽에 … (조작 키 펼치기) 키가 있는 것만 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "키를 길게 누르면 값이 크게 펼쳐지고 복사된다",
+   "outcome": null,
+   "note": "길게 누르기 판은 실기기 키보드에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드 안에서 옮긴 단축어 순서가 남는다",
+   "outcome": null,
+   "note": "끌기 제스처는 못 봤다. KeyboardReorderSyncTests 7개가 키보드가 쓴 순서를 앱과 키보드가 같이 읽는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "지우기 키를 누르고 있으면 계속 지워진다",
+   "outcome": null,
+   "note": "지우기 키 반복은 실기기 키보드에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "붙여넣기를 길게 눌러 복사한 글의 일부만 넣는다",
+   "outcome": null,
+   "note": "실기기 키보드 동작이라 못 봤다. ClipboardSplitterTests 9개가 조각내기 논리만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "숫자 판이 열리고 가로에서도 아랫줄이 보인다",
+   "outcome": null,
+   "note": "실기기 키보드 동작이라 못 봤다. '숫자 판 높이 맞추기' 7개가 가로에서 네 줄이 들어가는 계산을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드에서 두벌식·천지인 한글이 바르게 조합된다",
+   "outcome": null,
+   "note": "HangulComposerTests 18개(두벌식)와 CheonjiinInputTests 15개(천지인)가 익스텐션 조합기 소스를 가짜 proxy로 돌려 통과한다. 실기기 키보드로 쳐 보지는 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "빠른 줄에 최근 쓴 것과 붙박이 단축어가 선다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다. PersonaEditionTests '빠른 줄' 과 KeyboardSessionLedgerTests 가 구성 순서를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드에서 빈칸을 채울 때 지금 칸만 펼쳐진다",
+   "outcome": null,
+   "note": "NextUnfilledPlaceholderTests 8개가 다음 칸 고르기만 확인한다. 키보드 표시는 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "잠긴 스택은 값을 넘길 땐 안 묻고 넣을 때 PIN을 묻는다",
+   "outcome": null,
+   "note": "잠긴 스택의 PIN 시점은 실기기 키보드에서 봐야 한다. 이를 다루는 테스트가 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드 높이를 시스템과 같게 하면 전환 때 안 튄다",
+   "outcome": null,
+   "note": "KeyboardHeightBookTests 35개가 높이 계산을 확인한다. 전환 때 튀는지는 실기기에서만 보인다.",
+   "screenshot": null
+  },
+  {
+   "title": "가로로 긴 사진 단축어가 옆 키를 가리지 않는다",
+   "outcome": null,
+   "note": "사진 단축어 키 레이아웃은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드 탭 줄 맨 앞에 최근 탭이 선다",
+   "outcome": null,
+   "note": "진짜 키보드는 못 봤다. 앱 안 무대 탭 줄에서는 최근이 기본보다 앞에 섰다.",
+   "screenshot": null
+  },
+  {
+   "title": "최근 탭 저장 버튼에 지금 복사한 글이 미리 보인다",
+   "outcome": null,
+   "note": "전체 접근을 켠 실기기 키보드에서 봐야 한다. SmartClipboardLifecycleTests/testCaptureButtonPreview_OneLineAndMasksSensitive 가 한 줄 미리보기를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드를 띄운 채 새로 복사하면 저장 버튼 글이 바뀐다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "저장 버튼을 누르면 최근 목록 맨 위에 한 번만 담긴다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다. testAdd_DuplicateContent_MovesToFrontWithoutDuplicating 이 중복 없이 맨 앞으로 오는 것을 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "카드번호는 최근 탭에서 끝 네 자리만 보인다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다. testCaptureButtonPreview_OneLineAndMasksSensitive 가 카드번호 가리기를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최근 탭 줄을 누르면 입력되고 길게 누르면 복사된다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "키보드에서 저장한 글이 앱 클립보드 기록에도 쌓인다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다. 같은 App Group 기록을 쓰는 것은 SmartClipboardLifecycleTests 가 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "복사한 글은 30일 동안 남고 그보다 오래된 것은 사라진다",
+   "outcome": "pass",
+   "note": "BasicScenarioTests/test_담아_둔_것은_키보드_최근_탭에_30일_남는다 와 SmartClipboardLifecycleTests/testAdd_RemovesTemporaryItemsPastRetention, testKeyboardRecents_TextOnlyNewestFirst 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "최근 탭에서 닫으면 다음에도 최근 탭으로 열린다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최근 탭과 카테고리 사이를 좌우로 밀어 오간다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "전체 접근이 꺼져 있으면 저장 버튼이 클립보드를 미리 읽지 않는다",
+   "outcome": null,
+   "note": "전체 접근을 끈 실기기 키보드에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "앱 안 키보드의 최근 탭은 붙여넣기 허용 팝업을 저절로 띄우지 않는다",
+   "outcome": null,
+   "note": "앱 안 무대의 최근 탭은 열어 두지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "보안 단축어가 Face ID 후에 보인다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 자물쇠 카드(보안카드)를 탭하니 Face ID 창이 떴고, 시뮬레이터 Face ID 일치 신호를 보내니 그 값(SECRETVALUE123)이 클립보드로 복사됐다. 카드 화면에 내용이 펼쳐지는 방식이 아니라 복사로 드러난다.",
+   "screenshot": null
+  },
+  {
+   "title": "Face ID를 못 쓰면 PIN으로 열 수 있다",
+   "outcome": "fail",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 보안카드를 탭해 Face ID 불일치를 세 번 보내니 iOS 창에 'Face ID를 다시 시도' 와 취소만 있었고, 취소하니 앱이 '인증 실패 / 보안 단축어에 접근하려면 생체 인증이 필요합니다'에 확인 하나만 띄웠다. 번호 입력으로 넘어가는 길이 없다. ClipKeyboardListViewModel.swift 의 authenticateWithBiometrics 가 .deviceOwnerAuthenticationWithBiometrics 만 쓴다. 잠금 PIN 은 키보드용으로만 있다(무대 띠 '잠금 번호를 아직 안 만드셨어요').",
+   "screenshot": "claude-qa-clipkeyboard-v2-05-faceid-fail-no-pin"
+  },
+  {
+   "title": "잠근 단축어 카드에 자물쇠가 늘 보인다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 카드를 길게 눌러 보안 단축어로 설정하니 카드 제목 앞에 자물쇠가 붙었고, 목록을 위아래로 훑고 다시 켜도(라이트·다크·다른 언어) 계속 붙어 있었다.",
+   "screenshot": null
+  },
+  {
+   "title": "공유 시트로 받은 글이 단축어가 된다",
+   "outcome": null,
+   "note": "공유 시트와 익스텐션 실행은 못 봤다. ShareExtensionMemoWriteTests 6개가 같은 JSON 을 앱이 읽는 것만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "즐겨찾기 위젯을 탭하면 복사된다",
+   "outcome": null,
+   "note": "위젯은 홈 화면에 놓아 보지 못했다(위젯 빌드는 경고 0).",
+   "screenshot": null
+  },
+  {
+   "title": "제어센터 값 복사 버튼이 앱을 열지 않고 복사한다",
+   "outcome": null,
+   "note": "제어센터 컨트롤은 시뮬레이터에서 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "제어센터 빠른 메모가 앱을 열어 입력 시트를 띄운다",
+   "outcome": null,
+   "note": "제어센터 버튼 자체는 못 봤다. 그 버튼이 여는 clipkeyboard://quicknote 를 꺼진 앱에 열어 보니 앱이 켜지면서 메모 입력 시트가 바로 올라왔다.",
+   "screenshot": null
+  },
+  {
+   "title": "키 컬러를 바꾸면 앱과 키보드가 함께 바뀐다",
+   "outcome": null,
+   "note": "키 컬러를 바꿔 보지 않았다. AppAccent 테스트 10개가 App Group 저장과 익스텐션 읽기를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "최근 탭 스위치를 끄면 키보드에서 최근 탭이 빠진다",
+   "outcome": null,
+   "note": "최근 탭 스위치를 꺼 보지 않았고 진짜 키보드는 실기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "업데이트하면 새로운 기능 안내가 한 번 뜨고 키보드 설정으로 데려간다",
+   "outcome": null,
+   "note": "덮어 깔기 업데이트를 재현하지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "사용법과 문의 맨 아래에 처리방침·약관·버전이 있다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 설정 ▸ 사용법과 문의 맨 아래에 개인정보 처리방침·이용약관 줄과 버전 5.1.9 줄이 있고, 버전 줄을 일곱 번 누르니 '개발자 모드가 켜졌어요' 창이 떴다. 설정 첫 화면 맨 아래에도 '버전 5.1.9 (26)'이 보인다.",
+   "screenshot": null
+  },
+  {
+   "title": "목록 배경에 내 사진을 넣고 지울 수 있다",
+   "outcome": null,
+   "note": "사진 보관함에서 고르는 일이라 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정에서 언어를 바꾸면 재실행 없이 바뀐다",
+   "outcome": null,
+   "note": "설정의 언어 메뉴로 바꿔 보지는 않았다. 실행 인자로 9개 언어(ko·en·ja·es·de·th·vi·zh-Hans·ru)로 켜면 화면 글이 그 언어로 나온다.",
+   "screenshot": null
+  },
+  {
+   "title": "나에게 맞추기에 판단 근거와 챙길 세 가지가 보인다",
+   "outcome": null,
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 설정 ▸ 단축어 ▸ 나에게 맞추기에 '먼저 챙겨 드리는 세 가지'(입금 계좌·집 주소·내 연락처)는 보였다. 단축어가 몇 개 없어 '아직 뚜렷한 쓰임새가 보이지 않아요'가 대신 서고 '이렇게 알아봤어요' 근거는 안 나와 판정 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "사용 기록에서 아낀 시간을 기간별로 본다",
+   "outcome": "pass",
+   "note": "RefundLedgerTests 19개(testWeekAndMonthAgreeOnTheSameUse, testSelectablePeriodsAreTheOnesTheScreenOffers 등)와 RefundReceipt 22개 통과. 사용 기록 탭에 이번 주·이번 달·전체 고르개와 다시 안 친 횟수·아낀 시간이 보였다(기간을 바꿔 보지는 않음).",
+   "screenshot": null
+  },
+  {
+   "title": "친구에게 알리기 영상을 만드는 동안 화면이 멈추지 않는다",
+   "outcome": null,
+   "note": "ShareVideoMainThreadTests 2개가 굽는 동안 메인 스레드 응답을 처음 0.4초만 본다. 끝까지 만드는 것은 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "100번을 넣기 전에는 개수 제한 없이 만들어진다",
+   "outcome": "pass",
+   "note": "FreeUseTests/test_무료_기간에는_Pro와_같다, test_문턱_전에는_전부_열려_있고_문턱에서_닫힌다 와 BasicScenarioTests/test_문턱을_넘어도_만든_것은_그대로고_새로_만들기에서만_결제를_묻는다 통과. 화면에서도 무료 상태로 단축어·보안 단축어를 결제 화면 없이 만들었다.",
+   "screenshot": null
+  },
+  {
+   "title": "설정 맨 위에 무료로 쓰는 중과 쓴 횟수가 보인다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 무료 상태 설정 탭 맨 위에 '무료로 쓰는 중 / 100번 중 6번 썼어요'가 있고, 누르니 '무료로 쓰는 방법' 화면(지금은 모든 기능이 무료예요. 94번 남았어요, 이렇게 운영해요, Pro 보기)이 열렸다. 8개 언어에서도 같다.",
+   "screenshot": null
+  },
+  {
+   "title": "50번과 80번에 목록 위 안내 카드가 한 번씩 뜬다",
+   "outcome": null,
+   "note": "50번·80번까지 넣지 않았다. FreeUseTests/test_본_이정표는_다시_뜨지_않고_돈을_낸_사람에게는_없다, test_이정표는_문턱에_비례한다 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "100번째에 앱을 열면 쓴 기록과 요금제 화면이 한 번 뜬다",
+   "outcome": null,
+   "note": "100번까지 넣지 않았다. 결제 화면 위쪽의 영수증(넣은 횟수·아낀 시간·가장 많이 쓴 것)은 Pro 보기로 연 화면에서 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료 기간이 끝나도 만든 단축어는 키보드에 모두 뜬다",
+   "outcome": null,
+   "note": "실기기 키보드에서 봐야 한다. FreeUseTests/test_문턱_뒤에도_만든_것은_전부_키보드에_실린다 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "무료 기간이 끝난 뒤 한도를 넘겨 만들면 결제 화면이 뜬다",
+   "outcome": "pass",
+   "note": "BasicScenarioTests/test_문턱을_넘어도_만든_것은_그대로고_새로_만들기에서만_결제를_묻는다, OwnShortcutLimitTests/testFreeUserReachesTheFullLimitBeforeThePaywall, ProFeatureManagerTests/testCanAddMemo_FreeUserAtLimit_False 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "결제 화면을 닫으면 하던 작업으로 돌아온다",
+   "outcome": "pass",
+   "note": "XCUITest 하네스(레포 밖)로 실제로 눌러 봤다. 결제 화면의 X 를 누르니 열기 직전의 '무료로 쓰는 방법' 화면 그 자리로 돌아왔다.",
+   "screenshot": null
+  },
+  {
+   "title": "무료 기간이 끝나면 iCloud 백업이 잠긴다",
+   "outcome": null,
+   "note": "무료 기간이 끝난 상태를 만들지 않았다. ProFeatureManagerTests/testIsCloudBackupAvailable_RequiresFullAccess 는 Pro일 때 열리는 쪽만 본다.",
+   "screenshot": null
+  },
+  {
+   "title": "Pro 혜택 화면의 숫자가 실제와 맞다",
+   "outcome": null,
+   "note": "Pro 를 산 상태를 만들 수 없어 혜택 화면을 못 봤다. testFreeLimits_AreExpectedValues 와 SlotPack 9개는 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "열 개 언어 모두 고를 수 있고 문구가 잘리지 않는다",
+   "outcome": "pass",
+   "note": "일본어·스페인어·독일어·태국어·베트남어(와 영어·중국어 간체·러시아어)로 켜 목록·사용 기록·설정·무료로 쓰는 방법 화면을 봤다. 잘린 글이나 한글이 섞인 앱 문구는 없었다(한글은 사용자가 만든 단축어·카테고리 이름뿐). 다만 중국어 간체 사용 기록 머리 숫자가 '第 7 个'(7번째)로 나온다. Localizable.xcstrings 의 '%d번' 이 횟수인데 서수로 옮겨졌다. 결제 화면 자체는 언어별로 보지 못했다.",
+   "screenshot": null
+  },
+  {
+   "title": "iPad에서 목록·시트·키보드가 화면에 맞게 놓인다",
+   "outcome": null,
+   "note": "iPad 시뮬레이터로 열지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver가 키보드 지구본을 다음 키보드로 읽는다",
+   "outcome": null,
+   "note": "VoiceOver 는 기기에서 봐야 한다.",
+   "screenshot": null
+  },
+  {
+   "title": "VoiceOver를 켜면 두 손가락 탭이 선택 화면을 안 연다",
+   "outcome": null,
+   "note": "VoiceOver 를 켠 화면은 못 봤다. BulkSelectionTests 가 TwoFingerTapAvailability.isAllowed(voiceOverRunning: true)=false 만 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "내보낸 .json을 가져오면 기존 데이터와 합쳐진다",
+   "outcome": null,
+   "note": "DataPortabilityCategoryTests 3개가 카테고리를 싣고 옛 파일도 읽는 것만 확인한다. 가져올 때 기존 단축어와 합치는 과정은 테스트되지 않고 화면으로도 못 봤다.",
+   "screenshot": null
+  },
+  {
+   "title": "iCloud 백업을 복원하면 카테고리와 사진까지 돌아온다",
+   "outcome": null,
+   "note": "실제 iCloud 복원은 못 봤다. CloudKitBackupIntegrityTests 21개(testBackupThenRestore_PreservesAllMemoFields 등) 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "두 기기 동기화에서 수정·삭제도 반대편에 간다",
+   "outcome": null,
+   "note": "두 기기 CloudKit 은 못 봤다. MemoSyncCore 10개, MemoSyncConvergenceTests 10개 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "카테고리를 지우거나 이름을 바꾸면 다른 기기에도 간다",
+   "outcome": null,
+   "note": "두 기기 동기화는 못 봤다. CategorySyncCoreTests 16개가 이름 변경·삭제 전파 논리를 확인한다.",
+   "screenshot": null
+  },
+  {
+   "title": "다른 기기를 이 기기에 맞추기가 바뀔 개수를 먼저 묻는다",
+   "outcome": null,
+   "note": "두 기기가 필요하다. 이 길을 다루는 화면 확인을 못 했다.",
+   "screenshot": null
+  },
+  {
+   "title": "변경 기록에서 지운 단축어를 되돌린다",
+   "outcome": "pass",
+   "note": "MemoTimeMachineTests 7개(testRestoreSnapshot_RevertsToPreviousState 등) 통과. 지운 단축어가 변경 기록으로 필드까지 되돌아온다. 화면으로는 열어 보지 않았다.",
+   "screenshot": null
+  },
+  {
+   "title": "모든 데이터 삭제 후 앱과 키보드가 모두 비어 있다",
+   "outcome": null,
+   "note": "모든 데이터 삭제를 끝까지 해 보지 않았다. 이를 다루는 테스트도 없다.",
+   "screenshot": null
+  },
+  {
+   "title": "구버전에서 올려도 단축어·카테고리·즐겨찾기가 남는다",
+   "outcome": null,
+   "note": "덮어 깔기는 재현하지 않았다. MigrationCompatibilityTests 9개(testOneLegacyItemDoesNotBreakWholeArray 등), CategorySidecarTests 6개, SyncBackwardCompatibilityTests 9개 통과.",
+   "screenshot": null
+  },
+  {
+   "title": "단축어가 수백 개여도 켜기·스크롤·검색이 끊기지 않는다",
+   "outcome": null,
+   "note": "대량 데이터 성능은 보지 않았다(시험 중 맥 부하가 매우 높아 시간 측정도 믿기 어렵다).",
+   "screenshot": null
+  },
+  {
+   "title": "기내 모드에서 로컬 기능은 되고 백업만 실패를 알린다",
+   "outcome": null,
+   "note": "기내 모드는 시뮬레이터에서 못 켠다. CloudKitBackupIntegrityTests 가 가짜 DB 로 네트워크 실패 보고를 확인한다.",
+   "screenshot": null
+  }
+ ]
+}
