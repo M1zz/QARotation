@@ -17,10 +17,14 @@ final class SessionViewModel {
     var reverify: [UUID: ReverifyDecision] = [:]
     var meta: SessionMeta
     /// 이어서 보는 Claude 기록. 통과·해당 없음은 미리 채우고, 실패는 이슈로 다시 확인한다.
-    let claudeSession: QASession?
+    /// 지금 고른 버전의 기록만 이어받는다. 버전을 바꾸면 다시 찾는다.
+    private(set) var claudeSession: QASession?
     /// 버전 QA지를 이어서 채우는 세션인지. 그 버전에서 이미 본 결과(자동·수동)를 모두 미리 채운다.
     let continuesSheet: Bool
-    private let initialDrafts: [DraftResult]
+    private let defaultItems: [ChecklistItem]
+    private var initialDrafts: [DraftResult]
+    /// 미리 채운 결과를 어느 버전 기록에서 가져왔는지. 버전을 바꾸면 그 버전 기록으로 다시 채운다.
+    private var prefilledVersion: String
 
     /// 보관해 둔 진행 상태가 있으면 이어서 시작한다. 없으면 처음부터.
     init(
@@ -31,27 +35,19 @@ final class SessionViewModel {
         now: Date = .now
     ) {
         self.app = app
-        let base = SessionRecorder.drafts(defaultItems: defaultItems, app: app)
-        let prefilled: [DraftResult]
-        if continuingSheet {
-            let sheet = VersionSheet.build(version: app.versionUnderTest, sessions: app.sortedSessions, checklist: base)
-            prefilled = SessionRecorder.prefill(base, carried: sheet.carried, unchecked: sheet.uncheckedNotes)
-            self.claudeSession = nil
-        } else {
-            let claude = app.pendingClaudeSession
-            prefilled = SessionRecorder.prefill(
-                base,
-                carried: SessionRecorder.carried(from: claude),
-                unchecked: claude?.claudeUncheckedNotes ?? [:]
-            )
-            self.claudeSession = claude
-        }
+        self.defaultItems = defaultItems
         self.continuesSheet = continuingSheet
+        let resumed = stored?.appID == app.id ? stored : nil
+        // 보관한 진행 상태는 그때 고른 버전으로 이어 가므로 미리 채우기도 그 버전을 따른다.
+        let version = resumed?.appVersion ?? app.versionUnderTest
+        let (prefilled, claude) = Self.prefill(app: app, defaultItems: defaultItems, version: version, continuingSheet: continuingSheet)
+        self.claudeSession = claude
+        self.prefilledVersion = version
         self.drafts = prefilled
         self.initialDrafts = prefilled
         self.reverifyIssues = app.openIssues
 
-        if let stored, stored.appID == app.id {
+        if let stored = resumed {
             // 쓴 시간을 이어 세려고 시작 시각을 거꾸로 잡는다.
             self.meta = SessionMeta(
                 startedAt: now.addingTimeInterval(-Double(stored.elapsedSeconds)),
@@ -84,7 +80,16 @@ final class SessionViewModel {
         var outcomes: [String: String] = [:]
         var notes: [String: String] = [:]
         for draft in drafts {
-            if let outcome = draft.outcome { outcomes[draft.id.uuidString] = outcome.rawValue }
+            // 미리 채운 결과는 보관하지 않는다. 열 때 그 버전 기록에서 다시 채운다.
+            // 그래야 다른 버전으로 이어 열었을 때 지난 버전의 결과가 사람이 본 것처럼 따라오지 않는다.
+            // 미리 채운 답을 사람이 지운 것은 빈 값으로 남겨, 다시 열어도 지운 채로 둔다.
+            if !draft.isCarried {
+                if let outcome = draft.outcome {
+                    outcomes[draft.id.uuidString] = outcome.rawValue
+                } else if draft.carriedOutcome != nil {
+                    outcomes[draft.id.uuidString] = ""
+                }
+            }
             let note = draft.note.trimmingCharacters(in: .whitespacesAndNewlines)
             if !note.isEmpty { notes[draft.id.uuidString] = note }
         }
@@ -105,6 +110,47 @@ final class SessionViewModel {
             ),
             to: defaults
         )
+    }
+
+    /// 그 버전 기록으로 미리 채운 체크리스트와 이어받은 Claude 기록.
+    private static func prefill(
+        app: TrackedApp,
+        defaultItems: [ChecklistItem],
+        version: String,
+        continuingSheet: Bool
+    ) -> ([DraftResult], QASession?) {
+        let base = SessionRecorder.drafts(defaultItems: defaultItems, app: app)
+        if continuingSheet {
+            let sheet = VersionSheet.build(version: version, sessions: app.sortedSessions, checklist: base)
+            return (SessionRecorder.prefill(base, carried: sheet.carried, unchecked: sheet.uncheckedNotes), nil)
+        }
+        let claude = app.pendingClaudeSession(for: version)
+        let drafts = SessionRecorder.prefill(
+            base,
+            carried: SessionRecorder.carried(from: claude),
+            unchecked: claude?.claudeUncheckedNotes ?? [:]
+        )
+        return (drafts, claude)
+    }
+
+    /// 테스트할 버전을 바꿨을 때 부른다. 미리 채운 결과를 새 버전 기록으로 다시 채우고,
+    /// 이번에 사람이 직접 고른 답과 메모·스크린샷은 그대로 둔다.
+    func versionChanged() {
+        let version = meta.appVersion.trimmingCharacters(in: .whitespaces)
+        guard version != prefilledVersion.trimmingCharacters(in: .whitespaces) else { return }
+        let mine = Dictionary(drafts.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        let (prefilled, claude) = Self.prefill(app: app, defaultItems: defaultItems, version: version, continuingSheet: continuesSheet)
+        drafts = prefilled.map { fresh in
+            guard let old = mine[fresh.id] else { return fresh }
+            var draft = fresh
+            if !old.isCarried, let outcome = old.outcome { draft.outcome = outcome }
+            draft.note = old.note
+            draft.screenshot = old.screenshot
+            return draft
+        }
+        initialDrafts = prefilled
+        claudeSession = claude
+        prefilledVersion = version
     }
 
     var sections: [CategorySection] { sections { _ in true } }

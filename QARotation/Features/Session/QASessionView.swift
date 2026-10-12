@@ -127,6 +127,11 @@ private struct SessionContentView: View {
                 Text(saveError ?? "")
             }
             .sensoryFeedback(.success, trigger: finished)
+            // 버전을 바꾸면 미리 채운 결과를 그 버전 기록으로 다시 채운다(한 장씩 보기·목록 어디서 바꿔도).
+            .onChange(of: model.meta.appVersion) { _, _ in
+                model.versionChanged()
+                if model.hasProgress { model.keepDraft() }
+            }
             // 홈으로 나가거나 앱이 꺼져도 여기까지 한 것이 남도록.
             .onChange(of: scenePhase) { _, phase in
                 if phase != .active, model.hasChanges { model.keepDraft() }

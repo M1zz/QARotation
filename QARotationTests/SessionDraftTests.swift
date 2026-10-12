@@ -113,6 +113,77 @@ struct SessionDraftTests {
         SessionDraftStore.clear(defaults)
         #expect(SessionDraftStore.load(defaults) == nil)
     }
+
+    /// 그 버전에서 Claude 가 "실행"은 통과, "구매"는 못 봤다고 남긴 기록.
+    @discardableResult
+    func claudeRun(version: String) throws -> QASession {
+        var drafts = SessionRecorder.drafts(defaultItems: items, app: app)
+        drafts[0].outcome = .pass
+        let meta = SessionMeta(startedAt: .now.addingTimeInterval(-60), deviceModel: "Mac", osVersion: "iOS 27.0", appVersion: version)
+        let session = try SessionRecorder.record(app: app, drafts: drafts, reverify: [:], meta: meta, byClaude: true, in: context)
+        session.uncheckedNotes = ["구매": "실기기 필요"]
+        try context.save()
+        return session
+    }
+
+    @Test func 다른_버전의_Claude_결과는_미리_채우지_않는다() throws {
+        try claudeRun(version: "1.0")
+        app.testingVersion = "1.1"
+        let fresh = model()
+        #expect(fresh.claudeSession == nil)
+        #expect(fresh.answeredCount == 0)
+        #expect(fresh.drafts.allSatisfy { $0.claudeNote == nil })
+    }
+
+    @Test func 버전을_바꾸면_그_버전_기록으로_다시_채운다() throws {
+        let run = try claudeRun(version: "1.0")
+        let first = model()
+        #expect(first.claudeSession?.id == run.id)
+        #expect(first.drafts[0].outcome == .pass)
+        // 사람이 직접 고른 답은 버전을 바꿔도 남는다.
+        first.setOutcome(.fail, for: first.drafts[2].id)
+
+        first.meta.appVersion = "1.1"
+        first.versionChanged()
+        #expect(first.claudeSession == nil)
+        #expect(first.drafts[0].outcome == nil)
+        #expect(first.drafts[0].carriedOutcome == nil)
+        #expect(first.drafts[1].claudeNote == nil)
+        #expect(first.drafts[2].outcome == .fail)
+
+        first.meta.appVersion = "1.0"
+        first.versionChanged()
+        #expect(first.drafts[0].outcome == .pass)
+        #expect(first.drafts[1].claudeNote == "실기기 필요")
+        #expect(first.drafts[2].outcome == .fail)
+    }
+
+    @Test func 미리_채운_결과는_보관하지_않아_다른_버전으로_따라가지_않는다() throws {
+        try claudeRun(version: "1.0")
+        let first = model()
+        first.setOutcome(.na, for: first.drafts[2].id)
+        first.meta.appVersion = "1.1"
+        first.keepDraft(defaults: defaults)
+
+        let stored = try #require(SessionDraftStore.load(defaults))
+        #expect(stored.outcomes[first.drafts[0].id.uuidString] == nil)
+        let resumed = model(resuming: stored)
+        #expect(resumed.meta.appVersion == "1.1")
+        #expect(resumed.drafts[0].outcome == nil)
+        #expect(resumed.drafts[2].outcome == .na)
+    }
+
+    @Test func 미리_채운_답을_지운_것은_다시_열어도_지운_채다() throws {
+        try claudeRun(version: "1.0")
+        let first = model()
+        first.setOutcome(.pass, for: first.drafts[0].id)
+        #expect(first.drafts[0].outcome == nil)
+        first.keepDraft(defaults: defaults)
+
+        let resumed = model(resuming: try #require(SessionDraftStore.load(defaults)))
+        #expect(resumed.drafts[0].carriedOutcome == .pass)
+        #expect(resumed.drafts[0].outcome == nil)
+    }
 }
 
 @Suite("보던 자리 기억하기")

@@ -77,6 +77,15 @@ final class TrackedApp {
         return sortedSessions.first { $0.byClaude && $0.date > last }
     }
 
+    /// 그 버전에서 사람이 아직 이어서 보지 않은 가장 최근 Claude 기록. 다른 버전의 결과는 이어받지 않는다.
+    func pendingClaudeSession(for version: String) -> QASession? {
+        let target = version.trimmingCharacters(in: .whitespaces)
+        let last = lastQADate ?? .distantPast
+        return sortedSessions.first {
+            $0.byClaude && $0.date > last && $0.appVersion.trimmingCharacters(in: .whitespaces) == target
+        }
+    }
+
     /// 이 앱만의 체크 항목이 하나도 없다. QA를 열어도 모든 앱 공통인 기본 항목만 나온다.
     var hasNoOwnChecklist: Bool {
         (extraChecklistItems ?? []).isEmpty

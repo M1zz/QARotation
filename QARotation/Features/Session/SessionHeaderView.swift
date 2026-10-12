@@ -58,9 +58,6 @@ struct SessionHeaderView: View {
         .sheet(isPresented: $pickingVersion) {
             VersionPicker(app: model.app, version: $model.meta.appVersion)
         }
-        .onChange(of: model.meta.appVersion) { _, _ in
-            if model.hasProgress { model.keepDraft() }
-        }
     }
 
     /// URL 스킴으로 못 열면(앱이 안 깔렸거나 스킴이 틀림) App Store 로 보낸다.
